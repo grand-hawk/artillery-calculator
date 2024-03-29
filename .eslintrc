@@ -88,17 +88,6 @@
     "@typescript-eslint/consistent-type-definitions": "error",
     "@typescript-eslint/consistent-indexed-object-style": "error",
     "@typescript-eslint/consistent-generic-constructors": "warn",
-    "@typescript-eslint/consistent-type-assertions": [
-      "error",
-      {
-        "assertionStyle": "as",
-        "objectLiteralTypeAssertions": "allow"
-      }
-    ],
-    "@typescript-eslint/method-signature-style": [
-      "error",
-      "property"
-    ],
     "react/jsx-filename-extension": "off"
   }
 }
