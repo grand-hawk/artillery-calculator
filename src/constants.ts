@@ -50,8 +50,22 @@ export const maps: Map[] = [
   {
     image: '/images/cloudy_valley.png',
     name: 'Cloudy Valley',
-    // Yet to receive true grid size in studs
     size: calculateMapSize(116, 9),
+  },
+  {
+    image: '/images/snow_tundra.png',
+    name: 'Snow Tundra',
+    size: calculateMapSize(160, 9),
+  },
+  {
+    image: '/images/gensokyo.png',
+    name: 'Gensokyo (old)',
+    size: calculateMapSize(122, 9),
+  },
+  {
+    image: '/images/reactor.png',
+    name: 'Reactor (old)',
+    size: calculateMapSize(207, 9),
   },
 ];
 
