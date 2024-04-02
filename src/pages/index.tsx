@@ -15,7 +15,8 @@ import ProjectileSelection from '@/components/molecules/configuration/Projectile
 import Canvas from '@/components/organisms/Canvas';
 import Footer from '@/components/organisms/Footer';
 import Motd from '@/components/organisms/Motd';
-import { maps, projectiles } from '@/constants';
+import { maps } from '@/config/maps';
+import { projectiles } from '@/config/projectiles';
 import { useDataStore } from '@/stores/data';
 import {
   calculateAzimuth,
