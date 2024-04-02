@@ -5,7 +5,7 @@ import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
 
 import CanvasContainer from '../molecules/canvas/Container';
 import AbsoluteContainer from '@/components/atoms/canvas/AbsoluteContainer';
-import { maps } from '@/constants';
+import { maps } from '@/config/maps';
 import { useCanvasStore } from '@/stores/canvas';
 import { useDataStore } from '@/stores/data';
 

@@ -5,7 +5,7 @@ import React from 'react';
 
 import DataContainer from '../../atoms/configuration/DataContainer';
 import ScrollBox from '../ScrollBox';
-import { maps } from '@/constants';
+import { maps } from '@/config/maps';
 import { useDataStore } from '@/stores/data';
 
 export default function MapSelection() {
