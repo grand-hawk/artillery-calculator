@@ -13,10 +13,10 @@ import { useOnClickOutside } from 'usehooks-ts';
 
 import DataContainer from '../../atoms/configuration/DataContainer';
 import ScrollBox from '../ScrollBox';
-import { projectiles } from '@/constants';
+import { projectiles } from '@/config/projectiles';
 import { useDataStore } from '@/stores/data';
 
-import type { Projectile } from '@/constants';
+import type { Projectile } from '@/config/projectiles';
 
 export default function ProjectileSelection() {
   const tooltip = React.useRef<HTMLDivElement | null>(null);
