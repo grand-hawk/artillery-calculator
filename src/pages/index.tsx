@@ -16,7 +16,7 @@ import Canvas from '@/components/organisms/Canvas';
 import Footer from '@/components/organisms/Footer';
 import Motd from '@/components/organisms/Motd';
 import { maps } from '@/config/maps';
-import { projectiles } from '@/config/projectiles';
+import { guns } from '@/config/projectiles';
 import { useDataStore } from '@/stores/data';
 import {
   calculateAzimuth,
@@ -39,8 +39,8 @@ export async function getStaticProps(): Promise<
   if (process.env.STRAPI_URL && process.env.STRAPI_TYPE) {
     try {
       const entry = await getEntry({
-        apiUrl: process.env.STRAPI_URL as string,
-        id: process.env.STRAPI_TYPE as string,
+        apiUrl: process.env.STRAPI_URL!,
+        id: process.env.STRAPI_TYPE!,
       });
 
       if (entry.attributes.text) motd = entry.attributes.text as string;
@@ -65,11 +65,9 @@ export default function Index({
   const isClient = useIsClient();
   const mapIndex = useDataStore((s) => s.mapIndex);
   const map = maps[mapIndex];
-  const [projectileIndex] = useDataStore((s) => [
-    s.projectileIndex,
-    s.setProjectileIndex,
-  ]);
-  const projectile = projectiles[projectileIndex];
+  const projectileData = useDataStore((s) => s.projectile);
+  const projectile =
+    guns[projectileData.gunKey].projectiles[projectileData.index];
   const [gun, target] = useDataStore((s) => [s.getGun(), s.getTarget()]);
 
   const distance =
