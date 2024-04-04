@@ -4,7 +4,14 @@ import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import { immer } from 'zustand/middleware/immer';
 
+import { guns } from '@/config/projectiles';
+
 import type { Vector } from '@/components/organisms/Canvas';
+
+interface ProjectileData {
+  gunKey: string;
+  index: number;
+}
 
 interface StringVector {
   x: string;
@@ -15,8 +22,8 @@ export interface DataStore {
   mapIndex: number;
   setMapIndex: (mapIndex: number) => void;
 
-  projectileIndex: number;
-  setProjectileIndex: (projectileIndex: number) => void;
+  projectile: ProjectileData;
+  setProjectile: (gun: string, index: number) => void;
 
   target: StringVector;
   getTarget: () => Vector;
@@ -37,10 +44,17 @@ export const useDataStore = create(
         });
       },
 
-      projectileIndex: 0,
-      setProjectileIndex(projectileIndex) {
+      // First gun and its projectile as default
+      projectile: {
+        gunKey: Object.keys(guns)[0],
+        index: 0,
+      },
+      setProjectile(gun, index) {
         set((s) => {
-          s.projectileIndex = projectileIndex;
+          s.projectile = {
+            gunKey: gun,
+            index,
+          };
         });
       },
 
