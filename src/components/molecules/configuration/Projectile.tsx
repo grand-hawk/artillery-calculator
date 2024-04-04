@@ -13,20 +13,20 @@ import { useOnClickOutside } from 'usehooks-ts';
 
 import DataContainer from '../../atoms/configuration/DataContainer';
 import ScrollBox from '../ScrollBox';
-import { projectiles } from '@/config/projectiles';
+import { guns } from '@/config/projectiles';
 import { useDataStore } from '@/stores/data';
-
-import type { Projectile } from '@/config/projectiles';
 
 export default function ProjectileSelection() {
   const tooltip = React.useRef<HTMLDivElement | null>(null);
   const selectionChanged = React.useRef<number>(0);
-  const [selectionOpen, setSelectionOpen] = React.useState<boolean>(false);
-  const [selectionTab, setSelectionTab] = React.useState<number>(0);
-  const [projectileIndex, setProjectileIndex] = useDataStore((s) => [
-    s.projectileIndex,
-    s.setProjectileIndex,
+  const [projectileData, setProjectile] = useDataStore((s) => [
+    s.projectile,
+    s.setProjectile,
   ]);
+  const [selectionOpen, setSelectionOpen] = React.useState<boolean>(false);
+  const [selectionTab, setSelectionTab] = React.useState<number>(
+    Object.keys(guns).findIndex((key) => key === projectileData.gunKey),
+  );
 
   function canChangeSelection() {
     const can = selectionChanged.current + 250 < performance.now();
@@ -38,39 +38,12 @@ export default function ProjectileSelection() {
     return true;
   }
 
-  const projectileCategories = React.useMemo(() => {
-    const categories: Record<string, Projectile[]> = {
-      // Add array in advance so that it always will be index 0
-      no_name: [],
-    };
-
-    for (const projectile of projectiles) {
-      const gunName = projectile.gun?.name || 'no_name';
-      if (!categories[gunName]) categories[gunName] = [];
-      categories[gunName].push(projectile);
-    }
-
-    return categories;
-  }, []);
-
   useOnClickOutside(
     tooltip,
     () => {
       if (selectionOpen && canChangeSelection()) setSelectionOpen(false);
     },
     'mouseup',
-  );
-
-  React.useEffect(
-    () =>
-      setSelectionTab(
-        Object.keys(projectileCategories).findIndex((categoryKey) =>
-          projectileCategories[categoryKey].find(
-            (projectile) => projectile === projectiles[projectileIndex],
-          ),
-        ),
-      ),
-    [setSelectionTab, projectileCategories, projectileIndex],
   );
 
   return (
@@ -96,70 +69,70 @@ export default function ProjectileSelection() {
             value={selectionTab}
             onChange={(event, newTab) => setSelectionTab(newTab as number)}
           >
-            {Object.values(projectileCategories).map((category, index) => (
-              <TabPanel value={index} key={index} sx={{ padding: 0 }}>
-                <ScrollBox dependency={selectionOpen}>
-                  <Stack direction="column">
-                    {category.map((projectile, thisIndex) => {
-                      const trueIndex = projectiles.indexOf(projectile);
+            {Object.keys(guns).map((gunKey, index) => {
+              const gun = guns[gunKey];
 
-                      return (
-                        <Button
-                          key={thisIndex}
-                          color="neutral"
-                          variant="plain"
-                          sx={(theme) => ({
-                            borderRadius: 0,
-                            fontWeight: 400,
+              return (
+                <TabPanel value={index} key={index} sx={{ padding: 0 }}>
+                  <ScrollBox dependency={selectionOpen}>
+                    <Stack direction="column">
+                      {gun.projectiles.map(
+                        (projectile, thisProjectileIndex) => (
+                          <Button
+                            key={thisProjectileIndex}
+                            color="neutral"
+                            variant="plain"
+                            sx={(theme) => ({
+                              borderRadius: 0,
+                              fontWeight: 400,
 
-                            ...(projectileIndex === trueIndex && {
-                              backgroundColor:
-                                theme.palette.neutral.plainActiveBg,
-                            }),
-                          })}
-                          size="sm"
-                          onClick={() => setProjectileIndex(trueIndex)}
-                        >
-                          <Stack
-                            sx={{
-                              flexDirection: 'row',
-                              alignItems: 'center',
-                              justifyContent: 'space-between',
-                              width: '100%',
-                              gap: 2,
-                            }}
+                              ...(thisProjectileIndex ===
+                                projectileData.index &&
+                                gunKey === projectileData.gunKey && {
+                                  backgroundColor:
+                                    theme.palette.neutral.plainActiveBg,
+                                }),
+                            })}
+                            size="sm"
+                            onClick={() =>
+                              setProjectile(gunKey, thisProjectileIndex)
+                            }
                           >
-                            <Typography>{projectile.name}</Typography>
+                            <Stack
+                              sx={{
+                                flexDirection: 'row',
+                                alignItems: 'center',
+                                justifyContent: 'space-between',
+                                width: '100%',
+                                gap: 2,
+                              }}
+                            >
+                              <Typography>{projectile.name}</Typography>
 
-                            <Typography level="body-sm">
-                              {todec(projectile.velocity)} m/s
-                            </Typography>
-                          </Stack>
-                        </Button>
-                      );
-                    })}
-                  </Stack>
-                </ScrollBox>
-              </TabPanel>
-            ))}
+                              <Typography level="body-sm">
+                                {todec(projectile.velocity)} m/s
+                              </Typography>
+                            </Stack>
+                          </Button>
+                        ),
+                      )}
+                    </Stack>
+                  </ScrollBox>
+                </TabPanel>
+              );
+            })}
 
             <TabList underlinePlacement="left">
               <ScrollBox dependency={selectionOpen}>
-                {Object.keys(projectileCategories).map((key, index) => (
+                {Object.values(guns).map((gun, index) => (
                   <Tab
                     variant="plain"
                     color="neutral"
                     key={index}
                     indicatorPlacement="left"
-                    sx={{
-                      width: '100%',
-
-                      ...(projectileCategories[key].length < 1 && {
-                        display: 'none',
-                      }),
-                    }}
+                    sx={{ width: '100%' }}
                   >
-                    {key === 'no_name' ? 'Other' : key}
+                    {gun.name}
                   </Tab>
                 ))}
               </ScrollBox>
@@ -187,7 +160,7 @@ export default function ProjectileSelection() {
             />
           }
         >
-          {projectiles[projectileIndex]?.name ?? 'Select a projectile...'}
+          {guns[projectileData.gunKey].projectiles[projectileData.index].name}
         </Button>
       </Tooltip>
     </DataContainer>

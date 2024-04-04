@@ -1,205 +1,179 @@
+export interface Projectile {
+  name: string;
+  velocity: number;
+}
+
 export interface Gun {
   name?: string;
+  projectiles: Projectile[];
 }
 
 export const guns: Record<string, Gun> = {
-  't34-calliope': {
+  t34: {
     name: 'T34 Calliope',
+    projectiles: [
+      {
+        name: 'M61',
+        velocity: 619,
+      },
+      {
+        name: 'M48',
+        velocity: 463,
+      },
+      {
+        name: 'M8 Rocket',
+        velocity: 260,
+      },
+    ],
   },
 
   rszo: {
     name: 'RSZO series',
+    projectiles: [
+      {
+        name: 'Rocketetet',
+        velocity: 150,
+      },
+    ],
   },
 
-  'sau-2': {
+  sau2: {
     name: 'SAU-2',
+    projectiles: [
+      {
+        name: 'BR-540B',
+        velocity: 600,
+      },
+      {
+        name: '3OF25 Low Charge',
+        velocity: 125,
+      },
+      {
+        name: '3OF25',
+        velocity: 665,
+      },
+    ],
   },
 
   m109: {
     name: 'M109',
+    projectiles: [
+      {
+        name: 'M107',
+        velocity: 684,
+      },
+      {
+        name: 'M110 Smoke Grenade',
+        velocity: 172,
+      },
+      {
+        name: 'M107 Low Charge',
+        velocity: 172,
+      },
+      {
+        name: 'M107 Medium Charge',
+        velocity: 225,
+      },
+    ],
   },
 
   grad: {
     name: 'BM-21 Grad',
+    projectiles: [
+      {
+        name: '9M22/M21 HE-Frag',
+        velocity: 150,
+      },
+    ],
   },
 
   mortar: {
     name: 'Mortar',
+    projectiles: [
+      {
+        name: 'Medium Charge',
+        velocity: 172,
+      },
+      {
+        name: 'Low Charge',
+        velocity: 125,
+      },
+      {
+        name: 'High Charge',
+        velocity: 225,
+      },
+    ],
   },
 
   sturmtiger: {
     name: 'Sturmtiger',
+    projectiles: [
+      {
+        name: '38cm R Spgr.4581',
+        velocity: 150,
+      },
+    ],
   },
 
   panzerwerfer: {
     name: 'Panzerwerfer-15',
+    projectiles: [
+      {
+        name: 'HE Rocket',
+        velocity: 340,
+      },
+    ],
   },
 
-  propane: {
-    name: 'Hell Cannon',
-  },
-
-  'd-30': {
+  d30: {
     name: '122mm D-30',
+    projectiles: [
+      {
+        name: 'HE',
+        velocity: 690,
+      },
+      {
+        name: 'HEAT',
+        velocity: 726,
+      },
+    ],
   },
 
-  '2b9': {
+  vasilek: {
     name: '82mm 2B9 Vasilek',
+    projectiles: [
+      {
+        name: 'Medium Charge',
+        velocity: 175,
+      },
+      {
+        name: 'Low Charge',
+        velocity: 75,
+      },
+      {
+        name: 'High Charge',
+        velocity: 255,
+      },
+    ],
   },
 
   speedsta: {
     name: 'Speedsta',
+    projectiles: [
+      {
+        name: 'BruhHe',
+        velocity: 230,
+      },
+    ],
+  },
+
+  hellcannon: {
+    name: 'Hell Cannon',
+    projectiles: [
+      {
+        name: 'Propane',
+        velocity: 130,
+      },
+    ],
   },
 };
-
-export interface Projectile {
-  name: string;
-  velocity: number;
-  gun?: Gun;
-}
-
-export const projectiles: Projectile[] = [
-  // T34 Calliope
-  {
-    name: 'M61',
-    velocity: 619,
-    gun: guns['t34-calliope'],
-  },
-  {
-    name: 'M48',
-    velocity: 463,
-    gun: guns['t34-calliope'],
-  },
-  {
-    name: 'M8 Rocket',
-    velocity: 260,
-    gun: guns['t34-calliope'],
-  },
-
-  // RSZO-1 series
-  {
-    name: 'Rocketetet',
-    velocity: 150,
-    gun: guns.rszo,
-  },
-
-  // SAU-2
-  {
-    name: 'BR-540B',
-    velocity: 600,
-    gun: guns['sau-2'],
-  },
-  {
-    name: '3OF25 Low Charge',
-    velocity: 125,
-    gun: guns['sau-2'],
-  },
-  {
-    name: '3OF25',
-    velocity: 665,
-    gun: guns['sau-2'],
-  },
-
-  // M109
-  {
-    name: 'M107',
-    velocity: 684,
-    gun: guns.m109,
-  },
-  {
-    name: 'M110',
-    velocity: 172,
-    gun: guns.m109,
-  },
-  {
-    name: 'M107 Low Charge',
-    velocity: 172,
-    gun: guns.m109,
-  },
-  {
-    name: 'M107 Medium Charge',
-    velocity: 225,
-    gun: guns.m109,
-  },
-
-  // BM-21 Grad
-  {
-    name: '9M22/M21 HE-Frag',
-    velocity: 150,
-    gun: guns.grad,
-  },
-
-  // Mortar
-  {
-    name: 'Medium Charge',
-    velocity: 172,
-    gun: guns.mortar,
-  },
-  {
-    name: 'Low Charge',
-    velocity: 125,
-    gun: guns.mortar,
-  },
-  {
-    name: 'High Charge',
-    velocity: 225,
-    gun: guns.mortar,
-  },
-
-  // Sturmtiger
-  {
-    name: '38cm R Spgr.4581',
-    velocity: 150,
-    gun: guns.sturmtiger,
-  },
-
-  // Panzerwerfer-15
-  {
-    name: 'HE Rocket',
-    velocity: 340,
-    gun: guns.panzerwerfer,
-  },
-
-  // Hell Cannon
-  {
-    name: 'Propane',
-    velocity: 130,
-    gun: guns.propane,
-  },
-
-  // 122mm D-30
-  {
-    name: 'HE',
-    velocity: 690,
-    gun: guns['d-30'],
-  },
-  {
-    name: 'HEAT',
-    velocity: 726,
-    gun: guns['d-30'],
-  },
-
-  // 82mm 2B9 Vasilek
-  {
-    name: 'Medium Charge',
-    velocity: 175,
-    gun: guns['2b9'],
-  },
-  {
-    name: 'Low Charge',
-    velocity: 75,
-    gun: guns['2b9'],
-  },
-  {
-    name: 'High Charge',
-    velocity: 255,
-    gun: guns['2b9'],
-  },
-
-  // Speedsta
-  {
-    name: 'BruhHe',
-    velocity: 230,
-    gun: guns.speedsta,
-  },
-];
