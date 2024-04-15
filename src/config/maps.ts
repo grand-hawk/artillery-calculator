@@ -58,6 +58,11 @@ export const maps: Map[] = [
     size: calculateMapSize(160, 9),
   },
   {
+    image: '/images/zone_11.png',
+    name: 'Zone 11',
+    size: calculateMapSize(324, 9),
+  },
+  {
     image: '/images/gensokyo.png',
     name: 'Gensokyo (old)',
     size: calculateMapSize(122, 9),
