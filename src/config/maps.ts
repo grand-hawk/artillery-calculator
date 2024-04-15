@@ -48,6 +48,11 @@ export const maps: Map[] = [
     size: 2997,
   },
   {
+    image: '/images/zone_11.png',
+    name: 'Zone 11',
+    size: calculateMapSize(324, 9),
+  },
+  {
     image: '/images/cloudy_valley.png',
     name: 'Cloudy Valley',
     size: calculateMapSize(116, 9),
