@@ -50,26 +50,26 @@ export const maps: Map[] = [
   {
     image: '/images/cloudy_valley.png',
     name: 'Cloudy Valley',
-    size: calculateMapSize(116, 9),
+    size: calculateMapSize(116),
   },
   {
     image: '/images/snow_tundra.png',
     name: 'Snow Tundra',
-    size: calculateMapSize(160, 9),
+    size: calculateMapSize(160),
   },
   {
     image: '/images/zone_11.png',
     name: 'Zone 11',
-    size: calculateMapSize(324, 9),
+    size: calculateMapSize(324),
   },
   {
     image: '/images/gensokyo.png',
     name: 'Gensokyo (old)',
-    size: calculateMapSize(122, 9),
+    size: calculateMapSize(122),
   },
   {
     image: '/images/reactor.png',
     name: 'Reactor (old)',
-    size: calculateMapSize(207, 9),
+    size: calculateMapSize(207),
   },
 ];

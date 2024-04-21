@@ -17,7 +17,7 @@ Scroll to the bottom of the list and add:
 {
     image: '/images/the_image_filename.png'
     name: 'The name of the map',
-    size: calculateMapSize(123, 9) // 123 being the grid size in meters
+    size: calculateMapSize(123) // 123 being the grid size in meters
 }
 ```
 

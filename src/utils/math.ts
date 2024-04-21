@@ -35,6 +35,6 @@ export function metersToStuds(m: number): number {
   return (m * 5) / 1.8;
 }
 
-export function calculateMapSize(m: number, grids: number): number {
+export function calculateMapSize(m: number, grids: number = 9): number {
   return metersToStuds(m) * grids;
 }
