@@ -1,3 +1,4 @@
+import todec from '2dec';
 import Box from '@mui/joy/Box';
 import Stack from '@mui/joy/Stack';
 import Typography from '@mui/joy/Typography';
@@ -7,11 +8,11 @@ import { getEntry } from 'strapi-rest';
 import { useIsClient } from 'usehooks-ts';
 
 import Page from '@/components/layout/Page';
-import AzimuthValue from '@/components/molecules/configuration/Azimuth';
-import DistanceValue from '@/components/molecules/configuration/Distance';
 import ElevationValue from '@/components/molecules/configuration/Elevation';
 import MapSelection from '@/components/molecules/configuration/Map';
 import ProjectileSelection from '@/components/molecules/configuration/Projectile';
+import SimpleValue from '@/components/molecules/configuration/Simple';
+import TimeOfFlightValue from '@/components/molecules/configuration/TimeOfFlight';
 import Canvas from '@/components/organisms/Canvas';
 import Footer from '@/components/organisms/Footer';
 import Motd from '@/components/organisms/Motd';
@@ -22,7 +23,6 @@ import {
   calculateAzimuth,
   calculateDistance,
   calculateElevation,
-  studsToMeters,
 } from '@/utils/math';
 
 import type { GetStaticPropsResult, InferGetStaticPropsType } from 'next';
@@ -121,9 +121,16 @@ export default function Index({
                   },
                 }}
               >
-                <DistanceValue distance={studsToMeters(distance)} />
                 <ElevationValue elevation={elevation} />
-                <AzimuthValue azimuth={azimuth} />
+                <SimpleValue name="Azimuth" value={`${todec(azimuth)}°`} />
+                <SimpleValue
+                  name="Distance"
+                  value={`${todec(distance)} meter${distance >= 1 && distance < 2 ? '' : 's'}`}
+                />
+                <TimeOfFlightValue
+                  elevation={elevation}
+                  velocity={projectile.velocity}
+                />
                 <ProjectileSelection />
                 <MapSelection />
               </Stack>
