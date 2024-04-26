@@ -53,6 +53,10 @@ export const guns: Record<string, Gun> = {
         velocity: 125,
       },
       {
+        name: '3OF25 Low Charge (SV)',
+        velocity: 200,
+      },
+      {
         name: '3OF25',
         velocity: 665,
       },
