@@ -59,17 +59,34 @@ export const maps: Map[] = [
   },
   {
     image: '/images/zone_11.png',
+    // "Fields"
     name: 'Zone 11',
     size: calculateMapSize(324),
   },
   {
     image: '/images/gensokyo.png',
-    name: 'Gensokyo (old)',
+    name: 'Gensokyo',
     size: calculateMapSize(122),
   },
   {
     image: '/images/reactor.png',
     name: 'Reactor (old)',
     size: calculateMapSize(207),
+  },
+  {
+    image: '/images/muddy_fields.png',
+    name: 'Muddy Fields',
+    size: calculateMapSize(240),
+  },
+  {
+    image: '/images/japan.png',
+    // "Japan Map"
+    name: 'Japan',
+    size: calculateMapSize(122),
+  },
+  {
+    image: '/images/chernobyl.png',
+    name: 'Chernobyl',
+    size: calculateMapSize(165),
   },
 ];

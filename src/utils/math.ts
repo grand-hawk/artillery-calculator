@@ -20,7 +20,6 @@ export function calculateElevation(d: number, v: number): number {
 
 export function calculateTimeOfFlight(e: number, v: number): number {
   const rad = (e * Math.PI) / 180;
-  console.log(`${e}: ${rad}: ${(2 * v * Math.sin(rad)) / G}`);
   return (2 * v * Math.sin(rad)) / G;
 }
 

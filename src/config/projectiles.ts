@@ -45,20 +45,24 @@ export const guns: Record<string, Gun> = {
         velocity: 400,
       },
       {
-        name: 'BR-540B',
-        velocity: 600,
-      },
-      {
-        name: '3OF25 Low Charge',
-        velocity: 125,
-      },
-      {
-        name: '3OF25 Low Charge (SV)',
+        name: 'Smoke Shell',
         velocity: 200,
       },
       {
         name: '3OF25',
         velocity: 665,
+      },
+      {
+        name: 'BR-540B',
+        velocity: 600,
+      },
+      {
+        name: '3VO28 Canister Shot',
+        velocity: 200,
+      },
+      {
+        name: '3OF25 Low Charge',
+        velocity: 200,
       },
     ],
   },
@@ -181,6 +185,17 @@ export const guns: Record<string, Gun> = {
       {
         name: 'Propane',
         velocity: 130,
+      },
+    ],
+  },
+
+  // doesnt have elevation thing yet... yet.
+  strela_mlrs: {
+    name: 'Strela-MLRS',
+    projectiles: [
+      {
+        name: 'HEAT Rocket',
+        velocity: 150,
       },
     ],
   },
