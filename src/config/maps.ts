@@ -64,7 +64,7 @@ export const maps: Map[] = [
   },
   {
     image: '/images/gensokyo.png',
-    name: 'Gensokyo (old)',
+    name: 'Gensokyo',
     size: calculateMapSize(122),
   },
   {

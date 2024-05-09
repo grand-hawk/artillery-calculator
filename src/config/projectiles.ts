@@ -45,20 +45,24 @@ export const guns: Record<string, Gun> = {
         velocity: 400,
       },
       {
-        name: 'BR-540B',
-        velocity: 600,
-      },
-      {
-        name: '3OF25 Low Charge',
-        velocity: 125,
-      },
-      {
-        name: '3OF25 Low Charge (SV)',
+        name: 'Smoke Shell',
         velocity: 200,
       },
       {
         name: '3OF25',
         velocity: 665,
+      },
+      {
+        name: 'BR-540B',
+        velocity: 600,
+      },
+      {
+        name: '3VO28',
+        velocity: 200,
+      },
+      {
+        name: '3OF25 Low Charge',
+        velocity: 200,
       },
     ],
   },
