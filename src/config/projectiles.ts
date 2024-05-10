@@ -199,4 +199,18 @@ export const guns: Record<string, Gun> = {
       },
     ],
   },
+
+  tos1a: {
+    name: 'TOS-1A BM-1',
+    projectiles: [
+      {
+        name: 'Incendiary',
+        velocity: 150,
+      },
+      {
+        name: 'Thermobaric',
+        velocity: 150,
+      },
+    ],
+  },
 };
