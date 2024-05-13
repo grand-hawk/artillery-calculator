@@ -141,12 +141,16 @@ export const guns: Record<string, Gun> = {
     name: '122mm D-30',
     projectiles: [
       {
-        name: 'HE',
+        name: '3BK-10',
+        velocity: 726,
+      },
+      {
+        name: '3OF56',
         velocity: 690,
       },
       {
-        name: 'HEAT',
-        velocity: 726,
+        name: '3OF56 Low Charge',
+        velocity: 200,
       },
     ],
   },
