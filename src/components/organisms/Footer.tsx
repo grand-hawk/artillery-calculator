@@ -3,6 +3,7 @@ import Typography from '@mui/joy/Typography';
 
 import Link from '../atoms/footer/Link';
 import BMACIcon from '../atoms/icons/BMAC';
+import DiscordIcon from '../atoms/icons/Discord';
 import GitHubIcon from '../atoms/icons/GitHub';
 
 export default function Footer({ version }: { version: string }) {
@@ -16,7 +17,11 @@ export default function Footer({ version }: { version: string }) {
         justifyContent: 'space-between',
       }}
     >
-      <Stack direction="row" spacing={0.5} sx={{ alignItems: 'center' }}>
+      <Stack direction="row" spacing={0.75} sx={{ alignItems: 'center' }}>
+        <Link href="https://discord.gg/yHbVdPJ5vf">
+          <DiscordIcon />
+        </Link>
+
         <Link href="https://github.com/ari-party/mtc-artillery">
           <GitHubIcon />
         </Link>
