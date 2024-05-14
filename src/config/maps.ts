@@ -89,4 +89,9 @@ export const maps: Map[] = [
     name: 'Chernobyl',
     size: calculateMapSize(165),
   },
+  {
+    image: '/images/dustbowl_ii.png',
+    name: 'Dustbowl II',
+    size: calculateMapSize(250),
+  },
 ];
