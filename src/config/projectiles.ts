@@ -217,4 +217,14 @@ export const guns: Record<string, Gun> = {
       },
     ],
   },
+
+  karlgerat: {
+    name: 'Karl-Gerät',
+    projectiles: [
+      {
+        name: 'Schwere Betongranate',
+        velocity: 150,
+      },
+    ],
+  },
 };
