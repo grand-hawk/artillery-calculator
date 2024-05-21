@@ -91,7 +91,7 @@ export function calculateMapSize(m: number, grids: number = 9): number {
 
 /**
  * @param m Explosive mass in kg
- * @param c Cap (250) multiplier (default: 1)
+ * @param c Cap (500) multiplier (default: 1)
  * @param b Blast multiplier (default: 1)
  * @param d Air density (default: 1.2)
  * @param a Explosive constant (default: 0.07)
@@ -104,5 +104,5 @@ export function calculateBlastRange(
   d: number = P,
 ): number {
   const range = (1 / a) * ((m / d) ** (1 / 3) / 0.1);
-  return Math.min(range, 250 * c) * b;
+  return Math.min(range, 500 * c) * b;
 }
