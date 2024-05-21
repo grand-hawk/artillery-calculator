@@ -13,6 +13,7 @@ import { useOnClickOutside } from 'usehooks-ts';
 
 import DataContainer from '../../atoms/configuration/DataContainer';
 import ScrollBox from '../ScrollBox';
+import BlastRadiusSupport from '@/components/atoms/configuration/projectile/BlastRadiusSupport';
 import { guns } from '@/config/projectiles';
 import { useDataStore } from '@/stores/data';
 
@@ -107,7 +108,12 @@ export default function ProjectileSelection() {
                                 gap: 2,
                               }}
                             >
-                              <Typography>{projectile.name}</Typography>
+                              <Typography>
+                                {projectile.name}
+                                {projectile.explosiveMass && (
+                                  <BlastRadiusSupport />
+                                )}
+                              </Typography>
 
                               <Typography level="body-sm">
                                 {todec(projectile.velocity)} m/s
