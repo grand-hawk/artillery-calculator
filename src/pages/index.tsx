@@ -23,6 +23,7 @@ import {
   calculateAzimuth,
   calculateDistance,
   calculateElevation,
+  studsToMeters,
 } from '@/utils/math';
 
 import type { GetStaticPropsResult, InferGetStaticPropsType } from 'next';
@@ -70,9 +71,10 @@ export default function Index({
     guns[projectileData.gunKey].projectiles[projectileData.index];
   const [gun, target] = useDataStore((s) => [s.getGun(), s.getTarget()]);
 
-  const distance =
-    calculateDistance(gun.x, target.x, gun.y, target.y) * (map?.size || 0);
-  const azimuth = calculateAzimuth(gun.x, target.x, gun.y, target.y);
+  const distance = studsToMeters(
+    calculateDistance(gun.x, gun.y, target.x, target.y) * (map?.size || 0),
+  );
+  const azimuth = calculateAzimuth(gun.x, gun.y, target.x, target.y);
   const elevation = calculateElevation(distance, projectile.velocity);
 
   return (

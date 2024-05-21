@@ -1,49 +1,86 @@
-// Gravity
-const G = 9.81 * 1.8;
+/*
+  In-game gravity
+*/
+const G = 9.8 * 1.8;
 
+/**
+ * @param s Studs
+ * @returns Meters
+ */
 export function studsToMeters(s: number): number {
-  return s * 0.35;
+  return s / (5 / 1.8);
 }
 
+/**
+ * @param m Meters
+ * @returns Studs
+ */
 export function metersToStuds(m: number): number {
-  return m / 0.35;
+  return m * (5 / 1.8);
 }
 
 /**
  * @param d Studs
  * @param v Initial velocity
+ * @returns Elevation in degrees
  */
 export function calculateElevation(d: number, v: number): number {
   const angle = Math.asin((studsToMeters(d) * G) / v ** 2) / 2;
   return (angle * 180) / Math.PI;
 }
 
+/**
+ *
+ * @param e Elevation in degrees
+ * @param v Velocity in m/s
+ * @returns Time of flight in seconds
+ */
 export function calculateTimeOfFlight(e: number, v: number): number {
   const rad = (e * Math.PI) / 180;
   return (2 * v * Math.sin(rad)) / G;
 }
 
+/**
+ * @param x1 X of position 1
+ * @param y1 Y of position 1
+ * @param x2 X of position 2
+ * @param y2 Y of position 2
+ * @returns Azimuth, 0-360(359) in degrees
+ */
 export function calculateAzimuth(
   x1: number,
-  x2: number,
   y1: number,
+  x2: number,
   y2: number,
 ): number {
+  const radians = Math.atan2(y2 - y1, x2 - x1);
   return Math.abs(
     // 90° offset
-    (90 + (Math.atan2(y2 - y1, x2 - x1) * 180) / Math.PI + 360) % 360,
+    (90 + (radians * 180) / Math.PI + 360) % 360,
   );
 }
 
+/**
+ * @param x1 X of position 1
+ * @param y1 Y of position 1
+ * @param x2 X of position 2
+ * @param y2 Y of position 2
+ * @returns Distance (universal)
+ */
 export function calculateDistance(
   x1: number,
-  x2: number,
   y1: number,
+  x2: number,
   y2: number,
 ): number {
   return Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2);
 }
 
+/**
+ * @param m Meters
+ * @param grids Grids (default: 9)
+ * @returns Map size in studs
+ */
 export function calculateMapSize(m: number, grids: number = 9): number {
   return metersToStuds(m) * grids;
 }

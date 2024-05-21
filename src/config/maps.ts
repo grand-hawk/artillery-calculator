@@ -62,7 +62,6 @@ export const maps: Map[] = [
   },
   {
     image: '/images/zone_11.png',
-    // "Fields"
     name: 'Zone 11',
     size: calculateMapSize(324),
   },
@@ -76,27 +75,24 @@ export const maps: Map[] = [
     name: 'Reactor (old)',
     size: calculateMapSize(207),
   },
-  /*
-    The maps below appear to use meters but are actually studs
-  */
   {
     image: '/images/muddy_fields.png',
     name: 'Muddy Fields',
-    size: 240 * 9,
+    size: calculateMapSize(240),
   },
   {
     image: '/images/japan.png',
     name: 'Japan',
-    size: 122 * 9,
+    size: calculateMapSize(122),
   },
   {
     image: '/images/chernobyl.png',
     name: 'Chernobyl',
-    size: 165 * 9,
+    size: calculateMapSize(165),
   },
   {
     image: '/images/dustbowl_ii.png',
     name: 'Dustbowl II',
-    size: 250 * 9,
+    size: calculateMapSize(250),
   },
 ];
