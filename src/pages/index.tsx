@@ -23,6 +23,7 @@ import {
   calculateAzimuth,
   calculateDistance,
   calculateElevation,
+  metersToStuds,
   studsToMeters,
 } from '@/utils/math';
 
@@ -74,8 +75,11 @@ export default function Index({
   const distance = studsToMeters(
     calculateDistance(gun.x, gun.y, target.x, target.y) * (map?.size || 0),
   );
+  const elevation = calculateElevation(
+    metersToStuds(distance),
+    projectile.velocity,
+  );
   const azimuth = calculateAzimuth(gun.x, gun.y, target.x, target.y);
-  const elevation = calculateElevation(distance, projectile.velocity);
 
   return (
     <>
@@ -87,7 +91,7 @@ export default function Index({
         />
         <meta
           name="keywords"
-          content="Roblox, Artillery, MTC, Multicrew Tank Combat"
+          content="Roblox, Artillery, Artillery Calculator, MTC, Multicrew Tank Combat"
         />
       </Head>
 

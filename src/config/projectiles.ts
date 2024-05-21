@@ -1,6 +1,9 @@
 export interface Projectile {
   name: string;
   velocity: number;
+  explosiveMass?: number;
+  capMultiplier?: number;
+  blastMultiplier?: number;
 }
 
 export interface Gun {
@@ -23,6 +26,7 @@ export const guns: Record<string, Gun> = {
       {
         name: 'M8 Rocket',
         velocity: 260,
+        explosiveMass: 1.95,
       },
     ],
   },
@@ -33,6 +37,7 @@ export const guns: Record<string, Gun> = {
       {
         name: 'Rocketetet',
         velocity: 150,
+        explosiveMass: 1,
       },
     ],
   },
@@ -43,6 +48,7 @@ export const guns: Record<string, Gun> = {
       {
         name: '3OF25 Medium Charge',
         velocity: 400,
+        explosiveMass: 7.65,
       },
       {
         name: 'Smoke Shell',
@@ -51,6 +57,7 @@ export const guns: Record<string, Gun> = {
       {
         name: '3OF25',
         velocity: 665,
+        explosiveMass: 7.65,
       },
       {
         name: 'BR-540B',
@@ -59,10 +66,12 @@ export const guns: Record<string, Gun> = {
       {
         name: '3VO28 Canister Shot',
         velocity: 200,
+        explosiveMass: 1,
       },
       {
         name: '3OF25 Low Charge',
         velocity: 200,
+        explosiveMass: 7.65,
       },
     ],
   },
@@ -73,6 +82,7 @@ export const guns: Record<string, Gun> = {
       {
         name: 'M107',
         velocity: 684,
+        explosiveMass: 9.14,
       },
       {
         name: 'M110 Smoke Grenade',
@@ -81,10 +91,12 @@ export const guns: Record<string, Gun> = {
       {
         name: 'M107 Low Charge',
         velocity: 172,
+        explosiveMass: 9.14,
       },
       {
         name: 'M107 Medium Charge',
         velocity: 225,
+        explosiveMass: 9.14,
       },
     ],
   },
@@ -95,6 +107,7 @@ export const guns: Record<string, Gun> = {
       {
         name: '9M22/M21 HE-Frag',
         velocity: 150,
+        explosiveMass: 6.4,
       },
     ],
   },
@@ -105,14 +118,17 @@ export const guns: Record<string, Gun> = {
       {
         name: 'Medium Charge',
         velocity: 172,
+        explosiveMass: 2,
       },
       {
         name: 'Low Charge',
         velocity: 125,
+        explosiveMass: 2,
       },
       {
         name: 'High Charge',
         velocity: 225,
+        explosiveMass: 2,
       },
     ],
   },
@@ -161,14 +177,17 @@ export const guns: Record<string, Gun> = {
       {
         name: 'Medium Charge',
         velocity: 175,
+        explosiveMass: 2,
       },
       {
         name: 'Low Charge',
         velocity: 75,
+        explosiveMass: 2,
       },
       {
         name: 'High Charge',
         velocity: 255,
+        explosiveMass: 2,
       },
     ],
   },
@@ -214,6 +233,8 @@ export const guns: Record<string, Gun> = {
       {
         name: 'Thermobaric',
         velocity: 150,
+        explosiveMass: 1.2,
+        blastMultiplier: 2,
       },
     ],
   },
