@@ -82,21 +82,21 @@ export const maps: Map[] = [
   {
     image: '/images/muddy_fields.png',
     name: 'Muddy Fields',
-    size: calculateMapSize(240),
+    size: 240 * 9,
   },
   {
     image: '/images/japan.png',
     name: 'Japan',
-    size: calculateMapSize(122),
+    size: 122 * 9,
   },
   {
     image: '/images/chernobyl.png',
     name: 'Chernobyl',
-    size: calculateMapSize(165),
+    size: 165 * 9,
   },
   {
     image: '/images/dustbowl_ii.png',
     name: 'Dustbowl II',
-    size: calculateMapSize(250),
+    size: 250 * 9,
   },
 ];
