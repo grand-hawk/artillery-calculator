@@ -6,10 +6,6 @@ const G = 9.8 * 1.8;
  * Air density (1.2 kg/m^3)
  */
 const P = 1.2;
-/**
- * Explosive constant
- */
-const EC = 0.07;
 
 /**
  * @param s Studs
@@ -104,8 +100,8 @@ export function calculateBlastRange(
   m: number,
   c: number = 1,
   b: number = 1,
+  a: number = 0.07,
   d: number = P,
-  a: number = EC,
 ): number {
   const range = (1 / a) * ((m / d) ** (1 / 3) / 0.1);
   return Math.min(range, 250 * c) * b;

@@ -92,6 +92,11 @@ export default function ProjectileSelection() {
                                 gunKey === projectileData.gunKey && {
                                   backgroundColor:
                                     theme.palette.neutral.plainActiveBg,
+
+                                  '&:hover': {
+                                    backgroundColor:
+                                      theme.palette.neutral.plainActiveBg,
+                                  },
                                 }),
                             })}
                             size="sm"
