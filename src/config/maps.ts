@@ -10,43 +10,46 @@ export const maps: Map[] = [
   {
     image: '/images/arctic_airbase.png',
     name: 'Arctic Airbase',
-    size: 4041,
+    size: 449 * 9,
   },
   {
     image: '/images/dustbowl.png',
     name: 'Dustbowl',
-    size: 3438,
+    size: 382 * 9,
   },
   {
     image: '/images/normandy.png',
     name: 'Normandy Bocage',
-    size: 5976,
+    size: 664 * 9,
   },
   {
     image: '/images/powerplant.png',
     name: 'Powerplant',
-    size: 3996,
+    size: 444 * 9,
   },
   {
     image: '/images/radar_station.png',
     name: 'Radar Station',
-    size: 6372,
+    size: 708 * 9,
   },
   {
     image: '/images/roinburg.png',
     name: 'Roinburg',
-    size: 3546,
+    size: 394 * 9,
   },
   {
     image: '/images/sokolokva.png',
     name: 'Sokolokva',
-    size: 5004,
+    size: 556 * 9,
   },
   {
     image: '/images/villers_sommeil.png',
     name: 'Villers-Sommeil',
-    size: 2997,
+    size: 333 * 9,
   },
+  /*
+    The maps below used meters at the time, the calculateMapSize converts this correctly
+  */
   {
     image: '/images/cloudy_valley.png',
     name: 'Cloudy Valley',
@@ -73,25 +76,27 @@ export const maps: Map[] = [
     name: 'Reactor (old)',
     size: calculateMapSize(207),
   },
+  /*
+    The maps below appear to use meters but are actually studs
+  */
   {
     image: '/images/muddy_fields.png',
     name: 'Muddy Fields',
-    size: calculateMapSize(240),
+    size: 240 * 9,
   },
   {
     image: '/images/japan.png',
-    // "Japan Map"
     name: 'Japan',
-    size: calculateMapSize(122),
+    size: 122 * 9,
   },
   {
     image: '/images/chernobyl.png',
     name: 'Chernobyl',
-    size: calculateMapSize(165),
+    size: 165 * 9,
   },
   {
     image: '/images/dustbowl_ii.png',
     name: 'Dustbowl II',
-    size: calculateMapSize(250),
+    size: 250 * 9,
   },
 ];
