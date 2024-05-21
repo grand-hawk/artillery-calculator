@@ -77,7 +77,7 @@ export default function Canvas() {
     const targetY = target.y * scaledDimension;
 
     if (blastRadius) {
-      context.fillStyle = '#b24040';
+      context.fillStyle = 'rgba(176, 64, 64, 0.65)';
       context.beginPath();
       context.arc(targetX, targetY, blastRadius, 0, Math.PI * 2);
       context.fill();
