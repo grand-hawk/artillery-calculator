@@ -212,17 +212,6 @@ export const guns: Record<string, Gun> = {
     ],
   },
 
-  // doesnt have elevation thing yet... yet.
-  strela_mlrs: {
-    name: 'Strela-MLRS',
-    projectiles: [
-      {
-        name: 'HEAT Rocket',
-        velocity: 150,
-      },
-    ],
-  },
-
   tos1a: {
     name: 'TOS-1A BM-1',
     projectiles: [
