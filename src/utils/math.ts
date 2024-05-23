@@ -40,8 +40,8 @@ export function calculateElevation(d: number, v: number): number {
  * @returns Time of flight in seconds
  */
 export function calculateTimeOfFlight(e: number, v: number): number {
-  const rad = (e * Math.PI) / 180;
-  return (2 * v * Math.sin(rad)) / G;
+  const radians = (e * Math.PI) / 180;
+  return (2 * v * Math.sin(radians)) / G;
 }
 
 /**
