@@ -156,6 +156,7 @@ export default function Canvas() {
               height={canvasStore.height}
               width={canvasStore.width}
               unoptimized={canvasStore.zoom > 1.25}
+              priority
             />
 
             <AbsoluteContainer zIndex={2}>
