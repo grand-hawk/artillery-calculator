@@ -26,7 +26,7 @@ export default function ProjectileSelection() {
     s.setProjectile,
   ]);
 
-  const [selectionOpen, setSelectionOpen] = React.useState<boolean>(true);
+  const [selectionOpen, setSelectionOpen] = React.useState<boolean>(false);
   const [selectionTab, setSelectionTab] = React.useState<number>(
     Object.keys(guns).findIndex((key) => key === projectileData.gunKey),
   );
