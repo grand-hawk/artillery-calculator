@@ -19,6 +19,7 @@
 # misc
 .DS_Store
 *.pem
+/public/images/webp
 
 # debug
 npm-debug.log*

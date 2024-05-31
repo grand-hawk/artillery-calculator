@@ -6,14 +6,15 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "next dev --port=8080 --turbo",
-    "build": "next build",
+    "dev": "npm run generateMaps && next dev --port=8080 --turbo",
+    "build": "npm run generateMaps && next build",
     "start": "next start --port=8080",
     "lint": "next lint",
     "lint:fix": "next lint --fix",
     "format": "prettier . -w",
     "fix": "npm run lint:fix && npm run format",
-    "depcheck": "depcheck ."
+    "depcheck": "depcheck .",
+    "generateMaps": "tsx scripts/generate.ts"
   },
   "dependencies": {
     "2dec": "^1.0.5",
@@ -23,6 +24,8 @@
     "@mui/joy": "5.0.0-beta.22",
     "@mui/material": "^5.15.9",
     "immer": "^10.0.3",
+    "is-image": "^4.0.0",
+    "klaw": "^4.1.0",
     "merge-sx": "^2.0.0",
     "next": "14.1.4",
     "react": "^18.2.0",
@@ -34,6 +37,7 @@
     "zustand": "^4.4.7"
   },
   "devDependencies": {
+    "@types/klaw": "^3.0.6",
     "@types/node": "^20.11.10",
     "@types/react": "^18.2.47",
     "@types/react-dom": "^18.2.18",
@@ -51,6 +55,7 @@
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "prettier": "^3.2.1",
+    "tsx": "^4.11.0",
     "typescript": "^5.3.3"
   }
 }

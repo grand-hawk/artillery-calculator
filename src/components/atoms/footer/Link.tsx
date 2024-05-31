@@ -11,7 +11,10 @@ export default function Link({
     <NextLink
       {...props}
       target="_blank"
-      style={{ display: 'flex', alignItems: 'center' }}
+      style={{
+        display: 'flex',
+        alignItems: 'center',
+      }}
     >
       {children}
     </NextLink>

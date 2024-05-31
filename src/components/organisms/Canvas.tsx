@@ -18,14 +18,19 @@ export interface Vector {
 
 export default function Canvas() {
   const canvasStore = useCanvasStore();
+
+  const ref = React.useRef<HTMLCanvasElement | null>(null);
+  const isPanning = React.useRef<boolean>(false);
+
   const projectileData = useDataStore((s) => s.projectile);
   const projectile =
     guns[projectileData.gunKey].projectiles[projectileData.index];
+
+  const mapIndex = useDataStore((s) => s.mapIndex);
+  const map = maps[mapIndex];
+
   const [target, gun] = useDataStore((s) => [s.getTarget(), s.getGun()]);
   const [setTarget, setGun] = useDataStore((s) => [s.setTarget, s.setGun]);
-  const ref = React.useRef<HTMLCanvasElement | null>(null);
-  const isPanning = React.useRef<boolean>(false);
-  const map = maps[useDataStore((s) => s.mapIndex)];
 
   const canvasScale = 8;
   const scaledDimension = canvasStore.width * canvasScale;
@@ -147,11 +152,10 @@ export default function Canvas() {
           <TransformComponent>
             <Image
               alt={map.name}
-              src={map.image}
-              priority
+              src={`/images/webp/${map.image}.webp`}
               height={canvasStore.height}
               width={canvasStore.width}
-              unoptimized
+              unoptimized={canvasStore.zoom > 1.25}
             />
 
             <AbsoluteContainer zIndex={2}>

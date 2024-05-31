@@ -10,6 +10,7 @@ export default function Theme({ children }: PropsWithChildren) {
   return (
     <CssVarsProvider theme={theme} defaultMode="dark">
       <CssBaseline />
+
       {children}
     </CssVarsProvider>
   );

@@ -30,6 +30,7 @@
     "next-env.d.ts",
     "next.config.mjs",
     "src",
+    "scripts",
     "public",
     ".next/types/**/*.ts"
   ],

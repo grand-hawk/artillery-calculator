@@ -6,11 +6,12 @@ import { useCanvasStore } from '@/stores/canvas';
 import type { PropsWithChildren } from 'react';
 
 export default function CanvasContainer({ children }: PropsWithChildren) {
+  const ref = React.useRef<HTMLDivElement | null>(null);
+
   const [setWidth, setHeight] = useCanvasStore((s) => [
     s.setWidth,
     s.setHeight,
   ]);
-  const ref = React.useRef<HTMLDivElement | null>(null);
 
   React.useEffect(() => {
     const element = ref.current;
@@ -35,11 +36,14 @@ export default function CanvasContainer({ children }: PropsWithChildren) {
   return (
     <Box
       ref={ref}
-      sx={{
+      sx={(theme) => ({
         aspectRatio: '1/1',
         maxHeight: '75svh',
         height: 'max-content',
-      }}
+
+        borderRadius: theme.radius.sm,
+        overflow: 'hidden',
+      })}
     >
       {children}
     </Box>

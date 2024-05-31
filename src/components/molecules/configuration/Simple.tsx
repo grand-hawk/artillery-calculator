@@ -13,6 +13,7 @@ export default function SimpleValue({
   return (
     <DataContainer>
       <Typography level="title-md">{name}</Typography>
+
       <Typography>{value}</Typography>
     </DataContainer>
   );

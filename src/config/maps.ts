@@ -8,42 +8,42 @@ export interface Map {
 
 export const maps: Map[] = [
   {
-    image: '/images/arctic_airbase.png',
+    image: 'arctic_airbase',
     name: 'Arctic Airbase',
     size: 449 * 9,
   },
   {
-    image: '/images/dustbowl.png',
+    image: 'dustbowl',
     name: 'Dustbowl',
     size: 382 * 9,
   },
   {
-    image: '/images/normandy.png',
+    image: 'normandy',
     name: 'Normandy Bocage',
     size: 664 * 9,
   },
   {
-    image: '/images/powerplant.png',
+    image: 'powerplant',
     name: 'Powerplant',
     size: 444 * 9,
   },
   {
-    image: '/images/radar_station.png',
+    image: 'radar_station',
     name: 'Radar Station',
     size: 708 * 9,
   },
   {
-    image: '/images/roinburg.png',
+    image: 'roinburg',
     name: 'Roinburg',
     size: 394 * 9,
   },
   {
-    image: '/images/sokolokva.png',
+    image: 'sokolokva',
     name: 'Sokolokva',
     size: 556 * 9,
   },
   {
-    image: '/images/villers_sommeil.png',
+    image: 'villers_sommeil',
     name: 'Villers-Sommeil',
     size: 333 * 9,
   },
@@ -51,47 +51,47 @@ export const maps: Map[] = [
     The maps below used meters at the time, the calculateMapSize converts this correctly
   */
   {
-    image: '/images/cloudy_valley.png',
+    image: 'cloudy_valley',
     name: 'Cloudy Valley',
     size: calculateMapSize(116),
   },
   {
-    image: '/images/snow_tundra.png',
+    image: 'snow_tundra',
     name: 'Snow Tundra',
     size: calculateMapSize(160),
   },
   {
-    image: '/images/zone_11.png',
+    image: 'zone_11',
     name: 'Zone 11',
     size: calculateMapSize(324),
   },
   {
-    image: '/images/gensokyo.png',
+    image: 'gensokyo',
     name: 'Gensokyo',
     size: calculateMapSize(122),
   },
   {
-    image: '/images/reactor.png',
+    image: 'reactor',
     name: 'Reactor (old)',
     size: calculateMapSize(207),
   },
   {
-    image: '/images/muddy_fields.png',
+    image: 'muddy_fields',
     name: 'Muddy Fields',
     size: 667 * 9,
   },
   {
-    image: '/images/japan.png',
+    image: 'japan',
     name: 'Japan',
     size: calculateMapSize(122),
   },
   {
-    image: '/images/chernobyl.png',
+    image: 'chernobyl',
     name: 'Chernobyl',
     size: calculateMapSize(165),
   },
   {
-    image: '/images/dustbowl_ii.png',
+    image: 'dustbowl_ii',
     name: 'Dustbowl II',
     size: calculateMapSize(250),
   },

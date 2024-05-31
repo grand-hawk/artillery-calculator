@@ -11,12 +11,14 @@ function ScrollBox({
   ...props
 }: PropsWithChildren<{ dependency?: unknown } & BoxProps>) {
   const scrollBoxRef = React.useRef<HTMLDivElement | null>(null);
+
   const [maskImage, setMaskImage] = React.useState('unset');
 
   React.useEffect(() => {
     if (!scrollBoxRef.current) return;
 
     function update() {
+      // i dont really know how all this works i just copied it from my portfolio site
       if (scrollBoxRef.current)
         if (
           scrollBoxRef.current.scrollHeight > scrollBoxRef.current.clientHeight

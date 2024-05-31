@@ -20,11 +20,13 @@ import { useDataStore } from '@/stores/data';
 export default function ProjectileSelection() {
   const tooltip = React.useRef<HTMLDivElement | null>(null);
   const selectionChanged = React.useRef<number>(0);
+
   const [projectileData, setProjectile] = useDataStore((s) => [
     s.projectile,
     s.setProjectile,
   ]);
-  const [selectionOpen, setSelectionOpen] = React.useState<boolean>(false);
+
+  const [selectionOpen, setSelectionOpen] = React.useState<boolean>(true);
   const [selectionTab, setSelectionTab] = React.useState<number>(
     Object.keys(guns).findIndex((key) => key === projectileData.gunKey),
   );
@@ -52,21 +54,29 @@ export default function ProjectileSelection() {
       <Typography level="title-md">Projectile</Typography>
 
       <Tooltip
-        slotProps={{ root: { ref: tooltip, open: selectionOpen } }}
+        slotProps={{
+          root: {
+            ref: tooltip,
+            open: selectionOpen,
+          },
+        }}
         placement="top-end"
         size="lg"
-        variant="outlined"
+        variant="plain"
         keepMounted
-        sx={(theme) => ({
-          backgroundColor: theme.palette.background.body,
-          paddingLeft: 0,
-          paddingRight: 0,
-        })}
+        sx={{
+          padding: 0,
+          overflow: 'hidden',
+        }}
         title={
           <Tabs
+            variant="soft"
+            color="neutral"
             orientation="vertical"
             size="sm"
-            sx={{ backgroundColor: 'unset', maxHeight: 200 }}
+            sx={{
+              maxHeight: 200,
+            }}
             value={selectionTab}
             onChange={(event, newTab) => setSelectionTab(newTab as number)}
           >
@@ -82,7 +92,7 @@ export default function ProjectileSelection() {
                           <Button
                             key={thisProjectileIndex}
                             color="neutral"
-                            variant="plain"
+                            variant="soft"
                             sx={(theme) => ({
                               borderRadius: 0,
                               fontWeight: 400,
@@ -91,11 +101,10 @@ export default function ProjectileSelection() {
                                 projectileData.index &&
                                 gunKey === projectileData.gunKey && {
                                   backgroundColor:
-                                    theme.palette.neutral.plainActiveBg,
-
+                                    theme.palette.neutral.softActiveBg,
                                   '&:hover': {
                                     backgroundColor:
-                                      theme.palette.neutral.plainActiveBg,
+                                      theme.palette.neutral.softActiveBg,
                                   },
                                 }),
                             })}
@@ -120,7 +129,7 @@ export default function ProjectileSelection() {
                                 )}
                               </Typography>
 
-                              <Typography level="body-sm">
+                              <Typography level="body-sm" fontWeight={500}>
                                 {todec(projectile.velocity)} m/s
                               </Typography>
                             </Stack>
@@ -137,11 +146,13 @@ export default function ProjectileSelection() {
               <ScrollBox dependency={selectionOpen}>
                 {Object.values(guns).map((gun, index) => (
                   <Tab
-                    variant="plain"
-                    color="neutral"
                     key={index}
+                    variant="soft"
+                    color="neutral"
                     indicatorPlacement="left"
-                    sx={{ width: '100%' }}
+                    sx={{
+                      width: '100%',
+                    }}
                   >
                     {gun.name}
                   </Tab>
@@ -152,17 +163,16 @@ export default function ProjectileSelection() {
         }
       >
         <Button
-          variant="outlined"
+          variant="soft"
           color="neutral"
           onClick={() => {
             if (!selectionOpen && canChangeSelection()) setSelectionOpen(true);
           }}
-          sx={(theme) => ({
-            backgroundColor: theme.palette.background.surface,
+          sx={{
             paddingInline: '0.75rem',
             fontSize: 16,
             fontWeight: 400,
-          })}
+          }}
           endDecorator={
             <UnfoldMore
               style={{

@@ -7,7 +7,7 @@ export interface Projectile {
 }
 
 export interface Gun {
-  name?: string;
+  name: string;
   projectiles: Projectile[];
 }
 

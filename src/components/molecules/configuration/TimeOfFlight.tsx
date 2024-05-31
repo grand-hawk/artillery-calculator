@@ -19,6 +19,7 @@ export default function TimeOfFlightValue({
   return (
     <DataContainer>
       <Typography level="title-md">Time of flight</Typography>
+
       <Stack direction="row" spacing={1} sx={{ alignItems: 'center' }}>
         {lowArcElevation ? (
           <>

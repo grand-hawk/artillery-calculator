@@ -16,6 +16,7 @@ export default function ElevationValue({
   return (
     <DataContainer>
       <Typography level="title-md">Elevation</Typography>
+
       <Stack direction="row" spacing={1} sx={{ alignItems: 'center' }}>
         {lowArcElevation ? (
           <>

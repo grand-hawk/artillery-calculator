@@ -5,7 +5,6 @@ import Typography from '@mui/joy/Typography';
 import Head from 'next/head';
 import React from 'react';
 import { getEntry } from 'strapi-rest';
-import { useIsClient } from 'usehooks-ts';
 
 import Page from '@/components/layout/Page';
 import ElevationValue from '@/components/molecules/configuration/Elevation';
@@ -64,13 +63,14 @@ export default function Index({
   version,
   motd,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
-  const isClient = useIsClient();
   const mapIndex = useDataStore((s) => s.mapIndex);
   const map = maps[mapIndex];
+
+  const [gun, target] = useDataStore((s) => [s.getGun(), s.getTarget()]);
+
   const projectileData = useDataStore((s) => s.projectile);
   const projectile =
     guns[projectileData.gunKey].projectiles[projectileData.index];
-  const [gun, target] = useDataStore((s) => [s.getGun(), s.getTarget()]);
 
   const distance = studsToMeters(
     calculateDistance(gun.x, gun.y, target.x, target.y) * (map?.size || 0),
@@ -96,61 +96,48 @@ export default function Index({
       </Head>
 
       <Page>
-        {isClient && (
-          <Box
+        <Canvas />
+
+        <Box
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: 2.5,
+          }}
+        >
+          <Motd message={motd || undefined} />
+
+          <Stack
+            spacing={1}
             sx={{
-              display: 'grid',
-              gridTemplateColumns: {
-                MozBoxDirection: null,
-                lg: '1fr minmax(auto, 50%)',
+              '& > div': {
+                alignItems: 'center',
+                height: 35,
               },
-              gap: 4,
             }}
           >
-            <Canvas />
+            <ElevationValue elevation={elevation} />
+            <SimpleValue name="Azimuth" value={`${todec(azimuth)}°`} />
+            <SimpleValue
+              name="Distance"
+              value={`${todec(distance)} meter${distance >= 1 && distance < 2 ? '' : 's'}`}
+            />
+            <TimeOfFlightValue
+              elevation={elevation}
+              velocity={projectile.velocity}
+            />
+            <ProjectileSelection />
+            <MapSelection />
+          </Stack>
 
-            <Box
-              sx={{
-                display: 'flex',
-                flexDirection: 'column',
-                gap: 2.5,
-              }}
-            >
-              <Motd message={motd || undefined} />
+          <Typography sx={{ maxWidth: 500 }}>
+            Left click to set the gun position. Right click to set the target
+            position. Hold middle click to move the map around, and scroll wheel
+            to zoom.
+          </Typography>
 
-              <Stack
-                spacing={1}
-                sx={{
-                  '& > div': {
-                    alignItems: 'center',
-                    height: 35,
-                  },
-                }}
-              >
-                <ElevationValue elevation={elevation} />
-                <SimpleValue name="Azimuth" value={`${todec(azimuth)}°`} />
-                <SimpleValue
-                  name="Distance"
-                  value={`${todec(distance)} meter${distance >= 1 && distance < 2 ? '' : 's'}`}
-                />
-                <TimeOfFlightValue
-                  elevation={elevation}
-                  velocity={projectile.velocity}
-                />
-                <ProjectileSelection />
-                <MapSelection />
-              </Stack>
-
-              <Typography sx={{ maxWidth: 500 }}>
-                Left click to set the gun position. Right click to set the
-                target position. Hold middle click to move the map around, and
-                scroll wheel to zoom.
-              </Typography>
-
-              <Footer version={version} />
-            </Box>
-          </Box>
-        )}
+          <Footer version={version} />
+        </Box>
       </Page>
     </>
   );
