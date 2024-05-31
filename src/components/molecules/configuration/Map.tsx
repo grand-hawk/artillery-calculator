@@ -1,13 +1,11 @@
-import Box from '@mui/joy/Box';
 import Option from '@mui/joy/Option';
 import Select from '@mui/joy/Select';
-import Stack from '@mui/joy/Stack';
 import Typography from '@mui/joy/Typography';
-import Image from 'next/image';
 import React from 'react';
 
-import DataContainer from '../../atoms/configuration/DataContainer';
 import ScrollBox from '../ScrollBox';
+import DataContainer from '@/components/atoms/configuration/DataContainer';
+import MapItem from '@/components/atoms/configuration/map/Item';
 import { maps } from '@/config/maps';
 import { useDataStore } from '@/stores/data';
 
@@ -40,27 +38,7 @@ export default function MapSelection() {
         <ScrollBox dependency={listboxOpen}>
           {maps.map((item, index) => (
             <Option key={index} value={index}>
-              <Stack direction="row" alignItems="center" gap={1}>
-                <Box
-                  sx={(theme) => ({
-                    display: 'flex',
-                    alignItems: 'center',
-
-                    '& img': {
-                      borderRadius: theme.radius.sm,
-                    },
-                  })}
-                >
-                  <Image
-                    src={`/images/webp/${item.image}_small.webp`}
-                    alt=""
-                    height={24}
-                    width={24}
-                  />
-                </Box>
-
-                {item.name}
-              </Stack>
+              <MapItem item={item} />
             </Option>
           ))}
         </ScrollBox>

@@ -1,4 +1,3 @@
-import todec from '2dec';
 import UnfoldMore from '@mui/icons-material/UnfoldMore';
 import Button from '@mui/joy/Button';
 import Stack from '@mui/joy/Stack';
@@ -13,7 +12,7 @@ import { useOnClickOutside } from 'usehooks-ts';
 
 import DataContainer from '../../atoms/configuration/DataContainer';
 import ScrollBox from '../ScrollBox';
-import BlastRadiusSupport from '@/components/atoms/configuration/projectile/BlastRadiusSupport';
+import ProjectileButton from '@/components/atoms/configuration/projectile/Button';
 import { guns } from '@/config/projectiles';
 import { useDataStore } from '@/stores/data';
 
@@ -21,10 +20,7 @@ export default function ProjectileSelection() {
   const tooltip = React.useRef<HTMLDivElement | null>(null);
   const selectionChanged = React.useRef<number>(0);
 
-  const [projectileData, setProjectile] = useDataStore((s) => [
-    s.projectile,
-    s.setProjectile,
-  ]);
+  const projectileData = useDataStore((s) => s.projectile);
 
   const [selectionOpen, setSelectionOpen] = React.useState<boolean>(false);
   const [selectionTab, setSelectionTab] = React.useState<number>(
@@ -89,51 +85,12 @@ export default function ProjectileSelection() {
                     <Stack direction="column">
                       {gun.projectiles.map(
                         (projectile, thisProjectileIndex) => (
-                          <Button
+                          <ProjectileButton
+                            gunKey={gunKey}
+                            projectile={projectile}
                             key={thisProjectileIndex}
-                            color="neutral"
-                            variant="soft"
-                            sx={(theme) => ({
-                              borderRadius: 0,
-                              fontWeight: 400,
-
-                              ...(thisProjectileIndex ===
-                                projectileData.index &&
-                                gunKey === projectileData.gunKey && {
-                                  backgroundColor:
-                                    theme.palette.neutral.softActiveBg,
-                                  '&:hover': {
-                                    backgroundColor:
-                                      theme.palette.neutral.softActiveBg,
-                                  },
-                                }),
-                            })}
-                            size="sm"
-                            onClick={() =>
-                              setProjectile(gunKey, thisProjectileIndex)
-                            }
-                          >
-                            <Stack
-                              sx={{
-                                flexDirection: 'row',
-                                alignItems: 'center',
-                                justifyContent: 'space-between',
-                                width: '100%',
-                                gap: 2,
-                              }}
-                            >
-                              <Typography>
-                                {projectile.name}
-                                {projectile.explosiveMass && (
-                                  <BlastRadiusSupport />
-                                )}
-                              </Typography>
-
-                              <Typography level="body-sm" fontWeight={500}>
-                                {todec(projectile.velocity)} m/s
-                              </Typography>
-                            </Stack>
-                          </Button>
+                            thisProjectileIndex={thisProjectileIndex}
+                          />
                         ),
                       )}
                     </Stack>
