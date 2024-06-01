@@ -139,6 +139,7 @@ export const guns: Record<string, Gun> = {
       {
         name: '38cm R Spgr.4581',
         velocity: 150,
+        explosiveMass: 125,
       },
     ],
   },
@@ -149,6 +150,7 @@ export const guns: Record<string, Gun> = {
       {
         name: 'HE Rocket',
         velocity: 340,
+        explosiveMass: 2.15,
       },
     ],
   },
@@ -159,14 +161,17 @@ export const guns: Record<string, Gun> = {
       {
         name: '3BK-10',
         velocity: 726,
+        explosiveMass: 1.67,
       },
       {
         name: '3OF56',
         velocity: 690,
+        explosiveMass: 3.6,
       },
       {
         name: '3OF56 Low Charge',
         velocity: 200,
+        explosiveMass: 3.6,
       },
     ],
   },
@@ -196,8 +201,14 @@ export const guns: Record<string, Gun> = {
     name: 'Speedsta',
     projectiles: [
       {
+        name: 'BruhHeSh',
+        velocity: 230,
+        explosiveMass: 50,
+      },
+      {
         name: 'BruhHe',
         velocity: 230,
+        explosiveMass: 25.01,
       },
     ],
   },
@@ -208,6 +219,7 @@ export const guns: Record<string, Gun> = {
       {
         name: 'Propane',
         velocity: 130,
+        explosiveMass: 50,
       },
     ],
   },
@@ -234,6 +246,8 @@ export const guns: Record<string, Gun> = {
       {
         name: 'Schwere Betongranate',
         velocity: 150,
+        explosiveMass: 289,
+        capMultiplier: 2,
       },
     ],
   },
