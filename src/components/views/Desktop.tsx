@@ -36,43 +36,55 @@ export default function DesktopView({
     >
       <Box
         sx={{
-          display: 'grid',
-          gridTemplateColumns: '1fr 1fr',
-
-          padding: 4,
-          gap: 4,
+          display: 'flex',
+          justifyContent: 'center',
         }}
       >
-        <Canvas isMobile={false} mobileMode={mobileMode} />
-
-        <ColumnContainer
+        <Box
           sx={{
-            maxHeight: useCanvasStore((s) => s.height),
+            display: 'grid',
+            gridTemplateColumns: '1fr 1fr',
+
+            maxWidth: {
+              sm: '90vw',
+              lg: '75vw',
+            },
+
+            padding: 4,
+            gap: 4,
           }}
         >
-          <Motd message={motd || undefined} />
+          <Canvas isMobile={false} mobileMode={mobileMode} />
 
-          <ConfigurationGroup>
-            <ElevationValue elevation={elevation} />
-            <SimpleValue name="Azimuth" value={`${todec(azimuth)}°`} />
-            <SimpleValue
-              name="Distance"
-              value={`${todec(distance)} meter${distance >= 1 && distance < 2 ? '' : 's'}`}
-            />
-            <TimeOfFlightValue
-              elevation={elevation}
-              velocity={projectile.velocity}
-            />
-            <ProjectileSelection />
-            <MapSelection />
-          </ConfigurationGroup>
+          <ColumnContainer
+            sx={{
+              maxHeight: useCanvasStore((s) => s.height),
+            }}
+          >
+            <Motd message={motd || undefined} />
 
-          <Typography marginTop="auto">
-            Left click to set the gun position. Right click to set the target
-            position. Hold middle click to move the map around, and scroll wheel
-            to zoom.
-          </Typography>
-        </ColumnContainer>
+            <ConfigurationGroup>
+              <ElevationValue elevation={elevation} />
+              <SimpleValue name="Azimuth" value={`${todec(azimuth)}°`} />
+              <SimpleValue
+                name="Distance"
+                value={`${todec(distance)} meter${distance >= 1 && distance < 2 ? '' : 's'}`}
+              />
+              <TimeOfFlightValue
+                elevation={elevation}
+                velocity={projectile.velocity}
+              />
+              <ProjectileSelection />
+              <MapSelection />
+            </ConfigurationGroup>
+
+            <Typography marginTop="auto">
+              Left click to set the gun position. Right click to set the target
+              position. Hold middle click to move the map around, and scroll
+              wheel to zoom.
+            </Typography>
+          </ColumnContainer>
+        </Box>
       </Box>
 
       <Footer version={version} />
