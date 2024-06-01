@@ -140,7 +140,7 @@ function Canvas({
   });
 
   return (
-    <CanvasContainer float={isMobile ? 'center' : 'flex-end'}>
+    <CanvasContainer>
       <Sheet
         sx={{
           width: canvasStore.width,

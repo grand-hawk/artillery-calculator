@@ -38,7 +38,6 @@ export default function MobileView({
       <Box
         sx={{
           display: 'grid',
-          gridAutoRows: '1fr 1fr',
 
           gap: 4,
 
