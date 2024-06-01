@@ -1,10 +1,10 @@
 import Stack from '@mui/joy/Stack';
 import Typography from '@mui/joy/Typography';
 
-import Link from '../atoms/footer/Link';
-import BMACIcon from '../atoms/icons/BMAC';
-import DiscordIcon from '../atoms/icons/Discord';
-import GitHubIcon from '../atoms/icons/GitHub';
+import Link from '@/components/atoms/footer/Link';
+import BMACIcon from '@/components/atoms/icons/BMAC';
+import DiscordIcon from '@/components/atoms/icons/Discord';
+import GitHubIcon from '@/components/atoms/icons/GitHub';
 
 export default function Footer({ version }: { version: string }) {
   return (

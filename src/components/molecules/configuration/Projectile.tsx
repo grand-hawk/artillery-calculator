@@ -10,9 +10,9 @@ import Typography from '@mui/joy/Typography';
 import React from 'react';
 import { useOnClickOutside } from 'usehooks-ts';
 
-import DataContainer from '../../atoms/configuration/DataContainer';
-import ScrollBox from '../ScrollBox';
+import DataContainer from '@/components/atoms/configuration/DataContainer';
 import ProjectileButton from '@/components/atoms/configuration/projectile/Button';
+import ScrollBox from '@/components/molecules/ScrollBox';
 import { guns } from '@/config/projectiles';
 import { useDataStore } from '@/stores/data';
 

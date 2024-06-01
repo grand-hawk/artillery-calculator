@@ -3,24 +3,31 @@ import Image from 'next/image';
 import React from 'react';
 import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
 
-import CanvasContainer from '../molecules/canvas/Container';
 import AbsoluteContainer from '@/components/atoms/canvas/AbsoluteContainer';
+import CanvasContainer from '@/components/molecules/canvas/Container';
 import { maps } from '@/config/maps';
 import { guns } from '@/config/projectiles';
 import { useCanvasStore } from '@/stores/canvas';
 import { useDataStore } from '@/stores/data';
 import { calculateBlastRange } from '@/utils/math';
 
+import type { MobileModeMutable } from '@/components/molecules/configuration/MobileMode';
+
 export interface Vector {
   x: number;
   y: number;
 }
 
-export default function Canvas() {
-  const canvasStore = useCanvasStore();
-
+function Canvas({
+  isMobile,
+  mobileMode,
+}: {
+  isMobile: boolean;
+  mobileMode: MobileModeMutable;
+}) {
   const ref = React.useRef<HTMLCanvasElement | null>(null);
   const isPanning = React.useRef<boolean>(false);
+  const [isUnoptimized, setIsUnoptimized] = React.useState<boolean>(false);
 
   const projectileData = useDataStore((s) => s.projectile);
   const projectile =
@@ -32,6 +39,7 @@ export default function Canvas() {
   const [target, gun] = useDataStore((s) => [s.getTarget(), s.getGun()]);
   const [setTarget, setGun] = useDataStore((s) => [s.setTarget, s.setGun]);
 
+  const canvasStore = useCanvasStore();
   const canvasScale = 8;
   const scaledDimension = canvasStore.width * canvasScale;
 
@@ -98,23 +106,35 @@ export default function Canvas() {
 
       if (isPanning.current) return;
 
-      switch (event.button) {
-        // LMB
-        case 0:
-          setGun(
-            event.offsetX / (canvasStore.width / canvasScale) / canvasScale,
-            event.offsetY / (canvasStore.height / canvasScale) / canvasScale,
-          );
-          break;
+      const x = event.offsetX / (canvasStore.width / canvasScale) / canvasScale;
+      const y =
+        event.offsetY / (canvasStore.height / canvasScale) / canvasScale;
 
-        // RMB
-        case 2:
-          setTarget(
-            event.offsetX / (canvasStore.width / canvasScale) / canvasScale,
-            event.offsetY / (canvasStore.height / canvasScale) / canvasScale,
-          );
-          break;
-      }
+      const updateGun = () => setGun(x, y);
+      const updateTarget = () => setTarget(x, y);
+
+      console.log(mobileMode?.current);
+
+      if (isMobile)
+        switch (mobileMode?.current) {
+          case 'gun':
+            updateGun();
+            break;
+          case 'target':
+            updateTarget();
+            break;
+        }
+      else
+        switch (event.button) {
+          // LMB
+          case 0:
+            updateGun();
+            break;
+          // RMB
+          case 2:
+            updateTarget();
+            break;
+        }
     }
 
     canvas.addEventListener('mousedown', clickListener);
@@ -124,11 +144,21 @@ export default function Canvas() {
 
   return (
     <CanvasContainer>
-      <Sheet sx={{ width: canvasStore.width, height: canvasStore.height }}>
+      <Sheet
+        sx={{
+          width: canvasStore.width,
+          height: canvasStore.height,
+        }}
+      >
         <TransformWrapper
-          onZoom={(wrapper) =>
-            canvasStore.setZoom(wrapper.instance.transformState.scale)
-          }
+          onZoom={(wrapper) => {
+            const zoom = wrapper.instance.transformState.scale;
+
+            canvasStore.setZoom(zoom);
+
+            // dont go back to the optimized image once the full image was requested
+            if (zoom > 1.25) setIsUnoptimized(true);
+          }}
           onPanningStart={() => {
             // Don't allow setting gun/target when panning
             isPanning.current = true;
@@ -141,6 +171,9 @@ export default function Canvas() {
             allowMiddleClickPan: true,
             allowRightClickPan: false,
             velocityDisabled: true,
+          }}
+          doubleClick={{
+            disabled: true,
           }}
           wheel={{
             step: 0.1,
@@ -155,7 +188,7 @@ export default function Canvas() {
               src={`/images/webp/${map.image}.webp`}
               height={canvasStore.height}
               width={canvasStore.width}
-              unoptimized={canvasStore.zoom > 1.25}
+              unoptimized={isUnoptimized}
               priority
             />
 
@@ -177,3 +210,5 @@ export default function Canvas() {
     </CanvasContainer>
   );
 }
+
+export default Canvas;

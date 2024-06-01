@@ -3,7 +3,7 @@ import Stack from '@mui/joy/Stack';
 import Typography from '@mui/joy/Typography';
 import React from 'react';
 
-import DataContainer from '../../atoms/configuration/DataContainer';
+import DataContainer from '@/components/atoms/configuration/DataContainer';
 import { calculateTimeOfFlight } from '@/utils/math';
 
 export default function TimeOfFlightValue({

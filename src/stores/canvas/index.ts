@@ -31,7 +31,8 @@ export const useCanvasStore = create(
     zoom: 1,
     setZoom(zoom) {
       set((s) => {
-        s.zoom = zoom;
+        // minimum of 1 zoom, cant go lower
+        s.zoom = Math.max(zoom, 1);
       });
     },
   })),

@@ -3,9 +3,9 @@ import Select from '@mui/joy/Select';
 import Typography from '@mui/joy/Typography';
 import React from 'react';
 
-import ScrollBox from '../ScrollBox';
 import DataContainer from '@/components/atoms/configuration/DataContainer';
 import MapItem from '@/components/atoms/configuration/map/Item';
+import ScrollBox from '@/components/molecules/ScrollBox';
 import { maps } from '@/config/maps';
 import { useDataStore } from '@/stores/data';
 

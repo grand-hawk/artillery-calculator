@@ -1,7 +1,7 @@
 import Card from '@mui/joy/Card';
 import Typography from '@mui/joy/Typography';
 
-import ScrollBox from '../molecules/ScrollBox';
+import ScrollBox from '@/components/molecules/ScrollBox';
 
 function Motd({ message }: { message?: string }) {
   if (!message) return;

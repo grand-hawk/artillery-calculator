@@ -1,5 +1,8 @@
 import todec from '2dec';
-import { Button, Stack, Tooltip, Typography } from '@mui/joy';
+import Button from '@mui/joy/Button';
+import Stack from '@mui/joy/Stack';
+import Tooltip from '@mui/joy/Tooltip';
+import Typography from '@mui/joy/Typography';
 
 import { useDataStore } from '@/stores/data';
 
