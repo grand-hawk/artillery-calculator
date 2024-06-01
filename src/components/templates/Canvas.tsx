@@ -4,7 +4,7 @@ import React from 'react';
 import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
 
 import AbsoluteContainer from '@/components/atoms/canvas/AbsoluteContainer';
-import CanvasContainer from '@/components/molecules/canvas/Container';
+import CanvasContainer from '@/components/organisms/CanvasContainer';
 import { maps } from '@/config/maps';
 import { guns } from '@/config/projectiles';
 import { useCanvasStore } from '@/stores/canvas';
@@ -101,7 +101,7 @@ function Canvas({
     context.arc(targetX, targetY, markerRadius, 0, Math.PI * 2);
     context.fill();
 
-    async function clickListener(event: MouseEvent) {
+    function clickListener(event: MouseEvent) {
       event.preventDefault();
 
       if (isPanning.current) return;
@@ -112,8 +112,6 @@ function Canvas({
 
       const updateGun = () => setGun(x, y);
       const updateTarget = () => setTarget(x, y);
-
-      console.log(mobileMode?.current);
 
       if (isMobile)
         switch (mobileMode?.current) {
@@ -138,12 +136,11 @@ function Canvas({
     }
 
     canvas.addEventListener('mousedown', clickListener);
-
     return () => canvas.removeEventListener('mousedown', clickListener);
   });
 
   return (
-    <CanvasContainer>
+    <CanvasContainer float={isMobile ? 'center' : 'flex-end'}>
       <Sheet
         sx={{
           width: canvasStore.width,
@@ -160,7 +157,7 @@ function Canvas({
             if (zoom > 1.25) setIsUnoptimized(true);
           }}
           onPanningStart={() => {
-            // Don't allow setting gun/target when panning
+            // Don't allow setting gun/target while panning
             isPanning.current = true;
           }}
           onPanningStop={() => {
@@ -186,8 +183,8 @@ function Canvas({
             <Image
               alt={map.name}
               src={`/images/webp/${map.image}.webp`}
-              height={canvasStore.height}
               width={canvasStore.width}
+              height={canvasStore.height}
               unoptimized={isUnoptimized}
               priority
             />

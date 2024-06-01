@@ -7,9 +7,9 @@ import type { BoxProps } from '@mui/joy/Box';
 
 function ScrollBox({
   children,
-  dependency,
+  dependency = undefined,
   ...props
-}: PropsWithChildren<{ dependency?: unknown } & BoxProps>) {
+}: PropsWithChildren<{ dependency: unknown } & BoxProps>) {
   const scrollBoxRef = React.useRef<HTMLDivElement | null>(null);
 
   const [maskImage, setMaskImage] = React.useState('unset');
@@ -78,9 +78,5 @@ function ScrollBox({
     </Box>
   );
 }
-
-ScrollBox.defaultProps = {
-  dependency: false,
-};
 
 export default ScrollBox;

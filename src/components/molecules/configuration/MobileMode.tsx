@@ -15,14 +15,13 @@ export default function MobileMode({
     <Button
       variant="solid"
       color="primary"
+      size="lg"
       onClick={() => {
         mobileMode.current = mobileMode.current === 'gun' ? 'target' : 'gun';
         setVisual(mobileMode.current);
       }}
     >
-      {visual === 'gun'
-        ? 'Switch selection to target'
-        : 'Switch selection to gun'}
+      Switch selection to {visual === 'gun' ? 'target' : 'gun'}
     </Button>
   );
 }

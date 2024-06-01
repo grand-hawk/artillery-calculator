@@ -1,21 +1,11 @@
-import todec from '2dec';
-import Box from '@mui/joy/Box';
-import Stack from '@mui/joy/Stack';
-import Typography from '@mui/joy/Typography';
 import Head from 'next/head';
 import React from 'react';
+import { useMediaQuery } from 'usehooks-ts';
 
-import Dynamic from '@/components/layout/Dynamic';
 import Page from '@/components/layout/Page';
-import ElevationValue from '@/components/molecules/configuration/Elevation';
-import MapSelection from '@/components/molecules/configuration/Map';
-import MobileMode from '@/components/molecules/configuration/MobileMode';
-import ProjectileSelection from '@/components/molecules/configuration/Projectile';
-import SimpleValue from '@/components/molecules/configuration/Simple';
-import TimeOfFlightValue from '@/components/molecules/configuration/TimeOfFlight';
-import Canvas from '@/components/organisms/Canvas';
-import Footer from '@/components/organisms/Footer';
-import Motd from '@/components/organisms/Motd';
+import { theme } from '@/components/utils/Theme';
+import DesktopView from '@/components/views/Desktop';
+import MobileView from '@/components/views/Mobile';
 import { maps } from '@/config/maps';
 import { guns } from '@/config/projectiles';
 import useIsMobile from '@/hooks/useIsMobile';
@@ -29,8 +19,22 @@ import {
   studsToMeters,
 } from '@/utils/math';
 
-import type { MobileModes } from '@/components/molecules/configuration/MobileMode';
+import type {
+  MobileModeMutable,
+  MobileModes,
+} from '@/components/molecules/configuration/MobileMode';
+import type { Projectile } from '@/config/projectiles';
 import type { GetStaticPropsResult, InferGetStaticPropsType } from 'next';
+
+export interface ViewProps {
+  mobileMode: MobileModeMutable;
+  motd: string | null;
+  elevation: number;
+  projectile: Projectile;
+  azimuth: number;
+  distance: number;
+  version: string;
+}
 
 export async function getStaticProps(): Promise<
   GetStaticPropsResult<{
@@ -53,6 +57,9 @@ export default function Index({
   version,
   motd,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
+  const isSmallScreen = !useMediaQuery(
+    theme.breakpoints.up('md').replace('@media ', ''),
+  );
   const isMobile = useIsMobile();
   const mobileMode = React.useRef<MobileModes>('gun');
 
@@ -89,54 +96,27 @@ export default function Index({
       </Head>
 
       <Page>
-        <Dynamic>
-          <Canvas isMobile={isMobile} mobileMode={mobileMode} />
-
-          <Box
-            sx={{
-              display: 'flex',
-              flexDirection: 'column',
-              gap: 2.5,
-            }}
-          >
-            <Motd message={motd || undefined} />
-
-            <Stack
-              spacing={1}
-              sx={{
-                '& > div': {
-                  alignItems: 'center',
-                  height: 35,
-                },
-              }}
-            >
-              {isMobile && <MobileMode mobileMode={mobileMode} />}
-
-              <ElevationValue elevation={elevation} />
-              <SimpleValue name="Azimuth" value={`${todec(azimuth)}°`} />
-              <SimpleValue
-                name="Distance"
-                value={`${todec(distance)} meter${distance >= 1 && distance < 2 ? '' : 's'}`}
-              />
-              <TimeOfFlightValue
-                elevation={elevation}
-                velocity={projectile.velocity}
-              />
-              <ProjectileSelection />
-              <MapSelection />
-            </Stack>
-
-            {!isMobile && (
-              <Typography>
-                Left click to set the gun position. Right click to set the
-                target position. Hold middle click to move the map around, and
-                scroll wheel to zoom.
-              </Typography>
-            )}
-
-            <Footer version={version} />
-          </Box>
-        </Dynamic>
+        {isMobile || isSmallScreen ? (
+          <MobileView
+            mobileMode={mobileMode}
+            motd={motd}
+            elevation={elevation}
+            azimuth={azimuth}
+            distance={distance}
+            projectile={projectile}
+            version={version}
+          />
+        ) : (
+          <DesktopView
+            mobileMode={mobileMode}
+            motd={motd}
+            elevation={elevation}
+            azimuth={azimuth}
+            distance={distance}
+            projectile={projectile}
+            version={version}
+          />
+        )}
       </Page>
     </>
   );

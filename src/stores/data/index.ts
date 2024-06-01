@@ -6,7 +6,7 @@ import { immer } from 'zustand/middleware/immer';
 
 import { guns } from '@/config/projectiles';
 
-import type { Vector } from '@/components/organisms/Canvas';
+import type { Vector } from '@/components/templates/Canvas';
 
 interface ProjectileData {
   gunKey: string;

@@ -1,4 +1,5 @@
 import todec from '2dec';
+import Plus from '@mui/icons-material/Add';
 import Button from '@mui/joy/Button';
 import Stack from '@mui/joy/Stack';
 import Tooltip from '@mui/joy/Tooltip';
@@ -51,7 +52,7 @@ export default function ProjectileButton({
           gap: 2,
         }}
       >
-        <Typography>
+        <Typography display="flex">
           {projectile.name}
           {projectile.explosiveMass && (
             <Tooltip
@@ -60,7 +61,9 @@ export default function ProjectileButton({
               variant="plain"
               title="This projectile has blast radius data"
             >
-              <Typography color="success">*</Typography>
+              <Typography color="primary" fontSize={12}>
+                <Plus />
+              </Typography>
             </Tooltip>
           )}
         </Typography>
