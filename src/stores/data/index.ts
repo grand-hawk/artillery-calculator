@@ -37,7 +37,8 @@ export interface DataStore {
 export const useDataStore = create(
   persist(
     immer<DataStore>((set) => ({
-      mapIndex: 0,
+      // radar station as default map as it has the smallest size
+      mapIndex: 4,
       setMapIndex(mapIndex) {
         set((s) => {
           s.mapIndex = mapIndex;
