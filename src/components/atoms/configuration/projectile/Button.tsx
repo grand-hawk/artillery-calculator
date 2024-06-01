@@ -59,7 +59,7 @@ export default function ProjectileButton({
               placement="top"
               size="sm"
               variant="plain"
-              title="This projectile has blast radius data"
+              title="This projectile has blast range data"
             >
               <Typography color="primary" fontSize={12}>
                 <Plus />
