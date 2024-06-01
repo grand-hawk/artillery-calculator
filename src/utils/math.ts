@@ -24,7 +24,7 @@ export function metersToStuds(m: number): number {
 }
 
 /**
- * @param d Studs
+ * @param d Distance in studs
  * @param v Initial velocity
  * @returns Elevation in degrees
  */
@@ -67,8 +67,10 @@ export function calculateAzimuth(
 /**
  * @param x1 X of position 1
  * @param y1 Y of position 1
+ * @param z1 Z of position 1
  * @param x2 X of position 2
  * @param y2 Y of position 2
+ * @param z2 Z of position 2
  * @returns Distance (universal)
  */
 export function calculateDistance(
@@ -76,8 +78,10 @@ export function calculateDistance(
   y1: number,
   x2: number,
   y2: number,
+  z1: number = 0,
+  z2: number = 0,
 ): number {
-  return Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2);
+  return Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2 + (z2 - z1) ** 2);
 }
 
 /**
