@@ -11,6 +11,11 @@ export default function VersionAlert({
   const [updateAvailable, setUpdateAvailable] = React.useState<boolean>(false);
 
   React.useEffect(() => {
+    // when a new version was pushed to production
+    // vercel will automatically replace the existing version on the production domain
+    // with that in mind, we fetch the /api/version endpoint which always returns
+    // the latest version production is on
+
     const interval = setInterval(
       async () => {
         const remoteVersion = await getRemoteVersion();
@@ -18,7 +23,8 @@ export default function VersionAlert({
         if (remoteVersion && remoteVersion !== currentVersion)
           setUpdateAvailable(true);
       },
-      5 * 60 * 1_000,
+      // 2.5 minutes
+      2.5 * 60 * 1_000,
     );
 
     return () => clearInterval(interval);
