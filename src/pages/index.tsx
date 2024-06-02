@@ -18,6 +18,7 @@ import {
   metersToStuds,
   studsToMeters,
 } from '@/utils/math';
+import getVersion from '@/utils/version';
 
 import type {
   MobileModeMutable,
@@ -42,11 +43,9 @@ export async function getStaticProps(): Promise<
     motd: string | null;
   }>
 > {
-  const version = (process.env.VERCEL_GIT_COMMIT_SHA ?? 'dev').slice(0, 9);
-
   return {
     props: {
-      version,
+      version: getVersion(),
       motd: await getMotd(),
     },
     revalidate: 120,

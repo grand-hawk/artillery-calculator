@@ -1,23 +1,13 @@
-import Card from '@mui/joy/Card';
 import Typography from '@mui/joy/Typography';
 
+import HeaderCard from '@/components/atoms/HeaderCard';
 import ScrollBox from '@/components/molecules/ScrollBox';
 
 function Motd({ message = '' }: { message: string | undefined }) {
   if (!message) return;
 
   return (
-    <Card
-      role="alert"
-      sx={{
-        paddingX: 2,
-        maxHeight: 75,
-        overflow: 'auto',
-      }}
-      size="sm"
-      variant="soft"
-      orientation="horizontal"
-    >
+    <HeaderCard>
       <ScrollBox dependency={message}>
         <Typography
           sx={{
@@ -30,7 +20,7 @@ function Motd({ message = '' }: { message: string | undefined }) {
           {message}
         </Typography>
       </ScrollBox>
-    </Card>
+    </HeaderCard>
   );
 }
 
