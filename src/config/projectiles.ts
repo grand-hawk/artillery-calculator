@@ -109,6 +109,12 @@ export const guns: Record<string, Gun> = {
         velocity: 150,
         explosiveMass: 6.4,
       },
+
+      {
+        name: '9M22/M21 HE-Frag',
+        velocity: 180,
+        explosiveMass: 6.4,
+      },
     ],
   },
 
@@ -234,6 +240,17 @@ export const guns: Record<string, Gun> = {
       {
         name: 'Thermobaric',
         velocity: 150,
+        explosiveMass: 1.2,
+        blastMultiplier: 2,
+      },
+
+      {
+        name: 'Incendiary (SV)',
+        velocity: 180,
+      },
+      {
+        name: 'Thermobaric (SV)',
+        velocity: 180,
         explosiveMass: 1.2,
         blastMultiplier: 2,
       },
