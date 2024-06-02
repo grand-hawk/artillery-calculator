@@ -4,6 +4,10 @@
   "author": "Astrid <git@astrid.email>",
   "license": "MIT",
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ari-party/mtc-artillery.git"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "npm run generateMaps && next dev --port=8080 --turbo",
@@ -62,3 +66,4 @@
     "typescript": "^5.4.5"
   }
 }
+
