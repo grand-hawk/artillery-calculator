@@ -11,6 +11,7 @@ import SimpleValue from '@/components/molecules/configuration/Simple';
 import TimeOfFlightValue from '@/components/molecules/configuration/TimeOfFlight';
 import Footer from '@/components/organisms/Footer';
 import Motd from '@/components/organisms/Motd';
+import VersionAlert from '@/components/organisms/VersionAlert';
 import Canvas from '@/components/templates/Canvas';
 
 import type { ViewProps } from '@/pages';
@@ -51,6 +52,7 @@ export default function MobileView({
         <Canvas isMobile mobileMode={mobileMode} />
 
         <ColumnContainer>
+          <VersionAlert currentVersion={version} />
           <Motd message={motd || undefined} />
 
           <MobileMode mobileMode={mobileMode} />

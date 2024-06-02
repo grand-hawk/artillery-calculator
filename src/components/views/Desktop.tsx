@@ -11,6 +11,7 @@ import SimpleValue from '@/components/molecules/configuration/Simple';
 import TimeOfFlightValue from '@/components/molecules/configuration/TimeOfFlight';
 import Footer from '@/components/organisms/Footer';
 import Motd from '@/components/organisms/Motd';
+import VersionAlert from '@/components/organisms/VersionAlert';
 import Canvas from '@/components/templates/Canvas';
 import { useCanvasStore } from '@/stores/canvas';
 
@@ -61,6 +62,7 @@ export default function DesktopView({
               maxHeight: useCanvasStore((s) => s.height),
             }}
           >
+            <VersionAlert currentVersion={version} />
             <Motd message={motd || undefined} />
 
             <ConfigurationGroup>
