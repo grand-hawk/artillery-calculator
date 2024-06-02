@@ -9,7 +9,11 @@ import { maps } from '@/config/maps';
 import { guns } from '@/config/projectiles';
 import { useCanvasStore } from '@/stores/canvas';
 import { useDataStore } from '@/stores/data';
-import { calculateBlastRange } from '@/utils/math';
+import {
+  calculateBlastRange,
+  calculateMaxRange,
+  metersToStuds,
+} from '@/utils/math';
 
 import type { MobileModeMutable } from '@/components/molecules/configuration/MobileMode';
 
@@ -51,7 +55,11 @@ function Canvas({
       projectile.blastMultiplier,
     );
   const blastRadius =
-    blastRange && (blastRange / (map.size || 0) / 2) * scaledDimension;
+    blastRange && (blastRange / map.size / 2) * scaledDimension;
+
+  const maxRadius =
+    (metersToStuds(calculateMaxRange(projectile.velocity)) / map.size) *
+    scaledDimension;
 
   React.useEffect(() => {
     const canvas = ref.current;
@@ -74,15 +82,18 @@ function Canvas({
     );
 
     // Gun
+    const gunX = gun.x * scaledDimension;
+    const gunY = gun.y * scaledDimension;
+
+    context.lineWidth = 20;
+    context.strokeStyle = 'rgba(0, 50, 255, 0.5)';
+    context.beginPath();
+    context.arc(gunX, gunY, maxRadius, 0, Math.PI * 2);
+    context.stroke();
+
     context.fillStyle = '#52a8ff';
     context.beginPath();
-    context.arc(
-      gun.x * scaledDimension,
-      gun.y * scaledDimension,
-      markerRadius,
-      0,
-      Math.PI * 2,
-    );
+    context.arc(gunX, gunY, markerRadius, 0, Math.PI * 2);
     context.fill();
 
     // Target

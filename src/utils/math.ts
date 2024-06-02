@@ -25,7 +25,7 @@ export function metersToStuds(m: number): number {
 
 /**
  * @param d Distance in studs
- * @param v Initial velocity
+ * @param v Initial velocity (m/s)
  * @returns Elevation in degrees
  */
 export function calculateElevation(d: number, v: number): number {
@@ -109,4 +109,12 @@ export function calculateBlastRange(
 ): number {
   const range = (1 / a) * ((m / d) ** (1 / 3) / 0.1);
   return Math.min(range, 500 * c) * b;
+}
+
+/**
+ * @param v Initial velocity (m/s)
+ * @returns Max range in meters
+ */
+export function calculateMaxRange(v: number): number {
+  return v ** 2 / G;
 }

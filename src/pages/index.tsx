@@ -73,7 +73,7 @@ export default function Index({
     guns[projectileData.gunKey].projectiles[projectileData.index];
 
   const distance = studsToMeters(
-    calculateDistance(gun.x, gun.y, target.x, target.y) * (map?.size || 0),
+    calculateDistance(gun.x, gun.y, target.x, target.y) * map.size,
   );
   const elevation = calculateElevation(
     metersToStuds(distance),
