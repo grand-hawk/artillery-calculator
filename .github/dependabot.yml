@@ -6,7 +6,7 @@
 
 version: 2
 updates:
-  - package-ecosystem: 'devcontainers'
+  - package-ecosystem: 'pnpm'
     directory: '/'
     schedule:
       interval: weekly
