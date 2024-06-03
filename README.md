@@ -8,3 +8,5 @@
 ![Next JS](https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white)
 
 Website to calculate elevation and azimuth (and more) for artillery in [MTC](https://www.roblox.com/games/9520328730/WW2-UPDATE-Multicrew-Tank-Combat-4).
+
+![stats](https://umami-views.astrid.exposed/svg?shareURL=https://umami.astrid.exposed/share/Ps68DOSbQBecNH0l/artillery-calculator.com&theme=light)
