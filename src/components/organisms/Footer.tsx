@@ -21,15 +21,21 @@ function Footer({ version, sx = {} }: { version: string; sx?: SxProps }) {
       })}
     >
       <Stack direction="row" spacing={0.75} sx={{ alignItems: 'center' }}>
-        <Link href="https://discord.gg/yHbVdPJ5vf">
+        <Link href="https://discord.gg/yHbVdPJ5vf" data-umami-event="Discord">
           <DiscordIcon />
         </Link>
 
-        <Link href="https://github.com/ari-party/mtc-artillery">
+        <Link
+          href="https://github.com/ari-party/mtc-artillery"
+          data-umami-event="GitHub"
+        >
           <GitHubIcon />
         </Link>
 
-        <Link href="https://www.buymeacoffee.com/valk">
+        <Link
+          href="https://www.buymeacoffee.com/valk"
+          data-umami-event="Buy Me A Coffee"
+        >
           <BMACIcon />
         </Link>
       </Stack>
