@@ -59,7 +59,7 @@ export default function Index({
   const isSmallScreen = !useMediaQuery(
     theme.breakpoints.up('md').replace('@media ', ''),
   );
-  const isMobile = useIsMobile();
+  const isMobileDevice = useIsMobile();
   const mobileMode = React.useRef<MobileModes>('gun');
 
   const mapIndex = useDataStore((s) => s.mapIndex);
@@ -95,7 +95,7 @@ export default function Index({
       </Head>
 
       <Page>
-        {isMobile || isSmallScreen ? (
+        {isMobileDevice || isSmallScreen ? (
           <MobileView
             mobileMode={mobileMode}
             motd={motd}

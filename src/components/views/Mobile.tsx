@@ -13,6 +13,7 @@ import Footer from '@/components/organisms/Footer';
 import Motd from '@/components/organisms/Motd';
 import VersionAlert from '@/components/organisms/VersionAlert';
 import Canvas from '@/components/templates/Canvas';
+import useIsMobile from '@/hooks/useIsMobile';
 
 import type { ViewProps } from '@/pages';
 
@@ -25,6 +26,8 @@ export default function MobileView({
   projectile,
   version,
 }: ViewProps) {
+  const isMobileDevice = useIsMobile();
+
   return (
     <Box
       className="mobile"
@@ -49,13 +52,13 @@ export default function MobileView({
           },
         }}
       >
-        <Canvas isMobile mobileMode={mobileMode} />
+        <Canvas isMobile={isMobileDevice} mobileMode={mobileMode} />
 
         <ColumnContainer>
           <VersionAlert currentVersion={version} />
           <Motd message={motd || undefined} />
 
-          <MobileMode mobileMode={mobileMode} />
+          {isMobileDevice && <MobileMode mobileMode={mobileMode} />}
 
           <ConfigurationGroup>
             <ElevationValue elevation={elevation} />
