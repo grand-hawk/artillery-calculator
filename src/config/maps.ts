@@ -96,8 +96,8 @@ export const maps: Map[] = [
     size: calculateMapSize(250),
   },
   {
-    image: 'sunny_place',
-    name: 'Sunny Place',
+    image: 'sandy_place',
+    name: 'Sandy Place',
     size: calculateMapSize(240),
   },
 ];
