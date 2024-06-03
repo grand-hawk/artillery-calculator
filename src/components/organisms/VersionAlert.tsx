@@ -1,3 +1,4 @@
+import { useTranslations } from 'next-intl';
 import React from 'react';
 
 import HeaderCard from '@/components/atoms/HeaderCard';
@@ -8,6 +9,8 @@ export default function VersionAlert({
 }: {
   currentVersion: string;
 }) {
+  const t = useTranslations();
+
   const [updateAvailable, setUpdateAvailable] = React.useState<boolean>(false);
 
   React.useEffect(() => {
@@ -29,7 +32,7 @@ export default function VersionAlert({
   return (
     updateAvailable && (
       <HeaderCard variant="solid" color="warning">
-        A new version has been published, refresh the page to apply it.
+        {t('typography.newVersion')}
       </HeaderCard>
     )
   );

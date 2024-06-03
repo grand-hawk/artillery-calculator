@@ -1,6 +1,7 @@
 import todec from '2dec';
 import Stack from '@mui/joy/Stack';
 import Typography from '@mui/joy/Typography';
+import { useTranslations } from 'next-intl';
 import React from 'react';
 
 import DataContainer from '@/components/atoms/configuration/DataContainer';
@@ -13,14 +14,16 @@ export default function TimeOfFlightValue({
   elevation: number;
   velocity: number;
 }) {
+  const t = useTranslations();
+
   const highArcElevation = 90 - lowArcElevation;
   const highArcTOF = calculateTimeOfFlight(highArcElevation, velocity);
 
   return (
     <DataContainer>
-      <Typography level="title-md">Time of flight</Typography>
+      <Typography level="title-md">{t('typography.timeOfFlight')}</Typography>
 
-      <Stack direction="row" spacing={1} sx={{ alignItems: 'center' }}>
+      <Stack direction="row" spacing={1} alignItems="center">
         {lowArcElevation ? (
           <>
             <Typography>
@@ -28,16 +31,15 @@ export default function TimeOfFlightValue({
             </Typography>
 
             <Typography component="b" level="body-sm">
-              or
+              {t('typography.or')}
             </Typography>
 
             <Typography>
-              {todec(highArcTOF)} second
-              {highArcTOF >= 1 && highArcTOF < 2 ? '' : 's'}
+              {t(`units.second`, { value: todec(highArcTOF) })}
             </Typography>
           </>
         ) : (
-          <Typography>N/A</Typography>
+          <Typography>{t('typography.notApplicable')}</Typography>
         )}
       </Stack>
     </DataContainer>

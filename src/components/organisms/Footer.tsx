@@ -20,7 +20,7 @@ function Footer({ version, sx = {} }: { version: string; sx?: SxProps }) {
         justifyContent: 'space-between',
       })}
     >
-      <Stack direction="row" spacing={0.75} sx={{ alignItems: 'center' }}>
+      <Stack direction="row" spacing={0.75} alignItems="center">
         <Link href="https://discord.gg/yHbVdPJ5vf" data-umami-event="Discord">
           <DiscordIcon />
         </Link>

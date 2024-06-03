@@ -4,6 +4,7 @@ import Button from '@mui/joy/Button';
 import Stack from '@mui/joy/Stack';
 import Tooltip from '@mui/joy/Tooltip';
 import Typography from '@mui/joy/Typography';
+import { useTranslations } from 'next-intl';
 
 import { useDataStore } from '@/stores/data';
 
@@ -18,6 +19,8 @@ export default function ProjectileButton({
   projectile: Projectile;
   thisProjectileIndex: number;
 }) {
+  const t = useTranslations();
+
   const [projectileData, setProjectile] = useDataStore((s) => [
     s.projectile,
     s.setProjectile,
@@ -59,7 +62,7 @@ export default function ProjectileButton({
               placement="top"
               size="sm"
               variant="plain"
-              title="This projectile has blast range data"
+              title={t('typography.blastRange')}
             >
               <Typography color="primary" fontSize={12}>
                 <Plus />
@@ -69,7 +72,9 @@ export default function ProjectileButton({
         </Typography>
 
         <Typography level="body-sm" fontWeight={500}>
-          {todec(projectile.velocity)} m/s
+          {t('typography.metersPerSecond', {
+            value: todec(projectile.velocity),
+          })}
         </Typography>
       </Stack>
     </Button>

@@ -4,11 +4,10 @@ import { useMediaQuery } from 'usehooks-ts';
 
 import Page from '@/components/layout/Page';
 import { theme } from '@/components/utils/Theme';
-import DesktopView from '@/components/views/Desktop';
-import MobileView from '@/components/views/Mobile';
 import { maps } from '@/config/maps';
 import { guns } from '@/config/projectiles';
 import useIsMobile from '@/hooks/useIsMobile';
+import locales from '@/i18n';
 import getMotd from '@/lib/server/getMotd';
 import { useDataStore } from '@/stores/data';
 import {
@@ -19,13 +18,19 @@ import {
   studsToMeters,
 } from '@/utils/math';
 import getVersion from '@/utils/version';
+import DesktopView from '@/views/Desktop';
+import MobileView from '@/views/Mobile';
 
 import type {
   MobileModeMutable,
   MobileModes,
 } from '@/components/molecules/configuration/MobileMode';
 import type { Projectile } from '@/config/projectiles';
-import type { GetStaticPropsResult, InferGetStaticPropsType } from 'next';
+import type {
+  GetStaticPropsContext,
+  GetStaticPropsResult,
+  InferGetStaticPropsType,
+} from 'next';
 
 export interface ViewProps {
   mobileMode: MobileModeMutable;
@@ -37,16 +42,18 @@ export interface ViewProps {
   version: string;
 }
 
-export async function getStaticProps(): Promise<
+export async function getStaticProps(context: GetStaticPropsContext): Promise<
   GetStaticPropsResult<{
     version: string;
     motd: string | null;
+    messages: unknown;
   }>
 > {
   return {
     props: {
       version: getVersion(),
       motd: await getMotd(),
+      messages: locales[context.locale!],
     },
     revalidate: 120,
   };

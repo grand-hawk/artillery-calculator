@@ -1,11 +1,18 @@
+import { useRouter } from 'next/router';
 import Script from 'next/script';
+import { NextIntlClientProvider } from 'next-intl';
 import React from 'react';
 
 import type { AppProps } from 'next/app';
 
 function App({ Component, pageProps }: AppProps) {
+  const router = useRouter();
+
   return (
-    <>
+    <NextIntlClientProvider
+      locale={router.locale}
+      messages={pageProps.messages}
+    >
       <Component {...pageProps} />
 
       {process.env.NEXT_PUBLIC_ANALYTICS_DOMAIN && (
@@ -19,7 +26,7 @@ function App({ Component, pageProps }: AppProps) {
           data-host-url={process.env.NEXT_PUBLIC_ANALYTICS_DOMAIN}
         />
       )}
-    </>
+    </NextIntlClientProvider>
   );
 }
 

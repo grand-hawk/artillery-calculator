@@ -1,5 +1,6 @@
 import todec from '2dec';
 import Box from '@mui/joy/Box';
+import { useTranslations } from 'next-intl';
 
 import ColumnContainer from '@/components/atoms/ColumnContainer';
 import ConfigurationGroup from '@/components/atoms/ConfigurationGroup';
@@ -26,6 +27,8 @@ export default function MobileView({
   projectile,
   version,
 }: ViewProps) {
+  const t = useTranslations();
+
   const isMobileDevice = useIsMobile();
 
   return (
@@ -62,10 +65,13 @@ export default function MobileView({
 
           <ConfigurationGroup>
             <ElevationValue elevation={elevation} />
-            <SimpleValue name="Azimuth" value={`${todec(azimuth)}°`} />
             <SimpleValue
-              name="Distance"
-              value={`${todec(distance)} meter${distance >= 1 && distance < 2 ? '' : 's'}`}
+              name={t('typography.azimuth')}
+              value={`${todec(azimuth)}°`}
+            />
+            <SimpleValue
+              name={t('typography.distance')}
+              value={t(`units.meter`, { value: todec(distance) })}
             />
             <TimeOfFlightValue
               elevation={elevation}

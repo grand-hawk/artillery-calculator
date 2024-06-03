@@ -7,6 +7,7 @@ import TabPanel from '@mui/joy/TabPanel';
 import Tabs from '@mui/joy/Tabs';
 import Tooltip from '@mui/joy/Tooltip';
 import Typography from '@mui/joy/Typography';
+import { useTranslations } from 'next-intl';
 import React from 'react';
 import { useOnClickOutside } from 'usehooks-ts';
 
@@ -17,6 +18,8 @@ import { guns } from '@/config/projectiles';
 import { useDataStore } from '@/stores/data';
 
 export default function ProjectileSelection() {
+  const t = useTranslations();
+
   const tooltip = React.useRef<HTMLDivElement | null>(null);
   const selectionChanged = React.useRef<number>(0);
 
@@ -47,7 +50,7 @@ export default function ProjectileSelection() {
 
   return (
     <DataContainer>
-      <Typography level="title-md">Projectile</Typography>
+      <Typography level="title-md">{t('typography.projectile')}</Typography>
 
       <Tooltip
         slotProps={{

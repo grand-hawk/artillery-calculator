@@ -1,4 +1,5 @@
 import Button from '@mui/joy/Button';
+import { useTranslations } from 'next-intl';
 import React from 'react';
 
 export type MobileModes = 'gun' | 'target';
@@ -9,6 +10,8 @@ export default function MobileMode({
 }: {
   mobileMode: MobileModeMutable;
 }) {
+  const t = useTranslations();
+
   const [visual, setVisual] = React.useState<MobileModes>(mobileMode.current);
 
   return (
@@ -21,7 +24,9 @@ export default function MobileMode({
         setVisual(mobileMode.current);
       }}
     >
-      Switch selection to {visual === 'gun' ? 'target' : 'gun'}
+      {t('typography.switchSelectionTo', {
+        value: visual === 'gun' ? t('typography.target') : t('typography.gun'),
+      })}
     </Button>
   );
 }

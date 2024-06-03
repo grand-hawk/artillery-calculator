@@ -1,6 +1,7 @@
 import Option from '@mui/joy/Option';
 import Select from '@mui/joy/Select';
 import Typography from '@mui/joy/Typography';
+import { useTranslations } from 'next-intl';
 import React from 'react';
 
 import DataContainer from '@/components/atoms/configuration/DataContainer';
@@ -10,6 +11,8 @@ import { maps } from '@/config/maps';
 import { useDataStore } from '@/stores/data';
 
 export default function MapSelection() {
+  const t = useTranslations();
+
   const [listboxOpen, setListboxOpen] = React.useState<boolean>(false);
 
   const [mapIndex, setMapIndex] = useDataStore((s) => [
@@ -19,12 +22,11 @@ export default function MapSelection() {
 
   return (
     <DataContainer>
-      <Typography level="title-md">Map</Typography>
+      <Typography level="title-md">{t('typography.map')}</Typography>
 
       <Select
         value={mapIndex}
         onChange={(event, newValue) => setMapIndex(newValue as number)}
-        placeholder="Select a map..."
         slotProps={{
           listbox: {
             placement: 'top-end',

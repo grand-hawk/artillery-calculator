@@ -1,6 +1,7 @@
 import todec from '2dec';
 import Box from '@mui/joy/Box';
 import Typography from '@mui/joy/Typography';
+import { useTranslations } from 'next-intl';
 
 import ColumnContainer from '@/components/atoms/ColumnContainer';
 import ConfigurationGroup from '@/components/atoms/ConfigurationGroup';
@@ -26,6 +27,8 @@ export default function DesktopView({
   projectile,
   version,
 }: ViewProps) {
+  const t = useTranslations();
+
   return (
     <Box
       className="desktop"
@@ -67,10 +70,13 @@ export default function DesktopView({
 
             <ConfigurationGroup>
               <ElevationValue elevation={elevation} />
-              <SimpleValue name="Azimuth" value={`${todec(azimuth)}°`} />
               <SimpleValue
-                name="Distance"
-                value={`${todec(distance)} meter${distance >= 1 && distance < 2 ? '' : 's'}`}
+                name={t('typography.azimuth')}
+                value={`${todec(azimuth)}°`}
+              />
+              <SimpleValue
+                name={t('typography.distance')}
+                value={t(`units.meter`, { value: todec(distance) })}
               />
               <TimeOfFlightValue
                 elevation={elevation}
@@ -81,9 +87,7 @@ export default function DesktopView({
             </ConfigurationGroup>
 
             <Typography marginTop="auto">
-              Left click to set the gun position. Right click to set the target
-              position. Hold middle click to move the map around, and scroll
-              wheel to zoom.
+              {t('typography.instructions')}
             </Typography>
           </ColumnContainer>
         </Box>
