@@ -95,4 +95,9 @@ export const maps: Map[] = [
     name: 'Dustbowl II',
     size: calculateMapSize(250),
   },
+  {
+    image: 'sunny_place',
+    name: 'Sunny Place',
+    size: calculateMapSize(240),
+  },
 ];

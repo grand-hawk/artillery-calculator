@@ -85,7 +85,7 @@ export function calculateDistance(
 }
 
 /**
- * @param m Meters
+ * @param m Grid size in meters
  * @param grids Grids (default: 9)
  * @returns Map size in studs
  */
@@ -99,6 +99,7 @@ export function calculateMapSize(m: number, grids: number = 9): number {
  * @param b Blast multiplier (default: 1)
  * @param d Air density (default: 1.2)
  * @param a Explosive constant (default: 0.07)
+ * @returns Blast range in studs
  */
 export function calculateBlastRange(
   m: number,
