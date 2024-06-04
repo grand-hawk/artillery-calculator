@@ -1,23 +1,23 @@
 {
   "typography": {
-    "azimuth": "Azimuth",
-    "blastRange": "This projectile has blast range data",
-    "distance": "Distance",
-    "elevation": "Elevation",
-    "gun": "gun",
-    "instructions": "Left click to set the gun position. Right click to set the target position. Hold middle click to move the map around, and scroll wheel to zoom.",
-    "map": "Map",
+    "azimuth": "Azimut",
+    "blastRange": "Este proyectil tiene datos del rango de explosión",
+    "distance": "Distancia",
+    "elevation": "Comunicaciones",
+    "gun": "cañón",
+    "instructions": "Clic izquierdo para establecer la posición de arma. Clic derecho para establecer la posición objetivo. Mantén pulsado el botón central para mover el mapa y desplaza la rueda hasta el zoom.",
+    "map": "Mapa",
     "metersPerSecond": "{value} m/s",
-    "newVersion": "A new version has been published, refresh the page to apply it.",
+    "newVersion": "Una nueva versión ha sido publicada, actualiza la página para aplicarla.",
     "notApplicable": "N/A",
-    "or": "or",
-    "projectile": "Projectile",
-    "switchSelectionTo": "Switch selection to {value}",
+    "or": "o",
+    "projectile": "Proyectil",
+    "switchSelectionTo": "Cambiar selección a {value}",
     "target": "target",
-    "timeOfFlight": "Time of flight"
+    "timeOfFlight": "Hora de vuelo"
   },
   "units": {
-    "meter": "{value, plural, =1 {{value} meter} other {{value} meters}}",
-    "second": "{value, plural, =1 {{value} second} other {{value} seconds}}"
+    "meter": "{value, plural, =1 {{value} metro} other {{value} metros}}",
+    "second": "{value, plural, =1 {{value} segundo} other {{value} segundos}}"
   }
 }
