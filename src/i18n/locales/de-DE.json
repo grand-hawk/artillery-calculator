@@ -17,7 +17,7 @@
     "timeOfFlight": "Flugzeit"
   },
   "units": {
-    "meter": "{value} Meter",
+    "meter": "{value, plural, =1 {{value} meter} other {{value} meters}}",
     "second": "{value, plural, =1 {{value} Sekunde} other {{value} Sekunden}}"
   }
 }
