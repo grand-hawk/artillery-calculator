@@ -1,14 +1,14 @@
 {
   "typography": {
     "azimuth": "Azimut",
-    "blastRange": "Dieses Projektil hat Explosionsreichweitendaten",
+    "blastRange": "Dieses Projektil hat Explosionsradius-Daten",
     "distance": "Distanz",
-    "elevation": "Elevation",
+    "elevation": "Höhenwinkel",
     "gun": "Geschütz",
-    "instructions": "Left click to set the gun position. Right click to set the target position. Hold middle click to move the map around, and scroll wheel to zoom.",
+    "instructions": "Klicke mit der Linken Maustaste, um die Geschütz-Position zu setzen. Rechtsklick um die Zielposition zu setzen. Halte die Mittelmaustaste gedrückt, um dich auf der Karte umzusehen und das Mausrad, um zu Zoomen.",
     "map": "Landkarte",
     "metersPerSecond": "{value} m/s",
-    "newVersion": "A new version has been published, refresh the page to apply it.",
+    "newVersion": "Eine neue Version wurde veröffentlicht, aktualisiere die Seite, um sie anzuwenden.",
     "notApplicable": "N/A",
     "or": "oder",
     "projectile": "Projektil",
@@ -17,7 +17,7 @@
     "timeOfFlight": "Flugzeit"
   },
   "units": {
-    "meter": "{value, plural, =1 {{value} meter} other {{value} meters}}",
+    "meter": "{value, plural, =1 {{value} Meter} other {{value} Meter}}",
     "second": "{value, plural, =1 {{value} Sekunde} other {{value} Sekunden}}"
   }
 }

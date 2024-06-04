@@ -12,7 +12,7 @@
     "notApplicable": "н/д",
     "or": "Или",
     "projectile": "Снаряд",
-    "switchSelectionTo": "Switch selection to {value}",
+    "switchSelectionTo": "Перемикання вибору на {value}",
     "target": "мета",
     "timeOfFlight": "Час польоту"
   },
