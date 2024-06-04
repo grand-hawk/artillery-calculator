@@ -15,7 +15,7 @@ const config = {
   },
 
   i18n: {
-    locales: ['en-US'],
+    locales: ['de-DE', 'en-US', 'ru-RU', 'uk-UA'],
     defaultLocale: 'en-US',
   },
 };

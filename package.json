@@ -10,7 +10,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "npm run generateMaps && next dev --port=8080 --turbo",
+    "dev": "npm run generateMaps && next dev --port=8888 --turbo",
     "build": "npm run generateMaps && next build",
     "start": "next start --port=8080",
     "lint": "next lint",

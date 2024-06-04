@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    "debens.sort-js-object",
+    "aaron-bond.better-comments",
+    "dbaeumer.vscode-eslint",
+    "christian-kohler.npm-intellisense",
+    "esbenp.prettier-vscode",
+    "rvest.vs-code-prettier-eslint"
+  ]
+}
