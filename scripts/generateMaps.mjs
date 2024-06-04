@@ -45,6 +45,7 @@ for await (const file of klaw(imageDir, {
         `Failed to generate 64px image for ${fileName}\n${error}`,
       );
     });
+  console.log('Generated 64px images of maps');
 
   sharp(file.path)
     .webp({
@@ -59,4 +60,5 @@ for await (const file of klaw(imageDir, {
         `Failed to generate large webp image for ${fileName}\n${error}`,
       );
     });
+  console.log('Converted all large images to webp');
 }

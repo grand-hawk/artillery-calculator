@@ -19,7 +19,7 @@
     "format": "prettier . -w",
     "fix": "npm run lint:fix && npm run format",
     "depcheck": "depcheck .",
-    "generateMaps": "tsx scripts/generateMaps.ts"
+    "generateMaps": "node scripts/generateMaps.mjs"
   },
   "dependencies": {
     "2dec": "^1.0.6",
