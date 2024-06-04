@@ -6,7 +6,7 @@ import Link from '@/components/atoms/footer/Link';
 import BMACIcon from '@/components/atoms/icons/BMAC';
 import DiscordIcon from '@/components/atoms/icons/Discord';
 import GitHubIcon from '@/components/atoms/icons/GitHub';
-import LanguageSelector from '@/components/molecules/footer/LanguageSelector';
+import LanguageSelector from '@/components/organisms/LanguageSelector';
 
 import type { SxProps } from '@mui/joy/styles/types';
 

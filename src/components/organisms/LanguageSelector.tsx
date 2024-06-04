@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import { useTranslations } from 'next-intl';
 import React from 'react';
 
+import Flag from '@/components/molecules/languageSelector/Flag';
 import ScrollBox from '@/components/molecules/ScrollBox';
 import locales, { defaultLocale } from '@/i18n';
 
@@ -12,7 +13,7 @@ export default function LanguageSelector() {
 
   const router = useRouter();
 
-  const [listboxOpen, setListboxOpen] = React.useState<boolean>(false);
+  const [listboxOpen, setListboxOpen] = React.useState<boolean>(true);
 
   return (
     <Select
@@ -30,11 +31,12 @@ export default function LanguageSelector() {
       onClose={() => setListboxOpen(false)}
       variant="outlined"
       size="sm"
+      startDecorator={<Flag locale={router.locale!} />}
     >
       <ScrollBox dependency={listboxOpen}>
         {Object.keys(locales).map((locale, index) => (
           <Option key={index} value={locale}>
-            {t(`languages.${locale}`)}
+            <Flag locale={locale} /> {t(`languages.${locale}`)}
           </Option>
         ))}
       </ScrollBox>

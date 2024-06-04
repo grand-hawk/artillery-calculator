@@ -4,6 +4,7 @@ const common = {
     'de-DE': 'Deutsch',
     'en-US': 'English',
     'es-ES': 'Español',
+    'nl-NL': 'Nederlands',
     'pl-PL': 'Polski',
     'ru-RU': 'Русский',
     'uk-UA': 'українська',

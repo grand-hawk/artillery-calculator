@@ -4,7 +4,7 @@ import React from 'react';
 import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
 
 import AbsoluteContainer from '@/components/atoms/canvas/AbsoluteContainer';
-import CanvasContainer from '@/components/organisms/CanvasContainer';
+import CanvasContainer from '@/components/molecules/CanvasContainer';
 import { maps } from '@/config/maps';
 import { guns } from '@/config/projectiles';
 import { useCanvasStore } from '@/stores/canvas';

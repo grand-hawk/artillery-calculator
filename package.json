@@ -10,7 +10,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "npm run generateMaps && next dev --port=8080 --turbo",
+    "dev": "npm run generateMaps && next dev --port=8888",
     "build": "npm run generateMaps && next build",
     "build:analyze": "cross-env ANALYZE=true npm run build",
     "start": "next start --port=8080",
@@ -29,6 +29,7 @@
     "@mui/joy": "5.0.0-beta.36",
     "@mui/material": "^5.15.19",
     "@types/ua-parser-js": "^0.7.39",
+    "flag-icons": "^7.2.3",
     "immer": "^10.1.1",
     "is-image": "^4.0.0",
     "klaw": "^4.1.0",
