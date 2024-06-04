@@ -1,20 +1,20 @@
 {
   "typography": {
-    "azimuth": "Azimuth",
-    "blastRange": "This projectile has blast range data",
-    "distance": "Distance",
-    "elevation": "Elevation",
-    "gun": "gun",
-    "instructions": "Left click to set the gun position. Right click to set the target position. Hold middle click to move the map around, and scroll wheel to zoom.",
-    "map": "Map",
+    "azimuth": "Azymuth",
+    "blastRange": "Ten pocisk ma dane o zasięgu wybuchu",
+    "distance": "Odległość",
+    "elevation": "Wysokość",
+    "gun": "pistolet",
+    "instructions": "Kliknij lewym przyciskiem myszy, aby ustawić pozycję działa. Kliknij prawym przyciskiem myszy, aby ustawić pozycję docelową. Przytrzymaj środkowe kliknięcie, aby przesunąć mapę i przewiń koło do powiększenia.",
+    "map": "Mapa",
     "metersPerSecond": "{value} m/s",
-    "newVersion": "A new version has been published, refresh the page to apply it.",
-    "notApplicable": "N/A",
-    "or": "or",
-    "projectile": "Projectile",
-    "switchSelectionTo": "Switch selection to {value}",
+    "newVersion": "Nowa wersja została opublikowana, odśwież stronę, aby ją zastosować.",
+    "notApplicable": "Nie dotyczy.",
+    "or": "lub",
+    "projectile": "Pocisk",
+    "switchSelectionTo": "Przełącz wybór na {value}",
     "target": "target",
-    "timeOfFlight": "Time of flight"
+    "timeOfFlight": "Czas lotu"
   },
   "units": {
     "meter": "{value, plural, =1 {{value} metr} other {{value} metry}}",
