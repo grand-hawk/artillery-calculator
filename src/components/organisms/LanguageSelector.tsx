@@ -13,7 +13,7 @@ export default function LanguageSelector() {
 
   const router = useRouter();
 
-  const [listboxOpen, setListboxOpen] = React.useState<boolean>(true);
+  const [listboxOpen, setListboxOpen] = React.useState<boolean>(false);
 
   return (
     <Select
