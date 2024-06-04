@@ -10,8 +10,9 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "npm run generateMaps && next dev --port=8888 --turbo",
+    "dev": "npm run generateMaps && next dev --port=8080 --turbo",
     "build": "npm run generateMaps && next build",
+    "build:analyze": "cross-env ANALYZE=true npm run build",
     "start": "next start --port=8080",
     "lint": "next lint",
     "lint:fix": "next lint --fix",
@@ -45,12 +46,14 @@
     "zustand": "^4.5.2"
   },
   "devDependencies": {
+    "@next/bundle-analyzer": "^14.2.3",
     "@types/klaw": "^3.0.6",
     "@types/node": "^20.14.0",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@typescript-eslint/eslint-plugin": "^7.0.0",
     "@typescript-eslint/parser": "^6.21.0",
+    "cross-env": "^7.0.3",
     "depcheck": "^1.4.7",
     "eslint": "^8.57.0",
     "eslint-config-airbnb": "^19.0.4",
