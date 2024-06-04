@@ -90,15 +90,5 @@
     "@typescript-eslint/consistent-generic-constructors": "warn",
     "react/jsx-filename-extension": "off",
     "react/require-default-props": "off"
-  },
-  "overrides": [
-    {
-      "files": [
-        "src/i18n/**/*.ts"
-      ],
-      "rules": {
-        "sort-keys": "error"
-      }
-    }
-  ]
+  }
 }

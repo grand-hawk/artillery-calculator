@@ -1,4 +1,8 @@
-/** @type {import("next").NextConfig} */
+import bundleAnalyzer from '@next/bundle-analyzer';
+
+import i18nConfig from './src/i18n/config.json' with { type: 'json' };
+
+/** @type {import('next').NextConfig} */
 const config = {
   async headers() {
     return [
@@ -14,10 +18,11 @@ const config = {
     ];
   },
 
-  i18n: {
-    locales: ['de-DE', 'en-US', 'ru-RU', 'uk-UA'],
-    defaultLocale: 'en-US',
-  },
+  i18n: i18nConfig,
 };
 
-export default config;
+const withBundleAnalyzer = bundleAnalyzer({
+  enabled: process.env.ANALYZE === 'true',
+});
+
+export default withBundleAnalyzer(config);
