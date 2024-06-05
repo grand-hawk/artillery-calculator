@@ -18,6 +18,6 @@
   },
   "units": {
     "meter": "{value, plural, =1 {{value} metr} other {{value} metrów}}",
-    "second": "{value, plural, =1 {{value} sekunda} other {{value} sekund}}}"
+    "second": "{value, plural, =1 {{value} sekunda} other {{value} sekund}}"
   }
 }
