@@ -1,6 +1,7 @@
 // https://next-intl-docs.vercel.app/docs
 
-import common from '@/i18n/common';
+import common from './common.json';
+import config from './config.json';
 import deDE from '@/i18n/locales/de-DE.json';
 import enUS from '@/i18n/locales/en-US.json';
 import esES from '@/i18n/locales/es-ES.json';
@@ -26,3 +27,4 @@ for (const locale of Object.keys(locales))
   Object.assign(locales[locale]!, common);
 
 export default locales;
+export { config };

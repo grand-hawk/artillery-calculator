@@ -34,7 +34,7 @@ export default function LanguageSelector() {
       startDecorator={<Flag locale={router.locale!} />}
     >
       <ScrollBox dependency={listboxOpen}>
-        {Object.keys(config.locales).map((locale, index) => (
+        {config.locales.map((locale, index) => (
           <Option key={index} value={locale}>
             <Flag locale={locale} /> {t(`languages.${locale}`)}
           </Option>
