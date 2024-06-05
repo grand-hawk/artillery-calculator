@@ -1,6 +1,7 @@
 {
   "recommendations": [
     "debens.sort-js-object",
+    "thinker.sort-json",
     "aaron-bond.better-comments",
     "dbaeumer.vscode-eslint",
     "christian-kohler.npm-intellisense",
