@@ -1,11 +1,11 @@
 {
   "typography": {
-    "azimuth": "Azymuth",
+    "azimuth": "Azymut",
     "blastRange": "Ten pocisk ma dane o zasięgu wybuchu",
     "distance": "Odległość",
-    "elevation": "Wysokość",
-    "gun": "pistolet",
-    "instructions": "Kliknij lewym przyciskiem myszy, aby ustawić pozycję działa. Kliknij prawym przyciskiem myszy, aby ustawić pozycję docelową. Przytrzymaj środkowe kliknięcie, aby przesunąć mapę i przewiń koło do powiększenia.",
+    "elevation": "Elewacja",
+    "gun": "broń",
+    "instructions": "Kliknij lewym przyciskiem myszy, aby ustawić pozycję działa. Kliknij prawym przyciskiem myszy, aby ustawić pozycję celu. Przytrzymaj środkowy przycisk myszy, aby przesunąć mapę i użyj kółka od myszy, aby zmienić przybliżenie.",
     "map": "Mapa",
     "metersPerSecond": "{value} m/s",
     "newVersion": "Nowa wersja została opublikowana, odśwież stronę, aby ją zastosować.",
@@ -13,11 +13,11 @@
     "or": "lub",
     "projectile": "Pocisk",
     "switchSelectionTo": "Przełącz wybór na {value}",
-    "target": "target",
+    "target": "cel",
     "timeOfFlight": "Czas lotu"
   },
   "units": {
-    "meter": "{value, plural, =1 {{value} metr} other {{value} metry}}",
-    "second": "{value, plural, =1 {{value} sekunda} other {{value} sekundy}}"
+    "meter": "{value, plural, =1 {{value} metr} other {{value} metrów}}",
+    "second": "{value, plural, =1 {{value} sekunda} other {{value} sekund}}}"
   }
 }
