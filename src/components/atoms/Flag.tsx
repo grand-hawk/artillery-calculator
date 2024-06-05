@@ -4,7 +4,7 @@ import React from 'react';
 
 import type { SvgIconProps } from '@mui/joy/SvgIcon';
 
-export default function SmallFlag({
+export default function Flag({
   code,
   ...props
 }: SvgIconProps & { code: string }) {

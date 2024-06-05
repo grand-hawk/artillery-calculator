@@ -1,8 +1,8 @@
 import Box from '@mui/joy/Box';
 
-import SmallFlag from '@/components/atoms/SmallFlag';
+import SmallFlag from '@/components/atoms/Flag';
 
-export default function Flag({ locale }: { locale: string }) {
+export default function LocaleFlag({ locale }: { locale: string }) {
   return (
     <Box
       sx={{

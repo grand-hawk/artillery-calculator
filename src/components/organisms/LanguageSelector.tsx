@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import { useTranslations } from 'next-intl';
 import React from 'react';
 
-import Flag from '@/components/molecules/languageSelector/Flag';
+import Flag from '@/components/molecules/languageSelector/LocaleFlag';
 import ScrollBox from '@/components/molecules/ScrollBox';
 import config from '@/i18n/config.json';
 
