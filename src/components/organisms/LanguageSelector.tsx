@@ -6,7 +6,7 @@ import React from 'react';
 
 import Flag from '@/components/molecules/languageSelector/Flag';
 import ScrollBox from '@/components/molecules/ScrollBox';
-import locales, { defaultLocale } from '@/i18n';
+import config from '@/i18n/config.json';
 
 export default function LanguageSelector() {
   const t = useTranslations();
@@ -19,7 +19,7 @@ export default function LanguageSelector() {
     <Select
       value={router.locale}
       onChange={(event, newValue) => {
-        router.push('/', '/', { locale: newValue || defaultLocale });
+        router.push('/', '/', { locale: newValue || config.defaultLocale });
       }}
       slotProps={{
         listbox: {
@@ -34,7 +34,7 @@ export default function LanguageSelector() {
       startDecorator={<Flag locale={router.locale!} />}
     >
       <ScrollBox dependency={listboxOpen}>
-        {Object.keys(locales).map((locale, index) => (
+        {Object.keys(config.locales).map((locale, index) => (
           <Option key={index} value={locale}>
             <Flag locale={locale} /> {t(`languages.${locale}`)}
           </Option>

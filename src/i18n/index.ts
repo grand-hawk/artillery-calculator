@@ -1,6 +1,5 @@
 // https://next-intl-docs.vercel.app/docs
 
-import config from './config.json';
 import common from '@/i18n/common';
 import deDE from '@/i18n/locales/de-DE.json';
 import enUS from '@/i18n/locales/en-US.json';
@@ -9,8 +8,6 @@ import nlNL from '@/i18n/locales/nl-NL.json';
 import plPL from '@/i18n/locales/pl-PL.json';
 import ruRU from '@/i18n/locales/ru-RU.json';
 import ukUA from '@/i18n/locales/uk-UA.json';
-
-export const { defaultLocale } = config;
 
 // TODO: Re-add polish to config.json
 
