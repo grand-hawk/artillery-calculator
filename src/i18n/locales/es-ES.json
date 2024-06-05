@@ -1,11 +1,11 @@
 {
   "typography": {
     "azimuth": "Azimut",
-    "blastRange": "Este proyectil tiene datos del rango de explosión",
+    "blastRange": "Este proyectil tiene datos sobre su rango de explosión",
     "distance": "Distancia",
-    "elevation": "Comunicaciones",
+    "elevation": "Elevación",
     "gun": "cañón",
-    "instructions": "Clic izquierdo para establecer la posición de arma. Clic derecho para establecer la posición objetivo. Mantén pulsado el botón central para mover el mapa y desplaza la rueda hasta el zoom.",
+    "instructions": "Click izquierdo para establecer la posición del arma. Click derecho para establecer la posición del objetivo. Mantén pulsado el botón central para mover el mapa y desplaza la rueda para el zoom.",
     "map": "Mapa",
     "metersPerSecond": "{value} m/s",
     "newVersion": "Una nueva versión ha sido publicada, actualiza la página para aplicarla.",
@@ -13,8 +13,8 @@
     "or": "o",
     "projectile": "Proyectil",
     "switchSelectionTo": "Cambiar selección a {value}",
-    "target": "target",
-    "timeOfFlight": "Hora de vuelo"
+    "target": "objetivo",
+    "timeOfFlight": "Tiempo de vuelo"
   },
   "units": {
     "meter": "{value, plural, =1 {{value} metro} other {{value} metros}}",
