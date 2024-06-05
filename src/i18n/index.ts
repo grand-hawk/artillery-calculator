@@ -12,6 +12,8 @@ import ukUA from '@/i18n/locales/uk-UA.json';
 
 export const { defaultLocale } = config;
 
+// TODO: Re-add polish to config.json
+
 const locales: Record<string, typeof enUS> = {
   'de-DE': deDE,
   'en-US': enUS,
