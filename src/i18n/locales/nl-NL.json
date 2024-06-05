@@ -5,7 +5,7 @@
     "distance": "Afstand",
     "elevation": "Elevatie",
     "gun": "geweer",
-    "instructions": "Linker muis knop om de positie van het geweer in te stellen. Rechter muis knop om de positie van het doelwit in te stellen.",
+    "instructions": "Linkermuisknop om de positie van het geweer in te stellen. Rechtermuisknop om de positie van het doelwit in te stellen.",
     "map": "Kaart",
     "metersPerSecond": "{value} m/s",
     "newVersion": "Er is een nieuwe versie gepubliceerd. Vernieuw de pagina om deze toe te passen.",
