@@ -10,8 +10,6 @@ import plPL from '@/i18n/locales/pl-PL.json';
 import ruRU from '@/i18n/locales/ru-RU.json';
 import ukUA from '@/i18n/locales/uk-UA.json';
 
-// TODO: Re-add polish to config.json
-
 const locales: Record<string, typeof enUS> = {
   'de-DE': deDE,
   'en-US': enUS,
