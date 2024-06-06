@@ -1,0 +1,23 @@
+{
+  "typography": {
+    "azimuth": "Gốc xoay",
+    "blastRange": "Đầu đạn này có khoảng cách sát thương",
+    "distance": "Khoảng cách",
+    "elevation": "Gốc nâng",
+    "gun": "pháo",
+    "instructions": "Chuột trái để xác định vị trí pháo của bạn. Chuột trái để xác định mục tiêu của bạn. Dùng chuột giữa để di chuyển quanh bản đổ và lăng chuột giữa để phóng to hoặc thu nhỏ bản đồ.",
+    "map": "Bản Đồ",
+    "metersPerSecond": "{value} m/s",
+    "newVersion": "Phiên bản mới đã được phát hành, tải lại trang để sử dụng phiên bản mới.",
+    "notApplicable": "Không có sẵn",
+    "or": "hoặc",
+    "projectile": "Đầu đạn",
+    "switchSelectionTo": "Đổi lựa chọn sang {value}",
+    "target": "mục tiêu",
+    "timeOfFlight": "Thời gian bay"
+  },
+  "units": {
+    "meter": "{value, plural, =1 {{value} mét} other {{value} mét}}",
+    "second": "{value, plural, =1 {{value} giây} other {{value} giây}}"
+  }
+}
