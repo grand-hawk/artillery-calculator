@@ -9,6 +9,7 @@ import nlNL from '@/i18n/locales/nl-NL.json';
 import plPL from '@/i18n/locales/pl-PL.json';
 import ruRU from '@/i18n/locales/ru-RU.json';
 import ukUA from '@/i18n/locales/uk-UA.json';
+import viVN from '@/i18n/locales/vi-VN.json';
 
 const locales: Record<string, typeof enUS> = {
   'de-DE': deDE,
@@ -18,6 +19,7 @@ const locales: Record<string, typeof enUS> = {
   'pl-PL': plPL,
   'ru-RU': ruRU,
   'uk-UA': ukUA,
+  'vi-VN': viVN,
 };
 
 // add the data in common to all locales
