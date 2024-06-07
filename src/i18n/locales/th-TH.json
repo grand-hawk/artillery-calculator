@@ -1,23 +1,23 @@
 {
   "typography": {
-    "azimuth": "Azimuth",
-    "blastRange": "This projectile has blast range data",
-    "distance": "Distance",
-    "elevation": "Elevation",
-    "gun": "gun",
-    "instructions": "Left click to set the gun position. Right click to set the target position. Hold middle click to move the map around, and scroll wheel to zoom.",
-    "map": "Map",
-    "metersPerSecond": "{value} m/s",
-    "newVersion": "A new version has been published, refresh the page to apply it.",
-    "notApplicable": "N/A",
-    "or": "or",
-    "projectile": "Projectile",
-    "switchSelectionTo": "Switch selection to {value}",
-    "target": "target",
-    "timeOfFlight": "Time of flight"
+    "azimuth": "มุมทิศ",
+    "blastRange": "กระสุนปืนนี้มีข้อมูลระยะการระเบิด",
+    "distance": "ระยะ",
+    "elevation": "มุมเงย",
+    "gun": "ปืน",
+    "instructions": "คลิกซ้ายเพื่อกำหนดตำแหน่งปืน คลิกขวาเพื่อกำหนดตำแหน่งเป้าหมาย คลิกกลางค้างไว้เพื่อเลื่อนแผนที่ และล้อเลื่อนเพื่อซูม",
+    "map": "เเผนที่",
+    "metersPerSecond": "{value} เมตร/วินาที",
+    "newVersion": "มีการเผยแพร่เวอร์ชันใหม่แล้ว โปรดรีเฟรชหน้าเพื่อนำไปใช้",
+    "notApplicable": "ไม่มีข้อมูล",
+    "or": "หรือ",
+    "projectile": "กระสุน",
+    "switchSelectionTo": "สลับการเลือกไปที่ {value}",
+    "target": "เป้าหมาย",
+    "timeOfFlight": "เวลาบิน"
   },
   "units": {
-    "meter": "{value, plural, =1 {{value} meter} other {{value} meters}}",
-    "second": "{value, plural, =1 {{value} second} other {{value} seconds}}"
+    "meter": "{value, plural, =1 {{value} เมตร} other {{value} เมตร}}",
+    "second": "{value, plural, =1 {{value} วินาที} other {{value} วินาที}}"
   }
 }
