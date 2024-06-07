@@ -4,6 +4,7 @@ import { useMediaQuery } from 'usehooks-ts';
 
 import Page from '@/components/layout/Page';
 import { theme } from '@/components/utils/Theme';
+import Umami from '@/components/utils/Umami';
 import { maps } from '@/config/maps';
 import { guns } from '@/config/projectiles';
 import useIsMobile from '@/hooks/useIsMobile';
@@ -124,6 +125,8 @@ export default function Index({
           />
         )}
       </Page>
+
+      <Umami />
     </>
   );
 }
