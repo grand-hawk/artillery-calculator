@@ -8,6 +8,7 @@ import esES from '@/i18n/locales/es-ES.json';
 import nlNL from '@/i18n/locales/nl-NL.json';
 import plPL from '@/i18n/locales/pl-PL.json';
 import ruRU from '@/i18n/locales/ru-RU.json';
+import thTH from '@/i18n/locales/th-TH.json';
 import ukUA from '@/i18n/locales/uk-UA.json';
 import viVN from '@/i18n/locales/vi-VN.json';
 
@@ -18,6 +19,7 @@ const locales: Record<string, typeof enUS> = {
   'nl-NL': nlNL,
   'pl-PL': plPL,
   'ru-RU': ruRU,
+  'th-TH': thTH,
   'uk-UA': ukUA,
   'vi-VN': viVN,
 };
