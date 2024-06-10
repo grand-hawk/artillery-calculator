@@ -5,6 +5,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
+import clone from 'clone';
 import isImage from 'is-image';
 import klaw from 'klaw';
 import sharp from 'sharp';
@@ -30,9 +31,17 @@ for await (const file of klaw(imageDir, {
   // expect no periods in filename besides ext seperator
   const fileName = path.basename(file.path).split('.')[0];
 
-  sharp(file.path)
+  const webp = sharp(file.path).webp({ quality: 100 });
+  const { width, height } = await webp.metadata();
+
+  const target = Math.max(width, height);
+  webp.resize(target, target, {
+    fit: sharp.fit.contain,
+    background: { r: 0, g: 0, b: 0, alpha: 0 },
+  });
+
+  clone(webp)
     .resize(64)
-    .webp()
     .toBuffer()
     .then((imageBuffer) =>
       fs.writeFileSync(
@@ -46,10 +55,7 @@ for await (const file of klaw(imageDir, {
       );
     });
 
-  sharp(file.path)
-    .webp({
-      quality: 100,
-    })
+  webp
     .toBuffer()
     .then((imageBuffer) =>
       fs.writeFileSync(path.join(webpDir, `${fileName}.webp`), imageBuffer),

@@ -106,3 +106,11 @@ export const maps: Map[] = [
     size: calculateMapSize(401),
   },
 ];
+
+// Add a debug map if dev mode
+if (process.env.NODE_ENV === 'development')
+  maps.push({
+    image: 'debug',
+    name: 'Debug',
+    size: calculateMapSize(250),
+  });
