@@ -100,7 +100,7 @@ export const maps: Map[] = [
   {
     image: 'testing',
     name: 'TESTING',
-    size: calculateMapSize(401),
+    size: 1113 * 9,
   },
 ];
 
