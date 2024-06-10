@@ -29,7 +29,7 @@ function Canvas({
   isMobile: boolean;
   mobileMode: MobileModeMutable;
 }) {
-  const ref = React.useRef<HTMLCanvasElement | null>(null);
+  const ref = React.useRef<HTMLCanvasElement>(null);
   const isPanning = React.useRef<boolean>(false);
   const [isUnoptimized, setIsUnoptimized] = React.useState<boolean>(false);
 
