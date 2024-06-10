@@ -47,9 +47,6 @@ export const maps: Map[] = [
     name: 'Villers-Sommeil',
     size: 333 * 9,
   },
-  /*
-    The maps below used meters at the time, the calculateMapSize converts this correctly
-  */
   {
     image: 'cloudy_valley',
     name: 'Cloudy Valley',
