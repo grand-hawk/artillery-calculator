@@ -14,6 +14,7 @@ import Motd from '@/components/organisms/Motd';
 import VersionAlert from '@/components/organisms/VersionAlert';
 import Canvas from '@/components/templates/Canvas';
 import Footer from '@/components/templates/Footer';
+import useAdBlockTrack from '@/hooks/useAdBlockTrack';
 import { useCanvasStore } from '@/stores/canvas';
 
 import type { ViewProps } from '@/pages';
@@ -27,6 +28,8 @@ export default function DesktopView({
   projectile,
   version,
 }: ViewProps) {
+  useAdBlockTrack();
+
   const t = useTranslations();
 
   return (
