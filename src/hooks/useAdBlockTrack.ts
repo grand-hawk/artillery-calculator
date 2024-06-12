@@ -55,7 +55,5 @@ export default function useAdBlockTrack(): boolean {
       clientHasAdBlock();
   }, [localStorage, setLocalStorage]);
 
-  console.log(localStorage);
-
   return localStorage.value;
 }
