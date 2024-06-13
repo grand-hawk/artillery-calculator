@@ -14,10 +14,6 @@ Dev branch site: [dev.artillery-calculator.com](https://dev.artillery-calculator
 
 ![stats](https://umami-views.astrid.exposed/svg?shareURL=https://umami.astrid.exposed/share/Ps68DOSbQBecNH0l/artillery-calculator.com&theme=light)
 
-## Data collection
-
-From the 12th of June, 2024. The website now tracks if you have an adblocker installed every 24 hours. If the client does, it will send an event to Umami if applicable. All data is anonymized by Umami, and no personal information is ever collected. This was done for research for possible ad placement.
-
 ## Contributing
 
 Translate this project on [Crowdin](https://crowdin.com/project/mtc-artillery).
