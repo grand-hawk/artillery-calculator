@@ -10,14 +10,14 @@
     "metersPerSecond": "{value} м/с",
     "newVersion": "Нову версію було опубліковано, оновіть сторінку, щоб застосувати її.",
     "notApplicable": "н/д",
-    "or": "Или",
+    "or": "Або",
     "projectile": "Снаряд",
     "switchSelectionTo": "Перемикання вибору на {value}",
     "target": "мета",
     "timeOfFlight": "Час польоту"
   },
   "units": {
-    "meter": "{value, plural, =1 {{value} метр} other {{value} метри}}",
+    "meter": "{value, plural, =1 {{value} метр} other {{value} метрів}}",
     "second": "{value, plural, =1 {{value} секунда} other {{value} секунди}}"
   }
 }
