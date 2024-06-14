@@ -2,29 +2,43 @@ import Box from '@mui/joy/Box';
 import React from 'react';
 import { useIsClient } from 'usehooks-ts';
 
+import PreviewWarning from '@/components/organisms/PreviewWarning';
 import Theme from '@/components/utils/Theme';
 
 import type { PropsWithChildren } from 'react';
 
 export default function Page({ children }: PropsWithChildren) {
   const isClient = useIsClient();
+  // const isPreview = process.env.NEXT_PUBLIC_VERCEL_ENV === 'preview';
+  const isPreview = true;
 
   return (
     <Theme>
-      <Box
-        sx={{
-          padding: 4,
+      {/* only render page if client, site breaks otherwise */}
+      {isClient && (
+        <Box
+          sx={{
+            minHeight: '100svh',
+            maxWidth: '100svw',
 
-          minHeight: '100svh',
-          width: '100%',
+            display: 'grid',
+            gridTemplateRows: 'min-content 1fr',
+          }}
+        >
+          <Box>{isPreview && <PreviewWarning />}</Box>
 
-          // setting to grid somehow makes the child 100% height and height: 100% doesnt lol
-          display: 'grid',
-        }}
-      >
-        {/* only render page if client, site breaks otherwise */}
-        {isClient && children}
-      </Box>
+          <Box
+            sx={{
+              padding: 4,
+
+              // setting to grid somehow makes the child 100% height and height: 100% doesnt lol
+              display: 'grid',
+            }}
+          >
+            {children}
+          </Box>
+        </Box>
+      )}
     </Theme>
   );
 }
