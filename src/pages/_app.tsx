@@ -10,16 +10,14 @@ function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
 
   return (
-    <React.StrictMode>
-      <HeightmapProvider>
-        <NextIntlClientProvider
-          locale={router.locale}
-          messages={pageProps.messages}
-        >
-          <Component {...pageProps} />
-        </NextIntlClientProvider>
-      </HeightmapProvider>
-    </React.StrictMode>
+    <HeightmapProvider>
+      <NextIntlClientProvider
+        locale={router.locale}
+        messages={pageProps.messages}
+      >
+        <Component {...pageProps} />
+      </NextIntlClientProvider>
+    </HeightmapProvider>
   );
 }
 
