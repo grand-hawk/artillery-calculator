@@ -7,6 +7,7 @@ import { theme } from '@/components/utils/Theme';
 import Umami from '@/components/utils/Umami';
 import { maps } from '@/config/maps';
 import { guns } from '@/config/projectiles';
+import useHeightmapContext from '@/hooks/useHeightmapContext';
 import useIsMobile from '@/hooks/useIsMobile';
 import locales from '@/i18n';
 import getMotd from '@/lib/server/getMotd';
@@ -14,8 +15,8 @@ import { useDataStore } from '@/stores/data';
 import {
   calculateAzimuth,
   calculateDistance,
-  calculateElevation,
-  metersToStuds,
+  calculateHighElevation,
+  calculateLowElevation,
   studsToMeters,
 } from '@/utils/math';
 import getVersion from '@/utils/version';
@@ -36,7 +37,7 @@ import type {
 export interface ViewProps {
   mobileMode: MobileModeMutable;
   motd: string | null;
-  elevation: number;
+  elevation: [number, number];
   projectile: Projectile;
   azimuth: number;
   distance: number;
@@ -75,6 +76,32 @@ export default function Index({
 
   const [gun, target] = useDataStore((s) => [s.getGun(), s.getTarget()]);
 
+  let gunHeight = 0;
+  let targetHeight = 0;
+
+  const heightmapContext = useHeightmapContext();
+  if (heightmapContext && map.heightmap) {
+    gunHeight =
+      (heightmapContext.getImageData(
+        gun.x * map.heightmap.width,
+        gun.y * map.heightmap.height,
+        1,
+        1,
+      ).data[0] /
+        255) *
+      map.heightmap[255];
+
+    targetHeight =
+      (heightmapContext.getImageData(
+        target.x * map.heightmap.width,
+        target.y * map.heightmap.height,
+        1,
+        1,
+      ).data[0] /
+        255) *
+      map.heightmap[255];
+  }
+
   const projectileData = useDataStore((s) => s.projectile);
   const projectile =
     guns[projectileData.gunKey].projectiles[projectileData.index];
@@ -82,9 +109,15 @@ export default function Index({
   const distance = studsToMeters(
     calculateDistance(gun.x, gun.y, target.x, target.y) * map.size,
   );
-  const elevation = calculateElevation(
-    metersToStuds(distance),
+  const lowElevation = calculateLowElevation(
+    distance,
     projectile.velocity,
+    studsToMeters(targetHeight) - studsToMeters(gunHeight),
+  );
+  const highElevation = calculateHighElevation(
+    distance,
+    projectile.velocity,
+    studsToMeters(targetHeight) - studsToMeters(gunHeight),
   );
   const azimuth = calculateAzimuth(gun.x, gun.y, target.x, target.y);
 
@@ -107,7 +140,7 @@ export default function Index({
           <MobileView
             mobileMode={mobileMode}
             motd={motd}
-            elevation={elevation}
+            elevation={[lowElevation, highElevation]}
             azimuth={azimuth}
             distance={distance}
             projectile={projectile}
@@ -117,7 +150,7 @@ export default function Index({
           <DesktopView
             mobileMode={mobileMode}
             motd={motd}
-            elevation={elevation}
+            elevation={[lowElevation, highElevation]}
             azimuth={azimuth}
             distance={distance}
             projectile={projectile}

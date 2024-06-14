@@ -7,29 +7,30 @@ import React from 'react';
 import DataContainer from '@/components/atoms/configuration/DataContainer';
 
 export default function ElevationValue({
-  elevation: lowArcElevation,
+  elevation: [lowArc, highArc],
 }: {
-  elevation: number;
+  elevation: [number, number];
 }) {
   const t = useTranslations();
-
-  // Yeah it's just that...
-  const highArcElevation = 90 - lowArcElevation;
 
   return (
     <DataContainer>
       <Typography level="title-md">{t('typography.elevation')}</Typography>
 
       <Stack direction="row" spacing={1} alignItems="center">
-        {lowArcElevation ? (
+        {lowArc ? (
           <>
-            <Typography>{todec(lowArcElevation)}°</Typography>
+            <Typography>{todec(lowArc)}°</Typography>
 
-            <Typography component="b" level="body-sm">
-              {t('typography.or')}
-            </Typography>
+            {highArc && (
+              <>
+                <Typography component="b" level="body-sm">
+                  {t('typography.or')}
+                </Typography>
 
-            <Typography>{todec(highArcElevation)}°</Typography>
+                <Typography>{todec(highArc)}°</Typography>
+              </>
+            )}
           </>
         ) : (
           <Typography>{t('typography.notApplicable')}</Typography>

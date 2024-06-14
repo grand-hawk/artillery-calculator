@@ -8,35 +8,38 @@ import DataContainer from '@/components/atoms/configuration/DataContainer';
 import { calculateTimeOfFlight } from '@/utils/math';
 
 export default function TimeOfFlightValue({
-  elevation: lowArcElevation,
+  elevation: [lowArc, highArc],
   velocity,
 }: {
-  elevation: number;
+  elevation: [number, number];
   velocity: number;
 }) {
   const t = useTranslations();
-
-  const highArcElevation = 90 - lowArcElevation;
-  const highArcTOF = calculateTimeOfFlight(highArcElevation, velocity);
 
   return (
     <DataContainer>
       <Typography level="title-md">{t('typography.timeOfFlight')}</Typography>
 
       <Stack direction="row" spacing={1} alignItems="center">
-        {lowArcElevation ? (
+        {lowArc ? (
           <>
             <Typography>
-              {todec(calculateTimeOfFlight(lowArcElevation, velocity))}
+              {todec(calculateTimeOfFlight(lowArc, velocity))}
             </Typography>
 
-            <Typography component="b" level="body-sm">
-              {t('typography.or')}
-            </Typography>
+            {highArc && (
+              <>
+                <Typography component="b" level="body-sm">
+                  {t('typography.or')}
+                </Typography>
 
-            <Typography>
-              {t(`units.second`, { value: todec(highArcTOF) })}
-            </Typography>
+                <Typography>
+                  {t(`units.second`, {
+                    value: todec(calculateTimeOfFlight(highArc, velocity)),
+                  })}
+                </Typography>
+              </>
+            )}
           </>
         ) : (
           <Typography>{t('typography.notApplicable')}</Typography>

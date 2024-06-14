@@ -24,17 +24,41 @@ export function metersToStuds(m: number): number {
 }
 
 /**
- * @param d Distance in studs
+ * @param d Distance in meters
  * @param v Initial velocity (m/s)
+ * @param h Initial height in meters (default: 0)
  * @returns Elevation in degrees
  */
-export function calculateElevation(d: number, v: number): number {
-  const angle = Math.asin((studsToMeters(d) * G) / v ** 2) / 2;
-  return (angle * 180) / Math.PI;
+export function calculateLowElevation(
+  d: number,
+  v: number,
+  h: number = 0,
+): number {
+  const radians = Math.atan(
+    (v ** 2 - Math.sqrt(v ** 4 - G * (G * d ** 2 + 2 * h * v ** 2))) / (G * d),
+  );
+  return radians * (180 / Math.PI);
 }
 
 /**
- *
+ * @param d Distance in meters
+ * @param v Initial velocity (m/s)
+ * @param h Initial height in meters (default: 0)
+ * @returns Elevation in degrees
+ */
+export function calculateHighElevation(
+  d: number,
+  v: number,
+  h: number = 0,
+): number {
+  const radians = Math.atan(
+    (v ** 2 + Math.sqrt(v ** 4 - 2 * G * (G * d ** 2 + 2 * h * v ** 2))) /
+      (G * d),
+  );
+  return radians * (180 / Math.PI);
+}
+
+/**
  * @param e Elevation in degrees
  * @param v Velocity in m/s
  * @returns Time of flight in seconds

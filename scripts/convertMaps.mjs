@@ -12,8 +12,8 @@ import sharp from 'sharp';
 
 const cwd = process.cwd();
 
-const publicDir = path.resolve(cwd, 'public');
-const imageDir = path.join(publicDir, 'images');
+const imageDir = path.join(path.resolve(cwd, 'public'), 'images');
+const heightmapDir = path.join(imageDir, 'heightmaps');
 const webpDir = path.join(imageDir, 'webp');
 
 if (fs.existsSync(webpDir))
@@ -22,11 +22,17 @@ if (fs.existsSync(webpDir))
   });
 fs.mkdirSync(webpDir);
 
-for await (const file of klaw(imageDir, {
-  // stay in the images folder and dont go into the webp folder once it is created
-  depthLimit: 0,
-})) {
+for await (const file of klaw(imageDir)) {
+  if (file.path.includes(webpDir)) continue;
+  if (file.path.includes(heightmapDir)) continue;
   if (!isImage(file.path)) continue;
+
+  const relativeName = file.path.split(imageDir)[1].trim(1);
+  const targetDir = path.join(
+    webpDir,
+    relativeName.split(path.sep).slice(0, -1).join(path.sep),
+  );
+  if (!fs.existsSync(targetDir)) fs.mkdirSync(targetDir, { recursive: true });
 
   // expect no periods in filename besides ext seperator
   const fileName = path.basename(file.path).split('.')[0];
@@ -37,28 +43,29 @@ for await (const file of klaw(imageDir, {
   const target = Math.max(width, height);
   webp.resize(target, target, {
     fit: sharp.fit.contain,
-    background: { r: 0, g: 0, b: 0, alpha: 0 },
   });
 
-  clone(webp)
-    .resize(64)
-    .toBuffer()
-    .then((imageBuffer) =>
-      fs.writeFileSync(
-        path.join(webpDir, `${fileName}_small.webp`),
-        imageBuffer,
-      ),
-    )
-    .catch((error) => {
-      throw new Error(
-        `Failed to generate 64px image for ${fileName}\n${error}`,
-      );
-    });
+  if (targetDir === webpDir) {
+    clone(webp)
+      .resize(64)
+      .toBuffer()
+      .then((imageBuffer) =>
+        fs.writeFileSync(
+          path.join(webpDir, `${fileName}_small.webp`),
+          imageBuffer,
+        ),
+      )
+      .catch((error) => {
+        throw new Error(
+          `Failed to generate 64px image for ${fileName}\n${error}`,
+        );
+      });
+  }
 
   webp
     .toBuffer()
     .then((imageBuffer) =>
-      fs.writeFileSync(path.join(webpDir, `${fileName}.webp`), imageBuffer),
+      fs.writeFileSync(path.join(targetDir, `${fileName}.webp`), imageBuffer),
     )
     .catch((error) => {
       throw new Error(

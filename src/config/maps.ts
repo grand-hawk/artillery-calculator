@@ -1,9 +1,17 @@
 import { calculateMapSize } from '@/utils/math';
 
+export interface Heightmap {
+  0: number;
+  255: number;
+  width: number;
+  height: number;
+}
+
 export interface Map {
   image: string;
   name: string;
   size: number;
+  heightmap?: Heightmap;
 }
 
 export const maps: Map[] = [
@@ -76,6 +84,12 @@ export const maps: Map[] = [
     image: 'muddy_fields',
     name: 'Muddy Fields',
     size: 667 * 9,
+    heightmap: {
+      0: 0,
+      255: 43.9580078125,
+      width: 6003,
+      height: 6003,
+    },
   },
   {
     image: 'japan',
@@ -91,6 +105,12 @@ export const maps: Map[] = [
     image: 'dustbowl_ii',
     name: 'Dustbowl II',
     size: calculateMapSize(250),
+    heightmap: {
+      0: 0,
+      255: 505.8818359375,
+      width: 6250,
+      height: 6250,
+    },
   },
   {
     image: 'sandy_place',
@@ -102,4 +122,4 @@ export const maps: Map[] = [
     name: 'TESTING',
     size: 1113 * 9,
   },
-];
+] as const;
