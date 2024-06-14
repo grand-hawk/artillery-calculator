@@ -106,18 +106,30 @@ export default function Index({
   const projectile =
     guns[projectileData.gunKey].projectiles[projectileData.index];
 
+  const heightDifference =
+    studsToMeters(targetHeight) - studsToMeters(gunHeight);
   const distance = studsToMeters(
     calculateDistance(gun.x, gun.y, target.x, target.y) * map.size,
+  );
+  const distanceWithHeight = studsToMeters(
+    calculateDistance(
+      gun.x,
+      gun.y,
+      target.x,
+      target.y,
+      gunHeight,
+      targetHeight,
+    ) * map.size,
   );
   const lowElevation = calculateLowElevation(
     distance,
     projectile.velocity,
-    studsToMeters(targetHeight) - studsToMeters(gunHeight),
+    heightDifference,
   );
   const highElevation = calculateHighElevation(
     distance,
     projectile.velocity,
-    studsToMeters(targetHeight) - studsToMeters(gunHeight),
+    heightDifference,
   );
   const azimuth = calculateAzimuth(gun.x, gun.y, target.x, target.y);
 
@@ -142,7 +154,7 @@ export default function Index({
             motd={motd}
             elevation={[lowElevation, highElevation]}
             azimuth={azimuth}
-            distance={distance}
+            distance={distanceWithHeight}
             projectile={projectile}
             version={version}
           />
@@ -152,7 +164,7 @@ export default function Index({
             motd={motd}
             elevation={[lowElevation, highElevation]}
             azimuth={azimuth}
-            distance={distance}
+            distance={distanceWithHeight}
             projectile={projectile}
             version={version}
           />
