@@ -22,7 +22,7 @@ export default function ElevationValue({
           <>
             <Typography>{todec(lowArc)}°</Typography>
 
-            {highArc && (
+            {!!highArc && (
               <>
                 <Typography component="b" level="body-sm">
                   {t('typography.or')}

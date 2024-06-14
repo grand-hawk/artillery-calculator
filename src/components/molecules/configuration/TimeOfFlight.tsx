@@ -27,7 +27,7 @@ export default function TimeOfFlightValue({
               {todec(calculateTimeOfFlight(lowArc, velocity))}
             </Typography>
 
-            {highArc && (
+            {!!highArc && (
               <>
                 <Typography component="b" level="body-sm">
                   {t('typography.or')}
