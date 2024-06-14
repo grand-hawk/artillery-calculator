@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { heightmapCanvasId } from '@/components/utils/HeightmapProvider';
+import { heightmapCanvasId } from '@/components/providers/HeightmapProvider';
 
 export default function useHeightmapContext() {
   const [context, setContext] = React.useState<CanvasRenderingContext2D | null>(
