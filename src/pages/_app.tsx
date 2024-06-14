@@ -2,7 +2,7 @@ import { useRouter } from 'next/router';
 import { NextIntlClientProvider } from 'next-intl';
 import React from 'react';
 
-import HeightmapProvider from '@/components/utils/HeightmapProvider';
+import HeightmapProvider from '@/components/providers/HeightmapProvider';
 
 import type { AppProps } from 'next/app';
 
