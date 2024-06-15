@@ -89,13 +89,13 @@ export default function Index({
   );
   const distanceWithHeight = studsToMeters(
     calculateDistance(
-      gun.x,
-      gun.y,
-      target.x,
-      target.y,
+      gun.x * map.size,
+      gun.y * map.size,
+      target.x * map.size,
+      target.y * map.size,
       gunHeight,
       targetHeight,
-    ) * map.size,
+    ),
   );
   const lowElevation = calculateLowElevation(
     distance,

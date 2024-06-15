@@ -104,7 +104,10 @@ export function calculateDistance(
   z1: number = 0,
   z2: number = 0,
 ): number {
-  return Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2 + (z2 - z1) ** 2);
+  const dx = x2 - x1;
+  const dy = y2 - y1;
+  const dz = z2 - z1;
+  return Math.sqrt(dx * dx + dy * dy + dz * dz);
 }
 
 /**
