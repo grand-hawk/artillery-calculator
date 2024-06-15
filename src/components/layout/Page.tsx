@@ -9,8 +9,7 @@ import type { PropsWithChildren } from 'react';
 
 export default function Page({ children }: PropsWithChildren) {
   const isClient = useIsClient();
-  // const isPreview = process.env.NEXT_PUBLIC_VERCEL_ENV === 'preview';
-  const isPreview = true;
+  const isPreview = process.env.NEXT_PUBLIC_VERCEL_ENV === 'preview';
 
   return (
     <Theme>
