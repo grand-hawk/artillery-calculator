@@ -15,6 +15,7 @@ const cwd = process.cwd();
 const imageDir = path.join(path.resolve(cwd, 'public'), 'images');
 const heightmapDir = path.join(imageDir, 'heightmaps');
 const webpDir = path.join(imageDir, 'webp');
+const mapsDir = path.join(webpDir, 'maps');
 
 if (fs.existsSync(webpDir))
   fs.rmSync(webpDir, {
@@ -45,13 +46,13 @@ for await (const file of klaw(imageDir)) {
     fit: sharp.fit.contain,
   });
 
-  if (targetDir === webpDir) {
+  if (targetDir === mapsDir)
     clone(webp)
       .resize(64)
       .toBuffer()
       .then((imageBuffer) =>
         fs.writeFileSync(
-          path.join(webpDir, `${fileName}_small.webp`),
+          path.join(mapsDir, `${fileName}_small.webp`),
           imageBuffer,
         ),
       )
@@ -60,7 +61,6 @@ for await (const file of klaw(imageDir)) {
           `Failed to generate 64px image for ${fileName}\n${error}`,
         );
       });
-  }
 
   webp
     .toBuffer()

@@ -199,7 +199,7 @@ function Canvas({
           <TransformComponent>
             <Image
               alt={map.name}
-              src={`/images/webp/${map.image}.webp`}
+              src={`/images/webp/maps/${map.image}.webp`}
               width={canvasStore.width}
               height={canvasStore.height}
               unoptimized={isUnoptimized}

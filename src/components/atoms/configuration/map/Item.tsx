@@ -18,7 +18,7 @@ export default function MapItem({ item }: { item: Map }) {
         })}
       >
         <Image
-          src={`/images/webp/${item.image}_small.webp`}
+          src={`/images/webp/maps/${item.image}_small.webp`}
           alt=""
           height={24}
           width={24}
