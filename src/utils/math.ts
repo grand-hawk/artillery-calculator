@@ -52,8 +52,7 @@ export function calculateHighElevation(
   h: number = 0,
 ): number {
   const radians = Math.atan(
-    (v ** 2 + Math.sqrt(v ** 4 - 2 * G * (G * d ** 2 + 2 * h * v ** 2))) /
-      (G * d),
+    (v ** 2 + Math.sqrt(v ** 4 - G * (G * d ** 2 + 2 * h * v ** 2))) / (G * d),
   );
   return radians * (180 / Math.PI);
 }
@@ -137,9 +136,19 @@ export function calculateBlastRange(
 }
 
 /**
+ * @param d Distance in meters
  * @param v Initial velocity (m/s)
- * @returns Max range in meters
+ * @param h Initial height in meters (default: 0)
+ * @returns Elevation in degrees
  */
-export function calculateMaxRange(v: number): number {
-  return v ** 2 / G;
+export function calculateMaxRange(v: number, h: number = 0): number {
+  const a = -0.5 * G;
+  const b = (v * Math.sqrt(2)) / 2;
+
+  const discriminant = b ** 2 - 4 * a * h;
+  const t1 = (-b + Math.sqrt(discriminant)) / (2 * a);
+  const t2 = (-b - Math.sqrt(discriminant)) / (2 * a);
+
+  const t = Math.max(t1, t2);
+  return ((v * Math.sqrt(2)) / 2) * t;
 }

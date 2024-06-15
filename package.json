@@ -39,6 +39,7 @@
     "next-intl": "^3.15.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-draggable": "^4.4.6",
     "react-zoom-pan-pinch": "^3.4.4",
     "sharp": "^0.33.4",
     "strapi-rest": "^0.1.3",

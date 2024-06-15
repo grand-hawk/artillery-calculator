@@ -7,7 +7,7 @@ import { theme } from '@/components/utils/Theme';
 import Umami from '@/components/utils/Umami';
 import { maps } from '@/config/maps';
 import { guns } from '@/config/projectiles';
-import useHeightmapContext from '@/hooks/useHeightmapContext';
+import useHeightmapZ from '@/hooks/useHeightmapZ';
 import useIsMobile from '@/hooks/useIsMobile';
 import locales from '@/i18n';
 import getMotd from '@/lib/server/getMotd';
@@ -76,31 +76,7 @@ export default function Index({
 
   const [gun, target] = useDataStore((s) => [s.getGun(), s.getTarget()]);
 
-  let gunHeight = 0;
-  let targetHeight = 0;
-
-  const heightmapContext = useHeightmapContext();
-  if (heightmapContext && map.heightmap) {
-    gunHeight =
-      (heightmapContext.getImageData(
-        gun.x * map.heightmap.width,
-        gun.y * map.heightmap.height,
-        1,
-        1,
-      ).data[0] /
-        255) *
-      map.heightmap[255];
-
-    targetHeight =
-      (heightmapContext.getImageData(
-        target.x * map.heightmap.width,
-        target.y * map.heightmap.height,
-        1,
-        1,
-      ).data[0] /
-        255) *
-      map.heightmap[255];
-  }
+  const [gunHeight, targetHeight] = useHeightmapZ();
 
   const projectileData = useDataStore((s) => s.projectile);
   const projectile =

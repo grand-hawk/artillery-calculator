@@ -7,12 +7,14 @@ import AbsoluteContainer from '@/components/atoms/canvas/AbsoluteContainer';
 import CanvasContainer from '@/components/molecules/CanvasContainer';
 import { maps } from '@/config/maps';
 import { guns } from '@/config/projectiles';
+import useHeightmapZ from '@/hooks/useHeightmapZ';
 import { useCanvasStore } from '@/stores/canvas';
 import { useDataStore } from '@/stores/data';
 import {
   calculateBlastRange,
   calculateMaxRange,
   metersToStuds,
+  studsToMeters,
 } from '@/utils/math';
 
 import type { MobileModeMutable } from '@/components/molecules/configuration/MobileMode';
@@ -57,8 +59,12 @@ function Canvas({
   const blastRadius =
     blastRange && (blastRange / map.size / 2) * scaledDimension;
 
+  const [gunHeight] = useHeightmapZ();
   const maxRadius =
-    (metersToStuds(calculateMaxRange(projectile.velocity)) / map.size) *
+    (metersToStuds(
+      calculateMaxRange(projectile.velocity, studsToMeters(gunHeight)),
+    ) /
+      map.size) *
     scaledDimension;
 
   React.useEffect(() => {
