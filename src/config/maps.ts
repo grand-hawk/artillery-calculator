@@ -49,6 +49,12 @@ export const maps: Map[] = [
     image: 'sokolokva',
     name: 'Sokolokva',
     size: 556 * 9,
+    heightmap: {
+      0: 0,
+      255: 96.25390625,
+      width: 5004,
+      height: 5004,
+    },
   },
   {
     image: 'villers_sommeil',
