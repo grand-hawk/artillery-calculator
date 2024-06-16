@@ -5,7 +5,7 @@
     "distance": "Distancia",
     "elevation": "Elevación",
     "gun": "cañón",
-    "heightmap": "This map features a heightmap for improved accuracy",
+    "heightmap": "Este mapa presenta un mapa de altura para mejorar la precisión",
     "instructions": "Click izquierdo para establecer la posición del arma. Click derecho para establecer la posición del objetivo. Mantén pulsado el botón central para mover el mapa y desplaza la rueda para el zoom.",
     "map": "Mapa",
     "metersPerSecond": "{value} m/s",
