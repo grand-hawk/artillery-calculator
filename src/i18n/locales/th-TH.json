@@ -5,7 +5,7 @@
     "distance": "ระยะ",
     "elevation": "มุมเงย",
     "gun": "ปืน",
-    "heightmap": "This map features a heightmap for improved accuracy",
+    "heightmap": "แผนที่นี้มีแผนที่ความสูงเพื่อความแม่นยำที่ดีขึ้น",
     "instructions": "คลิกซ้ายเพื่อกำหนดตำแหน่งปืน คลิกขวาเพื่อกำหนดตำแหน่งเป้าหมาย คลิกกลางค้างไว้เพื่อเลื่อนแผนที่ และล้อเลื่อนเพื่อซูม",
     "map": "เเผนที่",
     "metersPerSecond": "{value} เมตร/วินาที",
