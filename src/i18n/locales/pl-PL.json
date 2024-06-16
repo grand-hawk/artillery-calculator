@@ -5,6 +5,7 @@
     "distance": "Odległość",
     "elevation": "Elewacja",
     "gun": "broń",
+    "heightmap": "This map features a heightmap for improved accuracy",
     "instructions": "Kliknij lewym przyciskiem myszy, aby ustawić pozycję działa. Kliknij prawym przyciskiem myszy, aby ustawić pozycję celu. Przytrzymaj środkowy przycisk myszy, aby przesunąć mapę i użyj kółka od myszy, aby zmienić przybliżenie.",
     "map": "Mapa",
     "metersPerSecond": "{value} m/s",
