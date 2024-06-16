@@ -14,6 +14,9 @@ export default function VersionAlert({
   const [updateAvailable, setUpdateAvailable] = React.useState<boolean>(false);
 
   React.useEffect(() => {
+    // dont bother if development mode
+    if (process.env.NODE_ENV === 'development') return;
+
     // when a new version was pushed to production
     // vercel will automatically replace the existing version on the production domain
     // with that in mind, we fetch the /api/version endpoint which always returns

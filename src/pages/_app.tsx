@@ -3,6 +3,8 @@ import { NextIntlClientProvider } from 'next-intl';
 import React from 'react';
 
 import HeightmapProvider from '@/components/providers/HeightmapProvider';
+import locales, { config } from '@/i18n';
+import objectKeySearch from '@/utils/objectKeySearch';
 
 import type { AppProps } from 'next/app';
 
@@ -14,6 +16,19 @@ function App({ Component, pageProps }: AppProps) {
       <NextIntlClientProvider
         locale={router.locale}
         messages={pageProps.messages}
+        getMessageFallback={(info) =>
+          objectKeySearch(
+            locales[config.defaultLocale] as Parameters<
+              typeof objectKeySearch
+            >[0],
+            info.key,
+          ) as string
+        }
+        onError={(error) =>
+          process.env.NODE_ENV === 'development'
+            ? console.warn(error)
+            : console.error(error)
+        }
       >
         <Component {...pageProps} />
       </NextIntlClientProvider>

@@ -13,7 +13,7 @@ import { useDataStore } from '@/stores/data';
 export default function MapSelection() {
   const t = useTranslations();
 
-  const [listboxOpen, setListboxOpen] = React.useState<boolean>(false);
+  const [listboxOpen, setListboxOpen] = React.useState<boolean>(true);
 
   const [mapIndex, setMapIndex] = useDataStore((s) => [
     s.mapIndex,

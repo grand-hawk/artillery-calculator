@@ -12,7 +12,9 @@ import thTH from '@/i18n/locales/th-TH.json';
 import ukUA from '@/i18n/locales/uk-UA.json';
 import viVN from '@/i18n/locales/vi-VN.json';
 
-const locales: Record<string, typeof enUS> = {
+export type LocaleDictionary = string | { [key: string]: LocaleDictionary };
+
+const locales: Record<string, LocaleDictionary> = {
   'de-DE': deDE,
   'en-US': enUS,
   'es-ES': esES,
