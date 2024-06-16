@@ -5,6 +5,7 @@
     "distance": "Afstand",
     "elevation": "Elevatie",
     "gun": "geweer",
+    "heightmap": "This map features a heightmap for improved accuracy",
     "instructions": "Linkermuisknop om de positie van het geweer in te stellen. Rechtermuisknop om de positie van het doelwit in te stellen.",
     "map": "Landkaart",
     "metersPerSecond": "{value} m/s",
