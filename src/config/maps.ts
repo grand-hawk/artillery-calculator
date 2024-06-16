@@ -23,7 +23,7 @@ export const maps: Map[] = [
   {
     image: 'dustbowl',
     name: 'Dustbowl',
-    size: 382 * 9,
+    size: 383 * 9,
   },
   {
     image: 'normandy',
@@ -122,6 +122,12 @@ export const maps: Map[] = [
     image: 'sandy_place',
     name: 'Sandy Place',
     size: calculateMapSize(361),
+    heightmap: {
+      0: 0,
+      255: 119.748046875,
+      width: 9025,
+      height: 9025,
+    },
   },
   {
     image: 'testing',
