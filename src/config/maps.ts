@@ -24,6 +24,12 @@ export const maps: Map[] = [
     image: 'dustbowl',
     name: 'Dustbowl',
     size: 383 * 9,
+    heightmap: {
+      0: 0,
+      255: 360.703125,
+      width: 3454,
+      height: 3454,
+    },
   },
   {
     image: 'normandy',

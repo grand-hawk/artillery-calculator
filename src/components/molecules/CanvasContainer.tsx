@@ -9,7 +9,7 @@ export default function CanvasContainer({
   children,
   float = 'center',
 }: PropsWithChildren<{ float?: 'flex-start' | 'center' | 'flex-end' }>) {
-  const ref = React.useRef<HTMLDivElement>(null);
+  const ref = React.useRef<HTMLDivElement | null>(null);
 
   const canvasStore = useCanvasStore();
 

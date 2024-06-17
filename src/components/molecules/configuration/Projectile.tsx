@@ -20,7 +20,7 @@ import { useDataStore } from '@/stores/data';
 export default function ProjectileSelection() {
   const t = useTranslations();
 
-  const tooltip = React.useRef<HTMLDivElement>(null);
+  const tooltip = React.useRef<HTMLDivElement | null>(null);
   const selectionChanged = React.useRef<number>(0);
 
   const projectileData = useDataStore((s) => s.projectile);
