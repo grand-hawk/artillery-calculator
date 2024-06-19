@@ -22,6 +22,8 @@ import type { ViewProps } from '@/pages';
 export default function DesktopView({ motd, version }: ViewProps) {
   const t = useTranslations();
 
+  const height = useCanvasStore((s) => s.height);
+
   return (
     <Box
       className="desktop"
@@ -53,11 +55,7 @@ export default function DesktopView({ motd, version }: ViewProps) {
         >
           <Canvas />
 
-          <ColumnContainer
-            sx={{
-              maxHeight: useCanvasStore((s) => s.height),
-            }}
-          >
+          <ColumnContainer sx={{ maxHeight: height }}>
             <VersionAlert currentVersion={version} />
             <Motd message={motd || undefined} />
 

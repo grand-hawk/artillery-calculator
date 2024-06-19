@@ -23,7 +23,7 @@ export default function TimeOfFlightValue() {
         {lowArc ? (
           <>
             <Typography>
-              {todec(calculateTimeOfFlight(lowArc, velocity))}
+              {todec(Math.max(0, calculateTimeOfFlight(lowArc, velocity)))}
             </Typography>
 
             {!!highArc && (
