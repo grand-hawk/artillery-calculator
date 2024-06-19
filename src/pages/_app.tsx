@@ -12,7 +12,7 @@ function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
 
   return (
-    <HeightmapProvider>
+    <React.StrictMode>
       <NextIntlClientProvider
         locale={router.locale}
         messages={pageProps.messages}
@@ -30,9 +30,11 @@ function App({ Component, pageProps }: AppProps) {
             : console.error(error)
         }
       >
-        <Component {...pageProps} />
+        <HeightmapProvider>
+          <Component {...pageProps} />
+        </HeightmapProvider>
       </NextIntlClientProvider>
-    </HeightmapProvider>
+    </React.StrictMode>
   );
 }
 

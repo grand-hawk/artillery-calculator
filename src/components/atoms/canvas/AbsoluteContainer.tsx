@@ -8,7 +8,8 @@ export default function AbsoluteContainer({
   children,
   zIndex,
 }: PropsWithChildren<{ zIndex: number }>) {
-  const [width, height] = useCanvasStore((s) => [s.width, s.height]);
+  const width = useCanvasStore((s) => s.width);
+  const height = useCanvasStore((s) => s.height);
 
   return (
     <Box

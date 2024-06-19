@@ -1,7 +1,4 @@
-import Sheet from '@mui/joy/Sheet';
-import Image from 'next/image';
 import React from 'react';
-import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
 
 import AbsoluteContainer from '@/components/atoms/canvas/AbsoluteContainer';
 import CanvasContainer from '@/components/molecules/CanvasContainer';
@@ -29,8 +26,6 @@ function Canvas() {
   const mobileMode = useDataStore((s) => s.mobileMode);
 
   const ref = React.useRef<HTMLCanvasElement | null>(null);
-  const isPanning = React.useRef<boolean>(false);
-  const [isUnoptimized, setIsUnoptimized] = React.useState<boolean>(false);
 
   const projectileData = useDataStore((s) => s.projectile);
   const projectile =
@@ -39,8 +34,10 @@ function Canvas() {
   const mapIndex = useDataStore((s) => s.mapIndex);
   const map = maps[mapIndex];
 
-  const [target, gun] = useDataStore((s) => [s.getTarget(), s.getGun()]);
-  const [setTarget, setGun] = useDataStore((s) => [s.setTarget, s.setGun]);
+  const gun = useDataStore((s) => s.getGun());
+  const setGun = useDataStore((s) => s.setGun);
+  const target = useDataStore((s) => s.getTarget());
+  const setTarget = useDataStore((s) => s.setTarget);
 
   const canvasStore = useCanvasStore();
   const canvasScale = 8;
@@ -118,8 +115,6 @@ function Canvas() {
     function clickListener(event: MouseEvent) {
       event.preventDefault();
 
-      if (isPanning.current) return;
-
       const x = event.offsetX / (canvasStore.width / canvasScale) / canvasScale;
       const y =
         event.offsetY / (canvasStore.height / canvasScale) / canvasScale;
@@ -156,69 +151,18 @@ function Canvas() {
   return (
     <Profiler id="canvas-profiler">
       <CanvasContainer>
-        <Sheet
-          sx={{
-            width: canvasStore.width,
-            height: canvasStore.height,
-          }}
-        >
-          <TransformWrapper
-            onZoom={(wrapper) => {
-              const zoom = wrapper.instance.transformState.scale;
-
-              canvasStore.setZoom(zoom);
-
-              // dont go back to the optimized image once the full image was requested
-              if (zoom > 1.25) setIsUnoptimized(true);
+        <AbsoluteContainer zIndex={2}>
+          <canvas
+            ref={ref}
+            width={scaledDimension}
+            height={scaledDimension}
+            onContextMenu={(event) => event.preventDefault()}
+            style={{
+              width: canvasStore.width,
+              height: canvasStore.height,
             }}
-            onPanningStart={() => {
-              // Don't allow setting gun/target while panning
-              isPanning.current = true;
-            }}
-            onPanningStop={() => {
-              isPanning.current = false;
-            }}
-            panning={{
-              allowLeftClickPan: false,
-              allowMiddleClickPan: true,
-              allowRightClickPan: false,
-              velocityDisabled: true,
-            }}
-            doubleClick={{
-              disabled: true,
-            }}
-            wheel={{
-              step: 0.1,
-            }}
-            alignmentAnimation={{
-              animationTime: 350,
-            }}
-          >
-            <TransformComponent>
-              <Image
-                alt={map.name}
-                src={`/images/webp/maps/${map.image}.webp`}
-                width={canvasStore.width}
-                height={canvasStore.height}
-                unoptimized={isUnoptimized}
-                priority
-              />
-
-              <AbsoluteContainer zIndex={2}>
-                <canvas
-                  ref={ref}
-                  width={scaledDimension}
-                  height={scaledDimension}
-                  onContextMenu={(event) => event.preventDefault()}
-                  style={{
-                    width: canvasStore.width,
-                    height: canvasStore.height,
-                  }}
-                />
-              </AbsoluteContainer>
-            </TransformComponent>
-          </TransformWrapper>
-        </Sheet>
+          />
+        </AbsoluteContainer>
       </CanvasContainer>
     </Profiler>
   );

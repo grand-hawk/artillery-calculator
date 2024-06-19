@@ -21,10 +21,8 @@ export default function ProjectileButton({
 }) {
   const t = useTranslations();
 
-  const [projectileData, setProjectile] = useDataStore((s) => [
-    s.projectile,
-    s.setProjectile,
-  ]);
+  const projectileData = useDataStore((s) => s.projectile);
+  const setProjectile = useDataStore((s) => s.setProjectile);
 
   return (
     <Button

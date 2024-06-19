@@ -9,10 +9,8 @@ export type MobileModes = 'gun' | 'target';
 export default function MobileMode() {
   const t = useTranslations();
 
-  const [mobileMode, setMobileMode] = useDataStore((s) => [
-    s.mobileMode,
-    s.setMobileMode,
-  ]);
+  const mobileMode = useDataStore((s) => s.mobileMode);
+  const setMobileMode = useDataStore((s) => s.setMobileMode);
 
   return (
     <Button

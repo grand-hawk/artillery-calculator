@@ -4,7 +4,9 @@ import { useDataStore } from '@/stores/data';
 import { calculateDistance, studsToMeters } from '@/utils/math';
 
 export default function useDistanceWithHeight(): number {
-  const [gun, target] = useDataStore((s) => [s.getGun(), s.getTarget()]);
+  const gun = useDataStore((s) => s.getGun());
+  const target = useDataStore((s) => s.getTarget());
+
   const map = useMap();
   const [gunHeight, targetHeight] = useHeightmapZ();
 

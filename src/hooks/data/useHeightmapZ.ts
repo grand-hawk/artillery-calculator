@@ -9,7 +9,8 @@ export default function useHeightmapZ(): [number, number] {
   const mapIndex = useDataStore((s) => s.mapIndex);
   const map = maps[mapIndex];
 
-  const [gun, target] = useDataStore((s) => [s.getGun(), s.getTarget()]);
+  const gun = useDataStore((s) => s.getGun());
+  const target = useDataStore((s) => s.getTarget());
 
   let gunHeight = 0;
   let targetHeight = 0;

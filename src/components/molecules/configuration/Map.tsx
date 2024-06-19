@@ -15,10 +15,8 @@ export default function MapSelection() {
 
   const [listboxOpen, setListboxOpen] = React.useState<boolean>(false);
 
-  const [mapIndex, setMapIndex] = useDataStore((s) => [
-    s.mapIndex,
-    s.setMapIndex,
-  ]);
+  const mapIndex = useDataStore((s) => s.mapIndex);
+  const setMapIndex = useDataStore((s) => s.setMapIndex);
 
   return (
     <DataContainer>
