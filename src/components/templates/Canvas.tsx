@@ -5,6 +5,7 @@ import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
 
 import AbsoluteContainer from '@/components/atoms/canvas/AbsoluteContainer';
 import CanvasContainer from '@/components/molecules/CanvasContainer';
+import Profiler from '@/components/utils/Profiler';
 import { maps } from '@/config/maps';
 import { guns } from '@/config/projectiles';
 import useHeightmapZ from '@/hooks/useHeightmapZ';
@@ -157,71 +158,73 @@ function Canvas({
   });
 
   return (
-    <CanvasContainer>
-      <Sheet
-        sx={{
-          width: canvasStore.width,
-          height: canvasStore.height,
-        }}
-      >
-        <TransformWrapper
-          onZoom={(wrapper) => {
-            const zoom = wrapper.instance.transformState.scale;
-
-            canvasStore.setZoom(zoom);
-
-            // dont go back to the optimized image once the full image was requested
-            if (zoom > 1.25) setIsUnoptimized(true);
-          }}
-          onPanningStart={() => {
-            // Don't allow setting gun/target while panning
-            isPanning.current = true;
-          }}
-          onPanningStop={() => {
-            isPanning.current = false;
-          }}
-          panning={{
-            allowLeftClickPan: false,
-            allowMiddleClickPan: true,
-            allowRightClickPan: false,
-            velocityDisabled: true,
-          }}
-          doubleClick={{
-            disabled: true,
-          }}
-          wheel={{
-            step: 0.1,
-          }}
-          alignmentAnimation={{
-            animationTime: 350,
+    <Profiler id="canvas-profiler">
+      <CanvasContainer>
+        <Sheet
+          sx={{
+            width: canvasStore.width,
+            height: canvasStore.height,
           }}
         >
-          <TransformComponent>
-            <Image
-              alt={map.name}
-              src={`/images/webp/maps/${map.image}.webp`}
-              width={canvasStore.width}
-              height={canvasStore.height}
-              unoptimized={isUnoptimized}
-              priority
-            />
+          <TransformWrapper
+            onZoom={(wrapper) => {
+              const zoom = wrapper.instance.transformState.scale;
 
-            <AbsoluteContainer zIndex={2}>
-              <canvas
-                ref={ref}
-                width={scaledDimension}
-                height={scaledDimension}
-                onContextMenu={(event) => event.preventDefault()}
-                style={{
-                  width: canvasStore.width,
-                  height: canvasStore.height,
-                }}
+              canvasStore.setZoom(zoom);
+
+              // dont go back to the optimized image once the full image was requested
+              if (zoom > 1.25) setIsUnoptimized(true);
+            }}
+            onPanningStart={() => {
+              // Don't allow setting gun/target while panning
+              isPanning.current = true;
+            }}
+            onPanningStop={() => {
+              isPanning.current = false;
+            }}
+            panning={{
+              allowLeftClickPan: false,
+              allowMiddleClickPan: true,
+              allowRightClickPan: false,
+              velocityDisabled: true,
+            }}
+            doubleClick={{
+              disabled: true,
+            }}
+            wheel={{
+              step: 0.1,
+            }}
+            alignmentAnimation={{
+              animationTime: 350,
+            }}
+          >
+            <TransformComponent>
+              <Image
+                alt={map.name}
+                src={`/images/webp/maps/${map.image}.webp`}
+                width={canvasStore.width}
+                height={canvasStore.height}
+                unoptimized={isUnoptimized}
+                priority
               />
-            </AbsoluteContainer>
-          </TransformComponent>
-        </TransformWrapper>
-      </Sheet>
-    </CanvasContainer>
+
+              <AbsoluteContainer zIndex={2}>
+                <canvas
+                  ref={ref}
+                  width={scaledDimension}
+                  height={scaledDimension}
+                  onContextMenu={(event) => event.preventDefault()}
+                  style={{
+                    width: canvasStore.width,
+                    height: canvasStore.height,
+                  }}
+                />
+              </AbsoluteContainer>
+            </TransformComponent>
+          </TransformWrapper>
+        </Sheet>
+      </CanvasContainer>
+    </Profiler>
   );
 }
 

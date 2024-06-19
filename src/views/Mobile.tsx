@@ -1,6 +1,7 @@
 import todec from '2dec';
 import Box from '@mui/joy/Box';
 import { useTranslations } from 'next-intl';
+import React from 'react';
 
 import ColumnContainer from '@/components/atoms/ColumnContainer';
 import ConfigurationGroup from '@/components/atoms/ConfigurationGroup';

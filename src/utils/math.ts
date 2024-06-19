@@ -152,6 +152,5 @@ export function calculateMaxRange(v: number, h: number = 0): number {
   const t1 = (-b + Math.sqrt(discriminant)) / (2 * a);
   const t2 = (-b - Math.sqrt(discriminant)) / (2 * a);
 
-  console.log(((v * Math.sqrt(2)) / 2) * Math.max(t1, t2));
   return ((v * Math.sqrt(2)) / 2) * Math.max(t1, t2);
 }

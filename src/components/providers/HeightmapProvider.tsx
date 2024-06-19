@@ -1,5 +1,6 @@
 import React from 'react';
 
+import Profiler from '@/components/utils/Profiler';
 import { maps } from '@/config/maps';
 import { useDataStore } from '@/stores/data';
 
@@ -39,13 +40,15 @@ export default function HeightmapProvider({ children }: PropsWithChildren) {
 
   return (
     <>
-      <canvas
-        ref={canvasRef}
-        id={heightmapCanvasId}
-        width={map.heightmap?.width ?? 0}
-        height={map.heightmap?.height ?? 0}
-        style={{ display: 'none' }}
-      />
+      <Profiler id="heightmap-canvas-profiler">
+        <canvas
+          ref={canvasRef}
+          id={heightmapCanvasId}
+          width={map.heightmap?.width ?? 0}
+          height={map.heightmap?.height ?? 0}
+          style={{ display: 'none' }}
+        />
+      </Profiler>
 
       {children}
     </>

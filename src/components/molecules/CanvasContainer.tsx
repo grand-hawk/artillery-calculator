@@ -37,7 +37,6 @@ export default function CanvasContainer({
   return (
     <Box
       ref={ref}
-      aria-roledescription="container"
       sx={(theme) => ({
         display: 'flex',
         justifyContent: float,
