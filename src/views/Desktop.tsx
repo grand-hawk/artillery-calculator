@@ -1,4 +1,3 @@
-import todec from '2dec';
 import Box from '@mui/joy/Box';
 import Typography from '@mui/joy/Typography';
 import { useTranslations } from 'next-intl';
@@ -6,10 +5,11 @@ import React from 'react';
 
 import ColumnContainer from '@/components/atoms/ColumnContainer';
 import ConfigurationGroup from '@/components/atoms/ConfigurationGroup';
+import AzimuthValue from '@/components/molecules/configuration/Azimuth';
+import DistanceValue from '@/components/molecules/configuration/Distance';
 import ElevationValue from '@/components/molecules/configuration/Elevation';
 import MapSelection from '@/components/molecules/configuration/Map';
 import ProjectileSelection from '@/components/molecules/configuration/Projectile';
-import SimpleValue from '@/components/molecules/configuration/Simple';
 import TimeOfFlightValue from '@/components/molecules/configuration/TimeOfFlight';
 import Motd from '@/components/organisms/Motd';
 import VersionAlert from '@/components/organisms/VersionAlert';
@@ -19,15 +19,7 @@ import { useCanvasStore } from '@/stores/canvas';
 
 import type { ViewProps } from '@/pages';
 
-export default function DesktopView({
-  mobileMode,
-  motd,
-  elevation,
-  azimuth,
-  distance,
-  projectile,
-  version,
-}: ViewProps) {
+export default function DesktopView({ motd, version }: ViewProps) {
   const t = useTranslations();
 
   return (
@@ -59,7 +51,7 @@ export default function DesktopView({
             gap: 4,
           }}
         >
-          <Canvas isMobile={false} mobileMode={mobileMode} />
+          <Canvas />
 
           <ColumnContainer
             sx={{
@@ -70,19 +62,10 @@ export default function DesktopView({
             <Motd message={motd || undefined} />
 
             <ConfigurationGroup>
-              <ElevationValue elevation={elevation} />
-              <SimpleValue
-                name={t('typography.azimuth')}
-                value={`${todec(azimuth)}°`}
-              />
-              <SimpleValue
-                name={t('typography.distance')}
-                value={t(`units.meter`, { value: todec(distance) })}
-              />
-              <TimeOfFlightValue
-                elevation={elevation}
-                velocity={projectile.velocity}
-              />
+              <ElevationValue />
+              <AzimuthValue />
+              <DistanceValue />
+              <TimeOfFlightValue />
               <ProjectileSelection />
               <MapSelection />
             </ConfigurationGroup>

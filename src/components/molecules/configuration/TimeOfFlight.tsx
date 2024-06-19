@@ -5,16 +5,15 @@ import { useTranslations } from 'next-intl';
 import React from 'react';
 
 import DataContainer from '@/components/atoms/configuration/DataContainer';
+import useElevation from '@/hooks/data/useElevation';
+import useProjectile from '@/hooks/data/useProjectile';
 import { calculateTimeOfFlight } from '@/utils/math';
 
-export default function TimeOfFlightValue({
-  elevation: [lowArc, highArc],
-  velocity,
-}: {
-  elevation: [number, number];
-  velocity: number;
-}) {
+export default function TimeOfFlightValue() {
   const t = useTranslations();
+
+  const { velocity } = useProjectile();
+  const [lowArc, highArc] = useElevation();
 
   return (
     <DataContainer>

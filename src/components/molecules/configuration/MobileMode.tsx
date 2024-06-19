@@ -2,17 +2,17 @@ import Button from '@mui/joy/Button';
 import { useTranslations } from 'next-intl';
 import React from 'react';
 
-export type MobileModes = 'gun' | 'target';
-export type MobileModeMutable = React.MutableRefObject<MobileModes>;
+import { useDataStore } from '@/stores/data';
 
-export default function MobileMode({
-  mobileMode,
-}: {
-  mobileMode: MobileModeMutable;
-}) {
+export type MobileModes = 'gun' | 'target';
+
+export default function MobileMode() {
   const t = useTranslations();
 
-  const [visual, setVisual] = React.useState<MobileModes>(mobileMode.current);
+  const [mobileMode, setMobileMode] = useDataStore((s) => [
+    s.mobileMode,
+    s.setMobileMode,
+  ]);
 
   return (
     <Button
@@ -20,12 +20,12 @@ export default function MobileMode({
       color="primary"
       size="lg"
       onClick={() => {
-        mobileMode.current = mobileMode.current === 'gun' ? 'target' : 'gun';
-        setVisual(mobileMode.current);
+        setMobileMode(mobileMode === 'gun' ? 'target' : 'gun');
       }}
     >
       {t('typography.switchSelectionTo', {
-        value: visual === 'gun' ? t('typography.target') : t('typography.gun'),
+        value:
+          mobileMode === 'gun' ? t('typography.target') : t('typography.gun'),
       })}
     </Button>
   );

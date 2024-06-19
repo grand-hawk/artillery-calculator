@@ -6,6 +6,7 @@ import { immer } from 'zustand/middleware/immer';
 
 import { guns } from '@/config/projectiles';
 
+import type { MobileModes } from '@/components/molecules/configuration/MobileMode';
 import type { Vector } from '@/components/templates/Canvas';
 
 interface ProjectileData {
@@ -32,6 +33,9 @@ export interface DataStore {
   gun: StringVector;
   getGun: () => Vector;
   setGun: (x: number, y: number) => void;
+
+  mobileMode: MobileModes;
+  setMobileMode: (mode: MobileModes) => void;
 }
 
 export const useDataStore = create(
@@ -88,6 +92,13 @@ export const useDataStore = create(
             x: String(x),
             y: String(y),
           };
+        });
+      },
+
+      mobileMode: 'gun',
+      setMobileMode(mode) {
+        set((s) => {
+          s.mobileMode = mode;
         });
       },
     })),

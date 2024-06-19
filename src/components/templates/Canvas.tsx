@@ -8,7 +8,8 @@ import CanvasContainer from '@/components/molecules/CanvasContainer';
 import Profiler from '@/components/utils/Profiler';
 import { maps } from '@/config/maps';
 import { guns } from '@/config/projectiles';
-import useHeightmapZ from '@/hooks/useHeightmapZ';
+import useHeightmapZ from '@/hooks/data/useHeightmapZ';
+import useIsMobile from '@/hooks/useIsMobile';
 import { useCanvasStore } from '@/stores/canvas';
 import { useDataStore } from '@/stores/data';
 import {
@@ -18,20 +19,15 @@ import {
   studsToMeters,
 } from '@/utils/math';
 
-import type { MobileModeMutable } from '@/components/molecules/configuration/MobileMode';
-
 export interface Vector {
   x: number;
   y: number;
 }
 
-function Canvas({
-  isMobile,
-  mobileMode,
-}: {
-  isMobile: boolean;
-  mobileMode: MobileModeMutable;
-}) {
+function Canvas() {
+  const isMobile = useIsMobile();
+  const mobileMode = useDataStore((s) => s.mobileMode);
+
   const ref = React.useRef<HTMLCanvasElement | null>(null);
   const isPanning = React.useRef<boolean>(false);
   const [isUnoptimized, setIsUnoptimized] = React.useState<boolean>(false);
@@ -132,7 +128,7 @@ function Canvas({
       const updateTarget = () => setTarget(x, y);
 
       if (isMobile)
-        switch (mobileMode?.current) {
+        switch (mobileMode) {
           case 'gun':
             updateGun();
             break;

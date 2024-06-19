@@ -1,37 +1,23 @@
-import todec from '2dec';
 import Box from '@mui/joy/Box';
-import { useTranslations } from 'next-intl';
 import React from 'react';
 
 import ColumnContainer from '@/components/atoms/ColumnContainer';
 import ConfigurationGroup from '@/components/atoms/ConfigurationGroup';
+import AzimuthValue from '@/components/molecules/configuration/Azimuth';
+import DistanceValue from '@/components/molecules/configuration/Distance';
 import ElevationValue from '@/components/molecules/configuration/Elevation';
 import MapSelection from '@/components/molecules/configuration/Map';
 import MobileMode from '@/components/molecules/configuration/MobileMode';
 import ProjectileSelection from '@/components/molecules/configuration/Projectile';
-import SimpleValue from '@/components/molecules/configuration/Simple';
 import TimeOfFlightValue from '@/components/molecules/configuration/TimeOfFlight';
 import Motd from '@/components/organisms/Motd';
 import VersionAlert from '@/components/organisms/VersionAlert';
 import Canvas from '@/components/templates/Canvas';
 import Footer from '@/components/templates/Footer';
-import useIsMobile from '@/hooks/useIsMobile';
 
 import type { ViewProps } from '@/pages';
 
-export default function MobileView({
-  mobileMode,
-  motd,
-  elevation,
-  azimuth,
-  distance,
-  projectile,
-  version,
-}: ViewProps) {
-  const t = useTranslations();
-
-  const isMobileDevice = useIsMobile();
-
+export default function MobileView({ motd, version }: ViewProps) {
   return (
     <Box
       className="mobile"
@@ -56,28 +42,19 @@ export default function MobileView({
           },
         }}
       >
-        <Canvas isMobile={isMobileDevice} mobileMode={mobileMode} />
+        <Canvas />
 
         <ColumnContainer>
           <VersionAlert currentVersion={version} />
           <Motd message={motd || undefined} />
 
-          {isMobileDevice && <MobileMode mobileMode={mobileMode} />}
+          <MobileMode />
 
           <ConfigurationGroup>
-            <ElevationValue elevation={elevation} />
-            <SimpleValue
-              name={t('typography.azimuth')}
-              value={`${todec(azimuth)}°`}
-            />
-            <SimpleValue
-              name={t('typography.distance')}
-              value={t(`units.meter`, { value: todec(distance) })}
-            />
-            <TimeOfFlightValue
-              elevation={elevation}
-              velocity={projectile.velocity}
-            />
+            <ElevationValue />
+            <AzimuthValue />
+            <DistanceValue />
+            <TimeOfFlightValue />
             <ProjectileSelection />
             <MapSelection />
           </ConfigurationGroup>

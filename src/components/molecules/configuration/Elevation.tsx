@@ -5,13 +5,12 @@ import { useTranslations } from 'next-intl';
 import React from 'react';
 
 import DataContainer from '@/components/atoms/configuration/DataContainer';
+import useElevation from '@/hooks/data/useElevation';
 
-export default function ElevationValue({
-  elevation: [lowArc, highArc],
-}: {
-  elevation: [number, number];
-}) {
+export default function ElevationValue() {
   const t = useTranslations();
+
+  const [lowArc, highArc] = useElevation();
 
   return (
     <DataContainer>
