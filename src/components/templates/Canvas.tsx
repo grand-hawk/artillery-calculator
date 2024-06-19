@@ -1,7 +1,6 @@
 import React from 'react';
 
-import AbsoluteContainer from '@/components/atoms/canvas/AbsoluteContainer';
-import CanvasContainer from '@/components/molecules/CanvasContainer';
+import CanvasMeasureContainer from '@/components/molecules/CanvasMeasureContainer';
 import Profiler from '@/components/utils/Profiler';
 import { maps } from '@/config/maps';
 import { guns } from '@/config/projectiles';
@@ -150,20 +149,18 @@ function Canvas() {
 
   return (
     <Profiler id="canvas-profiler">
-      <CanvasContainer>
-        <AbsoluteContainer zIndex={2}>
-          <canvas
-            ref={ref}
-            height={scaledDimension}
-            style={{
-              width: canvasStore.width,
-              height: canvasStore.height,
-            }}
-            width={scaledDimension}
-            onContextMenu={(event) => event.preventDefault()}
-          />
-        </AbsoluteContainer>
-      </CanvasContainer>
+      <CanvasMeasureContainer>
+        <canvas
+          ref={ref}
+          height={scaledDimension}
+          style={{
+            width: canvasStore.width,
+            height: canvasStore.height,
+          }}
+          width={scaledDimension}
+          onContextMenu={(event) => event.preventDefault()}
+        />
+      </CanvasMeasureContainer>
     </Profiler>
   );
 }
