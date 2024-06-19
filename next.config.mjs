@@ -19,10 +19,6 @@ const config = {
   },
 
   i18n: i18nConfig,
-
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
 };
 
 const withBundleAnalyzer = bundleAnalyzer({
