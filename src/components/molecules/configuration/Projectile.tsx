@@ -20,8 +20,8 @@ import { useDataStore } from '@/stores/data';
 export default function ProjectileSelection() {
   const t = useTranslations();
 
-  const tooltip = React.useRef<HTMLDivElement | null>(null);
-  const selectionChanged = React.useRef<number>(0);
+  const buttonRef = React.useRef<HTMLButtonElement | null>(null);
+  const tooltipRef = React.useRef<HTMLDivElement | null>(null);
 
   const projectileData = useDataStore((s) => s.projectile);
 
@@ -30,20 +30,18 @@ export default function ProjectileSelection() {
     Object.keys(guns).findIndex((key) => key === projectileData.gunKey),
   );
 
-  function canChangeSelection() {
-    const can = selectionChanged.current + 250 < performance.now();
-
-    if (!can) return false;
-
-    selectionChanged.current = performance.now();
-
-    return true;
-  }
+  const selectionOpenChange = React.useCallback(
+    (open: boolean) => setSelectionOpen(open),
+    [],
+  );
 
   useOnClickOutside(
-    tooltip,
-    () => {
-      if (selectionOpen && canChangeSelection()) setSelectionOpen(false);
+    tooltipRef,
+    (event) => {
+      // dont do anything if element that was pressed was the button
+      if (event.target === buttonRef.current) return;
+
+      if (selectionOpen) selectionOpenChange(false);
     },
     'mouseup',
   );
@@ -55,7 +53,7 @@ export default function ProjectileSelection() {
       <Tooltip
         slotProps={{
           root: {
-            ref: tooltip,
+            ref: tooltipRef,
             open: selectionOpen,
           },
         }}
@@ -125,9 +123,8 @@ export default function ProjectileSelection() {
         <Button
           variant="soft"
           color="neutral"
-          onClick={() => {
-            if (!selectionOpen && canChangeSelection()) setSelectionOpen(true);
-          }}
+          ref={buttonRef}
+          onClick={() => selectionOpenChange(!selectionOpen)}
           sx={{
             paddingInline: '0.75rem',
             fontSize: 16,
