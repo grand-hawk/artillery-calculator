@@ -11,10 +11,10 @@ export default function HeaderCard({
 }: PropsWithChildren<CardProps>) {
   return (
     <Card
+      orientation="horizontal"
       role="alert"
       size="sm"
       variant="soft"
-      orientation="horizontal"
       {...props}
       sx={mergeSx(sx, {
         paddingX: 2,

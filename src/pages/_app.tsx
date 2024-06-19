@@ -14,8 +14,6 @@ function App({ Component, pageProps }: AppProps) {
   return (
     <React.StrictMode>
       <NextIntlClientProvider
-        locale={router.locale}
-        messages={pageProps.messages}
         getMessageFallback={(info) =>
           objectKeySearch(
             locales[config.defaultLocale] as Parameters<
@@ -24,6 +22,8 @@ function App({ Component, pageProps }: AppProps) {
             info.key,
           ) as string
         }
+        locale={router.locale}
+        messages={pageProps.messages}
         onError={(error) =>
           process.env.NODE_ENV === 'development'
             ? console.warn(error)

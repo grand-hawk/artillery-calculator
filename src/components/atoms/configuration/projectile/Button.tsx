@@ -28,7 +28,7 @@ export default function ProjectileButton({
     <Button
       key={thisProjectileIndex}
       color="neutral"
-      variant="soft"
+      size="sm"
       sx={(theme) => ({
         borderRadius: 0,
         fontWeight: 400,
@@ -41,7 +41,7 @@ export default function ProjectileButton({
             },
           }),
       })}
-      size="sm"
+      variant="soft"
       onClick={() => setProjectile(gunKey, thisProjectileIndex)}
     >
       <Stack
@@ -59,8 +59,8 @@ export default function ProjectileButton({
             <Tooltip
               placement="top"
               size="sm"
-              variant="plain"
               title={t('typography.blastRange')}
+              variant="plain"
             >
               <Typography color="primary" fontSize={12}>
                 <Plus />
@@ -69,7 +69,7 @@ export default function ProjectileButton({
           )}
         </Typography>
 
-        <Typography level="body-sm" fontWeight={500}>
+        <Typography fontWeight={500} level="body-sm">
           {t('typography.metersPerSecond', {
             value: todec(projectile.velocity),
           })}

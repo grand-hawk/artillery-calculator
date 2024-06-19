@@ -7,8 +7,8 @@ export default function BMACIcon({ ...props }: SvgIconProps) {
   return (
     <SvgIcon {...props}>
       <svg
-        viewBox="0 0 884 1279"
         fill="currentcolor"
+        viewBox="0 0 884 1279"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path d="M791.109 297.518L790.231 297.002L788.201 296.383C789.018 297.072 790.04 297.472 791.109 297.518V297.518Z" />

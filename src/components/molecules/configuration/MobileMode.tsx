@@ -14,9 +14,9 @@ export default function MobileMode() {
 
   return (
     <Button
-      variant="solid"
       color="primary"
       size="lg"
+      variant="solid"
       onClick={() => {
         setMobileMode(mobileMode === 'gun' ? 'target' : 'gun');
       }}

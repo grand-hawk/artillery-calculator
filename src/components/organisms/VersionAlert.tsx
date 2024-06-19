@@ -34,7 +34,7 @@ export default function VersionAlert({
 
   return (
     updateAvailable && (
-      <HeaderCard variant="solid" color="warning">
+      <HeaderCard color="warning" variant="solid">
         {t('typography.newVersion')}
       </HeaderCard>
     )

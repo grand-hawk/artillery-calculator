@@ -154,13 +154,13 @@ function Canvas() {
         <AbsoluteContainer zIndex={2}>
           <canvas
             ref={ref}
-            width={scaledDimension}
             height={scaledDimension}
-            onContextMenu={(event) => event.preventDefault()}
             style={{
               width: canvasStore.width,
               height: canvasStore.height,
             }}
+            width={scaledDimension}
+            onContextMenu={(event) => event.preventDefault()}
           />
         </AbsoluteContainer>
       </CanvasContainer>

@@ -63,13 +63,20 @@ export default function CanvasContainer({
         }}
       >
         <TransformWrapper
-          onZoom={(wrapper) => {
-            const zoom = wrapper.instance.transformState.scale;
-
-            canvasStore.setZoom(zoom);
-
-            // dont go back to the optimized image once the full image was requested
-            if (zoom > 1.25) setIsUnoptimized(true);
+          alignmentAnimation={{
+            animationTime: 350,
+          }}
+          doubleClick={{
+            disabled: true,
+          }}
+          panning={{
+            allowLeftClickPan: false,
+            allowMiddleClickPan: true,
+            allowRightClickPan: false,
+            velocityDisabled: true,
+          }}
+          wheel={{
+            step: 0.1,
           }}
           onPanningStart={() => {
             // Don't allow setting gun/target while panning
@@ -78,30 +85,23 @@ export default function CanvasContainer({
           onPanningStop={() => {
             isPanning.current = false;
           }}
-          panning={{
-            allowLeftClickPan: false,
-            allowMiddleClickPan: true,
-            allowRightClickPan: false,
-            velocityDisabled: true,
-          }}
-          doubleClick={{
-            disabled: true,
-          }}
-          wheel={{
-            step: 0.1,
-          }}
-          alignmentAnimation={{
-            animationTime: 350,
+          onZoom={(wrapper) => {
+            const zoom = wrapper.instance.transformState.scale;
+
+            canvasStore.setZoom(zoom);
+
+            // dont go back to the optimized image once the full image was requested
+            if (zoom > 1.25) setIsUnoptimized(true);
           }}
         >
           <TransformComponent>
             <Image
               alt={map.name}
-              src={`/images/webp/maps/${map.image}.webp`}
-              width={canvasStore.width}
               height={canvasStore.height}
-              unoptimized={isUnoptimized}
               priority
+              src={`/images/webp/maps/${map.image}.webp`}
+              unoptimized={isUnoptimized}
+              width={canvasStore.width}
             />
 
             {children}

@@ -8,7 +8,7 @@ export const theme = extendTheme({});
 
 export default function Theme({ children }: PropsWithChildren) {
   return (
-    <CssVarsProvider theme={theme} defaultMode="dark">
+    <CssVarsProvider defaultMode="dark" theme={theme}>
       <CssBaseline />
       {children}
     </CssVarsProvider>

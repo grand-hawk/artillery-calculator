@@ -44,10 +44,10 @@ export default function HeightmapProvider({ children }: PropsWithChildren) {
       <Profiler id="heightmap-canvas-profiler">
         <canvas
           ref={canvasRef}
-          id={heightmapCanvasId}
-          width={map.heightmap?.width ?? 0}
           height={map.heightmap?.height ?? 0}
+          id={heightmapCanvasId}
           style={{ display: 'none' }}
+          width={map.heightmap?.width ?? 0}
         />
       </Profiler>
 

@@ -17,7 +17,8 @@
   "plugins": [
     "@typescript-eslint",
     "import",
-    "prettier"
+    "prettier",
+    "react"
   ],
   "parser": "@typescript-eslint/parser",
   "ignorePatterns": [],
@@ -33,6 +34,16 @@
     "consistent-return": "off",
     "react/jsx-props-no-spreading": "off",
     "react/no-array-index-key": "off",
+    "react/jsx-sort-props": [
+      "warn",
+      {
+        "callbacksLast": true,
+        "reservedFirst": [
+          "ref",
+          "key"
+        ]
+      }
+    ],
     "no-param-reassign": "off",
     "line-comment-position": [
       "warn",

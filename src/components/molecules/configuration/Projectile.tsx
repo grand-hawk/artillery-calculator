@@ -51,23 +51,21 @@ export default function ProjectileSelection() {
       <Typography level="title-md">{t('typography.projectile')}</Typography>
 
       <Tooltip
+        keepMounted
+        placement="top-end"
+        size="lg"
         slotProps={{
           root: {
             ref: tooltipRef,
             open: selectionOpen,
           },
         }}
-        placement="top-end"
-        size="lg"
-        variant="plain"
-        keepMounted
         sx={{
           padding: 0,
           overflow: 'hidden',
         }}
         title={
           <Tabs
-            variant="soft"
             color="neutral"
             orientation="vertical"
             size="sm"
@@ -75,21 +73,22 @@ export default function ProjectileSelection() {
               maxHeight: 200,
             }}
             value={selectionTab}
+            variant="soft"
             onChange={(event, newTab) => setSelectionTab(newTab as number)}
           >
             {Object.keys(guns).map((gunKey, index) => {
               const gun = guns[gunKey];
 
               return (
-                <TabPanel value={index} key={index} sx={{ padding: 0 }}>
+                <TabPanel key={index} sx={{ padding: 0 }} value={index}>
                   <ScrollBox dependency={selectionOpen}>
                     <Stack direction="column">
                       {gun.projectiles.map(
                         (projectile, thisProjectileIndex) => (
                           <ProjectileButton
+                            key={thisProjectileIndex}
                             gunKey={gunKey}
                             projectile={projectile}
-                            key={thisProjectileIndex}
                             thisProjectileIndex={thisProjectileIndex}
                           />
                         ),
@@ -105,12 +104,12 @@ export default function ProjectileSelection() {
                 {Object.values(guns).map((gun, index) => (
                   <Tab
                     key={index}
-                    variant="soft"
                     color="neutral"
                     indicatorPlacement="left"
                     sx={{
                       width: '100%',
                     }}
+                    variant="soft"
                   >
                     {gun.name}
                   </Tab>
@@ -119,17 +118,11 @@ export default function ProjectileSelection() {
             </TabList>
           </Tabs>
         }
+        variant="plain"
       >
         <Button
-          variant="soft"
-          color="neutral"
           ref={buttonRef}
-          onClick={() => selectionOpenChange(!selectionOpen)}
-          sx={{
-            paddingInline: '0.75rem',
-            fontSize: 16,
-            fontWeight: 400,
-          }}
+          color="neutral"
           endDecorator={
             <UnfoldMore
               style={{
@@ -137,6 +130,13 @@ export default function ProjectileSelection() {
               }}
             />
           }
+          sx={{
+            paddingInline: '0.75rem',
+            fontSize: 16,
+            fontWeight: 400,
+          }}
+          variant="soft"
+          onClick={() => selectionOpenChange(!selectionOpen)}
         >
           {guns[projectileData.gunKey].projectiles[projectileData.index].name}
         </Button>

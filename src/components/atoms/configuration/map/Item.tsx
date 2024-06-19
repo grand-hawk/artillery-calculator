@@ -12,7 +12,7 @@ export default function MapItem({ item }: { item: Map }) {
   const t = useTranslations();
 
   return (
-    <Stack direction="row" alignItems="center" gap={1}>
+    <Stack alignItems="center" direction="row" gap={1}>
       <Box
         sx={(theme) => ({
           display: 'flex',
@@ -24,21 +24,21 @@ export default function MapItem({ item }: { item: Map }) {
         })}
       >
         <Image
-          src={`/images/webp/maps/${item.image}_small.webp`}
           alt=""
           height={24}
+          src={`/images/webp/maps/${item.image}_small.webp`}
           width={24}
         />
       </Box>
 
-      <Stack direction="row" alignItems="center">
+      <Stack alignItems="center" direction="row">
         {item.name}
         {item.heightmap && (
           <Tooltip
             placement="top"
             size="sm"
-            variant="plain"
             title={t('typography.heightmap')}
+            variant="plain"
           >
             <Typography color="primary" fontSize={10}>
               <Plus fontSize="small" />

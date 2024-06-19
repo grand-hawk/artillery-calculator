@@ -49,12 +49,12 @@ export default function Index({
       <Head>
         <title>MTC Artillery</title>
         <meta
-          name="description"
           content="An artillery calculator made for Multicrew Tank Combat on Roblox."
+          name="description"
         />
         <meta
-          name="keywords"
           content="Roblox, Artillery, Artillery Calculator, MTC, Multicrew Tank Combat"
+          name="keywords"
         />
       </Head>
 

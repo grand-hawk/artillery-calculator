@@ -21,32 +21,32 @@ function Footer({ version, sx = {} }: { version: string; sx?: SxProps }) {
         justifyContent: 'space-between',
       })}
     >
-      <Stack direction="row" spacing={0.75} alignItems="center">
-        <Link href="https://discord.gg/yHbVdPJ5vf" data-umami-event="Discord">
+      <Stack alignItems="center" direction="row" spacing={0.75}>
+        <Link data-umami-event="Discord" href="https://discord.gg/yHbVdPJ5vf">
           <DiscordIcon />
         </Link>
 
         <Link
-          href="https://github.com/ari-party/mtc-artillery"
           data-umami-event="GitHub"
+          href="https://github.com/ari-party/mtc-artillery"
         >
           <GitHubIcon />
         </Link>
 
         <Link
-          href="https://www.buymeacoffee.com/valk"
           data-umami-event="Buy Me A Coffee"
+          href="https://www.buymeacoffee.com/valk"
         >
           <BMACIcon />
         </Link>
       </Stack>
 
-      <Stack direction="row" spacing={2} alignItems="center">
+      <Stack alignItems="center" direction="row" spacing={2}>
         <LanguageSelector />
 
         <Typography
-          level="body-sm"
           component="code"
+          level="body-sm"
           sx={(theme) => ({ fontFamily: theme.fontFamily.code })}
         >
           {version}

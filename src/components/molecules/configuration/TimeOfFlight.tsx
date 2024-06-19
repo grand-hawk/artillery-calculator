@@ -19,7 +19,7 @@ export default function TimeOfFlightValue() {
     <DataContainer>
       <Typography level="title-md">{t('typography.timeOfFlight')}</Typography>
 
-      <Stack direction="row" spacing={1} alignItems="center">
+      <Stack alignItems="center" direction="row" spacing={1}>
         {lowArc ? (
           <>
             <Typography>

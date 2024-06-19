@@ -16,7 +16,7 @@ export default function ElevationValue() {
     <DataContainer>
       <Typography level="title-md">{t('typography.elevation')}</Typography>
 
-      <Stack direction="row" spacing={1} alignItems="center">
+      <Stack alignItems="center" direction="row" spacing={1}>
         {lowArc ? (
           <>
             <Typography>{todec(lowArc)}°</Typography>

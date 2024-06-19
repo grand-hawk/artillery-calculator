@@ -17,21 +17,21 @@ export default function LanguageSelector() {
 
   return (
     <Select
-      value={router.locale}
-      onChange={(event, newValue) => {
-        router.push('/', '/', { locale: newValue || config.defaultLocale });
-      }}
+      listboxOpen={listboxOpen}
+      size="sm"
       slotProps={{
         listbox: {
           placement: 'top-end',
         },
       }}
-      listboxOpen={listboxOpen}
-      onListboxOpenChange={() => setListboxOpen(true)}
-      onClose={() => setListboxOpen(false)}
-      variant="outlined"
-      size="sm"
       startDecorator={<Flag locale={router.locale!} />}
+      value={router.locale}
+      variant="outlined"
+      onChange={(event, newValue) => {
+        router.push('/', '/', { locale: newValue || config.defaultLocale });
+      }}
+      onClose={() => setListboxOpen(false)}
+      onListboxOpenChange={() => setListboxOpen(true)}
     >
       <ScrollBox dependency={listboxOpen}>
         {config.locales.map((locale, index) => (

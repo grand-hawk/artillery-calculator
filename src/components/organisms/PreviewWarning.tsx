@@ -16,12 +16,11 @@ export default function PreviewWarning() {
   return (
     !hidden && (
       <Typography
-        variant="soft"
         color="warning"
         endDecorator={
           <IconButton
-            size="sm"
             color="warning"
+            size="sm"
             variant="outlined"
             onClick={() => setHidden(true)}
           >
@@ -43,6 +42,7 @@ export default function PreviewWarning() {
             marginLeft: 'auto',
           },
         }}
+        variant="soft"
       >
         You currently are visiting the preview version. Changes are not final.
       </Typography>

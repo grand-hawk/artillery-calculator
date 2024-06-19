@@ -23,17 +23,17 @@ export default function MapSelection() {
       <Typography level="title-md">{t('typography.map')}</Typography>
 
       <Select
-        value={mapIndex}
-        onChange={(event, newValue) => setMapIndex(newValue as number)}
+        listboxOpen={listboxOpen}
         slotProps={{
           listbox: {
             placement: 'top-end',
           },
         }}
-        listboxOpen={listboxOpen}
-        onListboxOpenChange={() => setListboxOpen(true)}
-        onClose={() => setListboxOpen(false)}
+        value={mapIndex}
         variant="soft"
+        onChange={(event, newValue) => setMapIndex(newValue as number)}
+        onClose={() => setListboxOpen(false)}
+        onListboxOpenChange={() => setListboxOpen(true)}
       >
         <ScrollBox dependency={listboxOpen}>
           {maps.map((item, index) => (
