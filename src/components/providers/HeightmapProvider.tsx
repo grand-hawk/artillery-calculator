@@ -17,6 +17,7 @@ export default function HeightmapProvider({ children }: PropsWithChildren) {
   React.useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
+
     if (!map.heightmap) return;
 
     const context = canvas.getContext('2d')!;

@@ -16,4 +16,8 @@ Dev branch site: [dev.artillery-calculator.com](https://dev.artillery-calculator
 
 ## Contributing
 
+If it's your first time and you have installed the dependencies, please run `pnpm convert` to generate the production images for the maps.
+
+## Translating
+
 Translate this project on [Crowdin](https://crowdin.com/project/mtc-artillery).
