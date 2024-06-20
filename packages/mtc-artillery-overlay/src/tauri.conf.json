@@ -1,0 +1,54 @@
+{
+  "build": {
+    "devPath": "http://localhost:8888",
+    "distDir": "../dist",
+    "withGlobalTauri": true
+  },
+  "package": {
+    "productName": "mtc-artillery-overlay",
+    "version": "0.0.0"
+  },
+  "tauri": {
+    "allowlist": {
+      "all": false,
+      "window": {
+        "all": false,
+        "startDragging": true,
+        "close": true
+      },
+      "shell": {
+        "all": false
+      }
+    },
+    "windows": [
+      {
+        "title": "Artillery overlay",
+        "width": 326,
+        "height": 546,
+        "fileDropEnabled": false,
+        "resizable": false,
+        "maximizable": false,
+        "minimizable": false,
+        "transparent": true,
+        "decorations": false,
+        "alwaysOnTop": true,
+        "theme": "Dark"
+      }
+    ],
+    "security": {
+      "csp": null
+    },
+    "bundle": {
+      "active": true,
+      "targets": "all",
+      "identifier": "com.artillery-calculator.overlay",
+      "icon": [
+        "icons/32x32.png",
+        "icons/128x128.png",
+        "icons/128x128@2x.png",
+        "icons/icon.icns",
+        "icons/icon.ico"
+      ]
+    }
+  }
+}
