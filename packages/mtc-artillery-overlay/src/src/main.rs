@@ -14,7 +14,7 @@ fn main() {
 
             // TAURI_ENV gets set during dev but not prod
             if tauri_env != "development" {
-                let _ = main.eval("window.location.replace('https://dev.artillery-calculator.com')");
+                let _ = main.eval("window.location.replace('https://artillery-calculator.com')");
             }
 
             // use overlay view
