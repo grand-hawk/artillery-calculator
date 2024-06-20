@@ -1,14 +1,13 @@
-import { useLocalStorage } from 'usehooks-ts';
+/* eslint-disable no-underscore-dangle */
+
+import React from 'react';
 
 export default function useIsOverlay() {
-  const [isOverlay] = useLocalStorage<boolean>('overlay-client', false, {
-    serializer(value) {
-      return String(value);
-    },
-    deserializer(value) {
-      return value === 'true';
-    },
-  });
+  const [isOverlay, setIsOverlay] = React.useState<boolean>(false);
+
+  React.useEffect(() => {
+    if ('__TAURI__' in window) setIsOverlay(true);
+  }, [setIsOverlay]);
 
   return isOverlay;
 }

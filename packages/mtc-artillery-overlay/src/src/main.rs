@@ -17,9 +17,6 @@ fn main() {
                 let _ = main.eval("window.location.replace('https://artillery-calculator.com')");
             }
 
-            // use overlay view
-            let _ = main.eval("window.localStorage.setItem('overlay-client', 'true')");
-
             Ok(())
         })
         .invoke_handler(tauri::generate_handler![])
