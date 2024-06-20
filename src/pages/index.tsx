@@ -4,6 +4,7 @@ import React from 'react';
 import Page from '@/components/layout/Page';
 import Umami from '@/components/utils/Umami';
 import useIsMobile from '@/hooks/useIsMobile';
+import useIsSmallScreen from '@/hooks/useIsSmallScreen';
 import locales from '@/i18n';
 import getMotd from '@/lib/server/getMotd';
 import getVersion from '@/utils/version';
@@ -43,6 +44,7 @@ export default function Index({
   motd,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const isMobileDevice = useIsMobile();
+  const isSmallScreen = useIsSmallScreen();
 
   return (
     <>
@@ -59,7 +61,7 @@ export default function Index({
       </Head>
 
       <Page>
-        {isMobileDevice ? (
+        {isMobileDevice || isSmallScreen ? (
           <MobileView motd={motd} version={version} />
         ) : (
           <DesktopView motd={motd} version={version} />
