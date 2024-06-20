@@ -14,7 +14,11 @@ export default function Navigation() {
         paddingX: 1.5,
       }}
     >
-      <Typography level="title-sm" sx={{ userSelect: 'none' }}>
+      <Typography
+        data-tauri-drag-region
+        level="title-sm"
+        sx={{ userSelect: 'none' }}
+      >
         Artillery overlay
       </Typography>
 
