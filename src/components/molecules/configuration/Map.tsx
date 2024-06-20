@@ -29,6 +29,9 @@ export default function MapSelection() {
             placement: 'top-end',
           },
         }}
+        sx={{
+          userSelect: 'none',
+        }}
         value={mapIndex}
         variant="soft"
         onChange={(event, newValue) => setMapIndex(newValue as number)}
