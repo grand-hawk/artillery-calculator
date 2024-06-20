@@ -2,6 +2,7 @@
   "build": {
     "devPath": "http://localhost:8888",
     "distDir": "../dist",
+    "beforeDevCommand": "npm run dev --prefix ../..",
     "withGlobalTauri": true
   },
   "package": {
@@ -23,6 +24,7 @@
     "windows": [
       {
         "title": "Artillery overlay",
+        "label": "main",
         "width": 326,
         "height": 546,
         "fileDropEnabled": false,
@@ -36,7 +38,12 @@
       }
     ],
     "security": {
-      "csp": null
+      "csp": null,
+      "dangerousRemoteDomainIpcAccess": [{
+        "domain": "artillery-calculator.com",
+        "windows": ["main"],
+        "enableTauriAPI": true
+      }]
     },
     "bundle": {
       "active": true,

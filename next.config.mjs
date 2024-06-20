@@ -18,7 +18,7 @@ const config = {
     ];
   },
 
-  i18n: i18nConfig,
+  i18n: process.env.OVERLAY_BUILD !== '1' && i18nConfig
 };
 
 const withBundleAnalyzer = bundleAnalyzer({

@@ -50,6 +50,7 @@
   },
   "devDependencies": {
     "@next/bundle-analyzer": "^14.2.4",
+    "@tauri-apps/cli": "^1.5.14",
     "@types/clone": "^2.1.4",
     "@types/klaw": "^3.0.6",
     "@types/node": "^20.14.2",
