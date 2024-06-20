@@ -28,7 +28,7 @@ function Footer({ version, sx = {} }: { version: string; sx?: SxProps }) {
           display: 'flex',
           flexDirection: 'row',
           alignItems: 'center',
-          spacing: 0.75,
+          gap: 0.75,
         }}
       >
         <Link data-umami-event="Discord" href="https://discord.gg/yHbVdPJ5vf">
