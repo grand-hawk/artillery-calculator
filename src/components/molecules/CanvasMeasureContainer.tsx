@@ -46,7 +46,7 @@ export default function CanvasMeasureContainer({
         overflow: 'hidden',
         aspectRatio: '1/1',
 
-        '& > *': {
+        '& .canvas-sheet': {
           borderRadius: theme.radius.sm,
           overflow: 'hidden',
         },

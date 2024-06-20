@@ -1,11 +1,19 @@
-import Stack from '@mui/joy/Stack';
+import Box from '@mui/joy/Box';
 
 import type { PropsWithChildren } from 'react';
 
 export default function DataContainer({ children }: PropsWithChildren) {
   return (
-    <Stack direction="row" justifyContent="space-between" spacing={1}>
+    <Box
+      className="datacontainer"
+      sx={{
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        gap: 1,
+      }}
+    >
       {children}
-    </Stack>
+    </Box>
   );
 }

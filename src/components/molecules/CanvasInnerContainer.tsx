@@ -21,6 +21,7 @@ export default function CanvasInnerContainer({ children }: PropsWithChildren) {
 
   return (
     <Sheet
+      className="canvas-sheet"
       sx={{
         width: canvasWidth,
         height: canvasHeight,

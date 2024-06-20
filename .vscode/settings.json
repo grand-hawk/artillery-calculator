@@ -1,3 +1,10 @@
 {
-  "typescript.preferences.importModuleSpecifier": "non-relative"
+  "typescript.preferences.importModuleSpecifier": "non-relative",
+  "vsicons.associations.folders": [
+    {
+      "icon": "tauri",
+      "extensions": ["tauri"],
+      "format": "svg"
+    }
+  ]
 }

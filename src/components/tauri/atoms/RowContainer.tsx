@@ -4,7 +4,7 @@ import { mergeSx } from 'merge-sx';
 import type { SxProps } from '@mui/joy/styles/types';
 import type { PropsWithChildren } from 'react';
 
-function ColumnContainer({
+export default function RowContainer({
   children,
   sx = {},
 }: PropsWithChildren<{ sx?: SxProps }>) {
@@ -13,8 +13,10 @@ function ColumnContainer({
       sx={mergeSx(
         {
           display: 'flex',
-          flexDirection: 'column',
-          gap: 2.5,
+          flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          gap: 1,
         },
         sx,
       )}
@@ -23,5 +25,3 @@ function ColumnContainer({
     </Box>
   );
 }
-
-export default ColumnContainer;

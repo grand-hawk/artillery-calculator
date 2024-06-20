@@ -1,6 +1,6 @@
 import UnfoldMore from '@mui/icons-material/UnfoldMore';
+import Box from '@mui/joy/Box';
 import Button from '@mui/joy/Button';
-import Stack from '@mui/joy/Stack';
 import Tab from '@mui/joy/Tab';
 import TabList from '@mui/joy/TabList';
 import TabPanel from '@mui/joy/TabPanel';
@@ -82,7 +82,12 @@ export default function ProjectileSelection() {
               return (
                 <TabPanel key={index} sx={{ padding: 0 }} value={index}>
                   <ScrollBox dependency={selectionOpen}>
-                    <Stack direction="column">
+                    <Box
+                      sx={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                      }}
+                    >
                       {gun.projectiles.map(
                         (projectile, thisProjectileIndex) => (
                           <ProjectileButton
@@ -93,7 +98,7 @@ export default function ProjectileSelection() {
                           />
                         ),
                       )}
-                    </Stack>
+                    </Box>
                   </ScrollBox>
                 </TabPanel>
               );

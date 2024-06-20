@@ -3,4 +3,7 @@ pnpm-lock.yaml
 package.json
 
 # other
-archive/source_heightmaps
+archive
+
+# rust
+/packages/mtc-artillery-overlay

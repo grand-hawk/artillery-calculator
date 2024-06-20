@@ -1,11 +1,14 @@
 {
   "recommendations": [
-    "debens.sort-js-object",
-    "thinker.sort-json",
     "aaron-bond.better-comments",
-    "dbaeumer.vscode-eslint",
     "christian-kohler.npm-intellisense",
+    "dbaeumer.vscode-eslint",
+    "debens.sort-js-object",
     "esbenp.prettier-vscode",
-    "rvest.vs-code-prettier-eslint"
+    "rust-lang.rust-analyzer",
+    "rvest.vs-code-prettier-eslint",
+    "tauri-apps.tauri-vscode",
+    "thinker.sort-json",
+    "vscode-icons-team.vscode-icons"
   ]
 }

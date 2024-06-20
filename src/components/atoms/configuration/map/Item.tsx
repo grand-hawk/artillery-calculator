@@ -1,6 +1,5 @@
 import Plus from '@mui/icons-material/Add';
 import Box from '@mui/joy/Box';
-import Stack from '@mui/joy/Stack';
 import Tooltip from '@mui/joy/Tooltip';
 import Typography from '@mui/joy/Typography';
 import Image from 'next/image';
@@ -12,7 +11,14 @@ export default function MapItem({ item }: { item: Map }) {
   const t = useTranslations();
 
   return (
-    <Stack alignItems="center" direction="row" gap={1}>
+    <Box
+      sx={{
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: 1,
+      }}
+    >
       <Box
         sx={(theme) => ({
           display: 'flex',
@@ -31,7 +37,13 @@ export default function MapItem({ item }: { item: Map }) {
         />
       </Box>
 
-      <Stack alignItems="center" direction="row">
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirection: 'row',
+          alignItems: 'center',
+        }}
+      >
         {item.name}
         {item.heightmap && (
           <Tooltip
@@ -45,7 +57,7 @@ export default function MapItem({ item }: { item: Map }) {
             </Typography>
           </Tooltip>
         )}
-      </Stack>
-    </Stack>
+      </Box>
+    </Box>
   );
 }

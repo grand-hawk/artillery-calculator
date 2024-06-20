@@ -1,12 +1,15 @@
-import Stack from '@mui/joy/Stack';
+import Box from '@mui/joy/Box';
 
 import type { PropsWithChildren } from 'react';
 
 export default function ConfigurationGroup({ children }: PropsWithChildren) {
   return (
-    <Stack
-      spacing={1}
+    <Box
       sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 1,
+
         '& > div': {
           alignItems: 'center',
           height: 35,
@@ -14,6 +17,6 @@ export default function ConfigurationGroup({ children }: PropsWithChildren) {
       }}
     >
       {children}
-    </Stack>
+    </Box>
   );
 }

@@ -22,6 +22,7 @@
     ],
     "baseUrl": "./",
     "paths": {
+      "@tauri/*": ["src/components/tauri/*"],
       "@/*": ["src/*"]
     },
     "noEmit": true

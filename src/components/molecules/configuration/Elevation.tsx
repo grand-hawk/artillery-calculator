@@ -1,5 +1,5 @@
 import todec from '2dec';
-import Stack from '@mui/joy/Stack';
+import Box from '@mui/joy/Box';
 import Typography from '@mui/joy/Typography';
 import { useTranslations } from 'next-intl';
 import React from 'react';
@@ -16,7 +16,14 @@ export default function ElevationValue() {
     <DataContainer>
       <Typography level="title-md">{t('typography.elevation')}</Typography>
 
-      <Stack alignItems="center" direction="row" spacing={1}>
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirection: 'row',
+          alignItems: 'center',
+          gap: 1,
+        }}
+      >
         {lowArc ? (
           <>
             <Typography>{todec(lowArc)}°</Typography>
@@ -34,7 +41,7 @@ export default function ElevationValue() {
         ) : (
           <Typography>{t('typography.notApplicable')}</Typography>
         )}
-      </Stack>
+      </Box>
     </DataContainer>
   );
 }

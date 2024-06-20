@@ -1,7 +1,7 @@
 import todec from '2dec';
 import Plus from '@mui/icons-material/Add';
+import Box from '@mui/joy/Box';
 import Button from '@mui/joy/Button';
-import Stack from '@mui/joy/Stack';
 import Tooltip from '@mui/joy/Tooltip';
 import Typography from '@mui/joy/Typography';
 import { useTranslations } from 'next-intl';
@@ -44,17 +44,20 @@ export default function ProjectileButton({
       variant="soft"
       onClick={() => setProjectile(gunKey, thisProjectileIndex)}
     >
-      <Stack
+      <Box
         sx={{
+          display: 'flex',
           flexDirection: 'row',
           alignItems: 'center',
           justifyContent: 'space-between',
-          width: '100%',
           gap: 2,
+
+          width: '100%',
         }}
       >
         <Typography display="flex">
           {projectile.name}
+
           {projectile.explosiveMass && (
             <Tooltip
               placement="top"
@@ -74,7 +77,7 @@ export default function ProjectileButton({
             value: todec(projectile.velocity),
           })}
         </Typography>
-      </Stack>
+      </Box>
     </Button>
   );
 }
