@@ -39,11 +39,13 @@
     ],
     "security": {
       "csp": null,
-      "dangerousRemoteDomainIpcAccess": [{
-        "domain": "artillery-calculator.com",
-        "windows": ["main"],
-        "enableTauriAPI": true
-      }]
+      "dangerousRemoteDomainIpcAccess": [
+        {
+          "domain": "artillery-calculator.com",
+          "windows": ["main"],
+          "enableTauriAPI": true
+        }
+      ]
     },
     "bundle": {
       "active": true,

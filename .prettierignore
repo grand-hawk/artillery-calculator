@@ -1,9 +1,10 @@
 # package managers
 pnpm-lock.yaml
 package.json
+Cargo.lock
 
 # other
 archive
 
 # rust
-/packages/mtc-artillery-overlay
+/packages/mtc-artillery-overlay/src/target

@@ -33,6 +33,7 @@
     "src",
     "scripts",
     "public",
+    "packages",
     ".next/types/**/*.ts"
   ],
   "exclude": ["node_modules"]

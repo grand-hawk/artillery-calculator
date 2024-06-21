@@ -7,7 +7,50 @@ on:
   workflow_dispatch:
 
 jobs:
+  version_check:
+    runs-on: 'ubuntu-latest'
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'pnpm'
+
+      - name: Get latest tag version
+        id: get_tag_version
+        run: |
+          latest_tag=$(git describe --tags `git rev-list --tags --max-count=1`)
+          version=${latest_tag#overlay-v}
+          echo "Extracted tag version: $version"
+          echo "::set-output name=version::$version"
+
+      - name: Get tauri version
+        id: get_version
+        run: |
+          tauri_version=$(node packages/mtc-artillery-overlay/scripts/version.mjs)
+          echo "Tauri version: $tauri_version"
+          echo "::set-output name=tauri_version::$tauri_version"
+
+      - name: Compare
+        run: |
+          version=${{ steps.get_tag_version.outputs.version }}
+          tauri_version=${{ steps.get_version.outputs.get_version }}
+          if [ "$version" == "$tauri_version" ]; then
+            echo "Versions are equal, exiting..."
+            exit 1
+          fi
+
   build:
+    needs: 'version_check'
+
     permissions:
       contents: write
 
@@ -25,6 +68,7 @@ jobs:
             args: ''
 
     runs-on: ${{ matrix.platform }}
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
