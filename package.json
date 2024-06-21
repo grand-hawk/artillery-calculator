@@ -10,20 +10,16 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-
     "dev": "next dev --port=8888",
     "build": "npm run convert && next build",
     "build:analyze": "cross-env ANALYZE=true npm run build",
     "start": "next start --port=8080",
-
     "next-lint": "next lint",
     "eslint": "eslint .",
     "lint": "npm run next-lint && npm run eslint",
     "lint:fix": "npm run eslint -- --fix",
-
     "format": "prettier . -w",
     "fix": "npm run eslint -- --fix && npm run format",
-
     "depcheck": "depcheck . --quiet --skip-missing",
     "convert": "node scripts/convertMaps.mjs && node scripts/convertHeightmaps.mjs"
   },
@@ -46,7 +42,6 @@
     "next-intl": "^3.15.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-draggable": "^4.4.6",
     "react-zoom-pan-pinch": "^3.4.4",
     "sharp": "^0.33.4",
     "strapi-rest": "^0.1.3",
