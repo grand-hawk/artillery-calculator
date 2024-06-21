@@ -3,7 +3,7 @@
 
 use std::env;
 use native_dialog::MessageDialog;
-use tauri::{ Manager };
+use tauri::Manager;
 use version_compare::{ compare_to, Cmp };
 
 const REPO_OWNER: &'static str = "ari-party";
