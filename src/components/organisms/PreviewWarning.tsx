@@ -3,15 +3,14 @@ import IconButton from '@mui/joy/IconButton';
 import Typography from '@mui/joy/Typography';
 import { useLocalStorage } from 'usehooks-ts';
 
+import { jsonSerializers } from '@/utils/jsonSerializers';
+
 export default function PreviewWarning() {
-  const [hidden, setHidden] = useLocalStorage<boolean>('hide-preview', false, {
-    serializer(value) {
-      return String(value ? 1 : 0);
-    },
-    deserializer(value) {
-      return Number(value) === 1;
-    },
-  });
+  const [hidden, setHidden] = useLocalStorage<boolean>(
+    'hide-preview',
+    false,
+    jsonSerializers,
+  );
 
   return (
     !hidden && (
