@@ -37,7 +37,7 @@ jobs:
       - name: Compare
         run: |
           version=${{ steps.tag_version.outputs.tag }}
-          tauri_version=${{ steps.tauri_version.outputs.get_version }}
+          tauri_version=${{ steps.tauri_version.outputs.tauri_version }}
           if [ "$version" == "$tauri_version" ]; then
             echo "Versions are equal, exiting..."
             exit 1
