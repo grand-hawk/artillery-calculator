@@ -6,6 +6,7 @@ export default function Document() {
     <Html lang="en">
       <Head />
       <body>
+        <noscript>JavaScript is required to run this app</noscript>
         <Main />
         <NextScript />
       </body>
