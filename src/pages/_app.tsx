@@ -23,7 +23,7 @@ function App({ Component, pageProps }: AppProps) {
           ) as string
         }
         locale={router.locale}
-        messages={pageProps.messages || {}}
+        messages={pageProps.messages}
         onError={(error) =>
           process.env.NODE_ENV === 'development'
             ? console.warn(error)

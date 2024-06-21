@@ -33,7 +33,7 @@ export async function getStaticProps(context: GetStaticPropsContext): Promise<
     props: {
       version: getVersion(),
       motd: await getMotd(),
-      messages: locales?.[context.locale!] || {},
+      messages: locales[context.locale!],
     },
     revalidate: 120,
   };
