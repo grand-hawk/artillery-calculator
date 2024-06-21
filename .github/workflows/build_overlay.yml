@@ -50,6 +50,8 @@ jobs:
 
     permissions:
       contents: write
+      id-token: write
+      attestations: write
 
     strategy:
       fail-fast: false
@@ -98,12 +100,26 @@ jobs:
         run: pnpm install
 
       - uses: tauri-apps/tauri-action@v0
+        id: tauri_build
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tagName: overlay-v__VERSION__ # the action automatically replaces \_\_VERSION\_\_ with the app version.
           releaseName: 'Overlay v__VERSION__'
-          releaseBody: 'See the assets to download this version and install.'
+          releaseBody: |
+            See the assets to download this version and install.
+            ```
+            aarch64.dmg = apple
+            amd64.appimage = linux (arm64 cpu)
+            amd64.deb = linux (arm64 cpu)
+            x64-setup.exe = windows
+            x64.dmg = linux
+            x64_en-US.msi = windows
+            ```
           releaseDraft: true
           prerelease: false
           args: ${{ matrix.args }}
+
+      - uses: actions/attest-build-provenance@v1
+        with:
+          subject-path: ${{ steps.tauri_build.outputs.artifactPaths }}
