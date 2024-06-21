@@ -134,6 +134,7 @@ jobs:
             ```
           releaseDraft: true
           prerelease: false
+          projectPath: ./packages/mtc-artillery-overlay
           args: ${{ matrix.args }}
 
       - name: Convert artifact paths
