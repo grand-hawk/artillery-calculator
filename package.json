@@ -10,15 +10,21 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+
     "dev": "next dev --port=8888",
     "build": "npm run convert && next build",
     "build:analyze": "cross-env ANALYZE=true npm run build",
     "start": "next start --port=8080",
-    "lint": "next lint",
-    "lint:fix": "next lint --fix",
+
+    "next-lint": "next lint",
+    "eslint": "eslint .",
+    "lint": "npm run next-lint && npm run eslint",
+    "lint:fix": "npm run eslint -- --fix",
+
     "format": "prettier . -w",
-    "fix": "npm run lint:fix && npm run format",
-    "depcheck": "depcheck .",
+    "fix": "npm run eslint -- --fix && npm run format",
+
+    "depcheck": "depcheck . --quiet --skip-missing",
     "convert": "node scripts/convertMaps.mjs && node scripts/convertHeightmaps.mjs"
   },
   "dependencies": {

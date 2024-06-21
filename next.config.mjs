@@ -19,6 +19,11 @@ const config = {
   },
 
   i18n: i18nConfig,
+
+  eslint: {
+    // ran by itself as script command
+    ignoreDuringBuilds: true,
+  },
 };
 
 const withBundleAnalyzer = bundleAnalyzer({

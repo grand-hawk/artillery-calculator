@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import { useTranslations } from 'next-intl';
 import React from 'react';
 
-import Flag from '@/components/molecules/languageSelector/LocaleFlag';
+import LocaleFlag from '@/components/atoms/LocaleFlag';
 import ScrollBox from '@/components/molecules/ScrollBox';
 import config from '@/i18n/config.json';
 
@@ -24,7 +24,7 @@ export default function LanguageSelector() {
           placement: 'top-end',
         },
       }}
-      startDecorator={<Flag locale={router.locale!} />}
+      startDecorator={<LocaleFlag locale={router.locale!} />}
       value={router.locale}
       variant="outlined"
       onChange={(event, newValue) => {
@@ -36,7 +36,7 @@ export default function LanguageSelector() {
       <ScrollBox dependency={listboxOpen}>
         {config.locales.map((locale, index) => (
           <Option key={index} value={locale}>
-            <Flag locale={locale} /> {t(`languages.${locale}`)}
+            <LocaleFlag locale={locale} /> {t(`languages.${locale}`)}
           </Option>
         ))}
       </ScrollBox>

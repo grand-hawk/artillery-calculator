@@ -1,7 +1,7 @@
 import Box from '@mui/joy/Box';
 import React from 'react';
 
-import CanvasInnerContainer from '@/components/molecules/CanvasInnerContainer';
+import CanvasInnerContainer from '@/components/organisms/CanvasInnerContainer';
 import { useCanvasStore } from '@/stores/canvas';
 
 import type { PropsWithChildren } from 'react';
