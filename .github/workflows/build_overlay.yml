@@ -36,7 +36,8 @@ jobs:
 
       - name: Compare
         run: |
-          version=${${{ steps.tag_version.outputs.tag }}#overlay-v}
+          raw_version=${{ steps.tag_version.outputs.tag }}
+          version=${raw_version#overlay-v}
           tauri_version=${{ steps.tauri_version.outputs.tauri_version }}
           echo "Branch version: $version"
           echo "Tauri version: $tauri_version"
