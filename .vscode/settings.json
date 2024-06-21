@@ -6,5 +6,6 @@
       "extensions": ["tauri"],
       "format": "svg"
     }
-  ]
+  ],
+  "files.eol": "\r\n"
 }
