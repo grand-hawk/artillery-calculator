@@ -86,7 +86,7 @@ jobs:
           node-version: 22
 
       - name: Install pnpm packages
-        run: npm install --prefix ./packages/mtc-artillery/overlay
+        run: npm install --prefix ./packages/mtc-artillery-overlay
 
       - name: Install Rust stable
         uses: dtolnay/rust-toolchain@stable
