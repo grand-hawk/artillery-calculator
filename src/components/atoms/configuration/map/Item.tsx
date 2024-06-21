@@ -45,6 +45,7 @@ export default function MapItem({ item }: { item: Map }) {
         }}
       >
         {item.name}
+
         {item.heightmap && (
           <Tooltip
             placement="top"
