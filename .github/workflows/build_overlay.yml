@@ -135,7 +135,6 @@ jobs:
           releaseDraft: true
           prerelease: false
           args: ${{ matrix.args }}
-          includeUpdaterJson: false
 
       - name: Convert artifact paths
         id: artifact_paths
