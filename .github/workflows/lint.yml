@@ -1,4 +1,4 @@
-name: ESLint
+name: Lint
 
 on:
   push:
@@ -28,5 +28,5 @@ jobs:
       - name: Install pnpm packages
         run: pnpm install
 
-      - name: Run ESLint
+      - name: Lint
         run: pnpm run lint
