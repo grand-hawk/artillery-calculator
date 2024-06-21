@@ -10,3 +10,7 @@ x64_en-US.msi = windows
 ```
 
 Downloads: https://github.com/ari-party/mtc-artillery/releases
+
+## Contributing
+
+Tauri prerequisites: https://tauri.app/v1/guides/getting-started/prerequisites
