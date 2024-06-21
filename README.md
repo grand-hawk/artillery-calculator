@@ -12,7 +12,7 @@ Website to calculate elevation and azimuth (and more) for artillery in [MTC](htt
 
 Dev branch site: [dev.artillery-calculator.com](https://dev.artillery-calculator.com)
 
-![stats](https://umami-views.astrid.exposed/svg?shareURL=https://umami.astrid.exposed/share/Ps68DOSbQBecNH0l/artillery-calculator.com&theme=light)
+[![stats](https://umami-views.astrid.exposed/svg?shareURL=https://umami.astrid.exposed/share/Ps68DOSbQBecNH0l/artillery-calculator.com&theme=light)](https://github.com/ari-party/umami-views)
 
 ## Contributing
 
