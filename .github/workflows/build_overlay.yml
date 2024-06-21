@@ -27,7 +27,7 @@ jobs:
       - uses: actions-ecosystem/action-get-latest-tag@v1
         id: tag_version
 
-      - name: Get tauri version
+      - name: Get Tauri version
         id: tauri_version
         run: |
           tauri_version=$(node packages/mtc-artillery-overlay/scripts/version.mjs)
@@ -38,6 +38,8 @@ jobs:
         run: |
           version=${${{ steps.tag_version.outputs.tag }}#overlay-v}
           tauri_version=${{ steps.tauri_version.outputs.tauri_version }}
+          echo "Branch version: $version"
+          echo "Tauri version: $tauri_version"
           if [ "$version" == "$tauri_version" ]; then
             echo "Versions are equal, exiting..."
             exit 1

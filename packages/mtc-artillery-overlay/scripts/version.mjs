@@ -7,4 +7,4 @@ import config from '../src/tauri.conf.json' with { type: 'json' };
 
 const { version } = config.package;
 
-console.log(version);
+process.stdout.write(version);
