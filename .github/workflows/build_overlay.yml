@@ -32,7 +32,7 @@ jobs:
         run: |
           tauri_version=$(node packages/mtc-artillery-overlay/scripts/version.mjs)
           echo "Tauri version: $tauri_version"
-          echo "::set-output name=tauri_version::$tauri_version"
+          echo "tauri_version=$tauri_version" >> $GITHUB_OUTPUT
 
       - name: Compare
         run: |
