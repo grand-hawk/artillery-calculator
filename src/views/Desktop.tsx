@@ -15,14 +15,11 @@ import Motd from '@/components/organisms/Motd';
 import VersionAlert from '@/components/organisms/VersionAlert';
 import Canvas from '@/components/templates/Canvas';
 import Footer from '@/components/templates/Footer';
-import { useCanvasStore } from '@/stores/canvas';
 
 import type { ViewProps } from '@/pages';
 
 export default function DesktopView({ motd, version }: ViewProps) {
   const t = useTranslations();
-
-  const height = useCanvasStore((s) => s.height);
 
   return (
     <Box
@@ -39,39 +36,41 @@ export default function DesktopView({ motd, version }: ViewProps) {
           justifyContent: 'center',
         }}
       >
-        <Box
-          sx={{
-            display: 'grid',
-            gridTemplateColumns: '1fr 1fr',
+        <Box>
+          <Box
+            sx={{
+              display: 'grid',
+              gridTemplateColumns: '1fr 1fr',
 
-            maxWidth: {
-              sm: '90vw',
-              lg: '75vw',
-            },
+              maxWidth: {
+                sm: '90vw',
+                lg: '75vw',
+              },
 
-            padding: 4,
-            gap: 4,
-          }}
-        >
-          <Canvas />
+              padding: 4,
+              gap: 4,
+            }}
+          >
+            <Canvas />
 
-          <ColumnContainer sx={{ maxHeight: height }}>
-            <VersionAlert currentVersion={version} />
-            <Motd message={motd || undefined} />
+            <ColumnContainer>
+              <VersionAlert currentVersion={version} />
+              <Motd message={motd || undefined} />
 
-            <ConfigurationGroup>
-              <ElevationValue />
-              <AzimuthValue />
-              <DistanceValue />
-              <TimeOfFlightValue />
-              <ProjectileSelection />
-              <MapSelection />
-            </ConfigurationGroup>
+              <ConfigurationGroup>
+                <ElevationValue />
+                <AzimuthValue />
+                <DistanceValue />
+                <TimeOfFlightValue />
+                <ProjectileSelection />
+                <MapSelection />
+              </ConfigurationGroup>
 
-            <Typography marginTop="auto">
-              {t('typography.instructions')}
-            </Typography>
-          </ColumnContainer>
+              <Typography sx={{ marginTop: 'auto' }}>
+                {t('typography.instructions')}
+              </Typography>
+            </ColumnContainer>
+          </Box>
         </Box>
       </Box>
 
