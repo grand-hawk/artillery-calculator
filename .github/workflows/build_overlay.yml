@@ -125,7 +125,7 @@ jobs:
         id: artifact_paths
         shell: bash
         run: |
-          json="${{ steps.tauri_build.outputs.artifactPaths }}"
+          json='${{ steps.tauri_build.outputs.artifactPaths }}' # must use single quotes
           list="$(echo $json | jq -r '. | join(", ")')"
           echo "list=$list" >> $GITHUB_OUTPUT
 
