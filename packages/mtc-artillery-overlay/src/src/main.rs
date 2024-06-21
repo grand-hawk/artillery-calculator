@@ -3,10 +3,36 @@
 
 use std::env;
 use native_dialog::MessageDialog;
-use tauri::Manager;
+use tauri::{ Manager };
+use version_compare::{ compare_to, Cmp };
 
 const REPO_OWNER: &'static str = "ari-party";
 const REPO_NAME: &'static str = "mtc-artillery";
+
+async fn check_for_updates(current_version: String) {
+  let octocrab = octocrab::instance();
+  let binding = octocrab.repos(REPO_OWNER, REPO_NAME);
+  let release_handler = binding.releases();
+  let latest_release = release_handler.get_latest().await.unwrap();
+
+  let version_parts: Vec<&str> = latest_release.tag_name.split("v").collect();
+  let latest_version = version_parts.last().unwrap();
+
+  if compare_to(latest_version, current_version, Cmp::Gt).unwrap() {
+    let confirmation = MessageDialog::new()
+      .set_type(native_dialog::MessageType::Info)
+      .set_title("Artillery overlay")
+      .set_text(
+        "A new version is available, do you wish to visit the releases page?"
+      )
+      .show_confirm()
+      .unwrap();
+
+    if confirmation {
+      let _ = open::that("https://overlay.artillery-calculator.com");
+    }
+  }
+}
 
 fn main() {
   dotenv::dotenv().ok();
@@ -20,37 +46,12 @@ fn main() {
         .unwrap_or_else(|_| "production".into());
 
       if tauri_env == "production" {
+        let rt = tokio::runtime::Runtime::new().unwrap();
+        rt.spawn(check_for_updates(app.package_info().version.to_string()));
+
         let _ = main.eval(
           "window.location.replace('https://artillery-calculator.com')"
         );
-
-        tauri::async_runtime::spawn(async {
-          let octocrab = octocrab::instance();
-          let binding = octocrab.repos(REPO_OWNER, REPO_NAME);
-          let release_handler = binding.releases();
-          let latest_release = release_handler.get_latest().await.unwrap();
-
-          let version_parts: Vec<&str> = latest_release.tag_name
-            .split("v")
-            .collect();
-          let latest_version = version_parts.last().unwrap();
-          let current_version = tauri::VERSION;
-
-          if *latest_version != current_version {
-            let confirmation = MessageDialog::new()
-              .set_type(native_dialog::MessageType::Info)
-              .set_title("Artillery overlay")
-              .set_text(
-                "A new version is available, do you wish to visit the releases page?"
-              )
-              .show_confirm()
-              .unwrap();
-
-            if confirmation {
-              let _ = open::that("https://overlay.artillery-calculator.com");
-            }
-          }
-        });
       }
 
       Ok(())
