@@ -88,6 +88,9 @@ jobs:
         with:
           node-version: 22
 
+      - name: Install pnpm packages
+        run: pnpm install
+
       - name: Install Rust stable
         uses: dtolnay/rust-toolchain@stable
         with:
