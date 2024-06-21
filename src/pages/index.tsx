@@ -7,7 +7,7 @@ import useIsMobile from '@/hooks/useIsMobile';
 import useIsSmallScreen from '@/hooks/useIsSmallScreen';
 import locales from '@/i18n';
 import getMotd from '@/lib/server/getMotd';
-import getVersion from '@/utils/version';
+import getVersion from '@/utils/getVersion';
 import DesktopView from '@/views/Desktop';
 import MobileView from '@/views/Mobile';
 

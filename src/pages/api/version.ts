@@ -1,4 +1,4 @@
-import getVersion from '@/utils/version';
+import getVersion from '@/utils/getVersion';
 
 import type { NextApiRequest, NextApiResponse } from 'next';
 
