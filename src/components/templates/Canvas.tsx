@@ -1,6 +1,6 @@
 import React from 'react';
 
-import CanvasMeasureContainer from '@/components/molecules/CanvasMeasureContainer';
+import CanvasMeasureContainer from '@/components/organisms/CanvasMeasureContainer';
 import Profiler from '@/components/utils/Profiler';
 import { maps } from '@/config/maps';
 import { guns } from '@/config/projectiles';
