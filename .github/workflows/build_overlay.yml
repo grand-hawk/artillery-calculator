@@ -121,6 +121,14 @@ jobs:
           prerelease: false
           args: ${{ matrix.args }}
 
+      - name: Convert artifact paths
+        id: artifact_paths
+        shell: bash
+        run: |
+          json=${{ steps.tauri_build.outputs.artifactPaths }}
+          list=$(echo $json | jq -r '. | join(", ")')
+          echo "list=$list" >> $GITHUB_OUTPUT
+
       - uses: actions/attest-build-provenance@v1
         with:
-          subject-path: ${{ steps.tauri_build.outputs.artifactPaths }}
+          subject-path: ${{ steps.artifact_paths.outputs.list }}
