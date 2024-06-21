@@ -92,6 +92,13 @@ jobs:
         # webkitgtk 4.0 is for Tauri v1 - webkitgtk 4.1 is for Tauri v2.
         # You can remove the one that doesn't apply to your app to speed up the workflow a bit.
 
+      - name: Get workflow run URL
+        id: workflow_url
+        shell: bash
+        run: |
+          url="$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
+          echo "url=$url" >> $GITHUB_OUTPUT
+
       - uses: tauri-apps/tauri-action@v0
         id: tauri_build
         env:
@@ -100,7 +107,10 @@ jobs:
           tagName: overlay-v__VERSION__ # the action automatically replaces \_\_VERSION\_\_ with the app version.
           releaseName: 'Overlay v__VERSION__'
           releaseBody: |
+            View the workflow summary [here](${{ steps.workflow_url.outputs.url }}).
+
             See the assets to download this version and install.
+
             ```
             aarch64.dmg = apple
             amd64.appimage = linux
