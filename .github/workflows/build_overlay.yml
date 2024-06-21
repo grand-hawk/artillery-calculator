@@ -103,8 +103,8 @@ jobs:
             See the assets to download this version and install.
             ```
             aarch64.dmg = apple
-            amd64.appimage = linux (arm64 cpu)
-            amd64.deb = linux (arm64 cpu)
+            amd64.appimage = linux
+            amd64.deb = linux
             x64-setup.exe = windows
             x64.dmg = linux
             x64_en-US.msi = windows
