@@ -11,7 +11,27 @@ import Canvas from '@/components/templates/Canvas';
 import RowContainer from '@tauri/atoms/RowContainer';
 import Navigation from '@tauri/templates/Navigation';
 
+declare global {
+  interface Window {
+    umami: {
+      track: (event: string) => void;
+    };
+  }
+}
+
 export default function OverlayView() {
+  React.useEffect(() => {
+    const timeout = setTimeout(() => {
+      try {
+        if ('umami' in window) window.umami.track('Overlay app');
+      } catch (error) {
+        console.warn(error);
+      }
+    }, 10_000);
+
+    return () => clearTimeout(timeout);
+  }, []);
+
   return (
     <>
       <GlobalStyles
