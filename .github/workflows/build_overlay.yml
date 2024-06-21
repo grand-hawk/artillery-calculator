@@ -24,7 +24,7 @@ jobs:
           node-version: 22
           cache: 'pnpm'
 
-      - uses: ari-party/action-get-latest-tag@v1
+      - uses: ari-party/action-get-latest-tag@v1.6.1
         id: tag_version
 
       - name: Get Tauri version
