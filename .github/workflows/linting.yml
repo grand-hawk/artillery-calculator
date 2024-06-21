@@ -1,4 +1,4 @@
-name: Linting
+name: ESLint
 
 on:
   push:
@@ -8,8 +8,7 @@ on:
     types: [opened, reopened]
 
 jobs:
-  linting:
-    name: Run Linters
+  eslint:
     runs-on: ubuntu-latest
 
     steps:
