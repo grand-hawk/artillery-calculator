@@ -125,8 +125,8 @@ jobs:
         id: artifact_paths
         shell: bash
         run: |
-          json=${{ steps.tauri_build.outputs.artifactPaths }}
-          list=$(echo $json | jq -r '. | join(", ")')
+          json="${{ steps.tauri_build.outputs.artifactPaths }}"
+          list="$(echo $json | jq -r '. | join(", ")')"
           echo "list=$list" >> $GITHUB_OUTPUT
 
       - uses: actions/attest-build-provenance@v1

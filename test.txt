@@ -1,0 +1,1 @@
+["/Users/runner/work/mtc-artillery/mtc-artillery/packages/mtc-artillery-overlay/src/target/aarch64-apple-darwin/release/bundle/dmg/mtc-artillery-overlay_0.1.0_aarch64.dmg","/Users/runner/work/mtc-artillery/mtc-artillery/packages/mtc-artillery-overlay/src/target/aarch64-apple-darwin/release/bundle/macos/mtc-artillery-overlay.app"]
