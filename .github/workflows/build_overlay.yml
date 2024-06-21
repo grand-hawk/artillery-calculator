@@ -1,4 +1,4 @@
-name: Build overlay
+name: Build mtc-artillery-overlay
 
 on:
   push:
