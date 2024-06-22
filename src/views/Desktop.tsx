@@ -5,12 +5,12 @@ import React from 'react';
 
 import ColumnContainer from '@/components/atoms/ColumnContainer';
 import ConfigurationGroup from '@/components/atoms/ConfigurationGroup';
-import AzimuthValue from '@/components/molecules/configuration/Azimuth';
-import DistanceValue from '@/components/molecules/configuration/Distance';
-import ElevationValue from '@/components/molecules/configuration/Elevation';
-import MapSelection from '@/components/molecules/configuration/Map';
-import ProjectileSelection from '@/components/molecules/configuration/Projectile';
-import TimeOfFlightValue from '@/components/molecules/configuration/TimeOfFlight';
+import AzimuthValue from '@/components/organisms/configuration/Azimuth';
+import DistanceValue from '@/components/organisms/configuration/Distance';
+import ElevationValue from '@/components/organisms/configuration/Elevation';
+import MapSelection from '@/components/organisms/configuration/Map';
+import ProjectileSelection from '@/components/organisms/configuration/Projectile';
+import TimeOfFlightValue from '@/components/organisms/configuration/TimeOfFlight';
 import Motd from '@/components/organisms/Motd';
 import VersionAlert from '@/components/organisms/VersionAlert';
 import Canvas from '@/components/templates/Canvas';

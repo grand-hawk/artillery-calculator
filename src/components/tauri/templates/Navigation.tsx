@@ -43,9 +43,12 @@ export default function Navigation() {
             zIndex: 2,
           }}
           onClick={async () => {
-            // window cant be imported top-level for some reason, even with "use client"
-            const { appWindow } = await import('@tauri-apps/api/window');
-            appWindow.close();
+            try {
+              const { appWindow } = await import('@tauri-apps/api/window');
+              appWindow.close();
+            } catch (error) {
+              console.error(error);
+            }
           }}
         >
           <Close />

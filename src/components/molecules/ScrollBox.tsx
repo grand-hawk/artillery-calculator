@@ -42,8 +42,9 @@ function ScrollBox({
       sx={mergeSx(
         {
           maxHeight: 250,
-          overflow: 'scroll',
           maskImage,
+
+          overflow: 'scroll',
           '&::-webkit-scrollbar': {
             display: 'none',
           },

@@ -6,7 +6,7 @@ import { immer } from 'zustand/middleware/immer';
 
 import { guns } from '@/config/projectiles';
 
-import type { MobileModes } from '@/components/molecules/configuration/MobileMode';
+import type { MobileModes } from '@/components/organisms/configuration/MobileMode';
 import type { Vector } from '@/components/templates/Canvas';
 
 interface ProjectileData {

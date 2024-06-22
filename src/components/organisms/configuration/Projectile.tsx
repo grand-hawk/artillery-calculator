@@ -70,7 +70,7 @@ export default function ProjectileSelection() {
             orientation="vertical"
             size="sm"
             sx={{
-              maxHeight: 200,
+              maxHeight: 250,
             }}
             value={selectionTab}
             variant="soft"

@@ -1,8 +1,8 @@
 {
   "build": {
+    "beforeDevCommand": "npm run dev --prefix ../..",
     "devPath": "http://localhost:8888",
     "distDir": "../dist",
-    "beforeDevCommand": "npm run dev --prefix ../..",
     "withGlobalTauri": true
   },
   "package": {
@@ -12,52 +12,53 @@
   "tauri": {
     "allowlist": {
       "all": false,
-      "window": {
-        "all": false,
-        "startDragging": true,
-        "close": true
-      },
       "shell": {
         "all": false
+      },
+      "window": {
+        "all": false,
+        "close": true,
+        "startDragging": true
       }
     },
-    "windows": [
-      {
-        "title": "Artillery overlay",
-        "label": "main",
-        "width": 326,
-        "height": 546,
-        "fileDropEnabled": false,
-        "resizable": false,
-        "maximizable": false,
-        "minimizable": false,
-        "transparent": true,
-        "decorations": false,
-        "alwaysOnTop": true,
-        "theme": "Dark"
-      }
-    ],
+    "bundle": {
+      "active": true,
+      "icon": [
+        "icons/128x128.png",
+        "icons/128x128@2x.png",
+        "icons/32x32.png",
+        "icons/icon.icns",
+        "icons/icon.ico"
+      ],
+      "identifier": "com.artillery-calculator.overlay",
+      "targets": "all"
+    },
+    "macOSPrivateApi": true,
     "security": {
       "csp": null,
       "dangerousRemoteDomainIpcAccess": [
         {
           "domain": "artillery-calculator.com",
-          "windows": ["main"],
-          "enableTauriAPI": true
+          "enableTauriAPI": true,
+          "windows": ["main"]
         }
       ]
     },
-    "bundle": {
-      "active": true,
-      "targets": "all",
-      "identifier": "com.artillery-calculator.overlay",
-      "icon": [
-        "icons/32x32.png",
-        "icons/128x128.png",
-        "icons/128x128@2x.png",
-        "icons/icon.icns",
-        "icons/icon.ico"
-      ]
-    }
+    "windows": [
+      {
+        "alwaysOnTop": true,
+        "decorations": false,
+        "fileDropEnabled": false,
+        "height": 546,
+        "label": "main",
+        "maximizable": false,
+        "minimizable": false,
+        "resizable": false,
+        "theme": "Dark",
+        "title": "Artillery overlay",
+        "transparent": true,
+        "width": 326
+      }
+    ]
   }
 }

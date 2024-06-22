@@ -3,10 +3,10 @@ import GlobalStyles from '@mui/joy/GlobalStyles';
 import React from 'react';
 
 import ColumnContainer from '@/components/atoms/ColumnContainer';
-import AzimuthValue from '@/components/molecules/configuration/Azimuth';
-import ElevationValue from '@/components/molecules/configuration/Elevation';
-import MapSelection from '@/components/molecules/configuration/Map';
-import ProjectileSelection from '@/components/molecules/configuration/Projectile';
+import AzimuthValue from '@/components/organisms/configuration/Azimuth';
+import ElevationValue from '@/components/organisms/configuration/Elevation';
+import MapSelection from '@/components/organisms/configuration/Map';
+import ProjectileSelection from '@/components/organisms/configuration/Projectile';
 import Canvas from '@/components/templates/Canvas';
 import RowContainer from '@tauri/atoms/RowContainer';
 import Navigation from '@tauri/templates/Navigation';
