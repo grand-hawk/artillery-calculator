@@ -45,6 +45,8 @@ fn main() {
         ::var("TAURI_ENV")
         .unwrap_or_else(|_| "production".into());
 
+      println!("Enviroment: {}", tauri_env);
+
       if tauri_env == "production" {
         let rt = tokio::runtime::Runtime::new().unwrap();
         rt.spawn(check_for_updates(app.package_info().version.to_string()));
