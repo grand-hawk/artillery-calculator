@@ -3,33 +3,47 @@
 
 use std::env;
 use native_dialog::MessageDialog;
-use tauri::Manager;
+use tauri::{ async_runtime::spawn, Manager };
 use version_compare::{ compare_to, Cmp };
 
 const REPO_OWNER: &'static str = "ari-party";
 const REPO_NAME: &'static str = "mtc-artillery";
 
 async fn check_for_updates(current_version: String) {
+  println!("Fetching latest version...");
+
   let octocrab = octocrab::instance();
   let binding = octocrab.repos(REPO_OWNER, REPO_NAME);
   let release_handler = binding.releases();
-  let latest_release = release_handler.get_latest().await.unwrap();
 
-  let version_parts: Vec<&str> = latest_release.tag_name.split("v").collect();
-  let latest_version = version_parts.last().unwrap();
+  match release_handler.get_latest().await {
+    Ok(latest_release) => {
+      let version_parts: Vec<&str> = latest_release.tag_name
+        .split("v")
+        .collect();
+      let latest_version = version_parts.last().unwrap();
 
-  if compare_to(latest_version, current_version, Cmp::Gt).unwrap() {
-    let confirmation = MessageDialog::new()
-      .set_type(native_dialog::MessageType::Info)
-      .set_title("Artillery overlay")
-      .set_text(
-        "A new version is available, do you wish to visit the releases page?"
-      )
-      .show_confirm()
-      .unwrap();
+      println!("Current version: {}", current_version);
+      println!("Latest version: {}", latest_version);
 
-    if confirmation {
-      let _ = open::that("https://overlay.artillery-calculator.com");
+      if compare_to(latest_version, current_version, Cmp::Gt).unwrap() {
+        let confirmation = MessageDialog::new()
+          .set_type(native_dialog::MessageType::Info)
+          .set_title("Artillery overlay")
+          .set_text(
+            "A new version is available, do you wish to visit the releases page?"
+          )
+          .show_confirm()
+          .unwrap();
+
+        if confirmation {
+          let _ = open::that("https://overlay.artillery-calculator.com");
+        }
+      }
+    }
+
+    Err(e) => {
+      eprintln!("check_for_updates: {}", e);
     }
   }
 }
@@ -48,8 +62,10 @@ fn main() {
       println!("Enviroment: {}", tauri_env);
 
       if tauri_env == "production" {
-        let rt = tokio::runtime::Runtime::new().unwrap();
-        rt.spawn(check_for_updates(app.package_info().version.to_string()));
+        let version = app.package_info().version.to_string();
+        spawn(async move {
+          check_for_updates(version).await;
+        });
 
         let _ = main.eval(
           "window.location.replace('https://artillery-calculator.com')"
