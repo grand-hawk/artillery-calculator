@@ -13,7 +13,7 @@
     "dev": "next dev --port=8888",
     "build": "npm run convert && npm run lint && next build",
     "build:analyze": "cross-env ANALYZE=true npm run build",
-    "start": "next start --port=8080",
+    "start": "next start",
     "next-lint": "next lint",
     "eslint": "eslint .",
     "lint": "npm run next-lint && npm run eslint",
