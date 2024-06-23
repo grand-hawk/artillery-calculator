@@ -45,6 +45,7 @@ export default function Navigation() {
           onClick={async () => {
             try {
               const { appWindow } = await import('@tauri-apps/api/window');
+
               appWindow.close();
             } catch (error) {
               console.error(error);

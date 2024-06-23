@@ -17,6 +17,11 @@ export default function RowContainer({
           alignItems: 'center',
           justifyContent: 'space-between',
           gap: 1,
+
+          '& .datacontainer': {
+            flexDirection: 'column',
+            gap: 0,
+          },
         },
         sx,
       )}

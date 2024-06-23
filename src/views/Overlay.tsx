@@ -4,6 +4,7 @@ import React from 'react';
 
 import ColumnContainer from '@/components/atoms/ColumnContainer';
 import AzimuthValue from '@/components/organisms/configuration/Azimuth';
+import DistanceValue from '@/components/organisms/configuration/Distance';
 import ElevationValue from '@/components/organisms/configuration/Elevation';
 import MapSelection from '@/components/organisms/configuration/Map';
 import ProjectileSelection from '@/components/organisms/configuration/Projectile';
@@ -19,6 +20,10 @@ declare global {
   }
 }
 
+const navigationHeight = 40;
+const canvasHeight = 326;
+const dataHeight = 225;
+
 export default function OverlayView() {
   React.useEffect(() => {
     const timeout = setTimeout(() => {
@@ -30,6 +35,24 @@ export default function OverlayView() {
     }, 10_000);
 
     return () => clearTimeout(timeout);
+  }, []);
+
+  React.useEffect(() => {
+    async function updateSize() {
+      try {
+        const { appWindow, LogicalSize } = await import(
+          '@tauri-apps/api/window'
+        );
+
+        await appWindow.setSize(
+          new LogicalSize(326, navigationHeight + canvasHeight + dataHeight),
+        );
+      } catch (error) {
+        console.error(error);
+      }
+    }
+
+    updateSize();
   }, []);
 
   return (
@@ -49,7 +72,7 @@ export default function OverlayView() {
       <Box
         sx={{
           display: 'grid',
-          gridTemplateRows: '40px 326px 180px',
+          gridTemplateRows: `${navigationHeight}px ${canvasHeight}px ${dataHeight}px`,
 
           borderRadius: 8,
           backgroundColor: 'black',
@@ -74,18 +97,17 @@ export default function OverlayView() {
             padding: 2,
           }}
         >
-          <RowContainer
-            sx={{
-              '& .datacontainer': {
-                flexDirection: 'column',
-                gap: 0,
-              },
-            }}
-          >
-            <ElevationValue />
+          <ColumnContainer sx={{ gap: 1 }}>
+            <RowContainer>
+              <ElevationValue />
 
-            <AzimuthValue />
-          </RowContainer>
+              <AzimuthValue />
+            </RowContainer>
+
+            <RowContainer>
+              <DistanceValue />
+            </RowContainer>
+          </ColumnContainer>
 
           <ColumnContainer
             sx={{
