@@ -63,6 +63,7 @@ fn main() {
 
       if tauri_env == "production" {
         let version = app.package_info().version.to_string();
+
         spawn(async move {
           check_for_updates(version).await;
         });

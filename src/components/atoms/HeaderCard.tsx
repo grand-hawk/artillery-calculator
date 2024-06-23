@@ -6,7 +6,6 @@ import type { PropsWithChildren } from 'react';
 
 export default function HeaderCard({
   children,
-  sx = {},
   ...props
 }: PropsWithChildren<CardProps>) {
   return (
@@ -16,11 +15,14 @@ export default function HeaderCard({
       size="sm"
       variant="soft"
       {...props}
-      sx={mergeSx(sx, {
-        paddingX: 2,
-        maxHeight: 75,
-        overflow: 'auto',
-      })}
+      sx={mergeSx(
+        {
+          paddingX: 2,
+          maxHeight: 75,
+          overflow: 'auto',
+        },
+        props.sx,
+      )}
     >
       {children}
     </Card>

@@ -30,7 +30,7 @@ export default function MapItem({ item }: { item: Map }) {
         })}
       >
         <Image
-          alt=""
+          alt={item.name}
           height={24}
           src={`/images/webp/maps/${item.image}_small.webp`}
           width={24}
@@ -53,7 +53,7 @@ export default function MapItem({ item }: { item: Map }) {
             title={t('typography.heightmap')}
             variant="plain"
           >
-            <Typography color="primary" fontSize={10}>
+            <Typography color="primary" sx={{ fontSize: 10 }}>
               <Plus fontSize="small" />
             </Typography>
           </Tooltip>
