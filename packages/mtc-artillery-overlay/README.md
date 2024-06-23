@@ -12,3 +12,5 @@ Downloads: https://github.com/ari-party/mtc-artillery/releases
 ## Contributing
 
 Tauri prerequisites: https://tauri.app/v1/guides/getting-started/prerequisites
+
+Submit false positives: https://github.com/yaronelh/False-Positive-Center
