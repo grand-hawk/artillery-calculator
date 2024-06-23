@@ -20,6 +20,7 @@ declare global {
   }
 }
 
+const windowWidth = 326;
 const navigationHeight = 40;
 const canvasHeight = 326;
 const dataHeight = 225;
@@ -45,7 +46,10 @@ export default function OverlayView() {
         );
 
         await appWindow.setSize(
-          new LogicalSize(326, navigationHeight + canvasHeight + dataHeight),
+          new LogicalSize(
+            windowWidth,
+            navigationHeight + canvasHeight + dataHeight,
+          ),
         );
       } catch (error) {
         console.error(error);
