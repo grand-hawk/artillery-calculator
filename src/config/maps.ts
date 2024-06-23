@@ -45,6 +45,12 @@ export const maps: Map[] = [
     image: 'radar_station',
     name: 'Radar Station',
     size: 708 * 9,
+    heightmap: {
+      0: 0,
+      255: 98,
+      width: 6372,
+      height: 6372,
+    },
   },
   {
     image: 'roinburg',
