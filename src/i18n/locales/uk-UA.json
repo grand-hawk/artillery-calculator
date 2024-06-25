@@ -15,7 +15,8 @@
     "projectile": "Снаряд",
     "switchSelectionTo": "Перемикання вибору на {value}",
     "target": "мета",
-    "timeOfFlight": "Час польоту"
+    "timeOfFlight": "Час польоту",
+    "downloadOverlay": "Download the in-game overlay on <link>GitHub</link>."
   },
   "units": {
     "meter": "{value, plural, =1 {{value} метр} other {{value} метрів}}",
