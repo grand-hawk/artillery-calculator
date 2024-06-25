@@ -15,7 +15,8 @@
     "projectile": "Projektil",
     "switchSelectionTo": "Auswahl wechseln zu {value}",
     "target": "Ziel",
-    "timeOfFlight": "Flugzeit"
+    "timeOfFlight": "Flugzeit",
+    "downloadOverlay": "Download the in-game overlay on <link>GitHub</link>."
   },
   "units": {
     "meter": "{value, plural, =1 {{value} Meter} other {{value} Meter}}",
