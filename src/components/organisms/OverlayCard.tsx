@@ -12,7 +12,7 @@ function OverlayCard() {
     <HeaderCard sx={{ backgroundColor: 'unset' }} variant="outlined">
       <Typography>
         {t.rich('typography.downloadOverlay', {
-          link: (chunks) => <OverlayCardLink renderText={chunks} />,
+          link: (chunks) => <OverlayCardLink renderText={() => chunks} />,
         })}
       </Typography>
     </HeaderCard>

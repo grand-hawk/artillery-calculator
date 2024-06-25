@@ -4,11 +4,11 @@ import React from 'react';
 export default function OverlayCardLink({
   renderText,
 }: {
-  renderText: React.ReactNode;
+  renderText: () => React.ReactNode;
 }) {
   return (
     <Link href="https://overlay.artillery-calculator.com" target="_blank">
-      {renderText}
+      {renderText()}
     </Link>
   );
 }
