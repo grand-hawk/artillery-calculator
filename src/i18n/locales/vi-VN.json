@@ -15,7 +15,8 @@
     "projectile": "Đầu đạn",
     "switchSelectionTo": "Đổi lựa chọn sang {value}",
     "target": "mục tiêu",
-    "timeOfFlight": "Thời gian bay"
+    "timeOfFlight": "Thời gian bay",
+    "downloadOverlay": "Download the in-game overlay on <link>GitHub</link>."
   },
   "units": {
     "meter": "{value, plural, =1 {{value} mét} other {{value} mét}}",
