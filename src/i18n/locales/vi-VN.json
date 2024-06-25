@@ -5,7 +5,7 @@
     "distance": "Khoảng cách",
     "elevation": "Gốc nâng",
     "gun": "pháo",
-    "heightmap": "This map features a heightmap for improved accuracy",
+    "heightmap": "Bản đồ có phân tầng địa hình để nâng cao độ chính xác của pháo",
     "instructions": "Chuột trái để xác định vị trí pháo của bạn. Chuột trái để xác định mục tiêu của bạn. Dùng chuột giữa để di chuyển quanh bản đổ và lăng chuột giữa để phóng to hoặc thu nhỏ bản đồ.",
     "map": "Bản Đồ",
     "metersPerSecond": "{value} m/s",
@@ -16,7 +16,7 @@
     "switchSelectionTo": "Đổi lựa chọn sang {value}",
     "target": "mục tiêu",
     "timeOfFlight": "Thời gian bay",
-    "downloadOverlay": "Download the in-game overlay on <link>GitHub</link>."
+    "downloadOverlay": "Tải bản overlay để dùng trong game ở <link>Github</link>."
   },
   "units": {
     "meter": "{value, plural, =1 {{value} mét} other {{value} mét}}",
