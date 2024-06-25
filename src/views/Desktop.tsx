@@ -11,10 +11,11 @@ import ElevationValue from '@/components/organisms/configuration/Elevation';
 import MapSelection from '@/components/organisms/configuration/Map';
 import ProjectileSelection from '@/components/organisms/configuration/Projectile';
 import TimeOfFlightValue from '@/components/organisms/configuration/TimeOfFlight';
+import Footer from '@/components/organisms/Footer';
 import Motd from '@/components/organisms/Motd';
+import OverlayCard from '@/components/organisms/OverlayCard';
 import VersionAlert from '@/components/organisms/VersionAlert';
 import Canvas from '@/components/templates/Canvas';
-import Footer from '@/components/templates/Footer';
 
 import type { ViewProps } from '@/pages';
 
@@ -69,6 +70,8 @@ export default function DesktopView({ motd, version }: ViewProps) {
               <Typography sx={{ marginTop: 'auto' }}>
                 {t('typography.instructions')}
               </Typography>
+
+              <OverlayCard />
             </ColumnContainer>
           </Box>
         </Box>

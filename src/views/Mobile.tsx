@@ -10,10 +10,10 @@ import MapSelection from '@/components/organisms/configuration/Map';
 import MobileMode from '@/components/organisms/configuration/MobileMode';
 import ProjectileSelection from '@/components/organisms/configuration/Projectile';
 import TimeOfFlightValue from '@/components/organisms/configuration/TimeOfFlight';
+import Footer from '@/components/organisms/Footer';
 import Motd from '@/components/organisms/Motd';
 import VersionAlert from '@/components/organisms/VersionAlert';
 import Canvas from '@/components/templates/Canvas';
-import Footer from '@/components/templates/Footer';
 import useIsMobile from '@/hooks/useIsMobile';
 
 import type { ViewProps } from '@/pages';
