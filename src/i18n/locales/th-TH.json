@@ -15,7 +15,8 @@
     "projectile": "กระสุน",
     "switchSelectionTo": "สลับการเลือกไปที่ {value}",
     "target": "เป้าหมาย",
-    "timeOfFlight": "เวลาบิน"
+    "timeOfFlight": "เวลาบิน",
+    "downloadOverlay": "Download the in-game overlay on <link>GitHub</link>."
   },
   "units": {
     "meter": "{value, plural, =1 {{value} เมตร} other {{value} เมตร}}",
