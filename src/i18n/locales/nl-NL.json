@@ -16,7 +16,7 @@
     "switchSelectionTo": "Schakel selectie naar {value}",
     "target": "doelwit",
     "timeOfFlight": "Vliegtijd",
-    "downloadOverlay": "Download the in-game overlay on <link>GitHub</link>."
+    "downloadOverlay": "Download de in-game overlay op <link>GitHub</link>."
   },
   "units": {
     "meter": "{value, plural, =1 {{value} meter} other {{value} meter}}",
