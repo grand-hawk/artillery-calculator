@@ -16,7 +16,7 @@
     "switchSelectionTo": "Cambiar selección a {value}",
     "target": "objetivo",
     "timeOfFlight": "Tiempo de vuelo",
-    "downloadOverlay": "Download the in-game overlay on <link>GitHub</link>."
+    "downloadOverlay": "Descargue la capa del juego en <link>GitHub</link>."
   },
   "units": {
     "meter": "{value, plural, =1 {{value} metro} other {{value} metros}}",
