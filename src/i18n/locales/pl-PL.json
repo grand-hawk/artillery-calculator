@@ -15,7 +15,8 @@
     "projectile": "Pocisk",
     "switchSelectionTo": "Przełącz wybór na {value}",
     "target": "cel",
-    "timeOfFlight": "Czas lotu"
+    "timeOfFlight": "Czas lotu",
+    "downloadOverlay": "Download the in-game overlay on <link>GitHub</link>."
   },
   "units": {
     "meter": "{value, plural, =1 {{value} metr} other {{value} metrów}}",
