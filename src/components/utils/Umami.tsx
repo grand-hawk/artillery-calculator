@@ -1,16 +1,15 @@
 import Script from 'next/script';
 
 export default function Umami() {
+  const domain = process.env.NEXT_PUBLIC_ANALYTICS_DOMAIN;
+
   return (
-    process.env.NEXT_PUBLIC_ANALYTICS_DOMAIN && (
+    domain && (
       <Script
-        data-host-url={process.env.NEXT_PUBLIC_ANALYTICS_DOMAIN}
+        data-host-url={domain}
         data-website-id={process.env.NEXT_PUBLIC_ANALYTICS_ID}
         defer
-        src={new URL(
-          '/script.js',
-          process.env.NEXT_PUBLIC_ANALYTICS_DOMAIN,
-        ).toString()}
+        src={new URL('/script.js', domain).toString()}
       />
     )
   );

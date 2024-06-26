@@ -6,6 +6,7 @@ import Link from '@/components/atoms/footer/Link';
 import BMACIcon from '@/components/atoms/icons/BMAC';
 import DiscordIcon from '@/components/atoms/icons/Discord';
 import GitHubIcon from '@/components/atoms/icons/GitHub';
+import Status from '@/components/molecules/footer/Status';
 import LanguageSelector from '@/components/organisms/LanguageSelector';
 
 import type { SxProps } from '@mui/joy/styles/types';
@@ -48,6 +49,8 @@ function Footer({ version, sx = {} }: { version: string; sx?: SxProps }) {
         >
           <BMACIcon />
         </Link>
+
+        <Status />
       </Box>
 
       <Box
