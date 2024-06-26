@@ -16,7 +16,7 @@
     "switchSelectionTo": "สลับการเลือกไปที่ {value}",
     "target": "เป้าหมาย",
     "timeOfFlight": "เวลาบิน",
-    "downloadOverlay": "Download the in-game overlay on <link>GitHub</link>."
+    "downloadOverlay": "ดาวน์โหลดโอเวอร์เลย์ในเกมได้ที่ <link>GitHub</link>"
   },
   "units": {
     "meter": "{value, plural, =1 {{value} เมตร} other {{value} เมตร}}",
