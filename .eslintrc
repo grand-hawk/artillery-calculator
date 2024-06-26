@@ -30,7 +30,12 @@
     }
   },
   "rules": {
-    "prettier/prettier": "warn",
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ],
     "consistent-return": "off",
     "react/jsx-props-no-spreading": "off",
     "react/no-array-index-key": "off",
