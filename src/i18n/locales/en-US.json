@@ -3,6 +3,7 @@
     "azimuth": "Azimuth",
     "blastRange": "This projectile has blast range data",
     "distance": "Distance",
+    "downloadOverlay": "Download the in-game overlay on <link>GitHub</link>.",
     "elevation": "Elevation",
     "gun": "gun",
     "heightmap": "This map features a heightmap for improved accuracy",
@@ -13,10 +14,10 @@
     "notApplicable": "N/A",
     "or": "or",
     "projectile": "Projectile",
+    "status": "Status",
     "switchSelectionTo": "Switch selection to {value}",
     "target": "target",
-    "timeOfFlight": "Time of flight",
-    "downloadOverlay": "Download the in-game overlay on <link>GitHub</link>."
+    "timeOfFlight": "Time of flight"
   },
   "units": {
     "meter": "{value, plural, =1 {{value} meter} other {{value} meters}}",
