@@ -2,6 +2,7 @@ import Head from 'next/head';
 import React from 'react';
 
 import Page from '@/components/layout/Page';
+import PropUpdater from '@/components/utils/PropUpdater';
 import Umami from '@/components/utils/Umami';
 import useIsMobile from '@/hooks/useIsMobile';
 import useIsSmallScreen from '@/hooks/useIsSmallScreen';
@@ -73,6 +74,7 @@ export default function Index({
       </Page>
 
       <Umami />
+      <PropUpdater />
     </>
   );
 }
