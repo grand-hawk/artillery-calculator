@@ -10,11 +10,10 @@
     "instructions": "Click izquierdo para establecer la posición del arma. Click derecho para establecer la posición del objetivo. Mantén pulsado el botón central para mover el mapa y desplaza la rueda para el zoom.",
     "map": "Mapa",
     "metersPerSecond": "{value} m/s",
-    "newVersion": "Una nueva versión ha sido publicada, actualiza la página para aplicarla.",
     "notApplicable": "N/A",
     "or": "o",
     "projectile": "Proyectil",
-    "status": "Status",
+    "status": "Estado",
     "switchSelectionTo": "Cambiar selección a {value}",
     "target": "objetivo",
     "timeOfFlight": "Tiempo de vuelo"
