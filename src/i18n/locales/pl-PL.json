@@ -3,6 +3,7 @@
     "azimuth": "Azymut",
     "blastRange": "Ten pocisk ma dane o zasięgu wybuchu",
     "distance": "Odległość",
+    "downloadOverlay": "Pobierz nakładkę w grze na <link>GitHub</link>.",
     "elevation": "Elewacja",
     "gun": "broń",
     "heightmap": "Ta mapa zawiera mapę wysokości dla poprawy dokładności",
@@ -13,10 +14,10 @@
     "notApplicable": "Nie dotyczy.",
     "or": "lub",
     "projectile": "Pocisk",
+    "status": "Status",
     "switchSelectionTo": "Przełącz wybór na {value}",
     "target": "cel",
-    "timeOfFlight": "Czas lotu",
-    "downloadOverlay": "Pobierz nakładkę w grze na <link>GitHub</link>."
+    "timeOfFlight": "Czas lotu"
   },
   "units": {
     "meter": "{value, plural, =1 {{value} metr} other {{value} metrów}}",
