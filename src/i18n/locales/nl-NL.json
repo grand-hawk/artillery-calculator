@@ -3,6 +3,7 @@
     "azimuth": "Azimut",
     "blastRange": "Dit projectiel heeft ontploffingsradius gegevens",
     "distance": "Afstand",
+    "downloadOverlay": "Download de in-game overlay op <link>GitHub</link>.",
     "elevation": "Elevatie",
     "gun": "geweer",
     "heightmap": "Deze kaart beschikt over een hoogtekaart voor verbeterde nauwkeurigheid",
@@ -13,10 +14,10 @@
     "notApplicable": "N.v.t.",
     "or": "of",
     "projectile": "Projectiel",
+    "status": "Status",
     "switchSelectionTo": "Schakel selectie naar {value}",
     "target": "doelwit",
-    "timeOfFlight": "Vliegtijd",
-    "downloadOverlay": "Download de in-game overlay op <link>GitHub</link>."
+    "timeOfFlight": "Vliegtijd"
   },
   "units": {
     "meter": "{value, plural, =1 {{value} meter} other {{value} meter}}",
