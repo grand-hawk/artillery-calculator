@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import React from 'react';
 import useSWR from 'swr';
 
+import { PropsMaxAge } from '@/lib/server/getProps';
 import { usePropStore } from '@/stores/props';
 import fetcher from '@/utils/fetcher';
 
@@ -17,7 +18,7 @@ export default function PropUpdater() {
   const setMotd = usePropStore((s) => s.setMotd);
 
   const { data, error } = useSWR<Props>('/api/props', {
-    refreshInterval: 60_000,
+    refreshInterval: PropsMaxAge * 1_000,
     fetcher,
   });
 
