@@ -64,7 +64,7 @@ export default function MobileView({ motd, version }: ViewProps) {
         </ColumnContainer>
       </Box>
 
-      <Footer sx={{ width: '100%' }} version={version} />
+      <Footer version={version} />
     </Box>
   );
 }

@@ -1,6 +1,7 @@
 import Box from '@mui/joy/Box';
 import Typography from '@mui/joy/Typography';
 import { mergeSx } from 'merge-sx';
+import { useMediaQuery } from 'usehooks-ts';
 
 import Link from '@/components/atoms/footer/Link';
 import BMACIcon from '@/components/atoms/icons/BMAC';
@@ -8,21 +9,35 @@ import DiscordIcon from '@/components/atoms/icons/Discord';
 import GitHubIcon from '@/components/atoms/icons/GitHub';
 import Status from '@/components/molecules/footer/Status';
 import LanguageSelector from '@/components/organisms/LanguageSelector';
+import useIsSmallScreen from '@/hooks/useIsSmallScreen';
 
 import type { SxProps } from '@mui/joy/styles/types';
 
 function Footer({ version, sx = {} }: { version: string; sx?: SxProps }) {
+  const isSmallScreen = useIsSmallScreen();
+  const isSuperSmallScreen = useMediaQuery('(max-width: 400px)');
+
   return (
     <Box
-      sx={mergeSx(sx, {
-        display: 'flex',
-        flexDirection: 'row',
-        gap: 1,
+      sx={mergeSx(
+        {
+          display: 'flex',
+          flexDirection: 'row',
+          gap: 1,
 
-        marginTop: 'auto',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-      })}
+          marginTop: 'auto',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+
+          width: isSmallScreen ? '100%' : 'unset',
+
+          ...(isSuperSmallScreen && {
+            flexDirection: 'column',
+            alignItems: 'stretch',
+          }),
+        },
+        sx,
+      )}
     >
       <Box
         sx={{
