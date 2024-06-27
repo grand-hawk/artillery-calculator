@@ -3,6 +3,7 @@
     "azimuth": "Gốc xoay",
     "blastRange": "Đầu đạn này có khoảng cách sát thương",
     "distance": "Khoảng cách",
+    "downloadOverlay": "Tải bản overlay để dùng trong game ở <link>Github</link>.",
     "elevation": "Gốc nâng",
     "gun": "pháo",
     "heightmap": "Bản đồ có phân tầng địa hình để nâng cao độ chính xác của pháo",
@@ -13,10 +14,10 @@
     "notApplicable": "Không có sẵn",
     "or": "hoặc",
     "projectile": "Đầu đạn",
+    "status": "Status",
     "switchSelectionTo": "Đổi lựa chọn sang {value}",
     "target": "mục tiêu",
-    "timeOfFlight": "Thời gian bay",
-    "downloadOverlay": "Tải bản overlay để dùng trong game ở <link>Github</link>."
+    "timeOfFlight": "Thời gian bay"
   },
   "units": {
     "meter": "{value, plural, =1 {{value} mét} other {{value} mét}}",
