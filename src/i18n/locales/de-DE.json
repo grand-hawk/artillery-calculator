@@ -3,6 +3,7 @@
     "azimuth": "Azimut",
     "blastRange": "Dieses Projektil hat Explosionsradius-Daten",
     "distance": "Distanz",
+    "downloadOverlay": "Laden Sie das In-Game Overlay auf <link>GitHub</link> herunter.",
     "elevation": "Höhenwinkel",
     "gun": "Geschütz",
     "heightmap": "Diese Karte verfügt über eine Höhenkarte für verbesserte Genauigkeit",
@@ -13,10 +14,10 @@
     "notApplicable": "N/V",
     "or": "oder",
     "projectile": "Projektil",
+    "status": "Status",
     "switchSelectionTo": "Auswahl wechseln zu {value}",
     "target": "Ziel",
-    "timeOfFlight": "Flugzeit",
-    "downloadOverlay": "Laden Sie das In-Game Overlay auf <link>GitHub</link> herunter."
+    "timeOfFlight": "Flugzeit"
   },
   "units": {
     "meter": "{value, plural, =1 {{value} Meter} other {{value} Meter}}",
