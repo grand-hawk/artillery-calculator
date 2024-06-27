@@ -1,9 +1,12 @@
 import Box from '@mui/joy/Box';
+import { useTranslations } from 'next-intl';
 
 import Circle from '@/components/atoms/Circle';
 import Link from '@/components/atoms/footer/Link';
 
 export default function Status() {
+  const t = useTranslations();
+
   const url = process.env.NEXT_PUBLIC_STATUS_URL;
 
   return (
@@ -23,7 +26,7 @@ export default function Status() {
         />
 
         <Link data-umami-event="Status" href={url}>
-          Status
+          {t('typography.status')}
         </Link>
       </Box>
     )
