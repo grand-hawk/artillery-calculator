@@ -6,7 +6,7 @@ import Umami from '@/components/utils/Umami';
 import useIsMobile from '@/hooks/useIsMobile';
 import useIsSmallScreen from '@/hooks/useIsSmallScreen';
 import locales from '@/i18n';
-import getProps from '@/lib/server/getProps';
+import getProps, { PropsMaxAge } from '@/lib/server/getProps';
 import { usePropStore, type Props } from '@/stores/props';
 import DesktopView from '@/views/Desktop';
 import MobileView from '@/views/Mobile';
@@ -34,7 +34,7 @@ export async function getStaticProps(context: GetStaticPropsContext): Promise<
         '/api/props': await getProps(),
       },
     },
-    revalidate: 120,
+    revalidate: PropsMaxAge,
   };
 }
 
