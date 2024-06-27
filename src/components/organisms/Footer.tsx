@@ -34,6 +34,10 @@ function Footer({ version, sx = {} }: { version: string; sx?: SxProps }) {
           ...(isSuperSmallScreen && {
             flexDirection: 'column',
             alignItems: 'stretch',
+
+            '& > div:last-child': {
+              justifyContent: 'space-between',
+            },
           }),
         },
         sx,
