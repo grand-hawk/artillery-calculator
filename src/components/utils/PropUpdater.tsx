@@ -33,5 +33,5 @@ export default function PropUpdater() {
     if (data?.motd !== undefined) setMotd(data.motd);
   });
 
-  return <div />;
+  return <div aria-roledescription="prop updater component" />;
 }
