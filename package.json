@@ -14,7 +14,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "next dev --port=8888",
-    "build": "npm run convert && npm run lint && next build",
+    "build": "npm run lint && npm run build:unsafe",
+    "build:unsafe": "npm run convert && next build",
     "build:analyze": "cross-env ANALYZE=true npm run build",
     "start": "next start",
     "next-lint": "next lint",
