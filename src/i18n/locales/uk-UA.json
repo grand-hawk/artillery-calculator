@@ -3,6 +3,7 @@
     "azimuth": "Азимут",
     "blastRange": "Цей снаряд має дані про радіус вибуху.",
     "distance": "Дистанція",
+    "downloadOverlay": "Завантажте вбудовану ігрове накладання на <link>GitHub</link>.",
     "elevation": "Кут підвищення",
     "gun": "гармата",
     "heightmap": "На цій карті є висота для підвищення точності",
@@ -13,10 +14,10 @@
     "notApplicable": "н/д",
     "or": "Або",
     "projectile": "Снаряд",
+    "status": "Status",
     "switchSelectionTo": "Перемикання вибору на {value}",
     "target": "мета",
-    "timeOfFlight": "Час польоту",
-    "downloadOverlay": "Завантажте вбудовану ігрове накладання на <link>GitHub</link>."
+    "timeOfFlight": "Час польоту"
   },
   "units": {
     "meter": "{value, plural, =1 {{value} метр} other {{value} метрів}}",
