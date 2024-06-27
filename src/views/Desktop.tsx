@@ -45,6 +45,7 @@ export default function DesktopView({ motd, version }: ViewProps) {
 
               maxWidth: {
                 sm: '90vw',
+                md: '80vw',
                 lg: '75vw',
               },
 
