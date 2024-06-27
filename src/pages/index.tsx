@@ -6,8 +6,8 @@ import Umami from '@/components/utils/Umami';
 import useIsMobile from '@/hooks/useIsMobile';
 import useIsSmallScreen from '@/hooks/useIsSmallScreen';
 import locales from '@/i18n';
-import getMotd from '@/lib/server/getMotd';
-import getVersion from '@/utils/getVersion';
+import getProps from '@/lib/server/getProps';
+import { usePropStore, type Props } from '@/stores/props';
 import DesktopView from '@/views/Desktop';
 import MobileView from '@/views/Mobile';
 
@@ -17,32 +17,40 @@ import type {
   InferGetStaticPropsType,
 } from 'next';
 
-export interface ViewProps {
-  motd: string | null;
-  version: string;
-}
-
 export async function getStaticProps(context: GetStaticPropsContext): Promise<
   GetStaticPropsResult<{
-    version: string;
-    motd: string | null;
     messages: unknown;
+
+    fallback: {
+      '/api/props': Props;
+    };
   }>
 > {
   return {
     props: {
-      version: getVersion(),
-      motd: await getMotd(),
       messages: locales[context.locale!],
+
+      fallback: {
+        '/api/props': await getProps(),
+      },
     },
     revalidate: 120,
   };
 }
 
 export default function Index({
-  version,
-  motd,
+  fallback,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
+  const setVersion = usePropStore((s) => s.setVersion);
+  const setMotd = usePropStore((s) => s.setMotd);
+
+  React.useEffect(() => {
+    const { version, motd } = fallback['/api/props'];
+
+    if (version) setVersion(version);
+    if (motd) setMotd(motd);
+  }, [fallback, setVersion, setMotd]);
+
   const isMobileDevice = useIsMobile();
   const isSmallScreen = useIsSmallScreen();
 
@@ -61,11 +69,7 @@ export default function Index({
       </Head>
 
       <Page>
-        {isMobileDevice || isSmallScreen ? (
-          <MobileView motd={motd} version={version} />
-        ) : (
-          <DesktopView motd={motd} version={version} />
-        )}
+        {isMobileDevice || isSmallScreen ? <MobileView /> : <DesktopView />}
       </Page>
 
       <Umami />

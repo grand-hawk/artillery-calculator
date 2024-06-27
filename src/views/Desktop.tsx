@@ -14,13 +14,14 @@ import TimeOfFlightValue from '@/components/organisms/configuration/TimeOfFlight
 import Footer from '@/components/organisms/Footer';
 import Motd from '@/components/organisms/Motd';
 import OverlayCard from '@/components/organisms/OverlayCard';
-import VersionAlert from '@/components/organisms/VersionAlert';
 import Canvas from '@/components/templates/Canvas';
+import { usePropStore } from '@/stores/props';
 
-import type { ViewProps } from '@/pages';
-
-export default function DesktopView({ motd, version }: ViewProps) {
+export default function DesktopView() {
   const t = useTranslations();
+
+  const version = usePropStore((s) => s.version);
+  const motd = usePropStore((s) => s.motd);
 
   return (
     <Box
@@ -56,7 +57,6 @@ export default function DesktopView({ motd, version }: ViewProps) {
             <Canvas />
 
             <ColumnContainer>
-              <VersionAlert currentVersion={version} />
               <Motd message={motd || undefined} />
 
               <ConfigurationGroup>
@@ -78,7 +78,7 @@ export default function DesktopView({ motd, version }: ViewProps) {
         </Box>
       </Box>
 
-      <Footer version={version} />
+      <Footer version={version!} />
     </Box>
   );
 }

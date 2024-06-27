@@ -12,14 +12,15 @@ import ProjectileSelection from '@/components/organisms/configuration/Projectile
 import TimeOfFlightValue from '@/components/organisms/configuration/TimeOfFlight';
 import Footer from '@/components/organisms/Footer';
 import Motd from '@/components/organisms/Motd';
-import VersionAlert from '@/components/organisms/VersionAlert';
 import Canvas from '@/components/templates/Canvas';
 import useIsMobile from '@/hooks/useIsMobile';
+import { usePropStore } from '@/stores/props';
 
-import type { ViewProps } from '@/pages';
-
-export default function MobileView({ motd, version }: ViewProps) {
+export default function MobileView() {
   const isMobile = useIsMobile();
+
+  const version = usePropStore((s) => s.version);
+  const motd = usePropStore((s) => s.motd);
 
   return (
     <Box
@@ -48,7 +49,6 @@ export default function MobileView({ motd, version }: ViewProps) {
         <Canvas />
 
         <ColumnContainer>
-          <VersionAlert currentVersion={version} />
           <Motd message={motd || undefined} />
 
           {isMobile && <MobileMode />}
@@ -64,7 +64,7 @@ export default function MobileView({ motd, version }: ViewProps) {
         </ColumnContainer>
       </Box>
 
-      <Footer version={version} />
+      <Footer version={version!} />
     </Box>
   );
 }
