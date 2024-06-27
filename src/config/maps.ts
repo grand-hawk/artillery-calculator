@@ -146,4 +146,9 @@ export const maps: Map[] = [
     name: 'TESTING',
     size: 1113 * 9,
   },
+  {
+    image: 'powerplant_sv',
+    name: 'Powerplant (SV)',
+    size: calculateMapSize(160),
+  },
 ] as const;
