@@ -42,6 +42,7 @@ function Canvas() {
   const canvasScale = 8;
   const scaledDimension = canvasStore.width * canvasScale;
 
+  const [gunHeight] = useHeightmapZ();
   const blastRange: number | undefined =
     projectile.explosiveMass &&
     calculateBlastRange(
@@ -51,8 +52,6 @@ function Canvas() {
     );
   const blastRadius =
     blastRange && (blastRange / map.size / 2) * scaledDimension;
-
-  const [gunHeight] = useHeightmapZ();
   const maxRadius =
     (metersToStuds(
       calculateMaxRange(projectile.velocity, studsToMeters(gunHeight)),
