@@ -1,23 +1,20 @@
 import Sheet from '@mui/joy/Sheet';
-import Image from 'next/image';
 import React from 'react';
 import { TransformComponent, TransformWrapper } from 'react-zoom-pan-pinch';
 
-import AbsoluteContainer from '@/components/atoms/canvas/AbsoluteContainer';
-import useMap from '@/hooks/data/useMap';
 import { useCanvasStore } from '@/stores/canvas';
 
 import type { PropsWithChildren } from 'react';
 
 export default function CanvasInnerContainer({ children }: PropsWithChildren) {
   const isPanning = React.useRef<boolean>(false);
-  const [isUnoptimized, setIsUnoptimized] = React.useState<boolean>(false);
-
-  const map = useMap();
 
   const canvasWidth = useCanvasStore((s) => s.width);
   const canvasHeight = useCanvasStore((s) => s.height);
   const setZoom = useCanvasStore((s) => s.setZoom);
+
+  const unoptimized = useCanvasStore((s) => s.unoptimized);
+  const setUnoptimized = useCanvasStore((s) => s.setUnoptimized);
 
   return (
     <Sheet
@@ -56,21 +53,10 @@ export default function CanvasInnerContainer({ children }: PropsWithChildren) {
           setZoom(zoom);
 
           // dont go back to the optimized image once the full image was requested
-          if (!isUnoptimized && zoom > 1.25) setIsUnoptimized(true);
+          if (!unoptimized && zoom > 1.25) setUnoptimized(true);
         }}
       >
-        <TransformComponent>
-          <Image
-            alt={map.name}
-            height={canvasHeight}
-            priority
-            src={`/images/webp/maps/${map.image}.webp`}
-            unoptimized={isUnoptimized}
-            width={canvasWidth}
-          />
-
-          <AbsoluteContainer zIndex={2}>{children}</AbsoluteContainer>
-        </TransformComponent>
+        <TransformComponent>{children}</TransformComponent>
       </TransformWrapper>
     </Sheet>
   );

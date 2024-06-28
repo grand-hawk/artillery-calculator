@@ -1,5 +1,7 @@
+import Image from 'next/image';
 import React from 'react';
 
+import AbsoluteContainer from '@/components/atoms/canvas/AbsoluteContainer';
 import CanvasMeasureContainer from '@/components/organisms/CanvasMeasureContainer';
 import Profiler from '@/components/utils/Profiler';
 import { maps } from '@/config/maps';
@@ -149,16 +151,27 @@ function Canvas() {
   return (
     <Profiler id="canvas-profiler">
       <CanvasMeasureContainer>
-        <canvas
-          ref={ref}
-          height={scaledDimension}
-          style={{
-            width: canvasStore.width,
-            height: canvasStore.height,
-          }}
-          width={scaledDimension}
-          onContextMenu={(event) => event.preventDefault()}
+        <Image
+          alt={map.name}
+          height={canvasStore.height}
+          priority
+          src={`/images/webp/maps/${map.image}.webp`}
+          unoptimized={canvasStore.unoptimized}
+          width={canvasStore.width}
         />
+
+        <AbsoluteContainer zIndex={2}>
+          <canvas
+            ref={ref}
+            height={scaledDimension}
+            style={{
+              width: canvasStore.width,
+              height: canvasStore.height,
+            }}
+            width={scaledDimension}
+            onContextMenu={(event) => event.preventDefault()}
+          />
+        </AbsoluteContainer>
       </CanvasMeasureContainer>
     </Profiler>
   );

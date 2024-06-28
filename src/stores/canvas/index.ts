@@ -10,6 +10,9 @@ export interface CanvasStore {
 
   zoom: number;
   setZoom: (zoom: number) => void;
+
+  unoptimized: boolean;
+  setUnoptimized: (unoptimized: boolean) => void;
 }
 
 export const useCanvasStore = create(
@@ -33,6 +36,13 @@ export const useCanvasStore = create(
       set((s) => {
         // minimum of 1 zoom, cant go lower
         s.zoom = Math.max(zoom, 1);
+      });
+    },
+
+    unoptimized: false,
+    setUnoptimized(unoptimized) {
+      set((s) => {
+        s.unoptimized = unoptimized;
       });
     },
   })),

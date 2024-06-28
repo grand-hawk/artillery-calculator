@@ -7,5 +7,6 @@
       "format": "svg"
     }
   ],
-  "files.eol": "\r\n"
+  "files.eol": "\r\n",
+  "typescript.enablePromptUseWorkspaceTsdk": true
 }
