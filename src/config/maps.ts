@@ -151,4 +151,9 @@ export const maps: Map[] = [
     name: 'Powerplant (SV)',
     size: calculateMapSize(160),
   },
+  {
+    image: 'roinburg_sv',
+    name: 'Roinburg (SV)',
+    size: calculateMapSize(142),
+  },
 ] as const;
