@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import React from 'react';
+import { isMobile } from 'react-device-detect';
 
 import AbsoluteContainer from '@/components/atoms/canvas/AbsoluteContainer';
 import CanvasMeasureContainer from '@/components/organisms/CanvasMeasureContainer';
@@ -7,7 +8,6 @@ import Profiler from '@/components/utils/Profiler';
 import { maps } from '@/config/maps';
 import { guns } from '@/config/projectiles';
 import useHeightmapZ from '@/hooks/data/useHeightmapZ';
-import useIsMobile from '@/hooks/useIsMobile';
 import { useCanvasStore } from '@/stores/canvas';
 import { useDataStore } from '@/stores/data';
 import {
@@ -23,7 +23,6 @@ export interface Vector {
 }
 
 function Canvas() {
-  const isMobile = useIsMobile();
   const mobileMode = useDataStore((s) => s.mobileMode);
 
   const ref = React.useRef<HTMLCanvasElement | null>(null);

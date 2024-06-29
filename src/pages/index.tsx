@@ -1,10 +1,10 @@
 import Head from 'next/head';
 import React from 'react';
+import { isMobile } from 'react-device-detect';
 
 import Page from '@/components/layout/Page';
 import PropUpdater from '@/components/utils/PropUpdater';
 import Umami from '@/components/utils/Umami';
-import useIsMobile from '@/hooks/useIsMobile';
 import useIsSmallScreen from '@/hooks/useIsSmallScreen';
 import locales from '@/i18n';
 import getProps, { PropsMaxAge } from '@/lib/server/getProps';
@@ -52,7 +52,6 @@ export default function Index({
     if (motd) setMotd(motd);
   }, [fallback, setVersion, setMotd]);
 
-  const isMobileDevice = useIsMobile();
   const isSmallScreen = useIsSmallScreen();
 
   return (
@@ -70,7 +69,7 @@ export default function Index({
       </Head>
 
       <Page>
-        {isMobileDevice || isSmallScreen ? <MobileView /> : <DesktopView />}
+        {isMobile || isSmallScreen ? <MobileView /> : <DesktopView />}
       </Page>
 
       <Umami />

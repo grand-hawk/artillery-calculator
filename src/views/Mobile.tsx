@@ -1,5 +1,6 @@
 import Box from '@mui/joy/Box';
 import React from 'react';
+import { isMobile } from 'react-device-detect';
 
 import ColumnContainer from '@/components/atoms/ColumnContainer';
 import ConfigurationGroup from '@/components/atoms/ConfigurationGroup';
@@ -13,12 +14,9 @@ import TimeOfFlightValue from '@/components/organisms/configuration/TimeOfFlight
 import Footer from '@/components/organisms/Footer';
 import Motd from '@/components/organisms/Motd';
 import Canvas from '@/components/templates/Canvas';
-import useIsMobile from '@/hooks/useIsMobile';
 import { usePropStore } from '@/stores/props';
 
 export default function MobileView() {
-  const isMobile = useIsMobile();
-
   const version = usePropStore((s) => s.version);
   const motd = usePropStore((s) => s.motd);
 
