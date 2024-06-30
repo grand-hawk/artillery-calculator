@@ -3,9 +3,9 @@ FROM node:22 as build
 
 RUN npm install -g pnpm
 
-COPY . /app
+COPY . /build
 
-WORKDIR /app
+WORKDIR /build
 
 RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --no-frozen-lockfile
 
@@ -19,11 +19,11 @@ FROM node:22-alpine as package
 
 RUN apk --no-cache add curl
 
-WORKDIR /.next
+WORKDIR /server
 
-COPY --from=build /app/.next/standalone .
-COPY --from=build /app/.next/static .next/static
-COPY --from=build /app/public public
+COPY --from=build /build/.next/standalone .
+COPY --from=build /build/.next/static .next/static
+COPY --from=build /build/public public
 
 EXPOSE 3000
 
