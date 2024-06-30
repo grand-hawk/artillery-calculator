@@ -34,9 +34,8 @@ export function calculateLowElevation(
   v: number,
   h: number = 0,
 ): number {
-  const radians = Math.atan(
-    (v ** 2 - Math.sqrt(v ** 4 - G * (G * d ** 2 + 2 * h * v ** 2))) / (G * d),
-  );
+  const squareRoot = Math.sqrt(v ** 4 - G * (G * d ** 2 + 2 * h * v ** 2));
+  const radians = Math.atan((v ** 2 - squareRoot) / (G * d));
   return radians * (180 / Math.PI);
 }
 
@@ -51,9 +50,8 @@ export function calculateHighElevation(
   v: number,
   h: number = 0,
 ): number {
-  const radians = Math.atan(
-    (v ** 2 + Math.sqrt(v ** 4 - G * (G * d ** 2 + 2 * h * v ** 2))) / (G * d),
-  );
+  const squareRoot = Math.sqrt(v ** 4 - G * (G * d ** 2 + 2 * h * v ** 2));
+  const radians = Math.atan((v ** 2 + squareRoot) / (G * d));
   return radians * (180 / Math.PI);
 }
 
