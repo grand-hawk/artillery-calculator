@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import { useTranslations } from 'next-intl';
 import React from 'react';
 import { isMobile } from 'react-device-detect';
 
@@ -41,6 +42,8 @@ export async function getStaticProps(context: GetStaticPropsContext): Promise<
 export default function Index({
   fallback,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
+  const t = useTranslations();
+
   const setVersion = usePropStore((s) => s.setVersion);
   const setMotd = usePropStore((s) => s.setMotd);
 
@@ -57,10 +60,7 @@ export default function Index({
     <>
       <Head>
         <title>MTC Artillery</title>
-        <meta
-          content="An artillery calculator made for Multicrew Tank Combat on Roblox."
-          name="description"
-        />
+        <meta content={t('meta.description')} name="description" />
         <meta
           content="Roblox, Artillery, Artillery Calculator, MTC, Multicrew Tank Combat"
           name="keywords"

@@ -24,6 +24,7 @@ function App({ Component, pageProps }: AppProps) {
         }
         locale={locale}
         messages={pageProps.messages}
+        timeZone="Europe/Amsterdam"
         onError={(error) =>
           process.env.NODE_ENV === 'development'
             ? console.warn(error)
