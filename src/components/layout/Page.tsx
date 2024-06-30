@@ -30,7 +30,9 @@ export default function Page({ children }: PropsWithChildren) {
               gridTemplateRows: 'min-content 1fr',
             }}
           >
-            <Box>{isPreview && <PreviewWarning />}</Box>
+            <Box aria-roledescription="preview warning container">
+              {isPreview && <PreviewWarning />}
+            </Box>
 
             <Box
               sx={{
