@@ -49,7 +49,7 @@ for await (const file of klaw(imageDir)) {
     )
     .catch((error) => {
       throw new Error(
-        `Failed to generate large webp image for ${fileName}\n${error}`,
+        `Failed to generate webp image for ${fileName}\n${error}`,
       );
     });
 }
