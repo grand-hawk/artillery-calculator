@@ -1,7 +1,7 @@
 # Build
 FROM node:22 as build
 
-RUN npm install -g pnpm
+RUN corepack enable pnpm
 
 COPY . /build
 
