@@ -10,6 +10,7 @@ export default function Konata() {
         position: 'absolute',
         bottom: 0,
         right: '20%',
+        userSelect: 'none',
       }}
       width={123}
     />
