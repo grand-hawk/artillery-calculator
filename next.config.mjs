@@ -24,6 +24,8 @@ const config = {
     // ran by itself as script command
     ignoreDuringBuilds: true,
   },
+
+  output: process.env.NEXT_OUTPUT,
 };
 
 const withBundleAnalyzer = bundleAnalyzer({
