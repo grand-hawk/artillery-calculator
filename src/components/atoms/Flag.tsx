@@ -10,7 +10,7 @@ export default function Flag({
 }: SvgIconProps & { code: string }) {
   return (
     <SvgIcon {...props}>
-      <svg className={`fi fi-${code.toLowerCase()}`} />
+      <svg className={`fi fi-${code}`} />
     </SvgIcon>
   );
 }
