@@ -17,6 +17,8 @@ RUN pnpm run build:prod
 
 FROM node:22-alpine as package
 
+RUN apk --no-cache add curl
+
 WORKDIR /.next
 
 COPY --from=build /app/.next/standalone .
