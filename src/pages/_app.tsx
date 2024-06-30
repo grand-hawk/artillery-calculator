@@ -1,15 +1,15 @@
-import { useRouter } from 'next/router';
 import { NextIntlClientProvider } from 'next-intl';
 import React from 'react';
 
 import HeightmapProvider from '@/components/providers/HeightmapProvider';
+import useLocale from '@/hooks/useLocale';
 import locales, { config } from '@/i18n';
 import objectKeySearch from '@/utils/objectKeySearch';
 
 import type { AppProps } from 'next/app';
 
 function App({ Component, pageProps }: AppProps) {
-  const router = useRouter();
+  const locale = useLocale();
 
   return (
     <React.StrictMode>
@@ -22,7 +22,7 @@ function App({ Component, pageProps }: AppProps) {
             info.key,
           ) as string
         }
-        locale={router.locale}
+        locale={locale}
         messages={pageProps.messages}
         onError={(error) =>
           process.env.NODE_ENV === 'development'
