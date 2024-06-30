@@ -4,11 +4,13 @@
 
 import fs from 'node:fs';
 import path from 'node:path';
+import { performance } from 'node:perf_hooks';
 
 import isImage from 'is-image';
 import klaw from 'klaw';
 import sharp from 'sharp';
 
+const start = performance.now();
 const cwd = process.cwd();
 
 const imageDir = path.join(path.resolve(cwd, 'public'), 'images');
@@ -53,3 +55,5 @@ for await (const file of klaw(imageDir)) {
       );
     });
 }
+
+console.log('Took', `${((performance.now() - start) / 1_000).toFixed(5)}s`);
