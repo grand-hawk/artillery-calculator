@@ -27,9 +27,11 @@ export default function LanguageSelector() {
       startDecorator={<LocaleFlag locale={router.locale!} />}
       value={router.locale}
       variant="outlined"
-      onChange={(event, newValue) => {
-        router.push('/', '/', { locale: newValue || config.defaultLocale });
-      }}
+      onChange={(event, newValue) =>
+        router.push('/', undefined, {
+          locale: newValue ?? config.defaultLocale,
+        })
+      }
       onClose={() => setListboxOpen(false)}
       onListboxOpenChange={() => setListboxOpen(true)}
     >
