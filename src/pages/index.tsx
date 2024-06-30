@@ -7,7 +7,7 @@ import PropUpdater from '@/components/utils/PropUpdater';
 import Umami from '@/components/utils/Umami';
 import useIsSmallScreen from '@/hooks/useIsSmallScreen';
 import locales from '@/i18n';
-import getProps, { PropsMaxAge } from '@/lib/server/getProps';
+import getProps from '@/lib/server/getProps';
 import { usePropStore, type Props } from '@/stores/props';
 import DesktopView from '@/views/Desktop';
 import MobileView from '@/views/Mobile';
@@ -35,7 +35,6 @@ export async function getStaticProps(context: GetStaticPropsContext): Promise<
         '/api/props': await getProps(),
       },
     },
-    revalidate: PropsMaxAge,
   };
 }
 
