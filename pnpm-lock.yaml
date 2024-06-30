@@ -29,9 +29,6 @@ importers:
       '@tauri-apps/api':
         specifier: ^1.5.6
         version: 1.5.6
-      clone:
-        specifier: ^2.1.2
-        version: 2.1.2
       flag-icons:
         specifier: ^7.2.3
         version: 7.2.3
@@ -87,9 +84,6 @@ importers:
       '@next/bundle-analyzer':
         specifier: ^14.2.4
         version: 14.2.4
-      '@types/clone':
-        specifier: ^2.1.4
-        version: 2.1.4
       '@types/klaw':
         specifier: ^3.0.6
         version: 3.0.6
@@ -764,9 +758,6 @@ packages:
     resolution: {integrity: sha512-LH5ToovAHnDVe5Qa9f/+jW28I6DeMhos8bNDtBOmmnaDpPmJmYLyHdeDblAWWWYc7KKRDg9/66vMuKyq0WIeFA==}
     engines: {node: '>= 14.6.0', npm: '>= 6.6.0', yarn: '>= 1.19.1'}
 
-  '@types/clone@2.1.4':
-    resolution: {integrity: sha512-NKRWaEGaVGVLnGLB2GazvDaZnyweW9FJLLFL5LhywGJB3aqGMT9R/EUoJoSRP4nzofYnZysuDmrEJtJdAqUOtQ==}
-
   '@types/json5@0.0.29':
     resolution: {integrity: sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==}
 
@@ -1066,10 +1057,6 @@ packages:
 
   cliui@7.0.4:
     resolution: {integrity: sha512-OcRE68cOsVMXp1Yvonl/fzkQOyjLSu/8bhPDfQt0e0/Eb283TKP20Fs2MqoPsr9SwA595rRCA+QMzYc9nBP+JQ==}
-
-  clone@2.1.2:
-    resolution: {integrity: sha512-3Pe/CF1Nn94hyhIYpjtiLhdCoEoz0DqQ+988E9gmeEdQZlojxnOb74wctFyuwWQHzqyf9X7C7MG8juUpqBJT8w==}
-    engines: {node: '>=0.8'}
 
   clsx@2.1.1:
     resolution: {integrity: sha512-eYm0QWBtUrBWZWG0d386OGAw16Z995PiOVo2B7bjWSbHedGl5e0ZWaq65kOGgUSNesEIDkB9ISbTg/JK9dhCZA==}
@@ -3135,8 +3122,6 @@ snapshots:
 
   '@tauri-apps/api@1.5.6': {}
 
-  '@types/clone@2.1.4': {}
-
   '@types/json5@0.0.29': {}
 
   '@types/klaw@3.0.6':
@@ -3515,8 +3500,6 @@ snapshots:
       string-width: 4.2.3
       strip-ansi: 6.0.1
       wrap-ansi: 7.0.0
-
-  clone@2.1.2: {}
 
   clsx@2.1.1: {}
 

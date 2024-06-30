@@ -26,7 +26,7 @@
     "format": "prettier . -w",
     "fix": "npm run eslint -- --fix && npm run format",
     "depcheck": "depcheck . --quiet --skip-missing",
-    "convert": "node scripts/convertMaps.mjs && node scripts/convertHeightmaps.mjs"
+    "convert": "node scripts/convert.mjs"
   },
   "dependencies": {
     "2dec": "^1.0.6",
@@ -36,7 +36,6 @@
     "@mui/joy": "5.0.0-beta.36",
     "@mui/material": "^5.15.21",
     "@tauri-apps/api": "^1.5.6",
-    "clone": "^2.1.2",
     "flag-icons": "^7.2.3",
     "immer": "^10.1.1",
     "is-image": "^4.0.0",
@@ -57,7 +56,6 @@
   },
   "devDependencies": {
     "@next/bundle-analyzer": "^14.2.4",
-    "@types/clone": "^2.1.4",
     "@types/klaw": "^3.0.6",
     "@types/node": "^20.14.9",
     "@types/react": "^18.3.3",
