@@ -1,5 +1,7 @@
 /* 
   Converts all images to webp
+
+  SHARP_EFFORT env var
 */
 
 import fs from 'node:fs';
@@ -36,7 +38,10 @@ for await (const file of klaw(imageDir)) {
   // expect no periods in filename besides ext seperator
   const fileName = path.basename(file.path).split('.')[0];
 
-  const webp = sharp(file.path).webp({ quality: 100, effort: 6 });
+  const webp = sharp(file.path).webp({
+    quality: 100,
+    effort: Number(process.env.SHARP_EFFORT ?? 3),
+  });
   const { width, height } = await webp.metadata();
 
   const target = Math.max(width, height);
