@@ -62,7 +62,7 @@ export default function Index({
         <title>MTC Artillery</title>
         <meta content={t('meta.description')} name="description" />
         <meta
-          content="Roblox, Artillery, Artillery Calculator, MTC, Multicrew Tank Combat"
+          content="Roblox, Artillery, Artillery Calculator, MTC, MTC4, Multicrew Tank Combat, Multicrew Tank Combat 4"
           name="keywords"
         />
       </Head>
