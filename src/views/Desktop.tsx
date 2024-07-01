@@ -28,64 +28,66 @@ export default function DesktopView() {
   const motd = usePropStore((s) => s.motd);
 
   return (
-    <Box
-      className="desktop"
-      sx={{
-        display: 'grid',
-        gridTemplateRows: '1fr min-content',
-        rowGap: 4,
-      }}
-      zIndex={1}
-    >
+    <>
       <Box
+        className="desktop"
         sx={{
-          display: 'flex',
-          justifyContent: 'center',
+          display: 'grid',
+          gridTemplateRows: '1fr min-content',
+          rowGap: 4,
         }}
+        zIndex={1}
       >
-        <Box>
-          <Box
-            sx={{
-              display: 'grid',
-              gridTemplateColumns: '1fr 1fr',
+        <Box
+          sx={{
+            display: 'flex',
+            justifyContent: 'center',
+          }}
+        >
+          <Box>
+            <Box
+              sx={{
+                display: 'grid',
+                gridTemplateColumns: '1fr 1fr',
 
-              maxWidth: {
-                sm: '90vw',
-                md: '80vw',
-                lg: '75vw',
-              },
+                maxWidth: {
+                  sm: '90vw',
+                  md: '80vw',
+                  lg: '75vw',
+                },
 
-              padding: 4,
-              gap: 4,
-            }}
-          >
-            <Canvas />
+                padding: 4,
+                gap: 4,
+              }}
+            >
+              <Canvas />
 
-            <ColumnContainer>
-              <Motd message={motd || undefined} />
+              <ColumnContainer>
+                <Motd message={motd || undefined} />
 
-              <ConfigurationGroup>
-                <ElevationValue />
-                <AzimuthValue />
-                <DistanceValue />
-                <TimeOfFlightValue />
-                <ProjectileSelection />
-                <MapSelection />
-              </ConfigurationGroup>
+                <ConfigurationGroup>
+                  <ElevationValue />
+                  <AzimuthValue />
+                  <DistanceValue />
+                  <TimeOfFlightValue />
+                  <ProjectileSelection />
+                  <MapSelection />
+                </ConfigurationGroup>
 
-              <Typography sx={{ marginTop: 'auto' }}>
-                {t('typography.instructions')}
-              </Typography>
+                <Typography sx={{ marginTop: 'auto' }}>
+                  {t('typography.instructions')}
+                </Typography>
 
-              <OverlayCard />
-            </ColumnContainer>
+                <OverlayCard />
+              </ColumnContainer>
+            </Box>
           </Box>
         </Box>
+
+        <Footer version={version!} />
       </Box>
 
-      <Footer version={version!} />
-
       {locale === 'lolcat-US' && <Konata />}
-    </Box>
+    </>
   );
 }
