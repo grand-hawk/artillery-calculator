@@ -203,22 +203,6 @@ export const guns: Record<string, Gun> = {
     ],
   },
 
-  speedsta: {
-    name: 'Speedsta',
-    projectiles: [
-      {
-        name: 'BruhHeSh',
-        velocity: 230,
-        explosiveMass: 50,
-      },
-      {
-        name: 'BruhHe',
-        velocity: 230,
-        explosiveMass: 25.01,
-      },
-    ],
-  },
-
   hellcannon: {
     name: 'Hell Cannon',
     projectiles: [
