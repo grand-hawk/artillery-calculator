@@ -39,7 +39,7 @@ export const maps: Map[] = [
   {
     image: 'powerplant',
     name: 'Powerplant',
-    size: 444 * 9,
+    size: calculateMapSize(160),
   },
   {
     image: 'radar_station',
@@ -55,7 +55,7 @@ export const maps: Map[] = [
   {
     image: 'roinburg',
     name: 'Roinburg',
-    size: 394 * 9,
+    size: calculateMapSize(142),
   },
   {
     image: 'sokolokva',
@@ -145,15 +145,5 @@ export const maps: Map[] = [
     image: 'testing',
     name: 'TESTING',
     size: 1113 * 9,
-  },
-  {
-    image: 'powerplant_sv',
-    name: 'Powerplant (SV)',
-    size: calculateMapSize(160),
-  },
-  {
-    image: 'roinburg_sv',
-    name: 'Roinburg (SV)',
-    size: calculateMapSize(142),
   },
 ] as const;
