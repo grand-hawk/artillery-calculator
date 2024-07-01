@@ -5,9 +5,9 @@ import Typography from '@mui/joy/Typography';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 
-import type { Map } from '@/config/maps';
+import type { GameMap } from '@/config/maps';
 
-export default function MapItem({ item }: { item: Map }) {
+export default function MapItem({ gameMap }: { gameMap: GameMap }) {
   const t = useTranslations();
 
   return (
@@ -30,9 +30,9 @@ export default function MapItem({ item }: { item: Map }) {
         })}
       >
         <Image
-          alt={item.name}
+          alt={gameMap.name}
           height={24}
-          src={`/images/webp/maps/${item.image}.webp`}
+          src={`/images/webp/maps/${gameMap.image}.webp`}
           width={24}
         />
       </Box>
@@ -44,9 +44,9 @@ export default function MapItem({ item }: { item: Map }) {
           alignItems: 'center',
         }}
       >
-        {item.name}
+        {gameMap.name}
 
-        {item.heightmap && (
+        {gameMap.heightmap && (
           <Tooltip
             placement="top"
             size="sm"

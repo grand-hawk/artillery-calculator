@@ -1,5 +1,5 @@
+import useGameMap from '@/hooks/data/useGameMap';
 import useHeightmapZ from '@/hooks/data/useHeightmapZ';
-import useMap from '@/hooks/data/useMap';
 import { useDataStore } from '@/stores/data';
 import { calculateDistance, studsToMeters } from '@/utils/math';
 
@@ -7,7 +7,7 @@ export default function useDistanceWithHeight(): number {
   const gun = useDataStore((s) => s.getGun());
   const target = useDataStore((s) => s.getTarget());
 
-  const map = useMap();
+  const map = useGameMap();
   const [gunHeight, targetHeight] = useHeightmapZ();
 
   const distanceWithHeight = studsToMeters(

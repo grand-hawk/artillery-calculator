@@ -7,20 +7,21 @@ export interface Heightmap {
   height: number;
 }
 
-export interface Map {
+export interface GameMap {
   image: string;
   name: string;
   size: number;
   heightmap?: Heightmap;
 }
 
-export const maps: Map[] = [
-  {
+export const gameMaps = {
+  arctic_airbase: {
     image: 'arctic_airbase',
     name: 'Arctic Airbase',
     size: 449 * 9,
   },
-  {
+
+  dustbowl: {
     image: 'dustbowl',
     name: 'Dustbowl',
     size: 383 * 9,
@@ -31,17 +32,20 @@ export const maps: Map[] = [
       height: 3454,
     },
   },
-  {
+
+  normandy: {
     image: 'normandy',
     name: 'Normandy Bocage',
     size: 664 * 9,
   },
-  {
+
+  powerplant: {
     image: 'powerplant',
     name: 'Powerplant',
     size: calculateMapSize(160),
   },
-  {
+
+  radar_station: {
     image: 'radar_station',
     name: 'Radar Station',
     size: 708 * 9,
@@ -52,12 +56,14 @@ export const maps: Map[] = [
       height: 6372,
     },
   },
-  {
+
+  roinburg: {
     image: 'roinburg',
     name: 'Roinburg',
     size: calculateMapSize(142),
   },
-  {
+
+  sokolokva: {
     image: 'sokolokva',
     name: 'Sokolokva',
     size: 556 * 9,
@@ -68,37 +74,44 @@ export const maps: Map[] = [
       height: 5004,
     },
   },
-  {
+
+  villers_sommeil: {
     image: 'villers_sommeil',
     name: 'Villers-Sommeil',
     size: 333 * 9,
   },
-  {
+
+  cloudy_valley: {
     image: 'cloudy_valley',
     name: 'Cloudy Valley',
     size: calculateMapSize(116),
   },
-  {
+
+  snow_tundra: {
     image: 'snow_tundra',
     name: 'Snow Tundra',
     size: calculateMapSize(160),
   },
-  {
+
+  zone_11: {
     image: 'zone_11',
     name: 'Zone 11',
     size: calculateMapSize(324),
   },
-  {
+
+  gensokyo: {
     image: 'gensokyo',
     name: 'Gensokyo',
     size: calculateMapSize(122),
   },
-  {
+
+  reactor: {
     image: 'reactor',
     name: 'Reactor (old)',
     size: calculateMapSize(207),
   },
-  {
+
+  muddy_fields: {
     image: 'muddy_fields',
     name: 'Muddy Fields',
     size: 667 * 9,
@@ -109,17 +122,20 @@ export const maps: Map[] = [
       height: 6003,
     },
   },
-  {
+
+  japan: {
     image: 'japan',
     name: 'Japan',
     size: calculateMapSize(122),
   },
-  {
+
+  chernobyl: {
     image: 'chernobyl',
     name: 'Chernobyl',
     size: calculateMapSize(165),
   },
-  {
+
+  dustbowl_ii: {
     image: 'dustbowl_ii',
     name: 'Dustbowl II',
     size: calculateMapSize(250),
@@ -130,7 +146,8 @@ export const maps: Map[] = [
       height: 6250,
     },
   },
-  {
+
+  sandy_place: {
     image: 'sandy_place',
     name: 'Sandy Place',
     size: calculateMapSize(361),
@@ -141,9 +158,12 @@ export const maps: Map[] = [
       height: 9025,
     },
   },
-  {
+
+  testing: {
     image: 'testing',
     name: 'TESTING',
     size: 1113 * 9,
   },
-] as const;
+} satisfies Record<string, GameMap>;
+
+export type MapId = keyof typeof gameMaps;

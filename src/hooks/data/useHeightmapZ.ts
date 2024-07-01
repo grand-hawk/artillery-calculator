@@ -1,4 +1,4 @@
-import { maps } from '@/config/maps';
+import useGameMap from '@/hooks/data/useGameMap';
 import useHeightmapContext from '@/hooks/useHeightmapContext';
 import { useDataStore } from '@/stores/data';
 
@@ -6,16 +6,14 @@ import { useDataStore } from '@/stores/data';
  * @returns [gunHeight, targetHeight]
  */
 export default function useHeightmapZ(): [number, number] {
-  const mapIndex = useDataStore((s) => s.mapIndex);
-  const map = maps[mapIndex];
+  const heightmapContext = useHeightmapContext();
+  const map = useGameMap();
 
   const gun = useDataStore((s) => s.getGun());
   const target = useDataStore((s) => s.getTarget());
 
   let gunHeight = 0;
   let targetHeight = 0;
-
-  const heightmapContext = useHeightmapContext();
 
   if (heightmapContext && map.heightmap) {
     const { width, height } = heightmapContext.canvas;

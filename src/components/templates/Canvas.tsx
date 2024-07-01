@@ -5,9 +5,9 @@ import { isMobile } from 'react-device-detect';
 import AbsoluteContainer from '@/components/atoms/canvas/AbsoluteContainer';
 import CanvasMeasureContainer from '@/components/organisms/CanvasMeasureContainer';
 import Profiler from '@/components/utils/Profiler';
-import { maps } from '@/config/maps';
-import { guns } from '@/config/projectiles';
+import useGameMap from '@/hooks/data/useGameMap';
 import useHeightmapZ from '@/hooks/data/useHeightmapZ';
+import useProjectile from '@/hooks/data/useProjectile';
 import { useCanvasStore } from '@/stores/canvas';
 import { useDataStore } from '@/stores/data';
 import {
@@ -27,12 +27,8 @@ function Canvas() {
 
   const ref = React.useRef<HTMLCanvasElement | null>(null);
 
-  const projectileData = useDataStore((s) => s.projectile);
-  const projectile =
-    guns[projectileData.gunKey].projectiles[projectileData.index];
-
-  const mapIndex = useDataStore((s) => s.mapIndex);
-  const map = maps[mapIndex];
+  const projectile = useProjectile();
+  const gameMap = useGameMap();
 
   const gun = useDataStore((s) => s.getGun());
   const setGun = useDataStore((s) => s.setGun);
@@ -52,12 +48,12 @@ function Canvas() {
       projectile.blastMultiplier,
     );
   const blastRadius =
-    blastRange && (blastRange / map.size / 2) * scaledDimension;
+    blastRange && (blastRange / gameMap.size / 2) * scaledDimension;
   const maxRadius =
     (metersToStuds(
       calculateMaxRange(projectile.velocity, studsToMeters(gunHeight)),
     ) /
-      map.size) *
+      gameMap.size) *
     scaledDimension;
 
   React.useEffect(() => {
@@ -151,10 +147,10 @@ function Canvas() {
     <Profiler id="canvas-profiler">
       <CanvasMeasureContainer>
         <Image
-          alt={map.name}
+          alt={gameMap.name}
           height={canvasStore.height}
           priority
-          src={`/images/webp/maps/${map.image}.webp`}
+          src={`/images/webp/maps/${gameMap.image}.webp`}
           unoptimized={canvasStore.unoptimized}
           width={canvasStore.width}
         />

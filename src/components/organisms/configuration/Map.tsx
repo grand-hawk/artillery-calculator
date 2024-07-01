@@ -5,18 +5,20 @@ import { useTranslations } from 'next-intl';
 import React from 'react';
 
 import DataContainer from '@/components/atoms/configuration/DataContainer';
-import MapItem from '@/components/atoms/configuration/map/Item';
+import MapItem from '@/components/molecules/configuration/map/Item';
 import ScrollBox from '@/components/molecules/ScrollBox';
-import { maps } from '@/config/maps';
+import { gameMaps } from '@/config/maps';
 import { useDataStore } from '@/stores/data';
+
+import type { MapId } from '@/config/maps';
 
 export default function MapSelection() {
   const t = useTranslations();
 
   const [listboxOpen, setListboxOpen] = React.useState<boolean>(false);
 
-  const mapIndex = useDataStore((s) => s.mapIndex);
-  const setMapIndex = useDataStore((s) => s.setMapIndex);
+  const mapId = useDataStore((s) => s.mapId);
+  const setMapId = useDataStore((s) => s.setMapId);
 
   return (
     <DataContainer>
@@ -32,16 +34,16 @@ export default function MapSelection() {
         sx={{
           userSelect: 'none',
         }}
-        value={mapIndex}
+        value={mapId}
         variant="soft"
-        onChange={(event, newValue) => setMapIndex(newValue as number)}
+        onChange={(event, newValue) => setMapId(newValue!)}
         onClose={() => setListboxOpen(false)}
         onListboxOpenChange={() => setListboxOpen(true)}
       >
         <ScrollBox dependency={listboxOpen}>
-          {maps.map((item, index) => (
-            <Option key={index} value={index}>
-              <MapItem item={item} />
+          {(Object.keys(gameMaps) as MapId[]).map((value, index) => (
+            <Option key={index} value={value}>
+              <MapItem gameMap={gameMaps[value]} />
             </Option>
           ))}
         </ScrollBox>

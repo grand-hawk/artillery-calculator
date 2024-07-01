@@ -6,6 +6,7 @@ import { guns } from '@/config/projectiles';
 
 import type { MobileModes } from '@/components/organisms/configuration/MobileMode';
 import type { Vector } from '@/components/templates/Canvas';
+import type { MapId } from '@/config/maps';
 
 interface ProjectileData {
   gunKey: string;
@@ -18,8 +19,8 @@ interface StringVector {
 }
 
 export interface DataStore {
-  mapIndex: number;
-  setMapIndex: (mapIndex: number) => void;
+  mapId: MapId;
+  setMapId: (mapId: MapId) => void;
 
   projectile: ProjectileData;
   setProjectile: (gun: string, index: number) => void;
@@ -39,15 +40,13 @@ export interface DataStore {
 export const useDataStore = create(
   persist(
     immer<DataStore>((set) => ({
-      // radar station as default map as it has the smallest size
-      mapIndex: 4,
-      setMapIndex(mapIndex) {
+      mapId: 'radar_station',
+      setMapId(mapId) {
         set((s) => {
-          s.mapIndex = mapIndex;
+          s.mapId = mapId;
         });
       },
 
-      // First gun and its projectile as default
       projectile: {
         gunKey: Object.keys(guns)[0],
         index: 0,
