@@ -38,7 +38,7 @@ export default function Theme({ children }: PropsWithChildren) {
   const theme = locale === 'lolcat-US' ? lolcatTheme : normalTheme;
 
   return (
-    <CssVarsProvider defaultMode="dark" theme={theme}>
+    <CssVarsProvider defaultColorScheme="dark" defaultMode="dark" theme={theme}>
       <CssBaseline />
       {children}
     </CssVarsProvider>

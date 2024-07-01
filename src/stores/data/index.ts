@@ -40,7 +40,7 @@ export interface DataStore {
 export const useDataStore = create(
   persist(
     immer<DataStore>((set) => ({
-      mapId: 'radar_station',
+      mapId: 'muddy_fields',
       setMapId(mapId) {
         set((s) => {
           s.mapId = mapId;

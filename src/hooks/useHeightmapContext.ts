@@ -18,7 +18,6 @@ export default function useHeightmapContext() {
     // https://html.spec.whatwg.org/multipage/canvas.html#dom-canvasrenderingcontext2dsettings-willreadfrequently
     const retrievedContext = element.getContext('2d', {
       willReadFrequently: true,
-      desynchronized: true,
     }) as CanvasRenderingContext2D;
 
     setContext(retrievedContext);

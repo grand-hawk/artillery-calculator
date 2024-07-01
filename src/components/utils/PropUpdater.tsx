@@ -22,7 +22,7 @@ export default function PropUpdater() {
     fetcher,
   });
 
-  if (error) console.error('[PropUpdater]', error);
+  if (error) console.warn('[PropUpdater]', error);
 
   React.useEffect(() => {
     if (data?.version !== undefined && data.version !== currentVersion) {
