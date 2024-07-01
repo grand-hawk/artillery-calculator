@@ -46,7 +46,7 @@
     "react": "^18.3.1",
     "react-device-detect": "^2.2.3",
     "react-dom": "^18.3.1",
-    "react-zoom-pan-pinch": "^3.6.0",
+    "react-zoom-pan-pinch": "^3.6.1",
     "sharp": "^0.33.4",
     "stale-lru-cache": "^5.1.1",
     "strapi-rest": "^0.1.3",
