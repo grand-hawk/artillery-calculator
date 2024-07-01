@@ -5,6 +5,3 @@ Cargo.lock
 
 # other
 archive
-
-# rust
-/packages/mtc-artillery-overlay/src/target
