@@ -13,10 +13,13 @@ import klaw from 'klaw';
 import sharp from 'sharp';
 
 const start = performance.now();
+const effort = Number(process.env.SHARP_EFFORT ?? 4);
 const cwd = process.cwd();
 
 const imageDir = path.join(path.resolve(cwd, 'public'), 'images');
 const webpDir = path.join(imageDir, 'webp');
+
+console.log('Effort:', effort);
 
 if (fs.existsSync(webpDir))
   fs.rmSync(webpDir, {
@@ -38,10 +41,7 @@ for await (const file of klaw(imageDir)) {
   // expect no periods in filename besides ext seperator
   const fileName = path.basename(file.path).split('.')[0];
 
-  const webp = sharp(file.path).webp({
-    quality: 100,
-    effort: Number(process.env.SHARP_EFFORT ?? 3),
-  });
+  const webp = sharp(file.path).webp({ quality: 100, effort });
   const { width, height } = await webp.metadata();
 
   const target = Math.max(width, height);
