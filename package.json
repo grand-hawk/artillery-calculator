@@ -26,7 +26,8 @@
     "format": "prettier . -w",
     "fix": "npm run eslint -- --fix && npm run format",
     "depcheck": "depcheck . --quiet --skip-missing",
-    "convert": "node scripts/convert.mjs"
+    "convert": "node scripts/convert.mjs",
+    "downloadAsset": "node scripts/downloadAsset.mjs"
   },
   "dependencies": {
     "2dec": "^1.0.6",
