@@ -158,6 +158,7 @@ export const gameMaps = {
       width: 5998,
       height: 5998,
     },
+    inRotation: true,
   },
 
   japan: {
