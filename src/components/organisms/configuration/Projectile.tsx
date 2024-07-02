@@ -70,7 +70,7 @@ export default function ProjectileSelection() {
             orientation="vertical"
             size="sm"
             sx={{
-              maxHeight: 250,
+              maxHeight: 200,
             }}
             value={selectionTab}
             variant="soft"
@@ -81,7 +81,7 @@ export default function ProjectileSelection() {
 
               return (
                 <TabPanel key={index} sx={{ padding: 0 }} value={index}>
-                  <ScrollBox dependency={selectionOpen}>
+                  <ScrollBox dependency={selectionOpen} sx={{ maxHeight: 200 }}>
                     <Box
                       sx={{
                         display: 'flex',
