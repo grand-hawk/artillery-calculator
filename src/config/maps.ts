@@ -55,6 +55,12 @@ export const gameMaps = {
     image: 'powerplant',
     name: 'Powerplant',
     size: calculateMapSize(160),
+    heightmap: {
+      0: 0,
+      255: 476.80126953125,
+      width: 3994,
+      height: 3994,
+    },
   },
 
   radar_station: {
