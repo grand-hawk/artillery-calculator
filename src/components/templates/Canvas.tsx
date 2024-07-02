@@ -10,6 +10,9 @@ import useHeightmapZ from '@/hooks/data/useHeightmapZ';
 import useProjectile from '@/hooks/data/useProjectile';
 import { useCanvasStore } from '@/stores/canvas';
 import { useDataStore } from '@/stores/data';
+import drawGun from '@/utils/canvas/drawGun';
+import drawLine from '@/utils/canvas/drawLine';
+import drawTarget from '@/utils/canvas/drawTarget';
 import {
   calculateBlastRange,
   calculateMaxRange,
@@ -63,49 +66,22 @@ function Canvas() {
 
     context.clearRect(0, 0, scaledDimension, scaledDimension);
 
-    // Line
-    context.lineWidth = (1.75 * canvasScale) / canvasStore.zoom;
-    context.strokeStyle = '#FFF';
-    context.beginPath();
-    context.moveTo(gun.x * scaledDimension, gun.y * scaledDimension);
-    context.lineTo(target.x * scaledDimension, target.y * scaledDimension);
-    context.stroke();
+    drawLine(
+      context,
+      canvasScale,
+      canvasStore.zoom,
+      gun,
+      target,
+      scaledDimension,
+    );
 
     const markerRadius = Math.max(
       (8 * canvasScale) / canvasStore.zoom,
       4 * (canvasScale / 2),
     );
 
-    // Gun
-    const gunX = gun.x * scaledDimension;
-    const gunY = gun.y * scaledDimension;
-
-    context.lineWidth = 20;
-    context.strokeStyle = 'rgba(0, 50, 255, 0.5)';
-    context.beginPath();
-    context.arc(gunX, gunY, maxRadius, 0, Math.PI * 2);
-    context.stroke();
-
-    context.fillStyle = '#52a8ff';
-    context.beginPath();
-    context.arc(gunX, gunY, markerRadius, 0, Math.PI * 2);
-    context.fill();
-
-    // Target
-    const targetX = target.x * scaledDimension;
-    const targetY = target.y * scaledDimension;
-
-    if (blastRadius) {
-      context.fillStyle = 'rgba(176, 64, 64, 0.65)';
-      context.beginPath();
-      context.arc(targetX, targetY, blastRadius, 0, Math.PI * 2);
-      context.fill();
-    }
-
-    context.fillStyle = '#ff6666';
-    context.beginPath();
-    context.arc(targetX, targetY, markerRadius, 0, Math.PI * 2);
-    context.fill();
+    drawGun(context, gun, maxRadius, scaledDimension, markerRadius);
+    drawTarget(context, target, scaledDimension, markerRadius, blastRadius);
 
     function clickListener(event: MouseEvent) {
       event.preventDefault();
@@ -150,6 +126,7 @@ function Canvas() {
           alt={gameMap.name}
           height={canvasStore.height}
           priority
+          quality={85}
           src={`/images/webp/maps/${gameMap.image}.webp`}
           unoptimized={canvasStore.unoptimized}
           width={canvasStore.width}
