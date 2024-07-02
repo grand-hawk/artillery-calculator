@@ -15,7 +15,7 @@ export interface GameMap {
   inRotation?: boolean;
 }
 
-export const gameMaps = {
+export const gameMaps: Record<string, GameMap> = {
   arctic_airbase: {
     image: 'arctic_airbase',
     name: 'Arctic Airbase',
