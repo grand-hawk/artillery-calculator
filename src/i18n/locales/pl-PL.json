@@ -3,6 +3,7 @@
     "description": "Kalkulator artylerii wykonany dla Walki Multicrew Tank na Roblox."
   },
   "typography": {
+    "active": "Active",
     "azimuth": "Azymut",
     "blastRange": "Ten pocisk ma dane o zasięgu wybuchu",
     "distance": "Odległość",
