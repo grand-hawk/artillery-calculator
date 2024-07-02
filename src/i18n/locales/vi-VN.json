@@ -1,9 +1,9 @@
 {
   "meta": {
-    "description": "An artillery calculator made for Multicrew Tank Combat on Roblox."
+    "description": "Một máy tính pháo binh được thiết kế cho Chiến đấu xe tăng nhiều người trên Roblox."
   },
   "typography": {
-    "active": "Active",
+    "active": "Tích cực",
     "azimuth": "Gốc xoay",
     "blastRange": "Đầu đạn này có khoảng cách sát thương",
     "distance": "Khoảng cách",
@@ -17,7 +17,7 @@
     "notApplicable": "Không có sẵn",
     "or": "hoặc",
     "projectile": "Đầu đạn",
-    "status": "Status",
+    "status": "Trạng thái",
     "switchSelectionTo": "Đổi lựa chọn sang {value}",
     "target": "mục tiêu",
     "timeOfFlight": "Thời gian bay"
