@@ -3,7 +3,6 @@
     "description": "Ein Artillerierechner für den Multicrew Tank Combat auf Roblox."
   },
   "typography": {
-    "active": "Aktiv",
     "azimuth": "Azimut",
     "blastRange": "Dieses Projektil hat Explosionsradius-Daten",
     "distance": "Distanz",
