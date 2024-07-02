@@ -19,6 +19,12 @@ export const gameMaps = {
     image: 'arctic_airbase',
     name: 'Arctic Airbase',
     size: 449 * 9,
+    heightmap: {
+      0: 0,
+      255: 566.8941650390625,
+      width: 4044,
+      height: 4044,
+    },
   },
 
   dustbowl: {
