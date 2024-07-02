@@ -40,9 +40,15 @@ export const gameMaps = {
   },
 
   normandy: {
-    image: 'normandy',
+    image: 'normandy_bocage',
     name: 'Normandy Bocage',
     size: 664 * 9,
+    heightmap: {
+      0: 0,
+      255: 116.07926940917969,
+      width: 5976,
+      height: 5975,
+    },
   },
 
   powerplant: {
