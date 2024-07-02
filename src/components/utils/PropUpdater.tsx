@@ -14,7 +14,6 @@ export default function PropUpdater() {
   const router = useRouter();
 
   const currentVersion = usePropStore((s) => s.version);
-  const setVersion = usePropStore((s) => s.setVersion);
   const setMotd = usePropStore((s) => s.setMotd);
 
   const { data, error } = useSWR<Props>('/api/props', {
@@ -25,11 +24,9 @@ export default function PropUpdater() {
   if (error) console.warn('[PropUpdater]', error);
 
   React.useEffect(() => {
-    if (data?.version !== undefined && data.version !== currentVersion) {
-      setVersion(data.version);
-
-      router.push(window.location.href);
-    }
+    // refresh page after 15 seconds to ensure that the deployment's rolling update was successful
+    if (data?.version !== undefined && data.version !== currentVersion)
+      setTimeout(() => router.push(window.location.href), 15_000);
 
     if (data?.motd !== undefined) setMotd(data.motd);
   });
