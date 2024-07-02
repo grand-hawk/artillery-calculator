@@ -139,12 +139,12 @@ export const gameMaps = {
   muddy_fields: {
     image: 'muddy_fields',
     name: 'Muddy Fields',
-    size: 667 * 9,
+    size: calculateMapSize(240),
     heightmap: {
       0: 0,
-      255: 43.9580078125,
-      width: 6003,
-      height: 6003,
+      255: 226.43841552734375,
+      width: 5998,
+      height: 5998,
     },
   },
 
