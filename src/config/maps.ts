@@ -85,6 +85,12 @@ export const gameMaps = {
     image: 'roinburg',
     name: 'Roinburg',
     size: calculateMapSize(142),
+    heightmap: {
+      0: 0,
+      255: 227.86021423339844,
+      width: 3543,
+      height: 3543,
+    },
     inRotation: true,
   },
 
