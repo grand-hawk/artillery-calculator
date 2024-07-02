@@ -74,9 +74,9 @@ export const gameMaps = {
     size: 708 * 9,
     heightmap: {
       0: 0,
-      255: 98,
-      width: 6372,
-      height: 6372,
+      255: 311.19268798828125,
+      width: 6369,
+      height: 6369,
     },
     inRotation: true,
   },
