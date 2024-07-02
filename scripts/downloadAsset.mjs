@@ -14,4 +14,4 @@ if (!response.ok) throw new Error(response.statusText);
 
 const arrayBuffer = await response.arrayBuffer();
 
-fs.writeFileSync(path.join(tmp, `${Date.now()}`), Buffer.from(arrayBuffer));
+fs.writeFileSync(path.join(tmp, id), Buffer.from(arrayBuffer));
