@@ -86,12 +86,6 @@ export const guns: Record<string, Gun> = {
     name: 'BM-21 Grad',
     projectiles: [
       {
-        name: '9M22/M21 HE-Frag (SV)',
-        velocity: 150,
-        explosiveMass: 6.4,
-      },
-
-      {
         name: '9M22/M21 HE-Frag',
         velocity: 180,
         explosiveMass: 6.4,
