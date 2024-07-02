@@ -172,9 +172,9 @@ export const gameMaps = {
     size: calculateMapSize(250),
     heightmap: {
       0: 0,
-      255: 505.8818359375,
-      width: 6250,
-      height: 6250,
+      255: 505.26953125,
+      width: 6262,
+      height: 6262,
     },
   },
 
