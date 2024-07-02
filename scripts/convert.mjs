@@ -1,5 +1,5 @@
 /* 
-  Converts all images to webp
+  Converts all images to webp and to complete squares (1:1 ratio)
 
   SHARP_EFFORT env var
 */
