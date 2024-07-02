@@ -3,6 +3,7 @@
     "description": "Una calculadora de artillería hecha para Multicrew Tank Combat en Roblox."
   },
   "typography": {
+    "active": "Active",
     "azimuth": "Azimut",
     "blastRange": "Este proyectil tiene datos sobre su rango de explosión",
     "distance": "Distancia",
