@@ -16,7 +16,7 @@ import type { MapId } from '@/config/maps';
 export default function MapSelection() {
   const t = useTranslations();
 
-  const [listboxOpen, setListboxOpen] = React.useState<boolean>(true);
+  const [listboxOpen, setListboxOpen] = React.useState<boolean>(false);
 
   const mapId = useDataStore((s) => s.mapId);
   const setMapId = useDataStore((s) => s.setMapId);
