@@ -115,6 +115,13 @@ export const gameMaps = {
     image: 'zone_11',
     name: 'Zone 11',
     size: calculateMapSize(324),
+    heightmap: {
+      0: 0,
+      // 1 digit removed due to possible precision loss (250.13919067382812)
+      255: 250.1391906738281,
+      width: 8106,
+      height: 8106,
+    },
   },
 
   gensokyo: {
@@ -151,6 +158,12 @@ export const gameMaps = {
     image: 'chernobyl',
     name: 'Chernobyl',
     size: calculateMapSize(165),
+    heightmap: {
+      0: 0,
+      255: 408.0989990234375,
+      width: 4128,
+      height: 4128,
+    },
   },
 
   dustbowl_ii: {
