@@ -3,7 +3,6 @@
     "description": "เครื่องคิดเลขปืนใหญ่ที่สร้างขึ้นสำหรับ Multicrew Tank Combat บน Roblox"
   },
   "typography": {
-    "active": "คล่องแคล่ว",
     "azimuth": "มุมทิศ",
     "blastRange": "กระสุนปืนนี้มีข้อมูลระยะการระเบิด",
     "distance": "ระยะ",
