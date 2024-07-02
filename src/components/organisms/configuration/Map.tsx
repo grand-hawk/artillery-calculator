@@ -1,3 +1,4 @@
+import Divider from '@mui/joy/Divider';
 import Option from '@mui/joy/Option';
 import Select from '@mui/joy/Select';
 import Typography from '@mui/joy/Typography';
@@ -15,14 +16,16 @@ import type { MapId } from '@/config/maps';
 export default function MapSelection() {
   const t = useTranslations();
 
-  const [listboxOpen, setListboxOpen] = React.useState<boolean>(false);
+  const [listboxOpen, setListboxOpen] = React.useState<boolean>(true);
 
   const mapId = useDataStore((s) => s.mapId);
   const setMapId = useDataStore((s) => s.setMapId);
 
   return (
     <DataContainer>
-      <Typography level="title-md">{t('typography.map')}</Typography>
+      <Typography level="title-md" sx={{ marginY: 0.5 }}>
+        {t('typography.map')}
+      </Typography>
 
       <Select
         listboxOpen={listboxOpen}
@@ -41,11 +44,25 @@ export default function MapSelection() {
         onListboxOpenChange={() => setListboxOpen(true)}
       >
         <ScrollBox dependency={listboxOpen}>
-          {(Object.keys(gameMaps) as MapId[]).map((value, index) => (
-            <Option key={index} value={value}>
-              <MapItem gameMap={gameMaps[value]} />
-            </Option>
-          ))}
+          <Divider sx={{ marginY: 0.5 }}>Active</Divider>
+
+          {(Object.keys(gameMaps) as MapId[])
+            .filter((value) => gameMaps[value].inRotation)
+            .map((value) => (
+              <Option key={value} value={value}>
+                <MapItem gameMap={gameMaps[value]} />
+              </Option>
+            ))}
+
+          <Divider sx={{ marginY: 1.5 }} />
+
+          {(Object.keys(gameMaps) as MapId[])
+            .filter((value) => !gameMaps[value].inRotation)
+            .map((value) => (
+              <Option key={value} value={value}>
+                <MapItem gameMap={gameMaps[value]} />
+              </Option>
+            ))}
         </ScrollBox>
       </Select>
     </DataContainer>
