@@ -16,7 +16,7 @@ const start = performance.now();
 const effort = Number(process.env.SHARP_EFFORT ?? 4);
 const cwd = process.cwd();
 
-const imageDir = path.join(path.resolve(cwd, 'public'), 'images');
+const imageDir = path.join(path.resolve(cwd, 'public'), 'images', 'square');
 const webpDir = path.join(imageDir, 'webp');
 
 console.log('Effort:', effort);

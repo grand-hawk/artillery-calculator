@@ -32,7 +32,7 @@ export default function MapItem({ gameMap }: { gameMap: GameMap }) {
         <Image
           alt={gameMap.name}
           height={24}
-          src={`/images/webp/maps/${gameMap.image}.webp`}
+          src={`/images/square/webp/maps/${gameMap.image}.webp`}
           width={24}
         />
       </Box>
