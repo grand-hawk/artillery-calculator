@@ -112,6 +112,12 @@ export const gameMaps = {
     image: 'villers_sommeil',
     name: 'Villers-Sommeil',
     size: 333 * 9,
+    heightmap: {
+      0: 0,
+      255: 104.35908508300781,
+      width: 2996,
+      height: 2996,
+    },
     inRotation: true,
   },
 
