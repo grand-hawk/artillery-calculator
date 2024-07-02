@@ -12,25 +12,6 @@ export interface Gun {
 }
 
 export const guns: Record<string, Gun> = {
-  t34: {
-    name: 'T34 Calliope',
-    projectiles: [
-      {
-        name: 'M61',
-        velocity: 619,
-      },
-      {
-        name: 'M48',
-        velocity: 463,
-      },
-      {
-        name: 'M8 Rocket',
-        velocity: 260,
-        explosiveMass: 1.95,
-      },
-    ],
-  },
-
   rszo: {
     name: 'RSZO series',
     projectiles: [
@@ -139,28 +120,6 @@ export const guns: Record<string, Gun> = {
     ],
   },
 
-  sturmtiger: {
-    name: 'Sturmtiger',
-    projectiles: [
-      {
-        name: '38cm R Spgr.4581',
-        velocity: 150,
-        explosiveMass: 125,
-      },
-    ],
-  },
-
-  panzerwerfer: {
-    name: 'Panzerwerfer-15',
-    projectiles: [
-      {
-        name: 'HE Rocket',
-        velocity: 340,
-        explosiveMass: 2.15,
-      },
-    ],
-  },
-
   d30: {
     name: '122mm D-30',
     projectiles: [
@@ -243,6 +202,47 @@ export const guns: Record<string, Gun> = {
         velocity: 180,
         explosiveMass: 15,
         blastMultiplier: 1,
+      },
+    ],
+  },
+
+  t34: {
+    name: 'T34 Calliope',
+    projectiles: [
+      {
+        name: 'M61',
+        velocity: 619,
+      },
+      {
+        name: 'M48',
+        velocity: 463,
+      },
+      {
+        name: 'M8 Rocket',
+        velocity: 260,
+        explosiveMass: 1.95,
+      },
+    ],
+  },
+
+  sturmtiger: {
+    name: 'Sturmtiger',
+    projectiles: [
+      {
+        name: '38cm R Spgr.4581',
+        velocity: 150,
+        explosiveMass: 125,
+      },
+    ],
+  },
+
+  panzerwerfer: {
+    name: 'Panzerwerfer-15',
+    projectiles: [
+      {
+        name: 'HE Rocket',
+        velocity: 340,
+        explosiveMass: 2.15,
       },
     ],
   },
