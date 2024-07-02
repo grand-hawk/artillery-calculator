@@ -49,16 +49,12 @@ for await (const file of klaw(imageDir)) {
     fit: sharp.fit.contain,
   });
 
-  webp
-    .toBuffer()
-    .then((imageBuffer) =>
-      fs.writeFileSync(path.join(targetDir, `${fileName}.webp`), imageBuffer),
-    )
-    .catch((error) => {
-      throw new Error(
-        `Failed to generate webp image for ${fileName}\n${error}`,
-      );
-    });
+  try {
+    const imageBuffer = await webp.toBuffer();
+    fs.writeFileSync(path.join(targetDir, `${fileName}.webp`), imageBuffer);
+  } catch (error) {
+    throw new Error(`Failed to generate webp image for ${fileName}\n${error}`);
+  }
 }
 
 console.log('Took', `${((performance.now() - start) / 1_000).toFixed(5)}s`);
