@@ -12,6 +12,7 @@ export interface GameMap {
   name: string;
   size: number;
   heightmap?: Heightmap;
+  inRotation?: boolean;
 }
 
 export const gameMaps = {
@@ -25,6 +26,7 @@ export const gameMaps = {
       width: 4044,
       height: 4044,
     },
+    inRotation: true,
   },
 
   dustbowl: {
@@ -37,6 +39,7 @@ export const gameMaps = {
       width: 3454,
       height: 3454,
     },
+    inRotation: true,
   },
 
   normandy: {
@@ -49,6 +52,7 @@ export const gameMaps = {
       width: 5976,
       height: 5975,
     },
+    inRotation: true,
   },
 
   powerplant: {
@@ -61,6 +65,7 @@ export const gameMaps = {
       width: 3994,
       height: 3994,
     },
+    inRotation: true,
   },
 
   radar_station: {
@@ -73,12 +78,14 @@ export const gameMaps = {
       width: 6372,
       height: 6372,
     },
+    inRotation: true,
   },
 
   roinburg: {
     image: 'roinburg',
     name: 'Roinburg',
     size: calculateMapSize(142),
+    inRotation: true,
   },
 
   sokolokva: {
@@ -91,18 +98,23 @@ export const gameMaps = {
       width: 5004,
       height: 5004,
     },
+    inRotation: true,
   },
 
   villers_sommeil: {
+    // also known as 'france'
     image: 'villers_sommeil',
     name: 'Villers-Sommeil',
     size: 333 * 9,
+    inRotation: true,
   },
 
   cloudy_valley: {
     image: 'cloudy_valley',
     name: 'Cloudy Valley',
     size: calculateMapSize(116),
+    // wtf??
+    inRotation: true,
   },
 
   snow_tundra: {
@@ -164,6 +176,7 @@ export const gameMaps = {
       width: 4128,
       height: 4128,
     },
+    inRotation: true,
   },
 
   dustbowl_ii: {
