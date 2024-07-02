@@ -18,7 +18,8 @@
     "@typescript-eslint",
     "import",
     "prettier",
-    "react"
+    "react",
+    "sort-keys-fix"
   ],
   "parser": "@typescript-eslint/parser",
   "ignorePatterns": [],
