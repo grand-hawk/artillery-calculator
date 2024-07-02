@@ -44,8 +44,6 @@ export default function MapSelection() {
         onListboxOpenChange={() => setListboxOpen(true)}
       >
         <ScrollBox dependency={listboxOpen}>
-          <Divider sx={{ marginY: 0.5 }}>{t('typography.active')}</Divider>
-
           {(Object.keys(gameMaps) as MapId[])
             .filter((value) => gameMaps[value].inRotation)
             .map((value) => (

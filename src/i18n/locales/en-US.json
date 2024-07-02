@@ -3,7 +3,6 @@
     "description": "An artillery calculator made for Multicrew Tank Combat on Roblox."
   },
   "typography": {
-    "active": "Active",
     "azimuth": "Azimuth",
     "blastRange": "This projectile has blast range data",
     "distance": "Distance",
