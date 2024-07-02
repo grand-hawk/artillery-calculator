@@ -129,7 +129,7 @@ jobs:
             amd64.appimage = linux
             amd64.deb = linux
             x64-setup.exe = windows
-            x64.dmg = linux
+            x64.dmg = apple
             x64_en-US.msi = windows
             ```
           releaseDraft: true
