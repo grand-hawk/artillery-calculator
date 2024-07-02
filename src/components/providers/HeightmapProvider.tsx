@@ -41,7 +41,7 @@ export default function HeightmapProvider({ children }: PropsWithChildren) {
 
     image.addEventListener('load', onImageLoad);
 
-    image.src = `/images/square/webp/heightmaps/${gameMap.image}.webp`;
+    image.src = `/images/webp/heightmaps/${gameMap.image}.webp`;
 
     return () => {
       image.removeEventListener('load', onImageLoad);

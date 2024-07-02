@@ -16,16 +16,16 @@ const start = performance.now();
 const effort = Number(process.env.SHARP_EFFORT ?? 4);
 const cwd = process.cwd();
 
-const imageDir = path.join(path.resolve(cwd, 'public'), 'images', 'square');
+const imageDir = path.join(path.resolve(cwd, 'public'), 'images');
 const webpDir = path.join(imageDir, 'webp');
 
-console.log('Effort:', effort);
+console.info('Effort:', effort);
 
 if (fs.existsSync(webpDir))
   fs.rmSync(webpDir, {
     recursive: true,
   });
-fs.mkdirSync(webpDir);
+fs.mkdirSync(webpDir, { recursive: true });
 
 for await (const file of klaw(imageDir)) {
   if (file.path.includes(webpDir)) continue;
@@ -53,7 +53,9 @@ for await (const file of klaw(imageDir)) {
     const imageBuffer = await webp.toBuffer();
     fs.writeFileSync(path.join(targetDir, `${fileName}.webp`), imageBuffer);
   } catch (error) {
-    throw new Error(`Failed to generate webp image for ${fileName}\n${error}`);
+    throw new Error(`Failed to convert: ${fileName}\n${error}`);
+  } finally {
+    console.info('Converted:', fileName);
   }
 }
 
