@@ -3,6 +3,7 @@
     "description": "Артиллерийский калькулятор сделанный для Multicrew Tank Combat в Роблокс."
   },
   "typography": {
+    "active": "Active",
     "azimuth": "Азимут",
     "blastRange": "У этого снаряда есть данные о радиусе взрыва.",
     "distance": "Дистанция",
