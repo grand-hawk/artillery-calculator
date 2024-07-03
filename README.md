@@ -10,7 +10,7 @@
 ![Tauri](https://img.shields.io/badge/tauri-%2324C8DB.svg?style=for-the-badge&logo=tauri&logoColor=%23FFFFFF)
 [![Crowdin](https://img.shields.io/badge/Crowdin-2E3340.svg?style=for-the-badge&logo=Crowdin&logoColor=white)](https://crowdin.com/project/mtc-artillery)
 
-Website to calculate elevation and azimuth (and more) for artillery in [MTC](https://www.roblox.com/games/9520328730/WW2-UPDATE-Multicrew-Tank-Combat-4).
+Website to calculate elevation and azimuth (and more) for artillery in [MTC](https://www.roblox.com/games/9520328730).
 
 Dev branch site: [dev.artillery-calculator.com](https://dev.artillery-calculator.com)
 
