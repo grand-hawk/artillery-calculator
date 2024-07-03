@@ -44,6 +44,12 @@ export const gameMaps: Record<string, GameMap> = {
   },
 
   cloudy_valley: {
+    heightmap: {
+      0: 0,
+      255: 318.92401123046875,
+      height: 2899,
+      width: 2899,
+    },
     image: 'cloudy_valley',
     // wtf??
     inRotation: true,
