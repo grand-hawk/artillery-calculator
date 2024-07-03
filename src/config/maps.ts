@@ -53,6 +53,7 @@ export const gameMaps: Record<string, GameMap> = {
     image: 'cloudy_valley',
     // wtf??
     inRotation: true,
+    // gup map
     name: 'Cloudy Valley',
     size: calculateMapSize(116),
   },
