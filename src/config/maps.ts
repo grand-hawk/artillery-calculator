@@ -103,6 +103,7 @@ export const gameMaps: Record<string, GameMap> = {
     },
     image: 'muddy_fields',
     inRotation: true,
+    // ukropg
     name: 'Muddy Fields',
     size: calculateMapSize(240),
   },
@@ -209,9 +210,9 @@ export const gameMaps: Record<string, GameMap> = {
       height: 2996,
       width: 2996,
     },
-    // also known as 'france'
     image: 'villers_sommeil',
     inRotation: true,
+    // france
     name: 'Villers-Sommeil',
     size: 333 * 9,
   },
