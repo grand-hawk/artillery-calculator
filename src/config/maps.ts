@@ -225,3 +225,5 @@ export const gameMaps: Record<string, GameMap> = {
 } satisfies Record<string, GameMap>;
 
 export type MapId = keyof typeof gameMaps;
+
+export const defaultMapId: MapId = 'muddy_fields';

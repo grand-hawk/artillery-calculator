@@ -2,11 +2,11 @@ import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import { immer } from 'zustand/middleware/immer';
 
+import { defaultMapId, type MapId } from '@/config/maps';
 import { guns } from '@/config/projectiles';
 
 import type { MobileModes } from '@/components/organisms/configuration/MobileMode';
 import type { Vector } from '@/components/templates/Canvas';
-import type { MapId } from '@/config/maps';
 
 interface ProjectileData {
   gunKey: string;
@@ -40,7 +40,7 @@ export interface DataStore {
 export const useDataStore = create(
   persist(
     immer<DataStore>((set) => ({
-      mapId: 'muddy_fields',
+      mapId: defaultMapId,
       setMapId(mapId) {
         set((s) => {
           s.mapId = mapId;
@@ -101,6 +101,16 @@ export const useDataStore = create(
     })),
     {
       name: 'data',
+      version: 1,
+
+      migrate(persistedState, version) {
+        if (version === 0) {
+          // @ts-expect-error ignore
+          persistedState.mapId = defaultMapId;
+        }
+
+        return persistedState;
+      },
     },
   ),
 );
