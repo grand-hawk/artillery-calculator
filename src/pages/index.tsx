@@ -44,6 +44,8 @@ export default function Index({
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const t = useTranslations();
 
+  const isSmallScreen = useIsSmallScreen();
+
   const setVersion = usePropStore((s) => s.setVersion);
   const setMotd = usePropStore((s) => s.setMotd);
 
@@ -53,8 +55,6 @@ export default function Index({
     if (version) setVersion(version);
     if (motd) setMotd(motd);
   }, [fallback, setVersion, setMotd]);
-
-  const isSmallScreen = useIsSmallScreen();
 
   return (
     <>
