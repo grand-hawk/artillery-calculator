@@ -126,7 +126,7 @@ function Canvas() {
           alt={gameMap.name}
           height={canvasStore.height}
           priority
-          quality={85}
+          quality={100}
           src={`/images/webp/maps/${gameMap.image}.webp`}
           unoptimized={canvasStore.unoptimized}
           width={canvasStore.width}
