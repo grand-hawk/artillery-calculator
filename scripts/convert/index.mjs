@@ -1,8 +1,4 @@
-/* 
-  Converts all images to webp and to complete squares (1:1 ratio)
-
-  SHARP_EFFORT env var
-*/
+// ENV: SHARP_EFFORT
 
 import fs from 'node:fs';
 import path from 'node:path';
@@ -10,7 +6,8 @@ import { performance } from 'node:perf_hooks';
 
 import isImage from 'is-image';
 import klaw from 'klaw';
-import sharp from 'sharp';
+
+import convertMap from './maps.mjs';
 
 const start = performance.now();
 const effort = Number(process.env.SHARP_EFFORT ?? 4);
@@ -40,22 +37,14 @@ for await (const file of klaw(imageDir)) {
 
   // expect no periods in filename besides ext seperator
   const fileName = path.basename(file.path).split('.')[0];
+  const targetFile = path.join(targetDir, `${fileName}.webp`);
+  const relativeTarget = path.relative(process.cwd(), targetFile);
 
-  const webp = sharp(file.path).webp({ quality: 100, effort });
-  const { width, height } = await webp.metadata();
-
-  const target = Math.max(width, height);
-  webp.resize(target, target, {
-    fit: sharp.fit.contain,
-  });
-
-  try {
-    const imageBuffer = await webp.toBuffer();
-    fs.writeFileSync(path.join(targetDir, `${fileName}.webp`), imageBuffer);
-  } catch (error) {
-    throw new Error(`Failed to convert: ${fileName}\n${error}`);
-  } finally {
-    console.info('Converted:', fileName);
+  switch (targetDir.split(path.sep).pop()) {
+    case 'maps':
+    case 'heightmaps':
+      await convertMap(effort, file.path, targetFile, relativeTarget);
+      break;
   }
 }
 

@@ -16,6 +16,9 @@ ENV SHARP_EFFORT=3
 
 RUN pnpm run build:prod
 
+# Remove all folders in public/images except 'webp'
+RUN find /build/public/images -mindepth 1 -maxdepth 1 -type d ! -name 'webp' -exec rm -rf {} +
+
 # Package
 FROM node:22-alpine as package
 
