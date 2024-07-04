@@ -50,17 +50,15 @@ export default function HeightmapProvider({ children }: PropsWithChildren) {
 
   return (
     <>
-      {gameMap.heightmap && (
-        <Profiler id="heightmap-canvas-profiler">
-          <canvas
-            ref={canvasRef}
-            height={gameMap.heightmap?.height ?? 0}
-            id={heightmapCanvasId}
-            style={{ display: 'none' }}
-            width={gameMap.heightmap?.width ?? 0}
-          />
-        </Profiler>
-      )}
+      <Profiler id="heightmap-canvas-profiler">
+        <canvas
+          ref={canvasRef}
+          height={1024}
+          id={heightmapCanvasId}
+          style={{ display: 'none' }}
+          width={1024}
+        />
+      </Profiler>
 
       {children}
     </>

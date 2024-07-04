@@ -42,12 +42,7 @@ function Canvas() {
   const canvasScale = 8;
   const scaledDimension = canvasStore.width * canvasScale;
 
-  const [gunHeight, targetHeight] = useHeightmapZ();
-  const heightDifference =
-    studsToMeters(targetHeight) - studsToMeters(gunHeight);
-
-  console.log('[Canvas]', 'height difference:', heightDifference);
-
+  const [gunHeight] = useHeightmapZ();
   const blastRange: number | undefined =
     projectile.explosiveMass &&
     calculateBlastRange(
@@ -58,7 +53,9 @@ function Canvas() {
   const blastRadius =
     blastRange && (blastRange / gameMap.size / 2) * scaledDimension;
   const maxRadius =
-    (metersToStuds(calculateMaxRange(projectile.velocity, heightDifference)) /
+    (metersToStuds(
+      calculateMaxRange(projectile.velocity, studsToMeters(gunHeight)),
+    ) /
       gameMap.size) *
     scaledDimension;
 

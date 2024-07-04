@@ -18,17 +18,23 @@ export default function useHeightmapZ(): [number, number] {
   if (heightmapContext && map.heightmap) {
     const { width, height } = heightmapContext.canvas;
 
-    gunHeight =
-      (heightmapContext.getImageData(gun.x * width, gun.y * height, 1, 1)
-        .data[0] /
-        255) *
-      map.heightmap[255];
+    const gunData = heightmapContext.getImageData(
+      Math.round(gun.x * width),
+      Math.round(gun.y * height),
+      1,
+      1,
+    );
 
-    targetHeight =
-      (heightmapContext.getImageData(target.x * width, target.y * height, 1, 1)
-        .data[0] /
-        255) *
-      map.heightmap[255];
+    gunHeight = (gunData.data[0] / 255) * map.heightmap[255];
+
+    const targetData = heightmapContext.getImageData(
+      Math.round(target.x * width),
+      Math.round(target.y * height),
+      1,
+      1,
+    );
+
+    targetHeight = (targetData.data[0] / 255) * map.heightmap[255];
   }
 
   return [gunHeight, targetHeight];
