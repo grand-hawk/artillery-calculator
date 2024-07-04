@@ -3,8 +3,6 @@ import { calculateMapSize } from '@/utils/math';
 export interface Heightmap {
   0: number;
   255: number;
-  height: number;
-  width: number;
 }
 
 export interface GameMap {
@@ -21,8 +19,6 @@ export const gameMaps: Record<string, GameMap> = {
     heightmap: {
       0: 0,
       255: 566.8941650390625,
-      height: 4044,
-      width: 4044,
     },
     image: 'arctic_airbase',
     inRotation: true,
@@ -34,8 +30,6 @@ export const gameMaps: Record<string, GameMap> = {
     heightmap: {
       0: 0,
       255: 408.0989990234375,
-      height: 4128,
-      width: 4128,
     },
     image: 'chernobyl',
     inRotation: true,
@@ -47,8 +41,6 @@ export const gameMaps: Record<string, GameMap> = {
     heightmap: {
       0: 0,
       255: 318.92401123046875,
-      height: 2899,
-      width: 2899,
     },
     image: 'cloudy_valley',
     // wtf??
@@ -62,8 +54,6 @@ export const gameMaps: Record<string, GameMap> = {
     heightmap: {
       0: 0,
       255: 360.703125,
-      height: 3454,
-      width: 3454,
     },
     image: 'dustbowl',
     inRotation: true,
@@ -75,8 +65,6 @@ export const gameMaps: Record<string, GameMap> = {
     heightmap: {
       0: 0,
       255: 505.26953125,
-      height: 6262,
-      width: 6262,
     },
     image: 'dustbowl_ii',
     name: 'Dustbowl II',
@@ -99,8 +87,6 @@ export const gameMaps: Record<string, GameMap> = {
     heightmap: {
       0: 0,
       255: 226.43841552734375,
-      height: 5998,
-      width: 5998,
     },
     image: 'muddy_fields',
     inRotation: true,
@@ -113,8 +99,6 @@ export const gameMaps: Record<string, GameMap> = {
     heightmap: {
       0: 0,
       255: 116.07926940917969,
-      height: 5975,
-      width: 5976,
     },
     image: 'normandy_bocage',
     inRotation: true,
@@ -126,8 +110,6 @@ export const gameMaps: Record<string, GameMap> = {
     heightmap: {
       0: 0,
       255: 476.80126953125,
-      height: 3994,
-      width: 3994,
     },
     image: 'powerplant',
     inRotation: true,
@@ -139,8 +121,6 @@ export const gameMaps: Record<string, GameMap> = {
     heightmap: {
       0: 0,
       255: 311.19268798828125,
-      height: 6369,
-      width: 6369,
     },
     image: 'radar_station',
     inRotation: true,
@@ -158,8 +138,6 @@ export const gameMaps: Record<string, GameMap> = {
     heightmap: {
       0: 0,
       255: 227.86021423339844,
-      height: 3543,
-      width: 3543,
     },
     image: 'roinburg',
     inRotation: true,
@@ -171,8 +149,6 @@ export const gameMaps: Record<string, GameMap> = {
     heightmap: {
       0: 0,
       255: 119.748046875,
-      height: 9025,
-      width: 9025,
     },
     image: 'sandy_place',
     name: 'Sandy Place',
@@ -189,8 +165,6 @@ export const gameMaps: Record<string, GameMap> = {
     heightmap: {
       0: 0,
       255: 96.25390625,
-      height: 5004,
-      width: 5004,
     },
     image: 'sokolokva',
     inRotation: true,
@@ -208,8 +182,6 @@ export const gameMaps: Record<string, GameMap> = {
     heightmap: {
       0: 0,
       255: 104.35908508300781,
-      height: 2996,
-      width: 2996,
     },
     image: 'villers_sommeil',
     inRotation: true,
@@ -223,8 +195,6 @@ export const gameMaps: Record<string, GameMap> = {
       0: 0,
       // 1 digit removed due to possible precision loss (250.13919067382812)
       255: 250.1391906738281,
-      height: 8106,
-      width: 8106,
     },
     image: 'zone_11',
     name: 'Zone 11',
