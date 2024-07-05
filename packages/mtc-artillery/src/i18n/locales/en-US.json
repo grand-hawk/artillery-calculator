@@ -10,6 +10,7 @@
     "elevation": "Elevation",
     "gun": "gun",
     "heightmap": "This map features a heightmap for improved accuracy",
+    "heightmapOpacity": "Heightmap",
     "instructions": "Left click to set the gun position. Right click to set the target position. Hold middle click to move the map around, and scroll wheel to zoom.",
     "map": "Map",
     "metersPerSecond": "{value} m/s",
