@@ -4,4 +4,4 @@ package.json
 Cargo.lock
 
 # other
-archive
+/packages/mtc-artillery/archive

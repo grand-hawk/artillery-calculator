@@ -1,3 +1,3 @@
 files:
-  - source: /src/i18n/locales/en-US.json
-    translation: /src/i18n/locales/%locale%.json
+  - source: /packages/mtc-artillery/src/i18n/locales/en-US.json
+    translation: /packages/mtc-artillery/src/i18n/locales/%locale%.json

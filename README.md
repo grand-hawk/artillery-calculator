@@ -16,10 +16,6 @@ Dev branch site: [dev.artillery-calculator.com](https://dev.artillery-calculator
 
 [![stats](https://umami-views.astrid.exposed/svg?shareURL=https://umami.astrid.exposed/share/Ps68DOSbQBecNH0l/artillery-calculator.com&theme=light)](https://github.com/ari-party/umami-views)
 
-## Contributing
-
-If it's your first time and you have installed the dependencies, run `pnpm convert` to generate the production images for the maps.
-
 ## Translating
 
 Translate this project on [Crowdin](https://crowdin.com/project/mtc-artillery).
