@@ -1,0 +1,28 @@
+{
+  "meta": {
+    "description": "Ein Artillerierechner für den Multicrew Tank Combat auf Roblox."
+  },
+  "typography": {
+    "azimuth": "Azimut",
+    "blastRange": "Dieses Projektil hat Explosionsradius-Daten",
+    "distance": "Distanz",
+    "downloadOverlay": "Laden Sie das In-Game Overlay auf <link>GitHub</link> herunter.",
+    "elevation": "Höhenwinkel",
+    "gun": "Geschütz",
+    "heightmap": "Diese Karte verfügt über eine Höhenkarte für verbesserte Genauigkeit",
+    "instructions": "Klicke mit der Linken Maustaste, um die Geschütz-Position zu setzen. Rechtsklick um die Zielposition zu setzen. Halte die Mittelmaustaste gedrückt, um dich auf der Karte umzusehen und das Mausrad, um zu Zoomen.",
+    "map": "Karte",
+    "metersPerSecond": "{value} m/s",
+    "notApplicable": "N/V",
+    "or": "oder",
+    "projectile": "Projektil",
+    "status": "Status",
+    "switchSelectionTo": "Auswahl wechseln zu {value}",
+    "target": "Ziel",
+    "timeOfFlight": "Flugzeit"
+  },
+  "units": {
+    "meter": "{value, plural, =1 {{value} Meter} other {{value} Meter}}",
+    "second": "{value, plural, =1 {{value} Sekunde} other {{value} Sekunden}}"
+  }
+}
