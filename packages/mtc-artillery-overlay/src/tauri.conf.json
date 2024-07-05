@@ -1,6 +1,6 @@
 {
   "build": {
-    "beforeDevCommand": "npm run dev --prefix ../..",
+    "beforeDevCommand": "npm run dev --prefix ../../packages/mtc-artillery",
     "devPath": "http://localhost:8888",
     "distDir": "../dist",
     "withGlobalTauri": true
