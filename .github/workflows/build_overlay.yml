@@ -8,7 +8,12 @@ on:
 
 jobs:
   version_check:
-    runs-on: 'ubuntu-latest'
+    runs-on: "ubuntu-latest"
+
+    defaults:
+      run:
+        shell: bash
+        working-directory: ./packages/mtc-artillery-overlay
 
     steps:
       - name: Checkout code
@@ -22,7 +27,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: 'pnpm'
+          cache: "pnpm"
 
       - uses: ari-party/action-get-latest-tag@v1
         id: tag_version
@@ -30,7 +35,7 @@ jobs:
       - name: Get Tauri version
         id: tauri_version
         run: |
-          tauri_version=$(node packages/mtc-artillery-overlay/scripts/version.mjs)
+          tauri_version=$(node scripts/version.mjs)
           echo "tauri_version=$tauri_version" >> $GITHUB_OUTPUT
 
       - name: Compare
@@ -47,7 +52,7 @@ jobs:
           fi
 
   build:
-    needs: 'version_check'
+    needs: "version_check"
 
     permissions:
       contents: write
@@ -59,14 +64,14 @@ jobs:
       max-parallel: 2
       matrix:
         include:
-          - platform: 'macos-latest' # for Arm based macs (M1 and above).
-            args: '--target aarch64-apple-darwin'
-          - platform: 'windows-latest'
-            args: ''
-          - platform: 'ubuntu-20.04' # for Tauri v1 you could replace this with ubuntu-20.04.
-            args: ''
-          - platform: 'macos-latest' # for Intel based macs.
-            args: '--target x86_64-apple-darwin'
+          - platform: "macos-latest" # for Arm based macs (M1 and above).
+            args: "--target aarch64-apple-darwin"
+          - platform: "windows-latest"
+            args: ""
+          - platform: "ubuntu-20.04" # for Tauri v1 you could replace this with ubuntu-20.04.
+            args: ""
+          - platform: "macos-latest" # for Intel based macs.
+            args: "--target x86_64-apple-darwin"
 
     runs-on: ${{ matrix.platform }}
 
@@ -87,7 +92,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: 'pnpm'
+          cache: "pnpm"
 
       - name: Install pnpm packages
         run: pnpm install
@@ -118,7 +123,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tagName: overlay-v__VERSION__ # the action automatically replaces \_\_VERSION\_\_ with the app version.
-          releaseName: 'Overlay v__VERSION__'
+          releaseName: "Overlay v__VERSION__"
           releaseBody: |
             View the workflow summary [here](${{ steps.workflow_url.outputs.url }}).
 
