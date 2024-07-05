@@ -9,7 +9,6 @@ next-env.d.ts
 
 # misc
 .DS_Store
-/packages/mtc-artillery/public/images/webp
 
 # debug
 npm-debug.log*
@@ -19,5 +18,3 @@ npm-debug.log*
 
 # temp files
 .tmp
-temp
-tmp
