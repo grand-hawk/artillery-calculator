@@ -1,0 +1,28 @@
+{
+  "meta": {
+    "description": "Kalkulator artylerii wykonany dla Multicrew Tank Combat na Roblox."
+  },
+  "typography": {
+    "azimuth": "Azymut",
+    "blastRange": "Ten pocisk ma dane o zasięgu wybuchu",
+    "distance": "Odległość",
+    "downloadOverlay": "Pobierz nakładkę w grze na <link>GitHub</link>.",
+    "elevation": "Elewacja",
+    "gun": "broń",
+    "heightmap": "Ta mapa zawiera mapę wysokości dla poprawy dokładności",
+    "instructions": "Kliknij lewym przyciskiem myszy, aby ustawić pozycję działa. Kliknij prawym przyciskiem myszy, aby ustawić pozycję celu. Przytrzymaj środkowy przycisk myszy, aby przesunąć mapę i użyj kółka od myszy, aby zmienić przybliżenie.",
+    "map": "Mapa",
+    "metersPerSecond": "{value} m/s",
+    "notApplicable": "Nie dotyczy.",
+    "or": "lub",
+    "projectile": "Pocisk",
+    "status": "Status",
+    "switchSelectionTo": "Przełącz wybór na {value}",
+    "target": "cel",
+    "timeOfFlight": "Czas lotu"
+  },
+  "units": {
+    "meter": "{value, plural, =1 {{value} metr} other {{value} metrów}}",
+    "second": "{value, plural, =1 {{value} sekunda} other {{value} sekund}}"
+  }
+}
