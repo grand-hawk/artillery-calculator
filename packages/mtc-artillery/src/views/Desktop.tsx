@@ -10,6 +10,7 @@ import Konata from '@/components/atoms/Konata';
 import AzimuthValue from '@/components/organisms/configuration/Azimuth';
 import DistanceValue from '@/components/organisms/configuration/Distance';
 import ElevationValue from '@/components/organisms/configuration/Elevation';
+import HeightmapOpacitySlider from '@/components/organisms/configuration/HeightmapOpacity';
 import MapSelection from '@/components/organisms/configuration/Map';
 import ProjectileSelection from '@/components/organisms/configuration/Projectile';
 import TimeOfFlightValue from '@/components/organisms/configuration/TimeOfFlight';
@@ -72,6 +73,7 @@ export default function DesktopView() {
                   <TimeOfFlightValue />
                   <ProjectileSelection />
                   <MapSelection />
+                  <HeightmapOpacitySlider />
                 </ConfigurationGroup>
 
                 <Typography sx={{ marginTop: 'auto' }}>

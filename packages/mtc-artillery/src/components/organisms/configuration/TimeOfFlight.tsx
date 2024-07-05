@@ -5,6 +5,7 @@ import { useTranslations } from 'next-intl';
 import React from 'react';
 
 import DataContainer from '@/components/atoms/configuration/DataContainer';
+import useDistanceWithHeight from '@/hooks/data/useDistanceWithHeight';
 import useElevation from '@/hooks/data/useElevation';
 import useProjectile from '@/hooks/data/useProjectile';
 import { calculateTimeOfFlight } from '@/utils/math';
@@ -14,6 +15,7 @@ export default function TimeOfFlightValue() {
 
   const { velocity } = useProjectile();
   const [lowArc, highArc] = useElevation();
+  const distance = useDistanceWithHeight();
 
   return (
     <DataContainer>
@@ -30,7 +32,9 @@ export default function TimeOfFlightValue() {
         {lowArc ? (
           <>
             <Typography>
-              {todec(Math.max(0, calculateTimeOfFlight(lowArc, velocity)))}
+              {todec(
+                Math.max(0, calculateTimeOfFlight(lowArc, velocity, distance)),
+              )}
             </Typography>
 
             {!!highArc && (
@@ -41,7 +45,9 @@ export default function TimeOfFlightValue() {
 
                 <Typography>
                   {t('units.second', {
-                    value: todec(calculateTimeOfFlight(highArc, velocity)),
+                    value: todec(
+                      calculateTimeOfFlight(highArc, velocity, distance),
+                    ),
                   })}
                 </Typography>
               </>

@@ -10,6 +10,7 @@
     "elevation": "Ewevation",
     "gun": "gun",
     "heightmap": "This map features a heightmap for improved accuracy",
+    "heightmapOpacity": "Heightmap",
     "instructions": "Weft cwick to set the gun position. Wight cwick to set the tawget position. Howd middwe cwick to move the map awound, awnd scroll wheew to zoom.",
     "map": "Map",
     "metersPerSecond": "{value} m/s",

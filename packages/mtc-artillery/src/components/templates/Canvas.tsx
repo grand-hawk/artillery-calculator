@@ -2,6 +2,7 @@ import Image from 'next/image';
 import React from 'react';
 import { isMobile } from 'react-device-detect';
 
+import HeightmapProvider from '../providers/HeightmapProvider';
 import AbsoluteContainer from '@/components/atoms/canvas/AbsoluteContainer';
 import CanvasMeasureContainer from '@/components/organisms/CanvasMeasureContainer';
 import Profiler from '@/components/utils/Profiler';
@@ -37,6 +38,8 @@ function Canvas() {
   const setGun = useDataStore((s) => s.setGun);
   const target = useDataStore((s) => s.getTarget());
   const setTarget = useDataStore((s) => s.setTarget);
+
+  const heightmapOpacity = useDataStore((s) => s.heightmapOpacity);
 
   const canvasStore = useCanvasStore();
   const canvasScale = 8;
@@ -133,6 +136,17 @@ function Canvas() {
         />
 
         <AbsoluteContainer zIndex={2}>
+          <HeightmapProvider
+            style={{
+              display: heightmapOpacity > 0.1 ? 'unset' : 'none',
+              opacity: heightmapOpacity,
+              width: canvasStore.width,
+              height: canvasStore.height,
+            }}
+          />
+        </AbsoluteContainer>
+
+        <AbsoluteContainer zIndex={3}>
           <canvas
             ref={ref}
             height={scaledDimension}

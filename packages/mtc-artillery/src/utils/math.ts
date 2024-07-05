@@ -58,11 +58,12 @@ export function calculateHighElevation(
 /**
  * @param e Elevation in degrees
  * @param v Velocity in m/s
+ * @param d Distance in meters
  * @returns Time of flight in seconds
  */
-export function calculateTimeOfFlight(e: number, v: number): number {
+export function calculateTimeOfFlight(e: number, v: number, d: number): number {
   const radians = (e * Math.PI) / 180;
-  return (2 * v * Math.sin(radians)) / G;
+  return d / (v * Math.cos(radians));
 }
 
 /**

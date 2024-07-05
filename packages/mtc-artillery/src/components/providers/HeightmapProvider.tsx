@@ -7,9 +7,13 @@ import type { PropsWithChildren } from 'react';
 
 export const heightmapCanvasId = 'heightmap-provider';
 
-export default function HeightmapProvider({ children }: PropsWithChildren) {
+export default function HeightmapProvider({
+  children,
+  ...props
+}: PropsWithChildren<React.ComponentProps<'canvas'>>) {
   const canvasRef = React.useRef<HTMLCanvasElement>(null);
 
+  const [size, setSize] = React.useState<number>(1024);
   const [mounted, setMounted] = React.useState<boolean>(false);
 
   const gameMap = useGameMap();
@@ -36,6 +40,8 @@ export default function HeightmapProvider({ children }: PropsWithChildren) {
     function onImageLoad() {
       context.drawImage(image, 0, 0);
 
+      setSize(Math.max(image.width, image.height));
+
       console.log('[Heightmap provider]', 'drew:', gameMap.name);
     }
 
@@ -53,10 +59,14 @@ export default function HeightmapProvider({ children }: PropsWithChildren) {
       <Profiler id="heightmap-canvas-profiler">
         <canvas
           ref={canvasRef}
-          height={1024}
+          height={size}
           id={heightmapCanvasId}
-          style={{ display: 'none' }}
-          width={1024}
+          width={size}
+          {...props}
+          style={{
+            display: 'none',
+            ...(props.style ?? {}),
+          }}
         />
       </Profiler>
 
