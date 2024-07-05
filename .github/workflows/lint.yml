@@ -29,6 +29,7 @@ jobs:
         with:
           node-version: 22
           cache: "pnpm"
+          cache-dependency-path: ./packages/mtc-artillery/pnpm-lock.yaml
 
       - name: Install pnpm packages
         run: pnpm install
