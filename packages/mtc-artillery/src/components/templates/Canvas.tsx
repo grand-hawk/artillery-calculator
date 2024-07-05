@@ -138,7 +138,8 @@ function Canvas() {
         <AbsoluteContainer zIndex={2}>
           <HeightmapProvider
             style={{
-              display: heightmapOpacity > 0.1 ? 'unset' : 'none',
+              display:
+                gameMap.heightmap && heightmapOpacity > 0.1 ? 'unset' : 'none',
               opacity: heightmapOpacity,
               width: canvasStore.width,
               height: canvasStore.height,
