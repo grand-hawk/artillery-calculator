@@ -1,0 +1,28 @@
+{
+  "meta": {
+    "description": "Một máy tính pháo binh được thiết kế cho Chiến đấu xe tăng nhiều người trên Roblox."
+  },
+  "typography": {
+    "azimuth": "Gốc xoay",
+    "blastRange": "Đầu đạn này có khoảng cách sát thương",
+    "distance": "Khoảng cách",
+    "downloadOverlay": "Tải bản overlay để dùng trong game ở <link>Github</link>.",
+    "elevation": "Gốc nâng",
+    "gun": "pháo",
+    "heightmap": "Bản đồ có phân tầng địa hình để nâng cao độ chính xác của pháo",
+    "instructions": "Chuột trái để xác định vị trí pháo của bạn. Chuột trái để xác định mục tiêu của bạn. Dùng chuột giữa để di chuyển quanh bản đổ và lăng chuột giữa để phóng to hoặc thu nhỏ bản đồ.",
+    "map": "Bản Đồ",
+    "metersPerSecond": "{value} m/s",
+    "notApplicable": "Không có sẵn",
+    "or": "hoặc",
+    "projectile": "Đầu đạn",
+    "status": "Trạng thái",
+    "switchSelectionTo": "Đổi lựa chọn sang {value}",
+    "target": "mục tiêu",
+    "timeOfFlight": "Thời gian bay"
+  },
+  "units": {
+    "meter": "{value, plural, =1 {{value} mét} other {{value} mét}}",
+    "second": "{value, plural, =1 {{value} giây} other {{value} giây}}"
+  }
+}
