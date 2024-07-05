@@ -5,6 +5,7 @@
     "dbaeumer.vscode-eslint",
     "esbenp.prettier-vscode",
     "jinxdash.prettier-rust",
+    "ms-azuretools.vscode-docker",
     "rust-lang.rust-analyzer",
     "rvest.vs-code-prettier-eslint",
     "tauri-apps.tauri-vscode",

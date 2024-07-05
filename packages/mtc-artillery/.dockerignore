@@ -1,6 +1,8 @@
+# dependencies
 node_modules
+
+# next.js
 .next
 
 # not required
 archive
-packages

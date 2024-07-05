@@ -1,12 +1,17 @@
 {
+  "[dockerfile]": {
+    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+  },
+  "files.eol": "\r\n",
+  "typescript.enablePromptUseWorkspaceTsdk": true,
   "typescript.preferences.importModuleSpecifier": "non-relative",
   "vsicons.associations.folders": [
     {
-      "icon": "tauri",
-      "extensions": ["tauri"],
-      "format": "svg"
+      "extensions": [
+        "tauri"
+      ],
+      "format": "svg",
+      "icon": "tauri"
     }
-  ],
-  "files.eol": "\r\n",
-  "typescript.enablePromptUseWorkspaceTsdk": true
+  ]
 }
