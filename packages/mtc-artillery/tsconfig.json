@@ -1,0 +1,40 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "baseUrl": "./",
+    "paths": {
+      "@tauri/*": ["src/components/tauri/*"],
+      "@/*": ["src/*"]
+    },
+    "noEmit": true
+  },
+  "include": [
+    "next-env.d.ts",
+    "packages/mtc-artillery/next.config.mjs",
+    "src",
+    "scripts",
+    "public",
+    "packages",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": ["node_modules"]
+}

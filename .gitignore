@@ -4,20 +4,17 @@
 node_modules
 
 # next.js
-/.next/
+.next
+next-env.d.ts
 
 # misc
 .DS_Store
-/public/images/webp
 
 # debug
 npm-debug.log*
 
 # env files
 .env
-
-# typescript
-next-env.d.ts
 
 # temp files
 .tmp

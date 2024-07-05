@@ -1,7 +1,0 @@
-# package managers
-pnpm-lock.yaml
-package.json
-Cargo.lock
-
-# other
-archive
