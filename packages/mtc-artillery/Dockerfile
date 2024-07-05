@@ -14,7 +14,14 @@ ENV NEXT_TELEMETRY_DISABLED=1
 ENV NEXT_OUTPUT=standalone
 ENV SHARP_EFFORT=3
 
-RUN pnpm run build:prod
+# only lint if DEVELOPMENT env var is not true
+ARG DEVELOPMENT=false
+ENV DEVELOPMENT=$DEVELOPMENT
+RUN if [ "$DEVELOPMENT" != "true" ]; then pnpm run lint; fi
+
+RUN pnpm run convert
+
+RUN pnpm run next:build
 
 # Remove all folders in public/images except 'webp'
 RUN find /build/public/images -mindepth 1 -maxdepth 1 -type d ! -name 'webp' -exec rm -rf {} +
