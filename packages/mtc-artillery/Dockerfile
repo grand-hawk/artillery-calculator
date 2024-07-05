@@ -1,10 +1,9 @@
-# Build
+# Build layer
 FROM node:22 as build
 
 RUN corepack enable pnpm
 
 COPY . /build
-
 WORKDIR /build
 
 RUN --mount=type=cache,id=pnpm,target=/root/.local/share/pnpm/store pnpm fetch --frozen-lockfile
@@ -19,14 +18,12 @@ ARG DEVELOPMENT=false
 ENV DEVELOPMENT=$DEVELOPMENT
 RUN if [ "$DEVELOPMENT" != "true" ]; then pnpm run lint; fi
 
-RUN pnpm run convert
-
-RUN pnpm run next:build
+RUN pnpm run build:unsafe
 
 # Remove all folders in public/images except 'webp'
 RUN find /build/public/images -mindepth 1 -maxdepth 1 -type d ! -name 'webp' -exec rm -rf {} +
 
-# Package
+# Package layer
 FROM node:22-alpine as package
 
 RUN apk --no-cache add curl
