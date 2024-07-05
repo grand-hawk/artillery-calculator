@@ -10,6 +10,7 @@
     "elevation": "Elevatie",
     "gun": "geweer",
     "heightmap": "Deze kaart beschikt over een hoogtekaart voor verbeterde nauwkeurigheid",
+    "heightmapOpacity": "Heightmap",
     "instructions": "Linkermuisknop om de positie van het geweer in te stellen. Rechtermuisknop om de positie van het doelwit in te stellen.",
     "map": "Kaart",
     "metersPerSecond": "{value} m/s",
