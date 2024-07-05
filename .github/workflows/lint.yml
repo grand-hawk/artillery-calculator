@@ -32,7 +32,7 @@ jobs:
           cache-dependency-path: ./packages/mtc-artillery/pnpm-lock.yaml
 
       - name: Install pnpm packages
-        run: pnpm install --dev
+        run: pnpm install
 
       - name: Lint
         run: pnpm run lint
