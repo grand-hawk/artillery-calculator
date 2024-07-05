@@ -40,7 +40,7 @@ export default function TimeOfFlightValue() {
                 </Typography>
 
                 <Typography>
-                  {t(`units.second`, {
+                  {t('units.second', {
                     value: todec(calculateTimeOfFlight(highArc, velocity)),
                   })}
                 </Typography>

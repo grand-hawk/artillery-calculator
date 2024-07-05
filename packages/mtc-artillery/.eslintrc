@@ -112,6 +112,7 @@
     "@typescript-eslint/consistent-indexed-object-style": "error",
     "@typescript-eslint/consistent-generic-constructors": "warn",
     "react/jsx-filename-extension": "off",
-    "react/require-default-props": "off"
+    "react/require-default-props": "off",
+    "@typescript-eslint/no-unnecessary-template-expression": "warn"
   }
 }
