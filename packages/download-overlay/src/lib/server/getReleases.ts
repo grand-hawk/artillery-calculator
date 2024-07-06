@@ -1,5 +1,3 @@
-import Cache from 'stale-lru-cache';
-
 export interface Asset {
   url: string;
   id: number;
@@ -27,8 +25,6 @@ export interface PlatformReleases {
 }
 
 export type Releases = Record<'win' | 'linux' | 'macos', PlatformReleases>;
-
-export const ReleasesMaxAge = 60;
 
 const ReleaseTemplate = {
   win: { arm: [], x64: [] },
@@ -74,9 +70,3 @@ export default async function getReleases(): Promise<Releases> {
 
   return releases;
 }
-
-export const cache = new Cache({
-  maxAge: ReleasesMaxAge,
-  revalidate: (_, callback) =>
-    getReleases().then((releases) => releases && callback(releases)),
-});

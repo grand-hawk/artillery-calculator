@@ -8,7 +8,7 @@ import Page from '@/components/layout/Page';
 import CustomTabList from '@/components/molecules/CustomTabList';
 import CustomTabPanel from '@/components/molecules/CustomTabPanel';
 import PlatformDownloads from '@/components/organisms/PlatformDownloads';
-import getReleases, { cache, ReleasesMaxAge } from '@/lib/server/getReleases';
+import getReleases from '@/lib/server/getReleases';
 
 import type { Releases } from '@/lib/server/getReleases';
 import type { GetStaticPropsResult, InferGetStaticPropsType } from 'next';
@@ -16,14 +16,11 @@ import type { GetStaticPropsResult, InferGetStaticPropsType } from 'next';
 export async function getStaticProps(): Promise<
   GetStaticPropsResult<{ releases: Releases }>
 > {
-  if (!cache.has('props')) cache.set('releases', await getReleases());
-  const releases = cache.get('releases') as Releases;
-
   return {
     props: {
-      releases,
+      releases: await getReleases(),
     },
-    revalidate: ReleasesMaxAge,
+    revalidate: 60,
   };
 }
 

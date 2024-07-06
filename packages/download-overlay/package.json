@@ -33,14 +33,12 @@
     "next": "14.2.4",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "sharp": "^0.33.4",
-    "stale-lru-cache": "^5.1.1"
+    "sharp": "^0.33.4"
   },
   "devDependencies": {
     "@types/node": "^20.14.10",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
-    "@types/stale-lru-cache": "^5.1.6",
     "@typescript-eslint/eslint-plugin": "^7.15.0",
     "@typescript-eslint/parser": "^7.15.0",
     "depcheck": "^1.4.7",
