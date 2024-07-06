@@ -5,6 +5,7 @@ import Head from 'next/head';
 import React from 'react';
 
 import Page from '@/components/layout/Page';
+import Code from '@/components/molecules/Code';
 import CustomTabList from '@/components/molecules/CustomTabList';
 import CustomTabPanel from '@/components/molecules/CustomTabPanel';
 import PlatformDownloads from '@/components/organisms/PlatformDownloads';
@@ -16,17 +17,23 @@ import type { GetStaticPropsResult, InferGetStaticPropsType } from 'next';
 export async function getStaticProps(): Promise<
   GetStaticPropsResult<{ releases: Releases }>
 > {
-  let releases: Releases = ReleaseTemplate;
+  let releases: Releases = { ...ReleaseTemplate };
 
   if (process.env.NODE_ENV === 'development') {
-    releases.win.arm.push({ name: 'ARM', browser_download_url: '' });
-    releases.win.x64.push({ name: 'x64', browser_download_url: '' });
+    releases.win = {
+      arm: [{ name: 'ARM', browser_download_url: '' }],
+      x64: [{ name: 'x64', browser_download_url: '' }],
+    };
 
-    releases.linux.arm.push({ name: 'ARM', browser_download_url: '' });
-    releases.linux.x64.push({ name: 'x64', browser_download_url: '' });
+    releases.linux = {
+      arm: [{ name: 'ARM', browser_download_url: '' }],
+      x64: [{ name: 'x64', browser_download_url: '' }],
+    };
 
-    releases.macos.arm.push({ name: 'ARM', browser_download_url: '' });
-    releases.macos.x64.push({ name: 'x64', browser_download_url: '' });
+    releases.macos = {
+      arm: [{ name: 'ARM', browser_download_url: '' }],
+      x64: [{ name: 'x64', browser_download_url: '' }],
+    };
   } else releases = await getReleases();
 
   return {
@@ -81,7 +88,20 @@ export default function Index({
           </CustomTabList>
 
           <CustomTabPanel value={0}>
+            <Typography marginBottom={2}>
+              Download one of the following executable(s) and run it. It will
+              install the <Code>mtc-artillery-overlay</Code> application on your
+              system.
+            </Typography>
+
             <PlatformDownloads platformReleases={releases.win} />
+
+            <Typography marginTop={2}>
+              It might say that the executable is a virus or trojan. It is not,
+              this is a common issue for compiled languages. The executables are
+              built by GitHub and not an individual, everything is provably
+              safe.
+            </Typography>
           </CustomTabPanel>
 
           <CustomTabPanel value={1}>
