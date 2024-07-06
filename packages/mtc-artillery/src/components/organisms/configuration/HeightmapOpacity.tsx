@@ -8,7 +8,9 @@ import DataContainer from '@/components/atoms/configuration/DataContainer';
 import useGameMap from '@/hooks/data/useGameMap';
 import { useDataStore } from '@/stores/data';
 
-export default function HeightmapOpacitySlider() {
+import type { SliderProps } from '@mui/joy/Slider';
+
+export default function HeightmapOpacitySlider({ ...props }: SliderProps) {
   const t = useTranslations();
 
   const gameMap = useGameMap();
@@ -18,6 +20,7 @@ export default function HeightmapOpacitySlider() {
 
   return (
     <DataContainer
+      className="datacontainer datacontainer-grid"
       sx={{
         display: 'grid',
         gridTemplateColumns: '1fr 1fr',
@@ -44,6 +47,7 @@ export default function HeightmapOpacitySlider() {
           step={0.1}
           value={heightmapOpacity}
           onChange={(_, value) => setHeightmapOpacity(value as number)}
+          {...props}
         />
       </Box>
     </DataContainer>

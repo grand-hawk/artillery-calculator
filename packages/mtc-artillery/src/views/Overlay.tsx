@@ -6,6 +6,7 @@ import ColumnContainer from '@/components/atoms/ColumnContainer';
 import AzimuthValue from '@/components/organisms/configuration/Azimuth';
 import DistanceValue from '@/components/organisms/configuration/Distance';
 import ElevationValue from '@/components/organisms/configuration/Elevation';
+import HeightmapOpacitySlider from '@/components/organisms/configuration/HeightmapOpacity';
 import MapSelection from '@/components/organisms/configuration/Map';
 import ProjectileSelection from '@/components/organisms/configuration/Projectile';
 import Canvas from '@/components/templates/Canvas';
@@ -108,8 +109,16 @@ export default function OverlayView() {
               <AzimuthValue />
             </RowContainer>
 
-            <RowContainer>
+            <RowContainer
+              sx={{
+                '& .datacontainer-grid': {
+                  display: 'flex',
+                },
+              }}
+            >
               <DistanceValue />
+
+              <HeightmapOpacitySlider size="sm" />
             </RowContainer>
           </ColumnContainer>
 

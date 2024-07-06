@@ -12,8 +12,8 @@ export default function RowContainer({
     <Box
       sx={mergeSx(
         {
-          display: 'flex',
-          flexDirection: 'row',
+          display: 'grid',
+          gridTemplateColumns: '1fr 1fr',
           alignItems: 'center',
           justifyContent: 'space-between',
           gap: 1,
