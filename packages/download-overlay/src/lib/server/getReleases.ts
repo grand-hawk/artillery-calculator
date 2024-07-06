@@ -41,8 +41,7 @@ export default async function getReleases(): Promise<Releases> {
     NEXT_PUBLIC_REPO_OWNER: REPO_OWNER,
     NEXT_PUBLIC_REPO_NAME: REPO_NAME,
   } = process.env;
-  if (!REPO_OWNER || !REPO_NAME)
-    throw new Error('Missing required enviroment variables');
+  if (!REPO_OWNER || !REPO_NAME) return ReleaseTemplate;
 
   const response = await fetch(
     `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/releases/latest`,
