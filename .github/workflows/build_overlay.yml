@@ -1,4 +1,4 @@
-name: Build mtc-artillery-overlay
+name: Build overlay
 
 on:
   push:
@@ -13,7 +13,7 @@ jobs:
     defaults:
       run:
         shell: bash
-        working-directory: ./packages/mtc-artillery-overlay
+        working-directory: ./packages/overlay
 
     steps:
       - name: Checkout code
@@ -78,7 +78,7 @@ jobs:
     defaults:
       run:
         shell: bash
-        working-directory: ./packages/mtc-artillery-overlay
+        working-directory: ./packages/overlay
 
     steps:
       - name: Checkout code
@@ -139,7 +139,7 @@ jobs:
             ```
           releaseDraft: true
           prerelease: false
-          projectPath: ./packages/mtc-artillery-overlay
+          projectPath: ./packages/overlay
           args: ${{ matrix.args }}
 
       - name: Convert artifact paths
