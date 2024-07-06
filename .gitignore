@@ -3,7 +3,7 @@
 # dependencies
 node_modules
 
-# next.js
+# frameworks
 .next
 next-env.d.ts
 
@@ -12,9 +12,10 @@ next-env.d.ts
 
 # debug
 npm-debug.log*
+pnpm-debug.log*
 
 # env files
-.env
+.env*
 
 # temp files
 .tmp
