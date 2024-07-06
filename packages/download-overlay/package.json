@@ -1,0 +1,62 @@
+{
+  "name": "download-overlay",
+  "version": "0.1.0",
+  "author": "Astrid <git@astrid.email>",
+  "license": "MIT",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ari-party/mtc-artillery.git"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "next dev --port=8888",
+    "start": "next start",
+    "build": "next build",
+    "lint": "npm run next:lint && npm run eslint",
+    "next:lint": "next lint",
+    "eslint": "eslint .",
+    "lint:fix": "npm run eslint -- --fix",
+    "format": "prettier . -w",
+    "fix": "npm run eslint -- --fix && npm run format",
+    "depcheck": "depcheck . --quiet --skip-missing"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "@mui/joy": "5.0.0-beta.47",
+    "@mui/material": "^5.16.0",
+    "merge-sx": "^2.0.2",
+    "next": "14.2.4",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "sharp": "^0.33.4",
+    "stale-lru-cache": "^5.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.10",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@types/stale-lru-cache": "^5.1.6",
+    "@typescript-eslint/eslint-plugin": "^7.15.0",
+    "@typescript-eslint/parser": "^7.15.0",
+    "depcheck": "^1.4.7",
+    "eslint": "^8.57.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-next": "14.2.4",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-import-resolver-typescript": "^3.6.1",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-jsx-a11y": "^6.9.0",
+    "eslint-plugin-prettier": "^5.1.3",
+    "eslint-plugin-react": "^7.34.3",
+    "eslint-plugin-react-hooks": "^4.6.2",
+    "prettier": "^3.3.2",
+    "prettier-eslint": "^16.3.0",
+    "typescript": "^5.5.3",
+    "user-agent-data-types": "^0.4.2"
+  }
+}
