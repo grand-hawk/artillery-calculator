@@ -9,7 +9,7 @@ import Code from '@/components/molecules/Code';
 import CustomTabList from '@/components/molecules/CustomTabList';
 import CustomTabPanel from '@/components/molecules/CustomTabPanel';
 import PlatformDownloads from '@/components/organisms/PlatformDownloads';
-import getReleases, { ReleaseTemplate } from '@/lib/server/getReleases';
+import getReleases from '@/lib/server/getReleases';
 
 import type { Releases } from '@/lib/server/getReleases';
 import type { GetStaticPropsResult, InferGetStaticPropsType } from 'next';
@@ -17,38 +17,36 @@ import type { GetStaticPropsResult, InferGetStaticPropsType } from 'next';
 export async function getStaticProps(): Promise<
   GetStaticPropsResult<{ releases: Releases }>
 > {
-  let releases: Releases = { ...ReleaseTemplate };
+  let releases: Releases | undefined;
 
-  if (process.env.NODE_ENV === 'development') {
-    releases.win = {
-      arm: [{ name: 'ARM', browser_download_url: '' }],
-      x64: [{ name: 'x64', browser_download_url: '' }],
-    };
-
-    releases.linux = {
-      arm: [{ name: 'ARM', browser_download_url: '' }],
-      x64: [{ name: 'x64', browser_download_url: '' }],
-    };
-
-    releases.macos = {
-      arm: [{ name: 'ARM', browser_download_url: '' }],
-      x64: [{ name: 'x64', browser_download_url: '' }],
-    };
-  } else releases = await getReleases();
+  if (process.env.NODE_ENV === 'development')
+    releases = {
+      win: {
+        arm: [{ name: 'ARM', browser_download_url: '' }],
+        x64: [{ name: 'x64', browser_download_url: '' }],
+      },
+      linux: {
+        arm: [{ name: 'ARM', browser_download_url: '' }],
+        x64: [{ name: 'x64', browser_download_url: '' }],
+      },
+      macos: {
+        arm: [{ name: 'ARM', browser_download_url: '' }],
+        x64: [{ name: 'x64', browser_download_url: '' }],
+      },
+    } as Releases;
+  else releases = await getReleases();
 
   return {
     props: {
       releases,
     },
-    revalidate: 60,
+    revalidate: 600,
   };
 }
 
 export default function Index({
   releases,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
-  React.useEffect(() => console.log('Releases:', releases));
-
   return (
     <>
       <Head>
