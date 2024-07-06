@@ -29,11 +29,9 @@
   },
   "include": [
     "next-env.d.ts",
-    "packages/mtc-artillery/next.config.mjs",
+    "next.config.mjs",
     "src",
     "scripts",
-    "public",
-    "packages",
     ".next/types/**/*.ts"
   ],
   "exclude": ["node_modules"]
