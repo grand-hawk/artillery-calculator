@@ -36,3 +36,32 @@ jobs:
 
       - name: Lint
         run: pnpm run lint
+
+  download-overlay:
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        shell: bash
+        working-directory: ./packages/download-overlay
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4.0.0
+        with:
+          version: 9
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: "pnpm"
+          cache-dependency-path: ./packages/download-overlay/pnpm-lock.yaml
+
+      - name: Install pnpm packages
+        run: pnpm install
+
+      - name: Lint
+        run: pnpm run lint
