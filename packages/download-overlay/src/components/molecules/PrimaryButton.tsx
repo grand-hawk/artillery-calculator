@@ -19,7 +19,7 @@ export default function PrimaryButton({
       sx={mergeSx(
         (theme) => ({
           paddingX: 4,
-          height: 50,
+          minHeight: 50,
           borderRadius: 8,
           fontSize: 16,
           color: theme.palette.text.tertiary,
