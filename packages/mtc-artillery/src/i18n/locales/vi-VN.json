@@ -10,7 +10,7 @@
     "elevation": "Gốc nâng",
     "gun": "pháo",
     "heightmap": "Bản đồ có phân tầng địa hình để nâng cao độ chính xác của pháo",
-    "heightmapOpacity": "Heightmap opacity",
+    "heightmapOpacity": "Heightmap",
     "instructions": "Chuột trái để xác định vị trí pháo của bạn. Chuột trái để xác định mục tiêu của bạn. Dùng chuột giữa để di chuyển quanh bản đổ và lăng chuột giữa để phóng to hoặc thu nhỏ bản đồ.",
     "map": "Bản Đồ",
     "metersPerSecond": "{value} m/s",
