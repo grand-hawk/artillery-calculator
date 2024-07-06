@@ -20,16 +20,16 @@ export interface Release {
 }
 
 export interface PlatformReleases {
-  arm: Release[];
-  x64: Release[];
+  arm: Record<string, Release>;
+  x64: Record<string, Release>;
 }
 
 export type Releases = Record<'win' | 'linux' | 'macos', PlatformReleases>;
 
 export const ReleaseTemplate: Releases = {
-  win: { arm: [], x64: [] },
-  linux: { arm: [], x64: [] },
-  macos: { arm: [], x64: [] },
+  win: { arm: {}, x64: {} },
+  linux: { arm: {}, x64: {} },
+  macos: { arm: {}, x64: {} },
 };
 
 export default async function getReleases(): Promise<Releases> {
@@ -58,14 +58,20 @@ export default async function getReleases(): Promise<Releases> {
     };
 
     // windows
-    if (name.endsWith('x64-setup.exe')) releases.win.x64.push(release);
-    else if (name.endsWith('x64_en-us.msi')) releases.win.x64.push(release);
+    if (name.endsWith('x64-setup.exe'))
+      releases.win.x64[asset.node_id] = release;
+    else if (name.endsWith('x64_en-us.msi'))
+      releases.win.x64[asset.node_id] = release;
     // linux
-    else if (name.endsWith('amd64.appimage')) releases.linux.x64.push(release);
-    else if (name.endsWith('amd64.deb')) releases.linux.x64.push(release);
+    else if (name.endsWith('amd64.appimage'))
+      releases.linux.x64[asset.node_id] = release;
+    else if (name.endsWith('amd64.deb'))
+      releases.linux.x64[asset.node_id] = release;
     // macos
-    else if (name.endsWith('aarch64.dmg')) releases.macos.arm.push(release);
-    else if (name.endsWith('x64.dmg')) releases.macos.x64.push(release);
+    else if (name.endsWith('aarch64.dmg'))
+      releases.macos.arm[asset.node_id] = release;
+    else if (name.endsWith('x64.dmg'))
+      releases.macos.x64[asset.node_id] = release;
   }
 
   return releases;

@@ -22,16 +22,16 @@ export async function getStaticProps(): Promise<
   if (process.env.NODE_ENV === 'development')
     releases = {
       win: {
-        arm: [{ name: 'ARM', browser_download_url: '' }],
-        x64: [{ name: 'x64', browser_download_url: '' }],
+        arm: { arm: { name: 'ARM', browser_download_url: '' } },
+        x64: { x64: { name: 'x64', browser_download_url: '' } },
       },
       linux: {
-        arm: [{ name: 'ARM', browser_download_url: '' }],
-        x64: [{ name: 'x64', browser_download_url: '' }],
+        arm: { arm: { name: 'ARM', browser_download_url: '' } },
+        x64: { x64: { name: 'x64', browser_download_url: '' } },
       },
       macos: {
-        arm: [{ name: 'ARM', browser_download_url: '' }],
-        x64: [{ name: 'x64', browser_download_url: '' }],
+        arm: { arm: { name: 'ARM', browser_download_url: '' } },
+        x64: { x64: { name: 'x64', browser_download_url: '' } },
       },
     } as Releases;
   else releases = await getReleases();
@@ -40,7 +40,7 @@ export async function getStaticProps(): Promise<
     props: {
       releases,
     },
-    revalidate: 600,
+    revalidate: 120,
   };
 }
 

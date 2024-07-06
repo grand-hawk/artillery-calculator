@@ -16,9 +16,11 @@ export default function PlatformDownloads({
 }) {
   const arch = useArch();
 
-  const downloads = arch
-    ? platformReleases[arch]
-    : [...platformReleases.arm, ...platformReleases.x64];
+  const downloads = Object.values(
+    arch
+      ? platformReleases[arch]
+      : { ...platformReleases.arm, ...platformReleases.x64 },
+  );
 
   return (
     <Box
