@@ -8,7 +8,7 @@ import Page from '@/components/layout/Page';
 import CustomTabList from '@/components/molecules/CustomTabList';
 import CustomTabPanel from '@/components/molecules/CustomTabPanel';
 import PlatformDownloads from '@/components/organisms/PlatformDownloads';
-import getReleases from '@/lib/server/getReleases';
+import getReleases, { ReleaseTemplate } from '@/lib/server/getReleases';
 
 import type { Releases } from '@/lib/server/getReleases';
 import type { GetStaticPropsResult, InferGetStaticPropsType } from 'next';
@@ -16,9 +16,22 @@ import type { GetStaticPropsResult, InferGetStaticPropsType } from 'next';
 export async function getStaticProps(): Promise<
   GetStaticPropsResult<{ releases: Releases }>
 > {
+  let releases: Releases = ReleaseTemplate;
+
+  if (process.env.NODE_ENV === 'development') {
+    releases.win.arm.push({ name: 'ARM', browser_download_url: '' });
+    releases.win.x64.push({ name: 'x64', browser_download_url: '' });
+
+    releases.linux.arm.push({ name: 'ARM', browser_download_url: '' });
+    releases.linux.x64.push({ name: 'x64', browser_download_url: '' });
+
+    releases.macos.arm.push({ name: 'ARM', browser_download_url: '' });
+    releases.macos.x64.push({ name: 'x64', browser_download_url: '' });
+  } else releases = await getReleases();
+
   return {
     props: {
-      releases: await getReleases(),
+      releases,
     },
     revalidate: 60,
   };

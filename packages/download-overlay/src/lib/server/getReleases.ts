@@ -26,7 +26,7 @@ export interface PlatformReleases {
 
 export type Releases = Record<'win' | 'linux' | 'macos', PlatformReleases>;
 
-const ReleaseTemplate = {
+export const ReleaseTemplate: Releases = {
   win: { arm: [], x64: [] },
   linux: { arm: [], x64: [] },
   macos: { arm: [], x64: [] },
@@ -57,15 +57,15 @@ export default async function getReleases(): Promise<Releases> {
       browser_download_url: asset.browser_download_url,
     };
 
-    // macos
-    if (name.endsWith('aarch64.dmg')) releases.macos.arm.push(release);
-    else if (name.endsWith('x64.dmg')) releases.macos.x64.push(release);
+    // windows
+    if (name.endsWith('x64-setup.exe')) releases.win.x64.push(release);
+    else if (name.endsWith('x64_en-us.msi')) releases.win.x64.push(release);
     // linux
     else if (name.endsWith('amd64.appimage')) releases.linux.x64.push(release);
     else if (name.endsWith('amd64.deb')) releases.linux.x64.push(release);
-    // windows
-    else if (name.endsWith('x64-setup.exe')) releases.win.x64.push(release);
-    else if (name.endsWith('x64_en-us.msi')) releases.win.x64.push(release);
+    // macos
+    else if (name.endsWith('aarch64.dmg')) releases.macos.arm.push(release);
+    else if (name.endsWith('x64.dmg')) releases.macos.x64.push(release);
   }
 
   return releases;
