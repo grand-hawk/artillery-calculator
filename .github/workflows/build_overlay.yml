@@ -137,6 +137,7 @@ jobs:
             See the assets to download this version and install.
 
             ```
+            x86_64.rpm = linux
             aarch64.dmg = apple
             amd64.appimage = linux
             amd64.deb = linux
