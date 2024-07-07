@@ -60,7 +60,7 @@ export async function getStaticProps(): Promise<
 export default function Index({
   releases,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
-  const [activeTab, setActiveTab] = useLocalStorage<string>('tab', 'win');
+  const [activeTab, setActiveTab] = useLocalStorage<number>('tab', 0);
 
   return (
     <>
@@ -86,7 +86,7 @@ export default function Index({
             marginY: 2,
           }}
           value={activeTab}
-          onChange={(_, value) => setActiveTab(value as string)}
+          onChange={(_, value) => setActiveTab(value as number)}
         >
           <CustomTabList>
             <Tab disableIndicator value={0}>
