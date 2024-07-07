@@ -28,6 +28,7 @@ WORKDIR /server
 
 COPY --from=build /build/.next/standalone .
 COPY --from=build /build/.next/static .next/static
+COPY --from=build /build/public public
 
 EXPOSE 3000
 
