@@ -6,7 +6,17 @@
 
 version: 2
 updates:
-  - package-ecosystem: 'npm'
-    directory: '/'
+  - package-ecosystem: "npm"
+    directory: "/packages/download-overlay"
+    schedule:
+      interval: daily
+
+  - package-ecosystem: "npm"
+    directory: "/packages/mtc-artillery"
+    schedule:
+      interval: daily
+
+  - package-ecosystem: "npm"
+    directory: "/packages/overlay"
     schedule:
       interval: daily
