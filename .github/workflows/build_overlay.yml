@@ -28,6 +28,7 @@ jobs:
         with:
           node-version: 22
           cache: "pnpm"
+          cache-dependency-path: ./packages/overlay/pnpm-lock.yaml
 
       - uses: ari-party/action-get-latest-tag@v1
         id: tag_version
