@@ -39,8 +39,6 @@ function Canvas() {
   const target = useDataStore((s) => s.getTarget());
   const setTarget = useDataStore((s) => s.setTarget);
 
-  const heightmapOpacity = useDataStore((s) => s.heightmapOpacity);
-
   const canvasStore = useCanvasStore();
   const canvasScale = 8;
   const scaledDimension = canvasStore.width * canvasScale;
@@ -136,15 +134,8 @@ function Canvas() {
         />
 
         <AbsoluteContainer zIndex={2}>
-          <HeightmapProvider
-            style={{
-              display:
-                gameMap.heightmap && heightmapOpacity > 0.1 ? 'unset' : 'none',
-              opacity: heightmapOpacity,
-              width: canvasStore.width,
-              height: canvasStore.height,
-            }}
-          />
+          {/* something will be done with this in the future */}
+          <HeightmapProvider />
         </AbsoluteContainer>
 
         <AbsoluteContainer zIndex={3}>

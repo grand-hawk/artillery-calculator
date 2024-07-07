@@ -35,9 +35,6 @@ export interface DataStore {
 
   mobileMode: MobileModes;
   setMobileMode: (mode: MobileModes) => void;
-
-  heightmapOpacity: number;
-  setHeightmapOpacity: (opacity: number) => void;
 }
 
 export const useDataStore = create(
@@ -99,13 +96,6 @@ export const useDataStore = create(
       setMobileMode(mode) {
         set((s) => {
           s.mobileMode = mode;
-        });
-      },
-
-      heightmapOpacity: 0,
-      setHeightmapOpacity(opacity) {
-        set((s) => {
-          s.heightmapOpacity = opacity;
         });
       },
     })),

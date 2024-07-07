@@ -50,7 +50,7 @@ export default function Index({
   return (
     <>
       <Head>
-        <title>Artillery overlay</title>
+        <title>Overlay download</title>
       </Head>
 
       <Page>

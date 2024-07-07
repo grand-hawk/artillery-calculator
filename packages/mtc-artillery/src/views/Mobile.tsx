@@ -7,7 +7,6 @@ import ConfigurationGroup from '@/components/atoms/ConfigurationGroup';
 import AzimuthValue from '@/components/organisms/configuration/Azimuth';
 import DistanceValue from '@/components/organisms/configuration/Distance';
 import ElevationValue from '@/components/organisms/configuration/Elevation';
-import HeightmapOpacitySlider from '@/components/organisms/configuration/HeightmapOpacity';
 import MapSelection from '@/components/organisms/configuration/Map';
 import MobileMode from '@/components/organisms/configuration/MobileMode';
 import ProjectileSelection from '@/components/organisms/configuration/Projectile';
@@ -58,7 +57,6 @@ export default function MobileView() {
             <TimeOfFlightValue />
             <ProjectileSelection />
             <MapSelection />
-            <HeightmapOpacitySlider />
           </ConfigurationGroup>
         </ColumnContainer>
       </Box>
