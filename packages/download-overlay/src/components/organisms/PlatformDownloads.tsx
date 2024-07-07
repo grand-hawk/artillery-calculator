@@ -20,7 +20,9 @@ export default function PlatformDownloads({
     arch
       ? platformReleases[arch]
       : { ...platformReleases.arm, ...platformReleases.x64 },
-  );
+  )
+    // put releases with recommended up top
+    .sort((a, b) => Number(b.recommended) - Number(a.recommended));
 
   return (
     <Box

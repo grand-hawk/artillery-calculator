@@ -17,6 +17,7 @@ export interface Asset {
 export interface Release {
   name: string;
   browser_download_url: string;
+  recommended: boolean;
 }
 
 export interface PlatformReleases {
@@ -55,17 +56,30 @@ export default async function getReleases(): Promise<Releases> {
     const release: Release = {
       name,
       browser_download_url: asset.browser_download_url,
+      recommended: false,
     };
 
     // windows
     if (name.endsWith('x64-setup.exe'))
-      releases.win.x64[asset.node_id] = release;
+      releases.win.x64[asset.node_id] = Object.assign(
+        {
+          recommended: true,
+        } as Partial<Release>,
+        release,
+      );
     else if (name.endsWith('x64_en-us.msi'))
       releases.win.x64[asset.node_id] = release;
     // linux
     else if (name.endsWith('amd64.appimage'))
       releases.linux.x64[asset.node_id] = release;
     else if (name.endsWith('amd64.deb'))
+      releases.linux.x64[asset.node_id] = Object.assign(
+        {
+          recommended: true,
+        } as Partial<Release>,
+        release,
+      );
+    else if (name.endsWith('x86_64.rpm'))
       releases.linux.x64[asset.node_id] = release;
     // macos
     else if (name.endsWith('aarch64.dmg'))
