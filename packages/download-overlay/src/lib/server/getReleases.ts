@@ -67,24 +67,14 @@ export default async function getReleases(): Promise<Releases> {
 
     // windows
     if (name.endsWith('x64-setup.exe'))
-      releases.win.x64[asset.node_id] = Object.assign(
-        {
-          recommended: true,
-        } as Partial<Release>,
-        release,
-      );
+      releases.win.x64[asset.node_id] = { ...release, recommended: true };
     else if (name.endsWith('x64_en-us.msi'))
       releases.win.x64[asset.node_id] = release;
     // linux
     else if (name.endsWith('amd64.appimage'))
       releases.linux.x64[asset.node_id] = release;
     else if (name.endsWith('amd64.deb'))
-      releases.linux.x64[asset.node_id] = Object.assign(
-        {
-          recommended: true,
-        } as Partial<Release>,
-        release,
-      );
+      releases.linux.x64[asset.node_id] = { ...release, recommended: true };
     else if (name.endsWith('x86_64.rpm'))
       releases.linux.x64[asset.node_id] = release;
     // macos
