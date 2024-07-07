@@ -22,7 +22,9 @@ export default function PlatformDownloads({
       : { ...platformReleases.arm, ...platformReleases.x64 },
   )
     // put releases with recommended up top
-    .sort((a, b) => Number(b.recommended) - Number(a.recommended));
+    .sort((a, b) =>
+      a.recommended === b.recommended ? 0 : a.recommended ? -1 : 1,
+    );
 
   return (
     <Box
