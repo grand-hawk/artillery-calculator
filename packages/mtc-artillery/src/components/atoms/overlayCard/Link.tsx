@@ -7,8 +7,6 @@ export default function OverlayCardLink({
   renderText: () => React.ReactNode;
 }) {
   return (
-    <Link href="https://download.artillery-calculator.com" target="_blank">
-      {renderText()}
-    </Link>
+    <Link href="https://download.artillery-calculator.com">{renderText()}</Link>
   );
 }
