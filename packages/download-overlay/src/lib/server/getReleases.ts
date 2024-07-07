@@ -37,11 +37,17 @@ export default async function getReleases(): Promise<Releases> {
   const {
     NEXT_PUBLIC_REPO_OWNER: REPO_OWNER,
     NEXT_PUBLIC_REPO_NAME: REPO_NAME,
+    GITHUB_TOKEN,
   } = process.env;
   if (!REPO_OWNER || !REPO_NAME) return ReleaseTemplate;
 
+  const headers: HeadersInit = {};
+
+  if (GITHUB_TOKEN) headers.authorization = `Bearer ${GITHUB_TOKEN}`;
+
   const response = await fetch(
     `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/releases/latest`,
+    { headers },
   );
   if (!response.ok) return ReleaseTemplate;
 
