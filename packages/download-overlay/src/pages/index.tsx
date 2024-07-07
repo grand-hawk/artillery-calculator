@@ -52,7 +52,7 @@ export async function getStaticProps(): Promise<
     props: {
       releases,
     },
-    revalidate: 120,
+    revalidate: 300,
   };
 }
 
