@@ -3,6 +3,7 @@ import Tabs from '@mui/joy/Tabs';
 import Typography from '@mui/joy/Typography';
 import Head from 'next/head';
 import React from 'react';
+import { useLocalStorage } from 'usehooks-ts';
 
 import Page from '@/components/layout/Page';
 import Code from '@/components/molecules/Code';
@@ -59,6 +60,8 @@ export async function getStaticProps(): Promise<
 export default function Index({
   releases,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
+  const [activeTab, setActiveTab] = useLocalStorage<string>('tab', 'win');
+
   return (
     <>
       <Head>
@@ -82,6 +85,8 @@ export default function Index({
             gap: 2,
             marginY: 2,
           }}
+          value={activeTab}
+          onChange={(_, value) => setActiveTab(value as string)}
         >
           <CustomTabList>
             <Tab disableIndicator value={0}>
