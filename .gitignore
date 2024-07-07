@@ -16,6 +16,7 @@ pnpm-debug.log*
 
 # env files
 .env*
+!.env.template
 
 # temp files
 .tmp
