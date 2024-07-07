@@ -93,6 +93,7 @@ jobs:
         with:
           node-version: 22
           cache: "pnpm"
+          cache-dependency-path: ./packages/overlay/pnpm-lock.yaml
 
       - name: Install pnpm packages
         run: pnpm install
