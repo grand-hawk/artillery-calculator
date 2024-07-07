@@ -31,13 +31,13 @@ async fn check_for_updates(current_version: String) {
           .set_type(native_dialog::MessageType::Info)
           .set_title("Artillery overlay")
           .set_text(
-            "A new version is available, do you wish to visit the releases page?"
+            "A new version is available, do you wish to visit the download page?"
           )
           .show_confirm()
           .unwrap();
 
         if confirmation {
-          let _ = open::that("https://overlay.artillery-calculator.com");
+          let _ = open::that("https://download.artillery-calculator.com");
         }
       }
     }
