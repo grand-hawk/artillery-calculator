@@ -10,7 +10,6 @@
     "elevation": "Höhenwinkel",
     "gun": "Geschütz",
     "heightmap": "Diese Karte verfügt über eine Höhenkarte für verbesserte Genauigkeit",
-    "heightmapOpacity": "Höhenkarte",
     "instructions": "Klicke mit der Linken Maustaste, um die Geschütz-Position zu setzen. Rechtsklick um die Zielposition zu setzen. Halte die Mittelmaustaste gedrückt, um dich auf der Karte umzusehen und das Mausrad, um zu Zoomen.",
     "map": "Karte",
     "metersPerSecond": "{value} m/s",
