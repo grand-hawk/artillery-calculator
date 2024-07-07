@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - release
+    paths:
+      - packages/overlay/**
   workflow_dispatch:
 
 jobs:
