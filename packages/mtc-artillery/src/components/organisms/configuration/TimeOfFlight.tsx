@@ -10,12 +10,21 @@ import useElevation from '@/hooks/data/useElevation';
 import useProjectile from '@/hooks/data/useProjectile';
 import { calculateTimeOfFlight } from '@/utils/math';
 
-export default function TimeOfFlightValue() {
+export default function TimeOfFlightValue({
+  minimized = false,
+}: {
+  minimized?: boolean;
+}) {
   const t = useTranslations();
 
   const { velocity } = useProjectile();
   const [lowArc, highArc] = useElevation();
   const distance = useDistanceWithHeight();
+
+  const lowArcTof = todec(
+    Math.max(0, calculateTimeOfFlight(lowArc, velocity, distance)),
+  );
+  const highArcTof = todec(calculateTimeOfFlight(highArc, velocity, distance));
 
   return (
     <DataContainer>
@@ -31,24 +40,20 @@ export default function TimeOfFlightValue() {
       >
         {lowArc ? (
           <>
-            <Typography>
-              {todec(
-                Math.max(0, calculateTimeOfFlight(lowArc, velocity, distance)),
-              )}
-            </Typography>
+            <Typography>{lowArcTof}</Typography>
 
             {!!highArc && (
               <>
                 <Typography component="b" level="body-sm">
-                  {t('typography.or')}
+                  {minimized ? '/' : t('typography.or')}
                 </Typography>
 
                 <Typography>
-                  {t('units.second', {
-                    value: todec(
-                      calculateTimeOfFlight(highArc, velocity, distance),
-                    ),
-                  })}
+                  {minimized
+                    ? highArcTof
+                    : t('units.second', {
+                        value: highArcTof,
+                      })}
                 </Typography>
               </>
             )}

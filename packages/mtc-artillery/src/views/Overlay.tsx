@@ -8,6 +8,7 @@ import DistanceValue from '@/components/organisms/configuration/Distance';
 import ElevationValue from '@/components/organisms/configuration/Elevation';
 import MapSelection from '@/components/organisms/configuration/Map';
 import ProjectileSelection from '@/components/organisms/configuration/Projectile';
+import TimeOfFlightValue from '@/components/organisms/configuration/TimeOfFlight';
 import Canvas from '@/components/templates/Canvas';
 import RowContainer from '@tauri/atoms/RowContainer';
 import Navigation from '@tauri/templates/Navigation';
@@ -110,6 +111,7 @@ export default function OverlayView() {
 
             <RowContainer>
               <DistanceValue />
+              <TimeOfFlightValue minimized />
             </RowContainer>
           </ColumnContainer>
 
