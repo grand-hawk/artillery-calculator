@@ -8,6 +8,7 @@ import { useLocalStorage } from 'usehooks-ts';
 import Code from '@/components/molecules/Code';
 import CustomTabList from '@/components/molecules/CustomTabList';
 import CustomTabPanel from '@/components/molecules/CustomTabPanel';
+import WarningCard from '@/components/molecules/WarningCard';
 import PlatformDownloads from '@/components/organisms/PlatformDownloads';
 
 import type { Releases } from '@/lib/server/getReleases';
@@ -40,7 +41,7 @@ export default function DownloadTabs({ releases }: { releases: Releases }) {
       </CustomTabList>
 
       <CustomTabPanel value={0}>
-        <Typography marginBottom={2}>
+        <Typography sx={{ marginBottom: 2 }}>
           Download one of the following executable(s) and run it. It will
           install the <Code>mtc-artillery-overlay</Code> application on your
           system.
@@ -48,11 +49,13 @@ export default function DownloadTabs({ releases }: { releases: Releases }) {
 
         <PlatformDownloads platformReleases={releases.win} />
 
-        <Typography marginTop={2}>
-          It might say that the executable is a virus or trojan. It is not, this
-          is a common issue for compiled languages. The executables are built by
-          GitHub and not an individual, everything is provably safe.
-        </Typography>
+        <WarningCard sx={{ marginTop: 2 }}>
+          <Typography>
+            It might say that the executable is a virus or trojan. It is not,
+            this is a common issue for compiled languages. The executables are
+            built by GitHub and not an individual, everything is provably safe.
+          </Typography>
+        </WarningCard>
       </CustomTabPanel>
 
       <CustomTabPanel value={1}>

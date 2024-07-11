@@ -47,6 +47,10 @@ export const theme = extendTheme({
           '900': '#6b0000',
         },
 
+        warning: {
+          '300': '#f0b232',
+        },
+
         text: {
           primary: '#89b481',
           secondary: '#d4be98',
