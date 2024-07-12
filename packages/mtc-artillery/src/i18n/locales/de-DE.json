@@ -16,6 +16,9 @@
     "notApplicable": "N/V",
     "or": "oder",
     "projectile": "Projektil",
+    "settings": {
+      "legacyBlastRadius": "Legacy Blast Radius"
+    },
     "status": "Status",
     "switchSelectionTo": "Auswahl wechseln zu {value}",
     "target": "Ziel",
