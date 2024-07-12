@@ -16,6 +16,9 @@
     "notApplicable": "N.v.t.",
     "or": "of",
     "projectile": "Projectiel",
+    "settings": {
+      "legacyBlastRadius": "Legacy Blast Radius"
+    },
     "status": "Status",
     "switchSelectionTo": "Schakel selectie naar {value}",
     "target": "doelwit",
