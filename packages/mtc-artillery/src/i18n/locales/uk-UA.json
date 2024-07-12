@@ -16,6 +16,9 @@
     "notApplicable": "н/д",
     "or": "Або",
     "projectile": "Снаряд",
+    "settings": {
+      "legacyBlastRadius": "Legacy Blast Radius"
+    },
     "status": "Статус",
     "switchSelectionTo": "Перемикання вибору на {value}",
     "target": "мета",
