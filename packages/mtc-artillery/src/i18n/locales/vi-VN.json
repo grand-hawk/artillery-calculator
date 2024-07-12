@@ -16,6 +16,9 @@
     "notApplicable": "Không có sẵn",
     "or": "hoặc",
     "projectile": "Đầu đạn",
+    "settings": {
+      "legacyBlastRadius": "Legacy Blast Radius"
+    },
     "status": "Trạng thái",
     "switchSelectionTo": "Đổi lựa chọn sang {value}",
     "target": "mục tiêu",
