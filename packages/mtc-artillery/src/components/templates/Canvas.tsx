@@ -2,7 +2,6 @@ import Image from 'next/image';
 import React from 'react';
 import { isMobile } from 'react-device-detect';
 
-import HeightmapProvider from '../providers/HeightmapProvider';
 import AbsoluteContainer from '@/components/atoms/canvas/AbsoluteContainer';
 import CanvasMeasureContainer from '@/components/organisms/CanvasMeasureContainer';
 import Profiler from '@/components/utils/Profiler';
@@ -134,11 +133,6 @@ function Canvas() {
         />
 
         <AbsoluteContainer zIndex={2}>
-          {/* something will be done with this in the future */}
-          <HeightmapProvider />
-        </AbsoluteContainer>
-
-        <AbsoluteContainer zIndex={3}>
           <canvas
             ref={ref}
             height={scaledDimension}

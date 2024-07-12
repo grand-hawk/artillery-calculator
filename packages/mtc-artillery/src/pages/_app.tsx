@@ -1,6 +1,7 @@
 import { NextIntlClientProvider } from 'next-intl';
 import React from 'react';
 
+import HeightmapProvider from '@/components/providers/HeightmapProvider';
 import useProperLocale from '@/hooks/useProperLocale';
 import locales, { config } from '@/i18n';
 import objectKeySearch from '@/utils/objectKeySearch';
@@ -30,7 +31,9 @@ function App({ Component, pageProps }: AppProps) {
             : console.error(error)
         }
       >
-        <Component {...pageProps} />
+        <HeightmapProvider>
+          <Component {...pageProps} />
+        </HeightmapProvider>
       </NextIntlClientProvider>
     </React.StrictMode>
   );
