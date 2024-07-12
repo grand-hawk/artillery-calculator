@@ -3,4 +3,8 @@ pnpm-lock.yaml
 package.json
 
 # other
-archive
+assets
+
+# frameworks
+next-env.d.ts
+.next
