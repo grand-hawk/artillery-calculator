@@ -1,15 +1,15 @@
+import { useRouter } from 'next/router';
 import { NextIntlClientProvider } from 'next-intl';
 import React from 'react';
 
 import HeightmapProvider from '@/components/providers/HeightmapProvider';
-import useProperLocale from '@/hooks/useProperLocale';
 import locales, { config } from '@/i18n';
 import objectKeySearch from '@/utils/objectKeySearch';
 
 import type { AppProps } from 'next/app';
 
 function App({ Component, pageProps }: AppProps) {
-  const locale = useProperLocale();
+  const { locale } = useRouter();
 
   return (
     <React.StrictMode>
