@@ -16,6 +16,9 @@
     "notApplicable": "Н/Д",
     "or": "или",
     "projectile": "Снаряд",
+    "settings": {
+      "legacyBlastRadius": "Legacy Blast Radius"
+    },
     "status": "Статус",
     "switchSelectionTo": "Переключение выбора на {value}",
     "target": "цель",
