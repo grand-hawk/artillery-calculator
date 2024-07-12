@@ -4,7 +4,7 @@ import Typography from '@mui/joy/Typography';
 import { useTranslations } from 'next-intl';
 import React from 'react';
 
-import DataContainer from '@/components/atoms/configuration/DataContainer';
+import DataContainer from '@/components/atoms/DataContainer';
 import useDistanceWithHeight from '@/hooks/data/useDistanceWithHeight';
 import useElevation from '@/hooks/data/useElevation';
 import useProjectile from '@/hooks/data/useProjectile';

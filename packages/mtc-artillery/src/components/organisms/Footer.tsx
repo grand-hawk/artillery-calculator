@@ -3,6 +3,8 @@ import Typography from '@mui/joy/Typography';
 import { mergeSx } from 'merge-sx';
 import { useMediaQuery } from 'usehooks-ts';
 
+import SettingsToggle from './footer/SettingsToggle';
+import DataContainer from '../atoms/DataContainer';
 import Link from '@/components/atoms/footer/Link';
 import BMACIcon from '@/components/atoms/icons/BMAC';
 import DiscordIcon from '@/components/atoms/icons/Discord';
@@ -15,7 +17,7 @@ import type { SxProps } from '@mui/joy/styles/types';
 
 function Footer({ version, sx = {} }: { version: string; sx?: SxProps }) {
   const isSmallScreen = useIsSmallScreen();
-  const isSuperSmallScreen = useMediaQuery('(max-width: 400px)');
+  const isSuperSmallScreen = useMediaQuery('(max-width: 450px)');
 
   return (
     <Box
@@ -72,24 +74,24 @@ function Footer({ version, sx = {} }: { version: string; sx?: SxProps }) {
         <Status />
       </Box>
 
-      <Box
-        sx={{
-          display: 'flex',
-          flexDirection: 'row',
-          alignItems: 'center',
-          gap: 2,
-        }}
-      >
-        <LanguageSelector />
+      <DataContainer>
+        <DataContainer>
+          <SettingsToggle />
+
+          <LanguageSelector />
+        </DataContainer>
 
         <Typography
           component="code"
           level="body-sm"
-          sx={(theme) => ({ fontFamily: theme.fontFamily.code })}
+          sx={(theme) => ({
+            fontFamily: theme.fontFamily.code,
+            marginX: 1,
+          })}
         >
           {version}
         </Typography>
-      </Box>
+      </DataContainer>
     </Box>
   );
 }

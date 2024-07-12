@@ -17,6 +17,7 @@ export default function DataContainer({
           display: 'flex',
           flexDirection: 'row',
           justifyContent: 'space-between',
+          alignItems: 'center',
           gap: 1,
         },
         props.sx,

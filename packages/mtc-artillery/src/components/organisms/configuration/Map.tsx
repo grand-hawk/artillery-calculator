@@ -5,7 +5,7 @@ import Typography from '@mui/joy/Typography';
 import { useTranslations } from 'next-intl';
 import React from 'react';
 
-import DataContainer from '@/components/atoms/configuration/DataContainer';
+import DataContainer from '@/components/atoms/DataContainer';
 import MapItem from '@/components/molecules/configuration/map/Item';
 import ScrollBox from '@/components/molecules/ScrollBox';
 import { gameMaps } from '@/config/maps';
