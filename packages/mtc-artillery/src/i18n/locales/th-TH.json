@@ -16,6 +16,9 @@
     "notApplicable": "ไม่มีข้อมูล",
     "or": "หรือ",
     "projectile": "กระสุน",
+    "settings": {
+      "legacyBlastRadius": "Legacy Blast Radius"
+    },
     "status": "สถานะ",
     "switchSelectionTo": "สลับการเลือกไปที่ {value}",
     "target": "เป้าหมาย",
