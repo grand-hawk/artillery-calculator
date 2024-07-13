@@ -17,7 +17,7 @@
     "or": "Або",
     "projectile": "Снаряд",
     "settings": {
-      "legacyBlastRadius": "Legacy Blast Radius"
+      "legacyBlastRadius": "Наслідки Радіусу Вибуха"
     },
     "status": "Статус",
     "switchSelectionTo": "Перемикання вибору на {value}",
