@@ -162,7 +162,7 @@ export const guns: Record<string, Gun> = {
       {
         name: 'Propane',
         velocity: 130,
-        explosiveMass: 50,
+        explosiveMass: 30,
       },
     ],
   },
