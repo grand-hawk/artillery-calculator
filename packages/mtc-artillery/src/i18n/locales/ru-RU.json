@@ -17,7 +17,7 @@
     "or": "или",
     "projectile": "Снаряд",
     "settings": {
-      "legacyBlastRadius": "Legacy Blast Radius"
+      "legacyBlastRadius": "Последствие Радиуса Взрыва"
     },
     "status": "Статус",
     "switchSelectionTo": "Переключение выбора на {value}",
