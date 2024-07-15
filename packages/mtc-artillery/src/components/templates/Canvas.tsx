@@ -10,6 +10,7 @@ import useHeightmapZ from '@/hooks/data/useHeightmapZ';
 import useProjectile from '@/hooks/data/useProjectile';
 import { useCanvasStore } from '@/stores/canvas';
 import { useDataStore } from '@/stores/data';
+import drawBlastRadius from '@/utils/canvas/drawBlastRadius';
 import drawGun from '@/utils/canvas/drawGun';
 import drawLine from '@/utils/canvas/drawLine';
 import drawTarget from '@/utils/canvas/drawTarget';
@@ -66,6 +67,12 @@ function Canvas() {
 
     context.clearRect(0, 0, scaledDimension, scaledDimension);
 
+    const markerRadius = Math.max(
+      (8 * canvasScale) / canvasStore.zoom,
+      4 * (canvasScale / 2),
+    );
+
+    drawBlastRadius(context, target, scaledDimension, blastRadius);
     drawLine(
       context,
       canvasScale,
@@ -74,14 +81,8 @@ function Canvas() {
       target,
       scaledDimension,
     );
-
-    const markerRadius = Math.max(
-      (8 * canvasScale) / canvasStore.zoom,
-      4 * (canvasScale / 2),
-    );
-
     drawGun(context, gun, maxRadius, scaledDimension, markerRadius);
-    drawTarget(context, target, scaledDimension, markerRadius, blastRadius);
+    drawTarget(context, target, scaledDimension, markerRadius);
 
     function clickListener(event: MouseEvent) {
       event.preventDefault();
