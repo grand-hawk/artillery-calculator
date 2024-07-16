@@ -9,14 +9,14 @@ updates:
   - package-ecosystem: "npm"
     directory: "/packages/download-overlay"
     schedule:
-      interval: daily
+      interval: weekly
 
   - package-ecosystem: "npm"
     directory: "/packages/mtc-artillery"
     schedule:
-      interval: daily
+      interval: weekly
 
   - package-ecosystem: "npm"
     directory: "/packages/overlay"
     schedule:
-      interval: daily
+      interval: weekly
