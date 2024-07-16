@@ -125,6 +125,8 @@ export default function OverlayView() {
               gap: 0.5,
 
               '& .datacontainer': {
+                justifyContent: 'stretch',
+
                 // ensure elements are full width
                 '& > .MuiButton-root, & > .MuiSelect-root': {
                   width: '100%',
