@@ -11,8 +11,8 @@ import { useTranslations } from 'next-intl';
 import React from 'react';
 import { useOnClickOutside } from 'usehooks-ts';
 
-import DataContainer from '@/components/atoms/DataContainer';
 import ProjectileButton from '@/components/atoms/configuration/projectile/Button';
+import DataContainer from '@/components/atoms/DataContainer';
 import ScrollBox from '@/components/molecules/ScrollBox';
 import { guns } from '@/config/projectiles';
 import { useDataStore } from '@/stores/data';
