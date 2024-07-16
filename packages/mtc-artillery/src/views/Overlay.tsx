@@ -97,9 +97,14 @@ export default function OverlayView() {
             flexDirection: 'column',
             justifyContent: 'space-between',
             alignItems: 'stretch',
-            gap: 0.5,
 
+            gap: 0.5,
             padding: 2,
+
+            // items centered by default
+            '& .datacontainer': {
+              alignItems: 'stretch',
+            },
           }}
         >
           <ColumnContainer sx={{ gap: 1 }}>
@@ -120,13 +125,13 @@ export default function OverlayView() {
               gap: 0.5,
 
               '& .datacontainer': {
-                justifyContent: 'stretch',
-
+                // ensure elements are full width
                 '& > .MuiButton-root, & > .MuiSelect-root': {
                   width: '100%',
                   justifyContent: 'space-between',
                 },
 
+                // hide titles on left side
                 '& > .MuiTypography-root': {
                   display: 'none',
                 },
