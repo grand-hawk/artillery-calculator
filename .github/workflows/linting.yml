@@ -35,7 +35,7 @@ jobs:
         run: pnpm install
 
       - name: Lint
-        run: pnpm run lint
+        run: pnpm run lint -- --max-warnings 0
 
   download-overlay:
     runs-on: ubuntu-latest
