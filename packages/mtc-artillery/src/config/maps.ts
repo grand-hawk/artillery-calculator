@@ -67,6 +67,7 @@ export const gameMaps: Record<string, GameMap> = {
       255: 505.26953125,
     },
     image: 'dustbowl_ii',
+    inRotation: true,
     name: 'Dustbowl II',
     size: calculateMapSize(250),
   },
