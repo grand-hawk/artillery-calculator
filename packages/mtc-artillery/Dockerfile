@@ -1,5 +1,5 @@
 # Build layer
-FROM node:22 as build
+FROM node:22 AS build
 
 RUN corepack enable pnpm
 
@@ -24,7 +24,7 @@ RUN pnpm run build:unsafe
 RUN find /build/public/images -mindepth 1 -maxdepth 1 -type d ! -name 'webp' -exec rm -rf {} +
 
 # Package layer
-FROM node:22-alpine as package
+FROM node:22-alpine AS package
 
 RUN apk --no-cache add curl
 
