@@ -1,5 +1,5 @@
 # Build layer
-FROM node:22 AS build
+FROM node:21 AS build
 
 RUN corepack enable pnpm
 
@@ -20,7 +20,7 @@ RUN if [ "$DEVELOPMENT" != "true" ]; then pnpm run lint; fi
 RUN pnpm run build
 
 # Package layer
-FROM node:22-alpine AS package
+FROM node:21-alpine AS package
 
 RUN apk --no-cache add curl
 
