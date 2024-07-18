@@ -25,7 +25,7 @@ const config = {
     ignoreDuringBuilds: true,
   },
 
-  output: "standalone",
+  output: process.env.NEXT_OUTPUT,
 };
 
 const withBundleAnalyzer = bundleAnalyzer({
