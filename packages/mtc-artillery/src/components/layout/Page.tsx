@@ -11,6 +11,7 @@ import type { PropsWithChildren } from 'react';
 export default function Page({ children }: PropsWithChildren) {
   const isClient = useIsClient();
   const isOverlay = useIsOverlay();
+
   return (
     <Theme>
       {/* only render page if client, site breaks otherwise */}
