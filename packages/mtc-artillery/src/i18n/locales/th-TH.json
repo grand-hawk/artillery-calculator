@@ -17,7 +17,7 @@
     "or": "หรือ",
     "projectile": "กระสุน",
     "settings": {
-      "legacyBlastRadius": "Legacy Blast Radius"
+      "legacyBlastRadius": "รัศมีการระเบิดดั้งเดิม"
     },
     "status": "สถานะ",
     "switchSelectionTo": "สลับการเลือกไปที่ {value}",
