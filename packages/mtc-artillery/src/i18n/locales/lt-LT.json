@@ -1,0 +1,31 @@
+{
+  "meta": {
+    "description": "An artillery calculator made for Multicrew Tank Combat on Roblox."
+  },
+  "typography": {
+    "azimuth": "Azimutas",
+    "blastRange": "Šis sviedinys turi sprogimo nuotolio duomenis",
+    "distance": "Atstumas",
+    "downloadOverlay": "Atsisiųskite in-game overlay <link>skirtoje svetainėje</link>.",
+    "elevation": "Pakilimas",
+    "gun": "ginklas",
+    "heightmap": "Šiame žemėlapyje yra aukščio žemėlapis, skirtas pagerinti tikslumą",
+    "instructions": "Spustelėkite kairįjį pelės klavišą, kad nustatytumėte ginklo padėtį. Dešiniuoju pelės mygtuku spustelėkite, kad nustatytumėte tikslinę padėtį. Norėdami perkelti žemėlapį, laikykite nuspaudę scroll wheel, judekite scroll wheel'a, kad padidintumėte mastelį.",
+    "map": "Žemėlapis",
+    "metersPerSecond": "{value} m/s",
+    "notApplicable": "N/A",
+    "or": "ar",
+    "projectile": "Sviedinys",
+    "settings": {
+      "legacyBlastRadius": "Legacy sprogimo spindulys"
+    },
+    "status": "Būsena,
+    "switchSelectionTo": "Perjungti pasirinkimą į {value}",
+    "target": "Taikinys",
+    "timeOfFlight": "Skrydžio laikas"
+  },
+  "units": {
+    "meter": "{value, plural, =1 {{value} meter} other {{value} meters}}",
+    "second": "{value, plural, =1 {{value} second} other {{value} seconds}}"
+  }
+}
