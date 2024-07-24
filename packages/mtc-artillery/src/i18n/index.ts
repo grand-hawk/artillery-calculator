@@ -11,6 +11,7 @@ import ruRU from '@/i18n/locales/ru-RU.json';
 import thTH from '@/i18n/locales/th-TH.json';
 import ukUA from '@/i18n/locales/uk-UA.json';
 import viVN from '@/i18n/locales/vi-VN.json';
+import ltLT from '@/i18n/locales/lt-LT.json';
 
 export type LocaleDictionary = string | { [key: string]: LocaleDictionary };
 
@@ -24,6 +25,7 @@ const locales: Record<string, LocaleDictionary> = {
   'th-TH': thTH,
   'uk-UA': ukUA,
   'vi-VN': viVN,
+  'lt-LT': ltLT
 };
 
 // add the data in common to all locales
