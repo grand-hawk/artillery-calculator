@@ -28,7 +28,7 @@
     "@emotion/react": "^11.13.0",
     "@emotion/styled": "^11.13.0",
     "@mui/joy": "5.0.0-beta.48",
-    "@mui/material": "^5.16.2",
+    "@mui/material": "^5.16.5",
     "merge-sx": "^3.0.1",
     "next": "14.2.5",
     "react": "^18.3.1",
