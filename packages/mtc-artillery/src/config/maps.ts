@@ -82,6 +82,17 @@ export const gameMaps: Record<string, GameMap> = {
     size: calculateMapSize(250),
   },
 
+  fulvia_gap: {
+    heightmap: {
+      0: 0,
+      255: 168.87933349609375,
+    },
+    image: 'fulvia_gap',
+    inRotation: true,
+    name: 'Fulvia Gap',
+    size: 888 * 9,
+  },
+
   gensokyo: {
     image: 'gensokyo',
     name: 'Gensokyo',
