@@ -58,7 +58,7 @@ export const guns: Record<string, Gun> = {
   },
 
   m109: {
-    name: 'M109',
+    name: 'M109(A6)',
     projectiles: [
       {
         name: 'M107',
