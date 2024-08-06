@@ -311,6 +311,7 @@ export const guns: Record<string, Gun> = {
       {
         name: 'L33A1',
         velocity: 259,
+        explosiveMass: 30.6,
       },
     ],
   },
