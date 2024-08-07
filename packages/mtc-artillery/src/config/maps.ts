@@ -37,6 +37,17 @@ export const gameMaps: Record<string, GameMap> = {
     size: calculateMapSize(165),
   },
 
+  chernobyl_v2: {
+    heightmap: {
+      0: 0,
+      255: 408.0989990234375,
+    },
+    image: 'chernobyl_v2',
+    inRotation: true,
+    name: 'Chernobyl V2',
+    size: calculateMapSize(165),
+  },
+
   cloudy_valley: {
     heightmap: {
       0: 0,
@@ -69,6 +80,17 @@ export const gameMaps: Record<string, GameMap> = {
     inRotation: true,
     name: 'Dustbowl II',
     size: calculateMapSize(250),
+  },
+
+  fulvia_gap: {
+    heightmap: {
+      0: 0,
+      255: 168.87933349609375,
+    },
+    image: 'fulvia_gap',
+    inRotation: true,
+    name: 'Fulvia Gap',
+    size: 888 * 9,
   },
 
   gensokyo: {

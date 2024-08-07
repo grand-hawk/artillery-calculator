@@ -58,7 +58,7 @@ export const guns: Record<string, Gun> = {
   },
 
   m109: {
-    name: 'M109',
+    name: 'M109(A6)',
     projectiles: [
       {
         name: 'M107',
@@ -195,7 +195,7 @@ export const guns: Record<string, Gun> = {
       {
         name: 'BP-540',
         velocity: 655,
-        explosiveMass: 3.48,
+        explosiveMass: 3,
       },
       {
         name: 'OF-72',
@@ -216,6 +216,21 @@ export const guns: Record<string, Gun> = {
         name: 'OF-91',
         velocity: 864,
         explosiveMass: 11,
+      },
+      {
+        name: 'OF-91 Low Charge',
+        velocity: 200,
+        explosiveMass: 11,
+      },
+      {
+        name: 'OF-91 Medium Charge',
+        velocity: 500,
+        explosiveMass: 11,
+      },
+      {
+        name: 'OF-91 Proxy Fuze',
+        velocity: 500,
+        explosiveMass: 864,
       },
     ],
   },
@@ -296,6 +311,7 @@ export const guns: Record<string, Gun> = {
       {
         name: 'L33A1',
         velocity: 259,
+        explosiveMass: 30.6,
       },
     ],
   },
