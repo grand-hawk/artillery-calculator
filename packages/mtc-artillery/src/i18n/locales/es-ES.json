@@ -17,7 +17,7 @@
     "or": "o",
     "projectile": "Proyectil",
     "settings": {
-      "legacyBlastRadius": "Legacy Blast Radius"
+      "legacyBlastRadius": "Indicador antiguo de radio de explosión"
     },
     "status": "Estado",
     "switchSelectionTo": "Cambiar selección a {value}",
