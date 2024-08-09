@@ -236,7 +236,7 @@ export const guns: Record<string, Gun> = {
   },
 
   '2S7': {
-    name: '2S7',
+    name: '2S7 Pion',
     projectiles: [
       {
         name: '2VG11',
