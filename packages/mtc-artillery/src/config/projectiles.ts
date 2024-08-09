@@ -235,6 +235,32 @@ export const guns: Record<string, Gun> = {
     ],
   },
 
+  '2S7': {
+    name: '2S7',
+    projectiles: [
+      {
+        name: '2VG11',
+        velocity: 864,
+        explosiveMass: 10,
+      },
+      {
+        name: '3VOF34',
+        velocity: 864,
+        explosiveMass: 30,
+      },
+      {
+        name: '3VOF42',
+        velocity: 200,
+        explosiveMass: 30,
+      },
+      {
+        name: '3V016',
+        velocity: 200,
+        explosiveMass: 0.23,
+      },
+    ],
+  },
+
   t34: {
     name: 'T34 Calliope',
     projectiles: [
