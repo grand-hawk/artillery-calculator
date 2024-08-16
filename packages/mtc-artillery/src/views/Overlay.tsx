@@ -73,9 +73,6 @@ export default function OverlayView() {
 
       <Box
         sx={{
-          display: 'grid',
-          gridTemplateRows: `max-content max-content max-content`,
-
           borderRadius: 8,
           backgroundColor: 'black',
 
