@@ -63,6 +63,8 @@ export default function OverlayView() {
         styles={{
           '*': {
             overflow: 'hidden',
+
+            userSelect: 'none',
           },
 
           body: {
