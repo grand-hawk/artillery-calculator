@@ -261,6 +261,24 @@ export const guns: Record<string, Gun> = {
     ],
   },
 
+  M270: {
+    name: 'M270',
+    projectiles: [
+      {
+        name: 'M26A1',
+        velocity: 180,
+        explosiveMass: 30 * 0.2,
+        blastMultiplier: 2,
+      },
+      {
+        name: 'M31A2',
+        velocity: 180,
+        explosiveMass: 100.1,
+        blastMultiplier: 2,
+      },
+    ],
+  },
+
   t34: {
     name: 'T34 Calliope',
     projectiles: [
