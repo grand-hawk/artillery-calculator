@@ -276,12 +276,6 @@ export const guns: Record<string, Gun> = {
         explosiveMass: 100.1,
         blastMultiplier: 2,
       },
-      {
-        name: 'ATACMS',
-        velocity: 150,
-        explosiveMass: 591,
-        blastMultiplier: 4,
-      },
     ],
   },
 
