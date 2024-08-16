@@ -16,6 +16,7 @@ export default function Navigation() {
           alignItems: 'center',
           justifyContent: 'space-between',
           paddingX: 1.5,
+          paddingY: 0.5,
         }}
       >
         <Box>

@@ -22,9 +22,6 @@ declare global {
 }
 
 const windowWidth = 326;
-const navigationHeight = 40;
-const canvasHeight = 326;
-const dataHeight = 225;
 
 export default function OverlayView() {
   React.useEffect(() => {
@@ -46,12 +43,12 @@ export default function OverlayView() {
           '@tauri-apps/api/window'
         );
 
-        await appWindow.setSize(
-          new LogicalSize(
-            windowWidth,
-            navigationHeight + canvasHeight + dataHeight,
-          ),
+        const height = Math.max(
+          document.body.scrollHeight,
+          document.body.offsetHeight,
         );
+
+        await appWindow.setSize(new LogicalSize(windowWidth, height));
       } catch (error) {
         console.error(error);
       }
@@ -77,7 +74,7 @@ export default function OverlayView() {
       <Box
         sx={{
           display: 'grid',
-          gridTemplateRows: `${navigationHeight}px ${canvasHeight}px ${dataHeight}px`,
+          gridTemplateRows: `max-content max-content max-content`,
 
           borderRadius: 8,
           backgroundColor: 'black',
@@ -98,7 +95,7 @@ export default function OverlayView() {
             justifyContent: 'space-between',
             alignItems: 'stretch',
 
-            gap: 0.5,
+            gap: 2,
             padding: 2,
 
             // items centered by default
