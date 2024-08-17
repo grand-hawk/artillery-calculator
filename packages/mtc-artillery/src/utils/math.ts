@@ -138,10 +138,9 @@ export function calculateBlastRange(
 }
 
 /**
- * @param d Distance in meters
  * @param v Initial velocity (m/s)
  * @param h Initial height in meters (default: 0)
- * @returns Elevation in degrees
+ * @returns Max range in meters
  */
 export function calculateMaxRange(v: number, h: number = 0): number {
   const a = -0.5 * G;
