@@ -124,7 +124,7 @@ export function calculateMapSize(m: number, grids: number = 9): number {
  * @param b Blast multiplier (default: 1)
  * @param d Air density (default: 1.2)
  * @param a Explosive constant (default: 0.07)
- * @returns Blast range in studs
+ * @returns Blast range
  */
 export function calculateBlastRange(
   m: number,
