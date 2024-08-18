@@ -184,7 +184,29 @@ export const guns: Record<string, Gun> = {
         name: 'Blast fragmentation',
         velocity: 180,
         explosiveMass: 10,
-        blastMultiplier: 1,
+      },
+    ],
+  },
+
+  tos1asv: {
+    name: 'TOS-1A BM-1 (SV)',
+    projectiles: [
+      {
+        name: 'Incendiary',
+        velocity: 180,
+        explosiveMass: 0.2,
+        blastMultiplier: 2,
+      },
+      {
+        name: 'Thermobaric',
+        velocity: 180,
+        explosiveMass: 3,
+        blastMultiplier: 4,
+      },
+      {
+        name: 'Blast fragmentation',
+        velocity: 180,
+        explosiveMass: 21,
       },
     ],
   },
