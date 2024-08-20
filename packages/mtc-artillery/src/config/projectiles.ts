@@ -212,7 +212,7 @@ export const guns: Record<string, Gun> = {
   },
 
   '2s19': {
-    name: '2S19',
+    name: '2S19 / 2S43',
     projectiles: [
       {
         name: 'BP-540',
