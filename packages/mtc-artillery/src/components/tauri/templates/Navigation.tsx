@@ -1,4 +1,5 @@
 import Close from '@mui/icons-material/Close';
+import Minimize from '@mui/icons-material/Minimize';
 import Box from '@mui/joy/Box';
 import IconButton from '@mui/joy/IconButton';
 import Typography from '@mui/joy/Typography';
@@ -36,25 +37,42 @@ export default function Navigation() {
           </Typography>
         </Box>
 
-        <IconButton
-          size="sm"
+        <Box
           sx={{
-            borderRadius: 0,
-            height: '100%',
             zIndex: 2,
-          }}
-          onClick={async () => {
-            try {
-              const { appWindow } = await import('@tauri-apps/api/window');
-
-              appWindow.close();
-            } catch (error) {
-              console.error(error);
-            }
+            borderRadius: 4,
+            '& > button': { borderRadius: 0 },
           }}
         >
-          <Close />
-        </IconButton>
+          <IconButton
+            size="sm"
+            onClick={async () => {
+              try {
+                const { appWindow } = await import('@tauri-apps/api/window');
+
+                appWindow.minimize();
+              } catch (error) {
+                console.error(error);
+              }
+            }}
+          >
+            <Minimize />
+          </IconButton>
+          <IconButton
+            size="sm"
+            onClick={async () => {
+              try {
+                const { appWindow } = await import('@tauri-apps/api/window');
+
+                appWindow.close();
+              } catch (error) {
+                console.error(error);
+              }
+            }}
+          >
+            <Close />
+          </IconButton>
+        </Box>
       </Box>
     </Box>
   );
