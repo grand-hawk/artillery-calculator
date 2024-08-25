@@ -124,9 +124,9 @@ export function calculateMapSize(m: number, grids: number = 9): number {
  * @param b Blast multiplier (default: 1)
  * @param d Air density (default: 1.2)
  * @param a Explosive constant (default: 0.07)
- * @returns Blast range
+ * @returns Blast diameter in studs
  */
-export function calculateBlastRange(
+export function calculateBlastDiameter(
   m: number,
   c: number = 1,
   b: number = 1,
@@ -140,9 +140,9 @@ export function calculateBlastRange(
 /**
  * @param v Initial velocity (m/s)
  * @param h Initial height in meters (default: 0)
- * @returns Max range in meters
+ * @returns Max range diameter in meters
  */
-export function calculateMaxRange(v: number, h: number = 0): number {
+export function calculateMaxRangeDiameter(v: number, h: number = 0): number {
   const a = -0.5 * G;
   const b = (v * Math.sqrt(2)) / 2;
 

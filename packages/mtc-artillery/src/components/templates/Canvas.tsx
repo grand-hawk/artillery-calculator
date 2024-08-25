@@ -15,8 +15,8 @@ import drawGun from '@/utils/canvas/drawGun';
 import drawLine from '@/utils/canvas/drawLine';
 import drawTarget from '@/utils/canvas/drawTarget';
 import {
-  calculateBlastRange,
-  calculateMaxRange,
+  calculateBlastDiameter,
+  calculateMaxRangeDiameter,
   metersToStuds,
   studsToMeters,
 } from '@/utils/math';
@@ -44,18 +44,19 @@ function Canvas() {
   const scaledDimension = canvasStore.width * canvasScale;
 
   const [gunHeight] = useHeightmapZ();
-  const blastRange: number | undefined =
+  const blastDiameter: number | undefined =
     projectile.explosiveMass &&
-    calculateBlastRange(
+    calculateBlastDiameter(
       projectile.explosiveMass,
       projectile.capMultiplier,
       projectile.blastMultiplier,
     );
   const blastRadius =
-    blastRange && (blastRange / gameMap.size / 2) * scaledDimension;
+    blastDiameter && (blastDiameter / gameMap.size / 2) * scaledDimension;
+
   const maxRadius =
     (metersToStuds(
-      calculateMaxRange(projectile.velocity, studsToMeters(gunHeight)),
+      calculateMaxRangeDiameter(projectile.velocity, studsToMeters(gunHeight)),
     ) /
       gameMap.size) *
     scaledDimension;
