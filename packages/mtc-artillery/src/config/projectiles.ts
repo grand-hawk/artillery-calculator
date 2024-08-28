@@ -167,17 +167,6 @@ export const guns: Record<string, Gun> = {
     ],
   },
 
-  strela: {
-    name: 'Strela-MLRS',
-    projectiles: [
-      {
-        name: 'S-8KO',
-        velocity: 650,
-        explosiveMass: 1.38,
-      },
-    ],
-  },
-
   tos1a: {
     name: 'TOS-1A BM-1',
     projectiles: [
