@@ -257,6 +257,32 @@ export const guns: Record<string, Gun> = {
     ],
   },
 
+  pzh: {
+    name: 'PzH-2000',
+    projectiles: [
+      {
+        name: 'DM702A1',
+        velocity: 200,
+        explosiveMass: 0.05,
+      },
+      {
+        name: 'DM121',
+        velocity: 1015,
+        explosiveMass: 15.4,
+      },
+      {
+        name: 'DM121 Medium Charge',
+        velocity: 350,
+        explosiveMass: 15.4,
+      },
+      {
+        name: 'DM121 Low Charge',
+        velocity: 200,
+        explosiveMass: 15.4,
+      },
+    ],
+  },
+
   '2S7': {
     name: '2S7 Pion',
     projectiles: [
