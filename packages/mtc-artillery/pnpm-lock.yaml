@@ -82,8 +82,8 @@ importers:
         version: 4.5.5(@types/react@18.3.5)(immer@10.1.1)(react@18.3.1)
     devDependencies:
       '@next/bundle-analyzer':
-        specifier: ^14.2.7
-        version: 14.2.7
+        specifier: ^14.2.11
+        version: 14.2.11
       '@types/klaw':
         specifier: ^3.0.6
         version: 3.0.6
@@ -579,8 +579,8 @@ packages:
       '@types/react':
         optional: true
 
-  '@next/bundle-analyzer@14.2.7':
-    resolution: {integrity: sha512-Zz55BLjoNKiUjr8PJIMTXFQnbUEpk8qkXP5nmEcXvOorbruQOIdmkRa3sahlJZPWTjsZNpxwImhZf2yFMVMWeg==}
+  '@next/bundle-analyzer@14.2.11':
+    resolution: {integrity: sha512-wFPjuXVlLkheng8BTG/K8UN8lRg93E5ZdE9gSmxpRP0XwC58w1B8wITXWeTD/Js4ObxyhxhiCrZzt2X+QJrrMw==}
 
   '@next/env@14.2.7':
     resolution: {integrity: sha512-OTx9y6I3xE/eih+qtthppwLytmpJVPM5PPoJxChFsbjIEFXIayG0h/xLzefHGJviAa3Q5+Fd+9uYojKkHDKxoQ==}
@@ -3076,7 +3076,7 @@ snapshots:
     optionalDependencies:
       '@types/react': 18.3.5
 
-  '@next/bundle-analyzer@14.2.7':
+  '@next/bundle-analyzer@14.2.11':
     dependencies:
       webpack-bundle-analyzer: 4.10.1
     transitivePeerDependencies:
