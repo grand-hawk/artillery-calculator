@@ -3,7 +3,7 @@ local ServerStorage = game:GetService("ServerStorage")
 local ReplicatedFirst = game:GetService("ReplicatedFirst")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
-local TankInfo: { [string]: { Dispname: string } } =
+local TankInfo: { [string]: { Dispname: string, Hidden: boolean? } } =
 	require(ReplicatedStorage:FindFirstChild("TankInfo") :: ModuleScript)
 local Tanks = ServerStorage:FindFirstChild("Tanks") :: Folder
 local Shells = ReplicatedFirst:FindFirstChild("Shells") :: Folder
@@ -32,6 +32,9 @@ function processTank(tank: Model)
 
 	local tankInfo = TankInfo[tank.Name]
 	if not tankInfo then
+		return
+	end
+	if tankInfo.Hidden then
 		return
 	end
 
