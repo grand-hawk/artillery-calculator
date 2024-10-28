@@ -35,6 +35,17 @@ const customGuns: Record<string, Gun> = {
     ],
   },
 
+  ags17: {
+    name: 'AGS-17',
+    projectiles: [
+      {
+        name: 'VOG-17M',
+        velocity: 185,
+        explosiveMass: 0.0065,
+      },
+    ],
+  },
+
   d30: {
     name: '122mm D-30',
     projectiles: [
