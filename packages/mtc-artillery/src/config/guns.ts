@@ -13,7 +13,7 @@ export interface Gun {
   projectiles: Projectile[];
 }
 
-export const customGuns: Record<string, Gun> = {
+export const guns: Record<string, Gun> = {
   mortar: {
     name: 'Mortar',
     projectiles: [
@@ -87,6 +87,6 @@ export const customGuns: Record<string, Gun> = {
       },
     ],
   },
-};
 
-export const guns: Record<string, Gun> = { ...customGuns, ...importedGuns };
+  ...importedGuns,
+};
