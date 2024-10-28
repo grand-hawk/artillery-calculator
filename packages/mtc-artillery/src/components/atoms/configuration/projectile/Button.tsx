@@ -8,7 +8,7 @@ import { useTranslations } from 'next-intl';
 
 import { useDataStore } from '@/stores/data';
 
-import type { Projectile } from '@/config/projectiles';
+import type { Projectile } from '@/config/guns';
 
 export default function ProjectileButton({
   gunKey,

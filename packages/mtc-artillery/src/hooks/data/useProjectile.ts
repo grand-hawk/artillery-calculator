@@ -1,9 +1,9 @@
 import { useRouter } from 'next/router';
 
-import { guns } from '@/config/projectiles';
+import { guns } from '@/config/guns';
 import { useDataStore } from '@/stores/data';
 
-import type { Projectile } from '@/config/projectiles';
+import type { Projectile } from '@/config/guns';
 
 export default function useProjectile(): Projectile {
   const router = useRouter();

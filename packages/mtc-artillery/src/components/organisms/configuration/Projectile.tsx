@@ -14,7 +14,7 @@ import { useOnClickOutside } from 'usehooks-ts';
 import ProjectileButton from '@/components/atoms/configuration/projectile/Button';
 import DataContainer from '@/components/atoms/DataContainer';
 import ScrollBox from '@/components/molecules/ScrollBox';
-import { guns } from '@/config/projectiles';
+import { guns } from '@/config/guns';
 import { useDataStore } from '@/stores/data';
 
 export default function ProjectileSelection() {

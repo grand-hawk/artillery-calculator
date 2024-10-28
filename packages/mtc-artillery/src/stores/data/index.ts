@@ -3,7 +3,7 @@ import { persist } from 'zustand/middleware';
 import { immer } from 'zustand/middleware/immer';
 
 import { defaultMapId, type MapId } from '@/config/maps';
-import { guns } from '@/config/projectiles';
+import { guns } from '@/config/guns';
 
 import type { MobileModes } from '@/components/organisms/configuration/MobileMode';
 import type { Vector } from '@/components/templates/Canvas';
