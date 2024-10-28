@@ -24,11 +24,7 @@ type Gun = {
 
 local guns: { [string]: Gun } = {}
 
-for _, tank in Tanks:GetChildren() do
-	if not tank:IsA("Model") then
-		continue
-	end
-
+function processTank(tank: Model)
 	local normalizedName = tank.Name:gsub("[^%w]", "_")
 	if normalizedName:match("^[0-9]") then
 		normalizedName = `_{normalizedName}`
@@ -79,6 +75,17 @@ for _, tank in Tanks:GetChildren() do
 					blastMultiplier = ammoType.blastradiusmult,
 				}
 
+				local foundDuplicate = false
+				for _, existingProjectile in gun.projectiles do
+					if existingProjectile.name == projectile.name then
+						foundDuplicate = true
+						break
+					end
+				end
+				if foundDuplicate then
+					continue
+				end
+
 				table.insert(gun.projectiles, projectile)
 			end
 		end
@@ -87,6 +94,14 @@ for _, tank in Tanks:GetChildren() do
 	if #gun.projectiles > 0 then
 		guns[normalizedName] = gun
 	end
+end
+
+for _, model in Tanks:GetChildren() do
+	if not model:IsA("Model") then
+		continue
+	end
+
+	processTank(model)
 end
 
 print(HttpService:JSONEncode(guns))

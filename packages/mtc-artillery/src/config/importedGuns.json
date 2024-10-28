@@ -71,7 +71,6 @@
       { "name": "OF-91 Low Charge", "velocity": 200, "explosiveMass": 11 },
       { "name": "OF-91 Medium Charge", "velocity": 500, "explosiveMass": 11 },
       { "name": "OF-91 Proxy Fuze", "velocity": 864, "explosiveMass": 11 },
-      { "name": "BP-540", "velocity": 655, "explosiveMass": 3.48 },
       { "name": "OF-91", "velocity": 864, "explosiveMass": 11 }
     ]
   },
@@ -112,7 +111,6 @@
   "BMPT_Terminator": {
     "name": "BMPT Terminator",
     "projectiles": [
-      { "name": "VOG-17M", "velocity": 185, "explosiveMass": 0.065 },
       { "name": "VOG-17M", "velocity": 185, "explosiveMass": 0.065 }
     ]
   },
@@ -189,8 +187,7 @@
     "projectiles": [
       { "name": "3VOF34", "velocity": 864, "explosiveMass": 30 },
       { "name": "2VG11", "velocity": 864, "explosiveMass": 10 },
-      { "name": "3VOF42", "velocity": 200, "explosiveMass": 5.52 },
-      { "name": "3VOF42", "velocity": 200, "explosiveMass": 30 }
+      { "name": "3VOF42", "velocity": 200, "explosiveMass": 5.52 }
     ]
   },
   "BTR_4": {
