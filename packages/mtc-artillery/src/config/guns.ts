@@ -98,8 +98,6 @@ const customGuns: Record<string, Gun> = {
       },
     ],
   },
-
-  ...importedGuns,
 };
 
 export const guns = Object.entries({ ...customGuns, ...importedGuns })
