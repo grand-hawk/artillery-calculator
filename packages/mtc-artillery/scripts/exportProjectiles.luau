@@ -25,17 +25,17 @@ type Gun = {
 local guns: { [string]: Gun } = {}
 
 function processTank(tank: Model)
-	local normalizedName = tank.Name:gsub("[^%w]", "_")
-	if normalizedName:match("^[0-9]") then
-		normalizedName = `_{normalizedName}`
-	end
-
 	local tankInfo = TankInfo[tank.Name]
 	if not tankInfo then
 		return
 	end
 	if tankInfo.Hidden then
 		return
+	end
+
+	local normalizedName = tankInfo.Dispname:gsub("[^%w]", "_")
+	if normalizedName:match("^[0-9]") then
+		normalizedName = `_{normalizedName}`
 	end
 
 	local gun: Gun = {
@@ -59,21 +59,24 @@ function processTank(tank: Model)
 
 			local shellModule = require(ShellModules:FindFirstChild(weapon.Name) :: ModuleScript)
 			for _, ammoType in pairs(shellModule.AmmoTypes) do
+				if not ammoType.MuzzleSpeed or not ammoType.ExplosiveMass then
+					continue
+				end
+
 				if
-					not ammoType.MuzzleSpeed
-					or not ammoType.ExplosiveMass
-					or not table.find(
-						{ "AutoCannon", "Tank_Projectile", "MLRSRocket" },
+					not table.find(
+						{ "AutoCannon", "Tank_Projectile", "MLRSRocket", "STURM", "Smoke" },
 						ammoType.OverrideProjectileModel
 					)
 				then
+					print(`Skipped {tank.Name}'s {ammoType.DisplayName}`)
 					continue
 				end
 
 				local projectile: Projectile = {
 					name = ammoType.DisplayName,
 					velocity = ammoType.MuzzleSpeed,
-					explosiveMass = tonumber(string.format("%.3f", ammoType.ExplosiveMass * (ammoType.Count or 1))),
+					explosiveMass = tonumber(string.format("%.4f", ammoType.ExplosiveMass * (ammoType.Count or 1))),
 					capMultiplier = ammoType.ExpCapMult,
 					blastMultiplier = ammoType.blastradiusmult,
 				}
