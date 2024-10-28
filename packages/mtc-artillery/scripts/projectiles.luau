@@ -60,11 +60,13 @@ for _, tank in Tanks:GetChildren() do
 
 			local shellModule = require(ShellModules:FindFirstChild(weapon.Name) :: ModuleScript)
 			for _, ammoType in pairs(shellModule.AmmoTypes) do
-				if not ammoType.MuzzleSpeed or not ammoType.ExplosiveMass then
-					continue
-				end
 				if
-					not table.find({ "AutoCannon", "Tank_Projectile", "MLRSRocket" }, ammoType.OverrideProjectileModel)
+					not ammoType.MuzzleSpeed
+					or not ammoType.ExplosiveMass
+					or not table.find(
+						{ "AutoCannon", "Tank_Projectile", "MLRSRocket" },
+						ammoType.OverrideProjectileModel
+					)
 				then
 					continue
 				end
