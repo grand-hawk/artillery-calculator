@@ -13,7 +13,7 @@ export interface Gun {
   projectiles: Projectile[];
 }
 
-export const guns: Record<string, Gun> = {
+const customGuns: Record<string, Gun> = {
   mortar: {
     name: 'Mortar',
     projectiles: [
@@ -90,3 +90,13 @@ export const guns: Record<string, Gun> = {
 
   ...importedGuns,
 };
+
+export const guns = Object.entries({ ...customGuns, ...importedGuns })
+  .sort((a, b) => a[1].name.localeCompare(b[1].name))
+  .reduce(
+    (acc, [key, gun]) => {
+      acc[key] = gun;
+      return acc;
+    },
+    {} as Record<string, Gun>,
+  );
