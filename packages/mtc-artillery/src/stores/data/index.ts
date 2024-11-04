@@ -2,8 +2,8 @@ import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import { immer } from 'zustand/middleware/immer';
 
-import { defaultMapId, type MapId } from '@/config/maps';
 import { guns } from '@/config/guns';
+import { defaultMapId, type MapId } from '@/config/maps';
 
 import type { MobileModes } from '@/components/organisms/configuration/MobileMode';
 import type { Vector } from '@/components/templates/Canvas';
