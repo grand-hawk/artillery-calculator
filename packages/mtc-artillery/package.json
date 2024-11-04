@@ -59,7 +59,7 @@
     "@next/bundle-analyzer": "^15.0.1",
     "@types/klaw": "^3.0.6",
     "@types/node": "^22.7.4",
-    "@types/react": "^18.3.11",
+    "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
     "@types/stale-lru-cache": "^5.1.6",
     "@typescript-eslint/eslint-plugin": "^7.18.0",
