@@ -5,6 +5,6 @@ process.emit = () => undefined;
 
 import config from '../src/tauri.conf.json' with { type: 'json' };
 
-const { version } = config.package;
+const { version } = config;
 
 process.stdout.write(version);
