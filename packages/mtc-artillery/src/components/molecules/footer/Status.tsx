@@ -14,16 +14,19 @@ export default function Status() {
       <Box
         sx={{
           display: 'flex',
-          gap: 1,
+          gap: 'inherit',
         }}
       >
-        <Circle
-          sx={(theme) => ({
-            height: 4,
-            width: 4,
-            backgroundColor: theme.palette.neutral.solidBg,
-          })}
-        />
+        {(process.env.NEXT_PUBLIC_DISCORD_URL ||
+          process.env.NEXT_PUBLIC_GITHUB_URL) && (
+          <Circle
+            sx={(theme) => ({
+              height: 4,
+              width: 4,
+              backgroundColor: theme.palette.neutral.solidBg,
+            })}
+          />
+        )}
 
         <Link data-umami-event="Status" href={url}>
           {t('typography.status')}
