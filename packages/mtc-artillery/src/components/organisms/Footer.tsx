@@ -6,7 +6,6 @@ import { useMediaQuery } from 'usehooks-ts';
 import SettingsToggle from './footer/SettingsToggle';
 import DataContainer from '../atoms/DataContainer';
 import Link from '@/components/atoms/footer/Link';
-import BMACIcon from '@/components/atoms/icons/BMAC';
 import DiscordIcon from '@/components/atoms/icons/Discord';
 import GitHubIcon from '@/components/atoms/icons/GitHub';
 import Status from '@/components/molecules/footer/Status';
