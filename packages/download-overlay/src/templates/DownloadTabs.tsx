@@ -51,9 +51,9 @@ export default function DownloadTabs({ releases }: { releases: Releases }) {
 
         <WarningCard sx={{ marginTop: 2 }}>
           <Typography>
-            It might say that the executable is a virus or trojan. It is not,
-            this is a common issue for compiled languages. The executables are
-            built by GitHub and not an individual, everything is provably safe.
+            Some executables might be flagged as a virus or trojan, but this is
+            a common issue with compiled languages. All executables are safely
+            built by GitHub and are fully verifiable.
           </Typography>
         </WarningCard>
       </CustomTabPanel>
