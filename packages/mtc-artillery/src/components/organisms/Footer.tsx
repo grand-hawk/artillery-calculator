@@ -53,23 +53,23 @@ function Footer({ version, sx = {} }: { version: string; sx?: SxProps }) {
           gap: 0.75,
         }}
       >
-        <Link data-umami-event="Discord" href="https://discord.gg/yHbVdPJ5vf">
-          <DiscordIcon />
-        </Link>
+        {process.env.NEXT_PUBLIC_DISCORD_URL && (
+          <Link
+            data-umami-event="Discord"
+            href={process.env.NEXT_PUBLIC_DISCORD_URL}
+          >
+            <DiscordIcon />
+          </Link>
+        )}
 
-        <Link
-          data-umami-event="GitHub"
-          href="https://github.com/ari-party/mtc-artillery"
-        >
-          <GitHubIcon />
-        </Link>
-
-        <Link
-          data-umami-event="Buy Me A Coffee"
-          href="https://www.buymeacoffee.com/valk"
-        >
-          <BMACIcon />
-        </Link>
+        {process.env.NEXT_PUBLIC_GITHUB_URL && (
+          <Link
+            data-umami-event="GitHub"
+            href={process.env.NEXT_PUBLIC_GITHUB_URL}
+          >
+            <GitHubIcon />
+          </Link>
+        )}
 
         <Status />
       </Box>

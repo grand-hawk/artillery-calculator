@@ -6,7 +6,7 @@
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ari-party/mtc-artillery.git"
+    "url": "https://github.com/grand-hawk/artillery-calculator.git"
   },
   "engines": {
     "node": ">=20"

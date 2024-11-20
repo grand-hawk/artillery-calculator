@@ -6,8 +6,9 @@ use native_dialog::MessageDialog;
 use tauri::{ async_runtime::spawn, Manager };
 use version_compare::{ compare_to, Cmp };
 
-const REPO_OWNER: &'static str = "ari-party";
-const REPO_NAME: &'static str = "mtc-artillery";
+const REPO_OWNER: &'static str = "grand-hawk";
+const REPO_NAME: &'static str = "artillery-calculator";
+const DOWNLOAD_URL: &'static str = "https://download.artillery-calculator.com";
 
 async fn check_for_updates(current_version: String) {
   println!("Fetching latest version...");
@@ -37,7 +38,7 @@ async fn check_for_updates(current_version: String) {
           .unwrap();
 
         if confirmation {
-          let _ = open::that("https://download.artillery-calculator.com");
+          let _ = open::that(DOWNLOAD_URL);
         }
       }
     }

@@ -1,6 +1,6 @@
 # MTC Artillery
 
-[![License](https://img.shields.io/github/license/ari-party/mtc-artillery?style=for-the-badge)](./LICENSE)
+[![License](https://img.shields.io/github/license/grand-hawk/artillery-calculator?style=for-the-badge)](./LICENSE)
 ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
 ![Rust](https://img.shields.io/badge/rust-%23000000.svg?style=for-the-badge&logo=rust&logoColor=white)
 [![Discord](https://img.shields.io/badge/Discord-%235865F2.svg?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/yHbVdPJ5vf)
