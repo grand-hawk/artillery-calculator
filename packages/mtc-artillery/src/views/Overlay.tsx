@@ -1,5 +1,6 @@
 import Box from '@mui/joy/Box';
 import GlobalStyles from '@mui/joy/GlobalStyles';
+import { LogicalSize } from '@tauri-apps/api/dpi';
 import React from 'react';
 
 import ColumnContainer from '@/components/atoms/ColumnContainer';
@@ -39,11 +40,12 @@ export default function OverlayView() {
   React.useEffect(() => {
     async function updateSize() {
       try {
-        const { appWindow, LogicalSize } = await import(
-          '@tauri-apps/api/window'
+        const { getCurrentWebviewWindow } = await import(
+          '@tauri-apps/api/webviewWindow'
         );
+        const appWindow = getCurrentWebviewWindow();
 
-        const height = Math.max(
+        const height = Math.min(
           document.body.scrollHeight,
           document.body.offsetHeight,
         );
@@ -97,7 +99,7 @@ export default function OverlayView() {
             gap: 2,
             padding: 2,
 
-            // items centered by default
+            // items are centered by default
             '& .datacontainer': {
               alignItems: 'stretch',
             },

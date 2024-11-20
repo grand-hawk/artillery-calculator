@@ -55,7 +55,7 @@ fn main() {
   tauri::Builder
     ::default()
     .setup(|app| {
-      let main = app.get_window("main").unwrap();
+      let main = app.get_webview_window("main").unwrap();
       let tauri_env = env
         ::var("TAURI_ENV")
         .unwrap_or_else(|_| "production".into());
