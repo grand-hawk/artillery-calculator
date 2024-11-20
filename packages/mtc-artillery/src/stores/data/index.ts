@@ -3,10 +3,11 @@ import { persist } from 'zustand/middleware';
 import { immer } from 'zustand/middleware/immer';
 
 import { guns } from '@/config/guns';
-import { defaultMapId, type MapId } from '@/config/maps';
+import { defaultMapId } from '@/config/maps';
 
 import type { MobileModes } from '@/components/organisms/configuration/MobileMode';
 import type { Vector } from '@/components/templates/Canvas';
+import type { MapId } from '@/config/maps';
 
 interface ProjectileData {
   gunKey: string;

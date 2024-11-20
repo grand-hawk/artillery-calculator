@@ -27,8 +27,8 @@ importers:
         specifier: ^5.16.7
         version: 5.16.7(@emotion/react@11.13.3(@types/react@18.3.12)(react@18.3.1))(@emotion/styled@11.13.0(@emotion/react@11.13.3(@types/react@18.3.12)(react@18.3.1))(@types/react@18.3.12)(react@18.3.1))(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@tauri-apps/api':
-        specifier: ^2.1.1
-        version: 2.1.1
+        specifier: ^1.6.0
+        version: 1.6.0
       flag-icons:
         specifier: ^7.2.3
         version: 7.2.3
@@ -78,8 +78,8 @@ importers:
         specifier: ^3.1.0
         version: 3.1.0(react@18.3.1)
       zustand:
-        specifier: ^5.0.1
-        version: 5.0.1(@types/react@18.3.12)(immer@10.1.1)(react@18.3.1)(use-sync-external-store@1.2.2(react@18.3.1))
+        specifier: ^4.5.5
+        version: 4.5.5(@types/react@18.3.12)(immer@10.1.1)(react@18.3.1)
     devDependencies:
       '@next/bundle-analyzer':
         specifier: ^15.0.3
@@ -673,8 +673,9 @@ packages:
   '@swc/helpers@0.5.13':
     resolution: {integrity: sha512-UoKGxQ3r5kYI9dALKJapMmuK+1zWM/H17Z1+iwnNmzcJRnfFuevZs375TA5rW31pu4BS4NoSy1fRsexDXfWn5w==}
 
-  '@tauri-apps/api@2.1.1':
-    resolution: {integrity: sha512-fzUfFFKo4lknXGJq8qrCidkUcKcH2UHhfaaCNt4GzgzGaW2iS26uFOg4tS3H4P8D6ZEeUxtiD5z0nwFF0UN30A==}
+  '@tauri-apps/api@1.6.0':
+    resolution: {integrity: sha512-rqI++FWClU5I2UBp4HXFvl+sBWkdigBkxnpJDQUWttNyG7IZP4FwQGhTNL5EOw0vI8i6eSAJ5frLqO7n7jbJdg==}
+    engines: {node: '>= 14.6.0', npm: '>= 6.6.0', yarn: '>= 1.19.1'}
 
   '@types/eslint@8.56.10':
     resolution: {integrity: sha512-Shavhk87gCtY2fhXDctcfS3e6FdxWkCx1iUZ9eEUbh7rTqlZT0/IzOkCOVt0fCjcFuZ9FPYfuezTBImfHCDBGQ==}
@@ -2492,22 +2493,19 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
 
-  zustand@5.0.1:
-    resolution: {integrity: sha512-pRET7Lao2z+n5R/HduXMio35TncTlSW68WsYBq2Lg1ASspsNGjpwLAsij3RpouyV6+kHMwwwzP0bZPD70/Jx/w==}
-    engines: {node: '>=12.20.0'}
+  zustand@4.5.5:
+    resolution: {integrity: sha512-+0PALYNJNgK6hldkgDq2vLrw5f6g/jCInz52n9RTpropGgeAf/ioFUCdtsjCqu4gNhW9D01rUQBROoRjdzyn2Q==}
+    engines: {node: '>=12.7.0'}
     peerDependencies:
-      '@types/react': '>=18.0.0'
+      '@types/react': '>=16.8'
       immer: '>=9.0.6'
-      react: '>=18.0.0'
-      use-sync-external-store: '>=1.2.0'
+      react: '>=16.8'
     peerDependenciesMeta:
       '@types/react':
         optional: true
       immer:
         optional: true
       react:
-        optional: true
-      use-sync-external-store:
         optional: true
 
 snapshots:
@@ -3031,7 +3029,7 @@ snapshots:
     dependencies:
       tslib: 2.6.3
 
-  '@tauri-apps/api@2.1.1': {}
+  '@tauri-apps/api@1.6.0': {}
 
   '@types/eslint@8.56.10':
     dependencies:
@@ -5133,9 +5131,10 @@ snapshots:
 
   yocto-queue@0.1.0: {}
 
-  zustand@5.0.1(@types/react@18.3.12)(immer@10.1.1)(react@18.3.1)(use-sync-external-store@1.2.2(react@18.3.1)):
+  zustand@4.5.5(@types/react@18.3.12)(immer@10.1.1)(react@18.3.1):
+    dependencies:
+      use-sync-external-store: 1.2.2(react@18.3.1)
     optionalDependencies:
       '@types/react': 18.3.12
       immer: 10.1.1
       react: 18.3.1
-      use-sync-external-store: 1.2.2(react@18.3.1)

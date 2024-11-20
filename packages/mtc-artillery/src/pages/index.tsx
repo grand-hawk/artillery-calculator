@@ -10,10 +10,11 @@ import Umami from '@/components/utils/Umami';
 import useIsSmallScreen from '@/hooks/useIsSmallScreen';
 import locales from '@/i18n';
 import { getCachedProps } from '@/lib/server/getProps';
-import { usePropStore, type Props } from '@/stores/props';
+import { usePropStore } from '@/stores/props';
 import DesktopView from '@/views/Desktop';
 import MobileView from '@/views/Mobile';
 
+import type { Props } from '@/stores/props';
 import type {
   GetStaticPropsContext,
   GetStaticPropsResult,
