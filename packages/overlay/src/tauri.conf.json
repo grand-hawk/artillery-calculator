@@ -27,7 +27,7 @@
         "alwaysOnTop": true,
         "decorations": false,
         "dragDropEnabled": false,
-        "height": 1000,
+        "height": 600,
         "label": "main",
         "maximizable": false,
         "minimizable": false,
@@ -36,7 +36,7 @@
         "title": "Artillery overlay",
         "shadow": false,
         "transparent": true,
-        "width": 500,
+        "width": 350,
         "useHttpsScheme": true
       }
     ],

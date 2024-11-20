@@ -45,18 +45,21 @@ export default function OverlayView() {
         );
         const appWindow = getCurrentWebviewWindow();
 
-        const height = Math.min(
-          document.body.scrollHeight,
-          document.body.offsetHeight,
-        );
+        const boundingClientRect =
+          document.documentElement.getBoundingClientRect();
 
-        await appWindow.setSize(new LogicalSize(windowWidth, height));
+        await appWindow.setSize(
+          new LogicalSize(windowWidth, boundingClientRect.height),
+        );
       } catch (error) {
         console.error(error);
       }
     }
 
     updateSize();
+
+    window.addEventListener('resize', updateSize);
+    return () => window.removeEventListener('resize', updateSize);
   }, []);
 
   return (
