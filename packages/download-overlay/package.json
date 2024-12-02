@@ -52,7 +52,7 @@
     "eslint-plugin-prettier": "^5.2.1",
     "eslint-plugin-react": "^7.37.2",
     "eslint-plugin-react-hooks": "^4.6.2",
-    "prettier": "^3.3.3",
+    "prettier": "^3.4.1",
     "prettier-eslint": "^16.3.0",
     "typescript": "^5.7.2",
     "user-agent-data-types": "^0.4.2"
