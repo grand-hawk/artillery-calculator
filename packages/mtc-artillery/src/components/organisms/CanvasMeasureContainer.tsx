@@ -34,7 +34,7 @@ export default function CanvasMeasureContainer({
     const observer = new ResizeObserver(update);
     observer.observe(element);
     return () => observer.disconnect();
-  });
+  }, []);
 
   return (
     <Box

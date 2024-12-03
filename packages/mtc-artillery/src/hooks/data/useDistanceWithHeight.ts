@@ -2,10 +2,11 @@ import useGameMap from '@/hooks/data/useGameMap';
 import useHeightmapZ from '@/hooks/data/useHeightmapZ';
 import { useDataStore } from '@/stores/data';
 import { calculateDistance, studsToMeters } from '@/utils/math';
+import { useShallow } from 'zustand/shallow';
 
 export default function useDistanceWithHeight(): number {
-  const gun = useDataStore((s) => s.getGun());
-  const target = useDataStore((s) => s.getTarget());
+  const gun = useDataStore(useShallow((s) => s.getGun()));
+  const target = useDataStore(useShallow((s) => s.getTarget()));
 
   const map = useGameMap();
   const [gunHeight, targetHeight] = useHeightmapZ();

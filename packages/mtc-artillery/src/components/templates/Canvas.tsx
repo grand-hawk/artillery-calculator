@@ -20,6 +20,7 @@ import {
   metersToStuds,
   studsToMeters,
 } from '@/utils/math';
+import { useShallow } from 'zustand/shallow';
 
 export interface Vector {
   x: number;
@@ -34,9 +35,9 @@ function Canvas() {
   const projectile = useProjectile();
   const gameMap = useGameMap();
 
-  const gun = useDataStore((s) => s.getGun());
+  const gun = useDataStore(useShallow((s) => s.getGun()));
   const setGun = useDataStore((s) => s.setGun);
-  const target = useDataStore((s) => s.getTarget());
+  const target = useDataStore(useShallow((s) => s.getTarget()));
   const setTarget = useDataStore((s) => s.setTarget);
 
   const canvasStore = useCanvasStore();
@@ -119,7 +120,7 @@ function Canvas() {
 
     canvas.addEventListener('mousedown', clickListener);
     return () => canvas.removeEventListener('mousedown', clickListener);
-  });
+  }, []);
 
   return (
     <Profiler id="canvas-profiler">

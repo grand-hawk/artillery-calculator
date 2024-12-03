@@ -4,11 +4,12 @@ import { guns } from '@/config/guns';
 import { useDataStore } from '@/stores/data';
 
 import type { Projectile } from '@/config/guns';
+import { useShallow } from 'zustand/shallow';
 
 export default function useProjectile(): Projectile {
   const router = useRouter();
 
-  const projectileData = useDataStore((s) => s.projectile);
+  const projectileData = useDataStore(useShallow((s) => s.projectile));
   const setProjectile = useDataStore((s) => s.setProjectile);
 
   const gun = guns[projectileData.gunKey];
