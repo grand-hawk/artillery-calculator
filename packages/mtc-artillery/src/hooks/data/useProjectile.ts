@@ -9,7 +9,7 @@ import type { Projectile } from '@/config/guns';
 export default function useProjectile(): Projectile {
   const router = useRouter();
 
-  const projectileData = useDataStore(useShallow((s) => s.projectile));
+  const projectileData = useDataStore((s) => s.projectile);
   const setProjectile = useDataStore((s) => s.setProjectile);
 
   const gun = guns[projectileData.gunKey];
