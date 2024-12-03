@@ -120,7 +120,19 @@ function Canvas() {
 
     canvas.addEventListener('mousedown', clickListener);
     return () => canvas.removeEventListener('mousedown', clickListener);
-  }, []);
+  }, [
+    blastRadius,
+    canvasStore.height,
+    canvasStore.width,
+    canvasStore.zoom,
+    gun,
+    maxRadius,
+    mobileMode,
+    scaledDimension,
+    setGun,
+    setTarget,
+    target,
+  ]);
 
   return (
     <Profiler id="canvas-profiler">

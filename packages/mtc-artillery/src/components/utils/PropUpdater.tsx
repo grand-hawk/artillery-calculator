@@ -29,7 +29,7 @@ export default function PropUpdater() {
       setTimeout(() => router.push(window.location.href), 15_000);
 
     if (data?.motd !== undefined) setMotd(data.motd);
-  }, []);
+  }, [currentVersion, data, router, setMotd]);
 
   return <div aria-roledescription="prop updater component" />;
 }
