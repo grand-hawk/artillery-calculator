@@ -98,6 +98,17 @@ const customGuns: Record<string, Gun> = {
       },
     ],
   },
+
+  ub32: {
+    name: 'UB-32',
+    projectiles: [
+      {
+        name: 'HEAT Rockets',
+        velocity: 150,
+        explosiveMass: 1.38,
+      },
+    ],
+  },
 };
 
 export const guns = Object.entries({ ...customGuns, ...importedGuns })
