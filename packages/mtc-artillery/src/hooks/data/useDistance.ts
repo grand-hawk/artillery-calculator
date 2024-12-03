@@ -1,7 +1,8 @@
+import { useShallow } from 'zustand/shallow';
+
 import useGameMap from '@/hooks/data/useGameMap';
 import { useDataStore } from '@/stores/data';
 import { calculateDistance, studsToMeters } from '@/utils/math';
-import { useShallow } from 'zustand/shallow';
 
 export default function useDistance(): number {
   const map = useGameMap();

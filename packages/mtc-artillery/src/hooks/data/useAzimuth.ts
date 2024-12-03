@@ -1,6 +1,7 @@
+import { useShallow } from 'zustand/shallow';
+
 import { useDataStore } from '@/stores/data';
 import { calculateAzimuth } from '@/utils/math';
-import { useShallow } from 'zustand/shallow';
 
 export default function useAzimuth(): number {
   const gun = useDataStore(useShallow((s) => s.getGun()));

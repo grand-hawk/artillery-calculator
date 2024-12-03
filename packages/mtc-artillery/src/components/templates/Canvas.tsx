@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import React from 'react';
 import { isMobile } from 'react-device-detect';
+import { useShallow } from 'zustand/shallow';
 
 import AbsoluteContainer from '@/components/atoms/canvas/AbsoluteContainer';
 import CanvasMeasureContainer from '@/components/organisms/CanvasMeasureContainer';
@@ -20,7 +21,6 @@ import {
   metersToStuds,
   studsToMeters,
 } from '@/utils/math';
-import { useShallow } from 'zustand/shallow';
 
 export interface Vector {
   x: number;

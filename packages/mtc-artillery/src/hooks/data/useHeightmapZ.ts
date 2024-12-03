@@ -1,7 +1,8 @@
+import { useShallow } from 'zustand/shallow';
+
 import useGameMap from '@/hooks/data/useGameMap';
 import useHeightmapContext from '@/hooks/useHeightmapContext';
 import { useDataStore } from '@/stores/data';
-import { useShallow } from 'zustand/shallow';
 
 /**
  * @returns [gunHeight, targetHeight]
