@@ -1,224 +1,108 @@
 {
-  "M109A6": {
-    "name": "M109A6",
+  "_9K720_Iskander": {
+    "name": "9K720 Iskander",
     "projectiles": [
-      { "name": "M110", "velocity": 172, "explosiveMass": 0.75 },
-      { "name": "M107", "velocity": 684, "explosiveMass": 9.14 },
-      { "name": "M107 Low Charge", "velocity": 172, "explosiveMass": 9.14 },
-      { "name": "M107 Medium Charge", "velocity": 225, "explosiveMass": 9.14 }
+      {
+        "blastMultiplier": 2,
+        "explosiveMass": 6,
+        "name": "M26A1",
+        "velocity": 180
+      },
+      {
+        "explosiveMass": 100.1,
+        "name": "M31A2",
+        "velocity": 180
+      }
     ]
   },
-  "T34_Calliope": {
-    "name": "T34 Calliope",
+  "BMP_2M": {
+    "name": "BMP-2M",
     "projectiles": [
-      { "name": "HE Rockets", "velocity": 260, "explosiveMass": 1.95 }
-    ]
-  },
-  "RSZO_2": {
-    "name": "RSZO-2",
-    "projectiles": [
-      { "name": "HE Rockets", "velocity": 150, "explosiveMass": 1 }
-    ]
-  },
-  "Centurion_Mk_5_AVRE": {
-    "name": "Centurion Mk 5 AVRE",
-    "projectiles": [{ "name": "L33A1", "velocity": 259, "explosiveMass": 30.6 }]
-  },
-  "BM_21_Grad": {
-    "name": "BM-21 Grad",
-    "projectiles": [
-      { "name": "9M22/M21 HE-Frag", "velocity": 180, "explosiveMass": 6.4 }
-    ]
-  },
-  "BTR_90": {
-    "name": "BTR-90",
-    "projectiles": [
-      { "name": "VOG-17M", "velocity": 185, "explosiveMass": 0.065 }
+      {
+        "explosiveMass": 0.065,
+        "name": "VOG-17M",
+        "velocity": 185
+      }
     ]
   },
   "BMP_30M": {
     "name": "BMP-30M",
     "projectiles": [
-      { "name": "VOG-17M", "velocity": 185, "explosiveMass": 0.065 }
-    ]
-  },
-  "_2S19_Msta_S": {
-    "name": "2S19 Msta-S",
-    "projectiles": [
-      { "name": "OF-72 Medium Charge", "velocity": 500, "explosiveMass": 9 },
-      { "name": "OF-72", "velocity": 864, "explosiveMass": 9 },
-      { "name": "BP-540", "velocity": 655, "explosiveMass": 3.48 },
-      { "name": "OF-72 Low Charge", "velocity": 200, "explosiveMass": 9 },
-      { "name": "OF-91 Low Charge", "velocity": 200, "explosiveMass": 11 },
-      { "name": "OF-91 Medium Charge", "velocity": 500, "explosiveMass": 11 },
-      { "name": "OF-91 Proxy Fuze", "velocity": 864, "explosiveMass": 11 },
-      { "name": "OF-91", "velocity": 864, "explosiveMass": 11 }
-    ]
-  },
-  "PzH_2000": {
-    "name": "PzH-2000",
-    "projectiles": [
-      { "name": "DM121 Low Charge", "velocity": 200, "explosiveMass": 15.4 },
-      { "name": "DM702A1", "velocity": 200, "explosiveMass": 0.05 },
-      { "name": "DM121 Medium Charge", "velocity": 350, "explosiveMass": 15.4 },
-      { "name": "DM121", "velocity": 1015, "explosiveMass": 15.4 }
-    ]
-  },
-  "Sturmtiger": {
-    "name": "Sturmtiger",
-    "projectiles": [
-      { "name": "38 cm R Spgr.4581", "velocity": 150, "explosiveMass": 125 }
-    ]
-  },
-  "M109": {
-    "name": "M109",
-    "projectiles": [
-      { "name": "M107 ", "velocity": 684, "explosiveMass": 9.14 },
-      { "name": "M110", "velocity": 172, "explosiveMass": 0.75 },
-      { "name": "M107 Low Charge", "velocity": 172, "explosiveMass": 9.14 },
-      { "name": "M107 Medium Charge", "velocity": 225, "explosiveMass": 9.14 }
-    ]
-  },
-  "Ariete_PSO": {
-    "name": "Ariete PSO",
-    "projectiles": [
-      { "name": "M383", "velocity": 241, "explosiveMass": 0.0959 }
-    ]
-  },
-  "Humvee": {
-    "name": "Humvee",
-    "projectiles": [
-      { "name": "M383", "velocity": 241, "explosiveMass": 0.0959 }
-    ]
-  },
-  "_9K720_Iskander": {
-    "name": "9K720 Iskander",
-    "projectiles": [
-      { "name": "M31A2", "velocity": 180, "explosiveMass": 100.1 },
       {
-        "name": "M26A1",
-        "blastMultiplier": 2,
-        "velocity": 180,
-        "explosiveMass": 6
-      }
-    ]
-  },
-  "Strf_9040C": {
-    "name": "Strf 9040C",
-    "projectiles": [
-      { "name": "M383", "velocity": 241, "explosiveMass": 0.0959 }
-    ]
-  },
-  "RSZO_1": {
-    "name": "RSZO-1",
-    "projectiles": [
-      { "name": "HE Rockets", "velocity": 150, "explosiveMass": 1 }
-    ]
-  },
-  "TOS_1A_BM_1": {
-    "name": "TOS-1A BM-1",
-    "projectiles": [
-      {
-        "name": "Thermobaric",
-        "blastMultiplier": 4,
-        "velocity": 180,
-        "explosiveMass": 3
-      },
-      {
-        "name": "Incendiary",
-        "blastMultiplier": 2,
-        "velocity": 180,
-        "explosiveMass": 2
-      },
-      { "name": "Blast fragmentation", "velocity": 180, "explosiveMass": 21 }
-    ]
-  },
-  "Cheonma_2": {
-    "name": "Cheonma-2",
-    "projectiles": [
-      { "name": "VOG-17M", "velocity": 185, "explosiveMass": 0.065 }
-    ]
-  },
-  "M1117_ASV": {
-    "name": "M1117 ASV",
-    "projectiles": [
-      { "name": "M383", "velocity": 241, "explosiveMass": 0.0959 }
-    ]
-  },
-  "LUAZ_672": {
-    "name": "LUAZ-672",
-    "projectiles": [
-      { "name": "9M22/M21 HE-Frag", "velocity": 180, "explosiveMass": 6.4 }
-    ]
-  },
-  "M270_MLRS": {
-    "name": "M270 MLRS",
-    "projectiles": [
-      { "name": "M31A2", "velocity": 180, "explosiveMass": 100.1 },
-      {
-        "name": "M26A1",
-        "blastMultiplier": 2,
-        "velocity": 180,
-        "explosiveMass": 6
+        "explosiveMass": 0.065,
+        "name": "VOG-17M",
+        "velocity": 185
       }
     ]
   },
   "BMPT_Terminator": {
     "name": "BMPT Terminator",
     "projectiles": [
-      { "name": "VOG-17M", "velocity": 185, "explosiveMass": 0.065 }
-    ]
-  },
-  "_2S43": {
-    "name": "2S43",
-    "projectiles": [
-      { "name": "OF-91 Low Charge", "velocity": 200, "explosiveMass": 11 },
-      { "name": "OF-91 Medium Charge", "velocity": 500, "explosiveMass": 11 },
-      { "name": "OF-91 Proxy Fuze", "velocity": 864, "explosiveMass": 11 },
-      { "name": "BP-540", "velocity": 655, "explosiveMass": 3.48 },
-      { "name": "OF-91", "velocity": 864, "explosiveMass": 11 }
-    ]
-  },
-  "SAU_2": {
-    "name": "SAU-2",
-    "projectiles": [
-      { "name": "3OF25 Medium Charge", "velocity": 400, "explosiveMass": 7.65 },
-      { "name": "Smoke Shell", "velocity": 200, "explosiveMass": 0.5 },
-      { "name": "3OF25 ", "velocity": 665, "explosiveMass": 7.65 },
-      { "name": "BR-540B ", "velocity": 600, "explosiveMass": 3.392 },
       {
-        "name": "3VO28",
-        "blastMultiplier": 1.2,
-        "velocity": 200,
-        "explosiveMass": 1.68
-      },
-      { "name": "3OF25 Low Charge", "velocity": 200, "explosiveMass": 7.65 }
-    ]
-  },
-  "One_Man_Ariete": {
-    "name": "One Man Ariete",
-    "projectiles": [
-      { "name": "VOG-17M", "velocity": 185, "explosiveMass": 0.065 }
-    ]
-  },
-  "T34__76__Calliope": {
-    "name": "T34 (76) Calliope",
-    "projectiles": [
-      { "name": "HEAT Rockets", "velocity": 260, "explosiveMass": 7 }
-    ]
-  },
-  "_2S7_Pion": {
-    "name": "2S7 Pion",
-    "projectiles": [
-      { "name": "3VOF34", "velocity": 864, "explosiveMass": 30 },
-      { "name": "2VG11", "velocity": 864, "explosiveMass": 10 },
-      { "name": "3VOF42", "velocity": 200, "explosiveMass": 5.52 }
+        "explosiveMass": 0.065,
+        "name": "VOG-17M",
+        "velocity": 185
+      }
     ]
   },
   "BTR_4": {
     "name": "BTR-4",
     "projectiles": [
-      { "name": "VOG-17M", "velocity": 185, "explosiveMass": 0.065 }
+      {
+        "explosiveMass": 0.065,
+        "name": "VOG-17M",
+        "velocity": 185
+      }
+    ]
+  },
+  "BTR_90": {
+    "name": "BTR-90",
+    "projectiles": [
+      {
+        "explosiveMass": 0.065,
+        "name": "VOG-17M",
+        "velocity": 185
+      }
+    ]
+  },
+  "Centurion_Mk_5_AVRE": {
+    "name": "Centurion Mk 5 AVRE",
+    "projectiles": [
+      {
+        "explosiveMass": 30.6,
+        "name": "L33A1",
+        "velocity": 259
+      }
+    ]
+  },
+  "Cheonma_2": {
+    "name": "Cheonma-2",
+    "projectiles": [
+      {
+        "explosiveMass": 0.065,
+        "name": "VOG-17M",
+        "velocity": 185
+      }
+    ]
+  },
+  "GAZ_Tigr": {
+    "name": "GAZ Tigr",
+    "projectiles": [
+      {
+        "explosiveMass": 0.065,
+        "name": "VOG-17M",
+        "velocity": 185
+      }
+    ]
+  },
+  "Humvee": {
+    "name": "Humvee",
+    "projectiles": [
+      {
+        "explosiveMass": 0.0959,
+        "name": "M383",
+        "velocity": 241
+      }
     ]
   },
   "Karl_Ger__t": {
@@ -226,9 +110,95 @@
     "projectiles": [
       {
         "capMultiplier": 2,
+        "explosiveMass": 289,
         "name": "Schwere Betongranate",
-        "velocity": 150,
-        "explosiveMass": 289
+        "velocity": 150
+      }
+    ]
+  },
+  "LUAZ_672": {
+    "name": "LUAZ-672",
+    "projectiles": [
+      {
+        "explosiveMass": 6.4,
+        "name": "9M22/M21 HE-Frag",
+        "velocity": 180
+      }
+    ]
+  },
+  "M109": {
+    "name": "M109",
+    "projectiles": [
+      {
+        "explosiveMass": 9.14,
+        "name": "M107 Medium Charge",
+        "velocity": 225
+      },
+      {
+        "explosiveMass": 9.14,
+        "name": "M107 Low Charge",
+        "velocity": 172
+      },
+      {
+        "explosiveMass": 0.75,
+        "name": "M110",
+        "velocity": 172
+      },
+      {
+        "explosiveMass": 9.14,
+        "name": "M107 ",
+        "velocity": 684
+      }
+    ]
+  },
+  "M109A6": {
+    "name": "M109A6",
+    "projectiles": [
+      {
+        "explosiveMass": 9.14,
+        "name": "M107 Medium Charge",
+        "velocity": 225
+      },
+      {
+        "explosiveMass": 9.14,
+        "name": "M107 Low Charge",
+        "velocity": 172
+      },
+      {
+        "explosiveMass": 9.14,
+        "name": "M107",
+        "velocity": 684
+      },
+      {
+        "explosiveMass": 0.75,
+        "name": "M110",
+        "velocity": 172
+      }
+    ]
+  },
+  "M1117_ASV": {
+    "name": "M1117 ASV",
+    "projectiles": [
+      {
+        "explosiveMass": 0.0959,
+        "name": "M383",
+        "velocity": 241
+      }
+    ]
+  },
+  "M270_MLRS": {
+    "name": "M270 MLRS",
+    "projectiles": [
+      {
+        "blastMultiplier": 2,
+        "explosiveMass": 6,
+        "name": "M26A1",
+        "velocity": 180
+      },
+      {
+        "explosiveMass": 100.1,
+        "name": "M31A2",
+        "velocity": 180
       }
     ]
   },
@@ -236,31 +206,164 @@
     "name": "Merkava Mk.4M",
     "projectiles": [
       {
-        "name": "Blast-frag Medium Charge",
-        "velocity": 80,
-        "explosiveMass": 1
+        "explosiveMass": 1,
+        "name": "Blast-frag Low Charge",
+        "velocity": 30
       },
-      { "name": "Smoke", "velocity": 30, "explosiveMass": 0.6 },
-      { "name": "Blast-frag High Charge", "velocity": 150, "explosiveMass": 1 },
-      { "name": "Blast-frag Low Charge", "velocity": 30, "explosiveMass": 1 }
+      {
+        "explosiveMass": 1,
+        "name": "Blast-frag High Charge",
+        "velocity": 150
+      },
+      {
+        "explosiveMass": 0.6,
+        "name": "Smoke",
+        "velocity": 30
+      },
+      {
+        "explosiveMass": 1,
+        "name": "Blast-frag Medium Charge",
+        "velocity": 80
+      }
+    ]
+  },
+  "PzH_2000": {
+    "name": "PzH-2000",
+    "projectiles": [
+      {
+        "explosiveMass": 15.4,
+        "name": "DM121",
+        "velocity": 1015
+      },
+      {
+        "explosiveMass": 15.4,
+        "name": "DM121 Medium Charge",
+        "velocity": 350
+      },
+      {
+        "explosiveMass": 0.05,
+        "name": "DM702A1",
+        "velocity": 200
+      },
+      {
+        "explosiveMass": 15.4,
+        "name": "DM121 Low Charge",
+        "velocity": 200
+      }
     ]
   },
   "PzWf__15": {
     "name": "PzWf. 15",
     "projectiles": [
-      { "name": "HE Rockets", "velocity": 340, "explosiveMass": 2.15 }
+      {
+        "explosiveMass": 2.15,
+        "name": "HE Rockets",
+        "velocity": 340
+      }
     ]
   },
-  "BMP_2M": {
-    "name": "BMP-2M",
+  "RSZO_2": {
+    "name": "RSZO-2",
     "projectiles": [
-      { "name": "VOG-17M", "velocity": 185, "explosiveMass": 0.065 }
+      {
+        "explosiveMass": 1,
+        "name": "HE Rockets",
+        "velocity": 150
+      }
     ]
   },
-  "GAZ_Tigr": {
-    "name": "GAZ Tigr",
+  "SAU_2": {
+    "name": "SAU-2",
     "projectiles": [
-      { "name": "VOG-17M", "velocity": 185, "explosiveMass": 0.065 }
+      {
+        "explosiveMass": 7.65,
+        "name": "3OF25 Low Charge",
+        "velocity": 200
+      },
+      {
+        "blastMultiplier": 1.2,
+        "explosiveMass": 1.68,
+        "name": "3VO28",
+        "velocity": 200
+      },
+      {
+        "explosiveMass": 3.392,
+        "name": "BR-540B ",
+        "velocity": 600
+      },
+      {
+        "explosiveMass": 7.65,
+        "name": "3OF25 ",
+        "velocity": 665
+      },
+      {
+        "explosiveMass": 0.5,
+        "name": "Smoke Shell",
+        "velocity": 200
+      },
+      {
+        "explosiveMass": 7.65,
+        "name": "3OF25 Medium Charge",
+        "velocity": 400
+      }
+    ]
+  },
+  "Strf_9040C": {
+    "name": "Strf 9040C",
+    "projectiles": [
+      {
+        "blastMultiplier": 2,
+        "explosiveMass": 0.03,
+        "name": "M430A1",
+        "velocity": 241
+      },
+      {
+        "explosiveMass": 0.0959,
+        "name": "M383",
+        "velocity": 241
+      }
+    ]
+  },
+  "Sturmtiger": {
+    "name": "Sturmtiger",
+    "projectiles": [
+      {
+        "explosiveMass": 125,
+        "name": "38 cm R Spgr.4581",
+        "velocity": 150
+      }
+    ]
+  },
+  "T34_Calliope": {
+    "name": "T34 Calliope",
+    "projectiles": [
+      {
+        "explosiveMass": 1.95,
+        "name": "HE Rockets",
+        "velocity": 260
+      }
+    ]
+  },
+  "TOS_1A_BM_1": {
+    "name": "TOS-1A BM-1",
+    "projectiles": [
+      {
+        "explosiveMass": 21,
+        "name": "Blast fragmentation",
+        "velocity": 180
+      },
+      {
+        "blastMultiplier": 2,
+        "explosiveMass": 2,
+        "name": "Incendiary",
+        "velocity": 180
+      },
+      {
+        "blastMultiplier": 4,
+        "explosiveMass": 3,
+        "name": "Thermobaric",
+        "velocity": 180
+      }
     ]
   }
 }
