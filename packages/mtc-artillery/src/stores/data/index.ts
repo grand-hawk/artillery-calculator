@@ -102,12 +102,16 @@ export const useDataStore = create(
     })),
     {
       name: 'data',
-      version: 1,
+      version: 2,
 
       migrate(persistedState, version) {
         if (version === 0) {
           // @ts-expect-error ignore
           persistedState.mapId = defaultMapId;
+        }
+
+        if (version === 1) {
+          persistedState = {};
         }
 
         return persistedState;
