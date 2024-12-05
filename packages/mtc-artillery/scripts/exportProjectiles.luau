@@ -2,8 +2,9 @@ local HttpService = game:GetService("HttpService")
 local ServerStorage = game:GetService("ServerStorage")
 local ReplicatedFirst = game:GetService("ReplicatedFirst")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local InsertService = game:GetService("InsertService")
 
-local TankInfo: { [string]: { Dispname: string, Hidden: boolean? } } =
+local TankInfo: { [string]: { Dispname: string, ModelID: number?, Hidden: boolean? } } =
 	require(ReplicatedStorage:FindFirstChild("TankInfo") :: ModuleScript)
 local Tanks = ServerStorage:FindFirstChild("Tanks") :: Folder
 local Shells = ReplicatedFirst:FindFirstChild("Shells") :: Folder
@@ -27,6 +28,7 @@ local guns: { [string]: Gun } = {}
 function processTank(tank: Model)
 	local tankInfo = TankInfo[tank.Name]
 	if not tankInfo then
+		print(`Failed to find tank info for {tank.Name}`)
 		return
 	end
 	if tankInfo.Hidden then
@@ -58,6 +60,9 @@ function processTank(tank: Model)
 			end
 
 			local shellModule = require(ShellModules:FindFirstChild(weapon.Name) :: ModuleScript)
+			if tank.Name == "2S19" then
+				print(shellModule)
+			end
 			for _, ammoType in pairs(shellModule.AmmoTypes) do
 				if not ammoType.MuzzleSpeed or not ammoType.ExplosiveMass then
 					continue
@@ -69,7 +74,7 @@ function processTank(tank: Model)
 						ammoType.OverrideProjectileModel
 					)
 				then
-					print(`Skipped {tank.Name}'s {ammoType.DisplayName}`)
+					print(`{tank.Name}'s {ammoType.DisplayName} not eligible`)
 					continue
 				end
 
@@ -102,12 +107,27 @@ function processTank(tank: Model)
 	end
 end
 
-for _, model in Tanks:GetChildren() do
-	if not model:IsA("Model") then
-		continue
+local tempFolder = Instance.new("Folder")
+tempFolder.Name = "Temp"
+tempFolder.Parent = workspace
+
+for name, tank in TankInfo do
+	local model = Tanks:FindFirstChild(name)
+	if not model and tank.ModelID then
+		local folder = InsertService:LoadAsset(tank.ModelID)
+		folder.Parent = tempFolder
+
+		model = folder:FindFirstChildWhichIsA("Model")
+		model.Parent = tempFolder
 	end
 
-	processTank(model)
+	if model and model:IsA("Model") then
+		processTank(model)
+	else
+		print(`{name} missing model`)
+	end
 end
+
+tempFolder:Destroy()
 
 print(HttpService:JSONEncode(guns))

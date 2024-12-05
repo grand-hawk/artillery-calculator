@@ -1,16 +1,131 @@
 {
+  "_2S19_Msta_S": {
+    "name": "2S19 Msta-S",
+    "projectiles": [
+      {
+        "explosiveMass": 9,
+        "name": "OF-72 Medium Charge",
+        "velocity": 500
+      },
+      {
+        "explosiveMass": 9,
+        "name": "OF-72",
+        "velocity": 864
+      },
+      {
+        "explosiveMass": 3.48,
+        "name": "BP-540",
+        "velocity": 655
+      },
+      {
+        "explosiveMass": 9,
+        "name": "OF-72 Low Charge",
+        "velocity": 200
+      },
+      {
+        "explosiveMass": 11,
+        "name": "OF-91 Low Charge",
+        "velocity": 200
+      },
+      {
+        "explosiveMass": 11,
+        "name": "OF-91 Medium Charge",
+        "velocity": 500
+      },
+      {
+        "explosiveMass": 11,
+        "name": "OF-91 Proxy Fuze",
+        "velocity": 864
+      },
+      {
+        "explosiveMass": 11,
+        "name": "OF-91",
+        "velocity": 864
+      }
+    ]
+  },
+  "_2S43": {
+    "name": "2S43",
+    "projectiles": [
+      {
+        "explosiveMass": 11,
+        "name": "OF-91 Low Charge",
+        "velocity": 200
+      },
+      {
+        "explosiveMass": 11,
+        "name": "OF-91 Medium Charge",
+        "velocity": 500
+      },
+      {
+        "explosiveMass": 11,
+        "name": "OF-91 Proxy Fuze",
+        "velocity": 864
+      },
+      {
+        "explosiveMass": 3.48,
+        "name": "BP-540",
+        "velocity": 655
+      },
+      {
+        "explosiveMass": 11,
+        "name": "OF-91",
+        "velocity": 864
+      }
+    ]
+  },
+  "_2S7_Pion": {
+    "name": "2S7 Pion",
+    "projectiles": [
+      {
+        "explosiveMass": 30,
+        "name": "3VOF34",
+        "velocity": 864
+      },
+      {
+        "explosiveMass": 10,
+        "name": "2VG11",
+        "velocity": 864
+      },
+      {
+        "explosiveMass": 5.52,
+        "name": "3VOF42",
+        "velocity": 200
+      }
+    ]
+  },
   "_9K720_Iskander": {
     "name": "9K720 Iskander",
     "projectiles": [
+      {
+        "explosiveMass": 100.1,
+        "name": "M31A2",
+        "velocity": 180
+      },
       {
         "blastMultiplier": 2,
         "explosiveMass": 6,
         "name": "M26A1",
         "velocity": 180
-      },
+      }
+    ]
+  },
+  "Ariete_PSO": {
+    "name": "Ariete PSO",
+    "projectiles": [
       {
-        "explosiveMass": 100.1,
-        "name": "M31A2",
+        "explosiveMass": 0.0959,
+        "name": "M383",
+        "velocity": 241
+      }
+    ]
+  },
+  "BM_21_Grad": {
+    "name": "BM-21 Grad",
+    "projectiles": [
+      {
+        "explosiveMass": 6.4,
+        "name": "9M22/M21 HE-Frag",
         "velocity": 180
       }
     ]
@@ -131,13 +246,8 @@
     "projectiles": [
       {
         "explosiveMass": 9.14,
-        "name": "M107 Medium Charge",
-        "velocity": 225
-      },
-      {
-        "explosiveMass": 9.14,
-        "name": "M107 Low Charge",
-        "velocity": 172
+        "name": "M107 ",
+        "velocity": 684
       },
       {
         "explosiveMass": 0.75,
@@ -146,8 +256,13 @@
       },
       {
         "explosiveMass": 9.14,
-        "name": "M107 ",
-        "velocity": 684
+        "name": "M107 Low Charge",
+        "velocity": 172
+      },
+      {
+        "explosiveMass": 9.14,
+        "name": "M107 Medium Charge",
+        "velocity": 225
       }
     ]
   },
@@ -155,13 +270,8 @@
     "name": "M109A6",
     "projectiles": [
       {
-        "explosiveMass": 9.14,
-        "name": "M107 Medium Charge",
-        "velocity": 225
-      },
-      {
-        "explosiveMass": 9.14,
-        "name": "M107 Low Charge",
+        "explosiveMass": 0.75,
+        "name": "M110",
         "velocity": 172
       },
       {
@@ -170,9 +280,14 @@
         "velocity": 684
       },
       {
-        "explosiveMass": 0.75,
-        "name": "M110",
+        "explosiveMass": 9.14,
+        "name": "M107 Low Charge",
         "velocity": 172
+      },
+      {
+        "explosiveMass": 9.14,
+        "name": "M107 Medium Charge",
+        "velocity": 225
       }
     ]
   },
@@ -190,14 +305,14 @@
     "name": "M270 MLRS",
     "projectiles": [
       {
-        "blastMultiplier": 2,
-        "explosiveMass": 6,
-        "name": "M26A1",
+        "explosiveMass": 100.1,
+        "name": "M31A2",
         "velocity": 180
       },
       {
-        "explosiveMass": 100.1,
-        "name": "M31A2",
+        "blastMultiplier": 2,
+        "explosiveMass": 6,
+        "name": "M26A1",
         "velocity": 180
       }
     ]
@@ -207,13 +322,8 @@
     "projectiles": [
       {
         "explosiveMass": 1,
-        "name": "Blast-frag Low Charge",
-        "velocity": 30
-      },
-      {
-        "explosiveMass": 1,
-        "name": "Blast-frag High Charge",
-        "velocity": 150
+        "name": "Blast-frag Medium Charge",
+        "velocity": 80
       },
       {
         "explosiveMass": 0.6,
@@ -222,8 +332,13 @@
       },
       {
         "explosiveMass": 1,
-        "name": "Blast-frag Medium Charge",
-        "velocity": 80
+        "name": "Blast-frag High Charge",
+        "velocity": 150
+      },
+      {
+        "explosiveMass": 1,
+        "name": "Blast-frag Low Charge",
+        "velocity": 30
       }
     ]
   },
@@ -232,13 +347,8 @@
     "projectiles": [
       {
         "explosiveMass": 15.4,
-        "name": "DM121",
-        "velocity": 1015
-      },
-      {
-        "explosiveMass": 15.4,
-        "name": "DM121 Medium Charge",
-        "velocity": 350
+        "name": "DM121 Low Charge",
+        "velocity": 200
       },
       {
         "explosiveMass": 0.05,
@@ -247,8 +357,13 @@
       },
       {
         "explosiveMass": 15.4,
-        "name": "DM121 Low Charge",
-        "velocity": 200
+        "name": "DM121 Medium Charge",
+        "velocity": 350
+      },
+      {
+        "explosiveMass": 15.4,
+        "name": "DM121",
+        "velocity": 1015
       }
     ]
   },
@@ -259,6 +374,16 @@
         "explosiveMass": 2.15,
         "name": "HE Rockets",
         "velocity": 340
+      }
+    ]
+  },
+  "RSZO_1": {
+    "name": "RSZO-1",
+    "projectiles": [
+      {
+        "explosiveMass": 1,
+        "name": "HE Rockets",
+        "velocity": 150
       }
     ]
   },
@@ -277,24 +402,8 @@
     "projectiles": [
       {
         "explosiveMass": 7.65,
-        "name": "3OF25 Low Charge",
-        "velocity": 200
-      },
-      {
-        "blastMultiplier": 1.2,
-        "explosiveMass": 1.68,
-        "name": "3VO28",
-        "velocity": 200
-      },
-      {
-        "explosiveMass": 3.392,
-        "name": "BR-540B ",
-        "velocity": 600
-      },
-      {
-        "explosiveMass": 7.65,
-        "name": "3OF25 ",
-        "velocity": 665
+        "name": "3OF25 Medium Charge",
+        "velocity": 400
       },
       {
         "explosiveMass": 0.5,
@@ -303,8 +412,24 @@
       },
       {
         "explosiveMass": 7.65,
-        "name": "3OF25 Medium Charge",
-        "velocity": 400
+        "name": "3OF25 ",
+        "velocity": 665
+      },
+      {
+        "explosiveMass": 3.392,
+        "name": "BR-540B ",
+        "velocity": 600
+      },
+      {
+        "blastMultiplier": 1.2,
+        "explosiveMass": 1.68,
+        "name": "3VO28",
+        "velocity": 200
+      },
+      {
+        "explosiveMass": 7.65,
+        "name": "3OF25 Low Charge",
+        "velocity": 200
       }
     ]
   },
@@ -312,14 +437,14 @@
     "name": "Strf 9040C",
     "projectiles": [
       {
-        "blastMultiplier": 2,
-        "explosiveMass": 0.03,
-        "name": "M430A1",
+        "explosiveMass": 0.0959,
+        "name": "M383",
         "velocity": 241
       },
       {
-        "explosiveMass": 0.0959,
-        "name": "M383",
+        "blastMultiplier": 2,
+        "explosiveMass": 0.03,
+        "name": "M430A1",
         "velocity": 241
       }
     ]
@@ -348,8 +473,9 @@
     "name": "TOS-1A BM-1",
     "projectiles": [
       {
-        "explosiveMass": 21,
-        "name": "Blast fragmentation",
+        "blastMultiplier": 4,
+        "explosiveMass": 3,
+        "name": "Thermobaric",
         "velocity": 180
       },
       {
@@ -359,9 +485,8 @@
         "velocity": 180
       },
       {
-        "blastMultiplier": 4,
-        "explosiveMass": 3,
-        "name": "Thermobaric",
+        "explosiveMass": 21,
+        "name": "Blast fragmentation",
         "velocity": 180
       }
     ]
