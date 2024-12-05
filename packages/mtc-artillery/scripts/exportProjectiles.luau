@@ -60,9 +60,6 @@ function processTank(tank: Model)
 			end
 
 			local shellModule = require(ShellModules:FindFirstChild(weapon.Name) :: ModuleScript)
-			if tank.Name == "2S19" then
-				print(shellModule)
-			end
 			for _, ammoType in pairs(shellModule.AmmoTypes) do
 				if not ammoType.MuzzleSpeed or not ammoType.ExplosiveMass then
 					continue
