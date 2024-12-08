@@ -171,6 +171,7 @@ export const gameMaps: Record<string, GameMap> = {
       255: 119.748046875,
     },
     image: 'sandy_place',
+    inRotation: true,
     name: 'Sandy Place',
     size: calculateMapSize(361),
   },
@@ -205,7 +206,6 @@ export const gameMaps: Record<string, GameMap> = {
     },
     image: 'villers_sommeil',
     inRotation: true,
-    // france
     name: 'Villers-Sommeil',
     size: 333 * 9,
   },
