@@ -55,7 +55,6 @@ export const gameMaps: Record<string, GameMap> = {
     },
     image: 'cloudy_valley',
     inRotation: true,
-    // gup map
     name: 'Cloudy Valley',
     size: calculateMapSize(116),
   },
@@ -107,12 +106,11 @@ export const gameMaps: Record<string, GameMap> = {
 
   muddy_fields: {
     heightmap: {
-      0: 0,
-      255: 226.43841552734375,
+      0: 6.65234375,
+      255: 163.99659729003906,
     },
     image: 'muddy_fields',
     inRotation: true,
-    // ukropg
     name: 'Muddy Fields',
     size: calculateMapSize(240),
   },
@@ -215,7 +213,6 @@ export const gameMaps: Record<string, GameMap> = {
   zone_11: {
     heightmap: {
       0: 0,
-      // 1 digit removed due to possible precision loss (250.13919067382812)
       255: 250.1391906738281,
     },
     image: 'zone_11',
