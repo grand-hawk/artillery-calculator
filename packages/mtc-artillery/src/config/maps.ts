@@ -62,7 +62,7 @@ export const gameMaps: Record<string, GameMap> = {
   dustbowl: {
     heightmap: {
       0: 0,
-      255: 360.703125,
+      255: 362.07421875,
     },
     image: 'dustbowl',
     inRotation: true,
