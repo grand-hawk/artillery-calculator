@@ -200,6 +200,16 @@
       }
     ]
   },
+  "Churchill_VII": {
+    "name": "Churchill VII",
+    "projectiles": [
+      {
+        "explosiveMass": 30.6,
+        "name": "L33A1",
+        "velocity": 259
+      }
+    ]
+  },
   "GAZ_Tigr": {
     "name": "GAZ Tigr",
     "projectiles": [
@@ -347,6 +357,16 @@
     "projectiles": [
       {
         "explosiveMass": 15.4,
+        "name": "DM121 Proxy-Fuze",
+        "velocity": 1015
+      },
+      {
+        "explosiveMass": 15.4,
+        "name": "DM121 Medium Charge",
+        "velocity": 350
+      },
+      {
+        "explosiveMass": 15.4,
         "name": "DM121 Low Charge",
         "velocity": 200
       },
@@ -354,11 +374,6 @@
         "explosiveMass": 0.05,
         "name": "DM702A1",
         "velocity": 200
-      },
-      {
-        "explosiveMass": 15.4,
-        "name": "DM121 Medium Charge",
-        "velocity": 350
       },
       {
         "explosiveMass": 15.4,
