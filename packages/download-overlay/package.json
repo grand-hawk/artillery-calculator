@@ -30,7 +30,7 @@
     "@mui/joy": "5.0.0-beta.50",
     "@mui/material": "^6.2.0",
     "merge-sx": "^3.3.1",
-    "next": "15.1.0",
+    "next": "15.1.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "usehooks-ts": "^3.1.0"
