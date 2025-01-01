@@ -26,6 +26,16 @@ export const gameMaps: Record<string, GameMap> = {
     size: 449 * 9,
   },
 
+  big_map: {
+    heightmap: {
+      0: -176.33370971679688,
+      255: 159.07421875,
+    },
+    image: 'big_map',
+    name: 'The Big Map',
+    size: 22943,
+  },
+
   chernobyl: {
     heightmap: {
       0: 0,
