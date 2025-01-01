@@ -36,17 +36,6 @@ export const gameMaps: Record<string, GameMap> = {
     size: 22943,
   },
 
-  chernobyl: {
-    heightmap: {
-      0: 0,
-      255: 408.0989990234375,
-    },
-    image: 'chernobyl',
-    inRotation: true,
-    name: 'Chernobyl',
-    size: calculateMapSize(165),
-  },
-
   chernobyl_v2: {
     heightmap: {
       0: 0,
