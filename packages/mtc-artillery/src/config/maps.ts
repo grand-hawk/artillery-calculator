@@ -43,7 +43,7 @@ export const gameMaps: Record<string, GameMap> = {
     },
     image: 'chernobyl_v2',
     inRotation: true,
-    name: 'Chernobyl (SV)',
+    name: 'Chernobyl',
     size: calculateMapSize(165),
   },
 
