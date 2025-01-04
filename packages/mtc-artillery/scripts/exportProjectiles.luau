@@ -115,8 +115,8 @@ function processTank(tank: Model)
 end
 
 local tempFolder = Instance.new("Folder")
-tempFolder.Name = "Temp"
-tempFolder.Parent = workspace
+tempFolder.Name = "ExportProjectilesTemp"
+tempFolder.Parent = game:GetService("ServerStorage")
 
 for name, tank in TankInfo do
 	local model = Tanks:FindFirstChild(name)
@@ -137,4 +137,18 @@ end
 
 tempFolder:Destroy()
 
-print(HttpService:JSONEncode(guns))
+local gunKeys = {}
+for key in pairs(guns) do
+	table.insert(gunKeys, key)
+end
+
+table.sort(gunKeys, function(a, b)
+	return guns[a].name < guns[b].name
+end)
+
+local sortedGuns = {}
+for _, key in ipairs(gunKeys) do
+	sortedGuns[key] = guns[key]
+end
+
+print(HttpService:JSONEncode(sortedGuns))
