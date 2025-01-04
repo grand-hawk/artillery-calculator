@@ -103,6 +103,13 @@ function processTank(tank: Model)
 	end
 
 	if #gun.projectiles > 0 then
+		table.sort(gun.projectiles, function(a, b)
+			if a.velocity == b.velocity then
+				return a.name < b.name
+			end
+			return a.velocity < b.velocity
+		end)
+
 		guns[normalizedName] = gun
 	end
 end
