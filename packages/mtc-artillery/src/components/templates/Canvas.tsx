@@ -6,6 +6,7 @@ import { useShallow } from 'zustand/shallow';
 import AbsoluteContainer from '@/components/atoms/canvas/AbsoluteContainer';
 import CanvasMeasureContainer from '@/components/organisms/CanvasMeasureContainer';
 import Profiler from '@/components/utils/Profiler';
+import useElevation from '@/hooks/data/useElevation';
 import useGameMap from '@/hooks/data/useGameMap';
 import useHeightmapZ from '@/hooks/data/useHeightmapZ';
 import useProjectile from '@/hooks/data/useProjectile';
@@ -18,6 +19,7 @@ import drawTarget from '@/utils/canvas/drawTarget';
 import {
   calculateBlastDiameter,
   calculateMaxRangeDiameter,
+  calculateSubmunitionBlastDiameter,
   metersToStuds,
   studsToMeters,
 } from '@/utils/math';
@@ -34,6 +36,8 @@ function Canvas() {
 
   const projectile = useProjectile();
   const gameMap = useGameMap();
+  const elevation = useElevation();
+  const [gunHeight] = useHeightmapZ();
 
   const gun = useDataStore(useShallow((s) => s.getGun()));
   const setGun = useDataStore((s) => s.setGun);
@@ -44,14 +48,27 @@ function Canvas() {
   const canvasScale = 8;
   const scaledDimension = canvasStore.width * canvasScale;
 
-  const [gunHeight] = useHeightmapZ();
-  const blastDiameter: number | undefined =
+  let blastDiameter: number | undefined;
+  if (
     projectile.explosiveMass &&
-    calculateBlastDiameter(
+    projectile.submunitions &&
+    projectile.submunitionAngularDispersion
+  )
+    blastDiameter = calculateSubmunitionBlastDiameter(
+      projectile.explosiveMass * projectile.submunitions,
+      projectile.submunitions,
+      projectile.submunitionAngularDispersion,
+      projectile.velocity,
+      elevation[0],
+      projectile.submunitionDeployFactor,
+    );
+  else if (projectile.explosiveMass)
+    blastDiameter = calculateBlastDiameter(
       projectile.explosiveMass,
       projectile.capMultiplier,
       projectile.blastMultiplier,
     );
+
   const blastRadius =
     blastDiameter && (blastDiameter / gameMap.size / 2) * scaledDimension;
 

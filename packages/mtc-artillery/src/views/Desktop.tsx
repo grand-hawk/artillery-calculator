@@ -5,6 +5,7 @@ import React from 'react';
 
 import ColumnContainer from '@/components/atoms/ColumnContainer';
 import ConfigurationGroup from '@/components/atoms/ConfigurationGroup';
+import Kbd from '@/components/atoms/Kbd';
 import AzimuthValue from '@/components/organisms/configuration/Azimuth';
 import DistanceValue from '@/components/organisms/configuration/Distance';
 import ElevationValue from '@/components/organisms/configuration/Elevation';
@@ -13,7 +14,7 @@ import ProjectileSelection from '@/components/organisms/configuration/Projectile
 import TimeOfFlightValue from '@/components/organisms/configuration/TimeOfFlight';
 import Footer from '@/components/organisms/Footer';
 import Motd from '@/components/organisms/Motd';
-import OverlayCard from '@/components/organisms/OverlayCard';
+import OverlayDownloadCard from '@/components/organisms/OverlayDownloadCard';
 import Canvas from '@/components/templates/Canvas';
 import { usePropStore } from '@/stores/props';
 
@@ -70,10 +71,12 @@ export default function DesktopView() {
               </ConfigurationGroup>
 
               <Typography sx={{ marginTop: 'auto' }}>
-                {t('typography.instructions')}
+                {t.rich('typography.instructions', {
+                  kbd: (chunks) => <Kbd renderText={() => chunks} />,
+                })}
               </Typography>
 
-              <OverlayCard />
+              <OverlayDownloadCard />
             </ColumnContainer>
           </Box>
         </Box>

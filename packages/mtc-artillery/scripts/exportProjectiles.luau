@@ -78,6 +78,9 @@ function processTank(tank: Model)
 				local projectile: Projectile = {
 					name = ammoType.DisplayName,
 					velocity = ammoType.MuzzleSpeed,
+					submunitions = ammoType.Submunitions,
+					submunitionAngularDispersion = ammoType.SubmunitionAngularDispersion,
+					submunitionDeployFactor = ammoType.SubmunitionDeployFactor,
 					explosiveMass = tonumber(string.format("%.4f", ammoType.ExplosiveMass * (ammoType.Count or 1))),
 					capMultiplier = ammoType.ExpCapMult,
 					blastMultiplier = ammoType.blastradiusmult,

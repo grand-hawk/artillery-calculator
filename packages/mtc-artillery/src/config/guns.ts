@@ -3,6 +3,9 @@ import importedGuns from './importedGuns.json';
 export interface Projectile {
   name: string;
   velocity: number;
+  submunitions?: number;
+  submunitionAngularDispersion?: number;
+  submunitionDeployFactor?: number;
   explosiveMass?: number;
   capMultiplier?: number;
   blastMultiplier?: number;
