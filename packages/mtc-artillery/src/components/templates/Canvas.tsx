@@ -56,14 +56,12 @@ function Canvas() {
   ) {
     const arcs = [
       calculateSubmunitionBlastDiameter(
-        projectile.explosiveMass,
         projectile.submunitionAngularDispersion,
         projectile.velocity,
         elevation[0],
         projectile.submunitionDeployFactor,
       ),
       calculateSubmunitionBlastDiameter(
-        projectile.explosiveMass,
         projectile.submunitionAngularDispersion,
         projectile.velocity,
         elevation[1],

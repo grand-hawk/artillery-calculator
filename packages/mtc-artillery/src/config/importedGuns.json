@@ -167,21 +167,23 @@
     "name": "M270 MLRS",
     "projectiles": [
       {
-        "submunitionAngularDispersion": 16.5,
+        "submunitionAngularDispersion": 32.5,
         "name": "M26A1 Low Charge",
-        "submunitions": 75,
+        "blastMultiplier": 2,
+        "submunitions": 150,
         "velocity": 180,
-        "explosiveMass": 0.304,
-        "submunitionDeployFactor": 0.5
+        "explosiveMass": 0.151,
+        "submunitionDeployFactor": 0.75
       },
       { "name": "M31A2 Low Charge", "velocity": 180, "explosiveMass": 100.1 },
       {
         "submunitionAngularDispersion": 15,
         "name": "M26A1 Medium Charge",
-        "submunitions": 75,
+        "blastMultiplier": 2,
+        "submunitions": 150,
         "velocity": 300,
-        "explosiveMass": 0.304,
-        "submunitionDeployFactor": 0.55
+        "explosiveMass": 0.151,
+        "submunitionDeployFactor": 0.8
       },
       {
         "name": "M31A2 Medium Charge",
@@ -189,12 +191,13 @@
         "explosiveMass": 100.1
       },
       {
-        "submunitionAngularDispersion": 11,
+        "submunitionAngularDispersion": 10,
         "name": "M26A1 High Charge",
-        "submunitions": 75,
+        "blastMultiplier": 2,
+        "submunitions": 150,
         "velocity": 420,
-        "explosiveMass": 0.304,
-        "submunitionDeployFactor": 0.75
+        "explosiveMass": 0.151,
+        "submunitionDeployFactor": 0.85
       },
       { "name": "M31A2 High Charge", "velocity": 420, "explosiveMass": 100.1 }
     ]
@@ -281,21 +284,23 @@
     "name": "9K720 Iskander",
     "projectiles": [
       {
-        "submunitionAngularDispersion": 16.5,
+        "submunitionAngularDispersion": 32.5,
         "name": "M26A1 Low Charge",
-        "submunitions": 75,
+        "blastMultiplier": 2,
+        "submunitions": 150,
         "velocity": 180,
         "explosiveMass": 0.304,
-        "submunitionDeployFactor": 0.5
+        "submunitionDeployFactor": 0.75
       },
       { "name": "M31A2 Low Charge", "velocity": 180, "explosiveMass": 100.1 },
       {
         "submunitionAngularDispersion": 15,
         "name": "M26A1 Medium Charge",
-        "submunitions": 75,
+        "blastMultiplier": 2,
+        "submunitions": 150,
         "velocity": 300,
         "explosiveMass": 0.304,
-        "submunitionDeployFactor": 0.55
+        "submunitionDeployFactor": 0.8
       },
       {
         "name": "M31A2 Medium Charge",
@@ -303,12 +308,13 @@
         "explosiveMass": 100.1
       },
       {
-        "submunitionAngularDispersion": 11,
+        "submunitionAngularDispersion": 10,
         "name": "M26A1 High Charge",
-        "submunitions": 75,
+        "blastMultiplier": 2,
+        "submunitions": 150,
         "velocity": 420,
         "explosiveMass": 0.304,
-        "submunitionDeployFactor": 0.75
+        "submunitionDeployFactor": 0.85
       },
       { "name": "M31A2 High Charge", "velocity": 420, "explosiveMass": 100.1 }
     ]
