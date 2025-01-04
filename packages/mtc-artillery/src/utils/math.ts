@@ -138,8 +138,7 @@ export function calculateBlastDiameter(
 }
 
 /**
- * @param m Total explosive mass in kg (distributed across submunitions)
- * @param n Number of submunitions
+ * @param submunitionMass Explosive mass of a single submunition in kg
  * @param theta Angular dispersion in degrees
  * @param launchSpeed Initial speed of the projectile
  * @param elevation Elevation angle in degrees
@@ -151,8 +150,7 @@ export function calculateBlastDiameter(
  * @returns Estimated blast diameter in studs
  */
 export function calculateSubmunitionBlastDiameter(
-  m: number,
-  n: number,
+  submunitionMass: number,
   theta: number,
   launchSpeed: number,
   elevation: number,
@@ -173,9 +171,8 @@ export function calculateSubmunitionBlastDiameter(
     deploymentTime * horizontalVelocity * Math.tan((theta * Math.PI) / 360);
   const dispersionRadiusStuds = metersToStuds(dispersionRadiusMeters);
 
-  const singleSubmunitionMass = m / n;
   const singleBlastDiameterStuds = calculateBlastDiameter(
-    singleSubmunitionMass,
+    submunitionMass,
     c,
     b,
     a,
