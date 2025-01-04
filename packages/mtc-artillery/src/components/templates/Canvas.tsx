@@ -53,16 +53,31 @@ function Canvas() {
     projectile.explosiveMass &&
     projectile.submunitions &&
     projectile.submunitionAngularDispersion
-  )
-    blastDiameter = calculateSubmunitionBlastDiameter(
-      projectile.explosiveMass * projectile.submunitions,
-      projectile.submunitions,
-      projectile.submunitionAngularDispersion,
-      projectile.velocity,
-      elevation[0],
-      projectile.submunitionDeployFactor,
-    );
-  else if (projectile.explosiveMass)
+  ) {
+    const arcs = [
+      calculateSubmunitionBlastDiameter(
+        projectile.explosiveMass * projectile.submunitions,
+        projectile.submunitions,
+        projectile.submunitionAngularDispersion,
+        projectile.velocity,
+        elevation[0],
+        projectile.submunitionDeployFactor,
+      ),
+      calculateSubmunitionBlastDiameter(
+        projectile.explosiveMass * projectile.submunitions,
+        projectile.submunitions,
+        projectile.submunitionAngularDispersion,
+        projectile.velocity,
+        elevation[1],
+        projectile.submunitionDeployFactor,
+      ),
+    ].filter((number) => !Number.isNaN(number));
+
+    const average = arcs.reduce((a, b) => a + b, 0) / arcs.length;
+
+    if (average > 0) blastDiameter = average;
+  }
+  if (projectile.explosiveMass && !blastDiameter)
     blastDiameter = calculateBlastDiameter(
       projectile.explosiveMass,
       projectile.capMultiplier,
