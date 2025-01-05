@@ -119,6 +119,10 @@ tempFolder.Name = "ExportProjectilesTemp"
 tempFolder.Parent = game:GetService("ServerStorage")
 
 for name, tank in TankInfo do
+	if tank.Hidden then
+		continue
+	end
+
 	local model = Tanks:FindFirstChild(name)
 	if not model and tank.ModelID then
 		local folder = InsertService:LoadAsset(tank.ModelID)
