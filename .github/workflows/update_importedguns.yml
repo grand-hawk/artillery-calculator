@@ -9,11 +9,6 @@ jobs:
   update-importedguns:
     runs-on: ubuntu-latest
 
-    defaults:
-      run:
-        shell: bash
-        working-directory: ./packages/mtc-artillery
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -39,13 +34,13 @@ jobs:
           roblox_api_key: ${{ secrets.ROBLOX_LUAU_EXECUTION_API_KEY }}
           universe_id: "3221676855"
           place_id: "8421780146"
-          luau_file: "./packages/mtc-artillery/scripts/exportProjectiles.lua"
+          luau_file: "packages/mtc-artillery/scripts/exportProjectiles.lua"
           output_file: "$RUNNER_TEMP/output.json"
 
       - name: Process JSON output
-        run: jq '.[0]' "$RUNNER_TEMP/output.json" > "src/config/importedGuns.json"
+        run: jq '.[0]' "$RUNNER_TEMP/output.json" > "./packages/mtc-artillery/src/config/importedGuns.json"
 
       - name: Commit changes
         uses: EndBug/add-and-commit@v9
         with:
-          add: "src/config/importedGuns.json"
+          add: "./packages/mtc-artillery/src/config/importedGuns.json"
