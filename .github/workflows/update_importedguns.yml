@@ -24,10 +24,6 @@ jobs:
           cache: "pnpm"
           cache-dependency-path: ./packages/mtc-artillery/pnpm-lock.yaml
 
-      - name: Install pnpm packages
-        run: pnpm install
-        working-directory: ./packages/mtc-artillery
-
       - name: Execute script
         id: roblox-luau-execution
         uses: grand-hawk/action-roblox-luau-execution@1.0.0
