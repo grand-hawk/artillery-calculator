@@ -24,7 +24,7 @@ jobs:
           output_file: "${{ runner.temp }}/output.json"
 
       - name: Process JSON output
-        run: jq '.[0]' '$RUNNER_TEMP/output.json' > 'packages/mtc-artillery/src/config/importedGuns.json'
+        run: jq ".[0]" "${{ runner.temp }}/output.json" > "packages/mtc-artillery/src/config/importedGuns.json"
 
       - name: Commit changes
         uses: EndBug/add-and-commit@v9
