@@ -1,4 +1,4 @@
-name: Extract projectiles
+name: Update importedGuns.json
 
 on:
   schedule:
@@ -32,7 +32,7 @@ jobs:
       - name: Install pnpm packages
         run: pnpm install
 
-      - name: Extract projectiles
+      - name: Execute script
         id: roblox-luau-execution
         uses: grand-hawk/action-roblox-luau-execution@0.1.1
         with:
