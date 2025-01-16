@@ -29,6 +29,9 @@ jobs:
           cache: "pnpm"
           cache-dependency-path: ./packages/mtc-artillery/pnpm-lock.yaml
 
+      - name: Install pnpm packages
+        run: pnpm install
+
       - name: Execute script
         id: roblox-luau-execution
         uses: grand-hawk/action-roblox-luau-execution@1.0.0
@@ -40,10 +43,7 @@ jobs:
           output_file: "script-execution-output.json"
 
       - name: Process JSON output
-        run: jq ".[0]" "script-execution-output.json" > "./src/config/importedGuns.json"
-
-      - name: Install pnpm packages
-        run: pnpm install
+        run: jq ".[0]" "./script-execution-output.json" > "./src/config/importedGuns.json"
 
       - name: Format
         run: pnpm run format
