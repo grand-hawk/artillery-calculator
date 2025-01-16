@@ -6,13 +6,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  update-importedguns:
+  execute:
     runs-on: ubuntu-latest
-
-    defaults:
-      run:
-        shell: bash
-        working-directory: ./packages/mtc-artillery
 
     steps:
       - name: Checkout code
@@ -43,10 +38,50 @@ jobs:
           output_file: "script-execution-output.json"
 
       - name: Process JSON output
-        run: jq ".[0]" "./script-execution-output.json" > "./src/config/importedGuns.json"
+        run: jq ".[0]" "./script-execution-output.json" > "./packages/mtc-artillery/src/config/importedGuns.json"
+
+  format:
+    runs-on: ubuntu-latest
+    needs: execute
+
+    defaults:
+      run:
+        shell: bash
+        working-directory: ./packages/mtc-artillery
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4.0.0
+        with:
+          version: 9
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: "pnpm"
+          cache-dependency-path: ./packages/mtc-artillery/pnpm-lock.yaml
+
+      - name: Install pnpm packages
+        run: pnpm install
 
       - name: Format
         run: pnpm run format
+
+  commit:
+    runs-on: ubuntu-latest
+    needs: format
+
+    defaults:
+      run:
+        shell: bash
+        working-directory: ./packages/mtc-artillery
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
 
       - name: Commit changes
         uses: EndBug/add-and-commit@v9
