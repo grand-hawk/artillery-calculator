@@ -38,7 +38,7 @@ jobs:
         run: jq ".[0]" "./script-execution-output.json" > "./packages/mtc-artillery/src/config/importedGuns.json"
 
       - name: Format
-        run: pnpx prettier "./src/config/importedGuns.json" -w
+        run: pnpm prettier "./src/config/importedGuns.json" -w
         working-directory: ./packages/mtc-artillery
 
       - name: Commit changes
