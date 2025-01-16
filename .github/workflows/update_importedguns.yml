@@ -9,9 +9,25 @@ jobs:
   update-importedguns:
     runs-on: ubuntu-latest
 
+    defaults:
+      run:
+        shell: bash
+        working-directory: ./packages/mtc-artillery
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4.0.0
+        with:
+          version: 9
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: "pnpm"
+          cache-dependency-path: ./packages/mtc-artillery/pnpm-lock.yaml
 
       - name: Execute script
         id: roblox-luau-execution
@@ -20,13 +36,19 @@ jobs:
           roblox_api_key: ${{ secrets.ROBLOX_LUAU_EXECUTION_API_KEY }}
           universe_id: "3221676855"
           place_id: "8421780146"
-          luau_file: "packages/mtc-artillery/scripts/exportProjectiles.luau"
-          output_file: "${{ runner.temp }}/output.json"
+          luau_file: "./packages/mtc-artillery/scripts/exportProjectiles.luau"
+          output_file: "script-execution-output.json"
 
       - name: Process JSON output
-        run: jq ".[0]" "${{ runner.temp }}/output.json" > "packages/mtc-artillery/src/config/importedGuns.json"
+        run: jq ".[0]" "script-execution-output.json" > "./src/config/importedGuns.json"
+
+      - name: Install pnpm packages
+        run: pnpm install
+
+      - name: Format
+        run: pnpm run format
 
       - name: Commit changes
         uses: EndBug/add-and-commit@v9
         with:
-          add: "packages/mtc-artillery/src/config/importedGuns.json"
+          add: "./src/config/importedGuns.json"
