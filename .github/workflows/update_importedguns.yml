@@ -2,7 +2,7 @@ name: Update importedGuns.json
 
 on:
   schedule:
-    - cron: '0 0 * * *'
+    - cron: "0 0 * * *"
   workflow_dispatch:
 
 jobs:
@@ -18,15 +18,15 @@ jobs:
         uses: grand-hawk/action-roblox-luau-execution@1.0.0
         with:
           roblox_api_key: ${{ secrets.ROBLOX_LUAU_EXECUTION_API_KEY }}
-          universe_id: '3221676855'
-          place_id: '8421780146'
-          luau_file: 'packages/mtc-artillery/scripts/exportProjectiles.luau'
-          output_file: '${{ runner.temp }}/output.json'
+          universe_id: "3221676855"
+          place_id: "8421780146"
+          luau_file: "packages/mtc-artillery/scripts/exportProjectiles.luau"
+          output_file: "${{ runner.temp }}/output.json"
 
       - name: Process JSON output
-        run: jq '.[0]' '$RUNNER_TEMP/output.json' > 'src/config/importedGuns.json'
+        run: jq '.[0]' '$RUNNER_TEMP/output.json' > 'packages/mtc-artillery/src/config/importedGuns.json'
 
       - name: Commit changes
         uses: EndBug/add-and-commit@v9
         with:
-          add: 'src/config/importedGuns.json'
+          add: "packages/mtc-artillery/src/config/importedGuns.json"
