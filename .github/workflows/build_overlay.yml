@@ -10,7 +10,7 @@ on:
 
 jobs:
   version_check:
-    runs-on: "ubuntu-latest"
+    runs-on: 'ubuntu-latest'
 
     defaults:
       run:
@@ -29,7 +29,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: "pnpm"
+          cache: 'pnpm'
           cache-dependency-path: ./packages/overlay/pnpm-lock.yaml
 
       - name: Install pnpm packages
@@ -42,7 +42,7 @@ jobs:
         id: tauri_version
         run: |
           tauri_version=$(node scripts/version.mjs)
-          echo "tauri_version=$tauri_version" >> $GITHUB_OUTPUT
+          echo 'tauri_version=$tauri_version' >> $GITHUB_OUTPUT
 
       - name: Compare
         run: |
@@ -50,15 +50,15 @@ jobs:
           prefixedVersion=${raw_version#overlay-}
           version=${prefixedVersion#v}
           tauri_version=${{ steps.tauri_version.outputs.tauri_version }}
-          echo "Branch version: $version"
-          echo "Tauri version: $tauri_version"
-          if [ "$version" == "$tauri_version" ]; then
-            echo "Versions are equal, exiting..."
+          echo 'Branch version: $version'
+          echo 'Tauri version: $tauri_version'
+          if [ '$version' == '$tauri_version' ]; then
+            echo 'Versions are equal, exiting...'
             exit 1
           fi
 
   build:
-    needs: "version_check"
+    needs: 'version_check'
 
     permissions:
       contents: write
@@ -70,10 +70,10 @@ jobs:
       max-parallel: 1
       matrix:
         include:
-          - platform: "windows-latest"
-            args: ""
-          - platform: "ubuntu-22.04"
-            args: ""
+          - platform: 'windows-latest'
+            args: ''
+          - platform: 'ubuntu-22.04'
+            args: ''
 
     runs-on: ${{ matrix.platform }}
 
@@ -94,7 +94,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: "pnpm"
+          cache: 'pnpm'
           cache-dependency-path: ./packages/overlay/pnpm-lock.yaml
 
       - name: Install pnpm packages
@@ -109,8 +109,8 @@ jobs:
       - name: Get workflow run URL
         id: workflow_url
         run: |
-          url="$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
-          echo "url=$url" >> $GITHUB_OUTPUT
+          url='$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID'
+          echo 'url=$url' >> $GITHUB_OUTPUT
 
       - uses: tauri-apps/tauri-action@v0
         id: tauri_build
@@ -118,7 +118,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tagName: overlay-v__VERSION__ # the action automatically replaces \_\_VERSION\_\_ with the app version.
-          releaseName: "Overlay v__VERSION__"
+          releaseName: 'Overlay v__VERSION__'
           releaseBody: |
             View the workflow summary [here](${{ steps.workflow_url.outputs.url }}).
 
@@ -140,8 +140,8 @@ jobs:
         id: artifact_paths
         run: |
           json='${{ steps.tauri_build.outputs.artifactPaths }}' # must use single quotes
-          list="$(echo $json | jq -r '. | join(", ")')"
-          echo "list=$list" >> $GITHUB_OUTPUT
+          list='$(echo $json | jq -r '. | join(', ')')'
+          echo 'list=$list' >> $GITHUB_OUTPUT
 
       - uses: actions/attest-build-provenance@v1
         with:
