@@ -34,7 +34,7 @@ jobs:
 
       - name: Execute script
         id: roblox-luau-execution
-        uses: grand-hawk/action-roblox-luau-execution@1.0.0
+        uses: grand-hawk/action-roblox-luau-execution@0.1.2
         with:
           roblox_api_key: ${{ secrets.ROBLOX_LUAU_EXECUTION_API_KEY }}
           universe_id: "3221676855"
