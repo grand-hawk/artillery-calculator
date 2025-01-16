@@ -20,7 +20,7 @@ jobs:
           roblox_api_key: ${{ secrets.ROBLOX_LUAU_EXECUTION_API_KEY }}
           universe_id: "3221676855"
           place_id: "8421780146"
-          luau_file: "packages/mtc-artillery/scripts/exportProjectiles.lua"
+          luau_file: "packages/mtc-artillery/scripts/exportProjectiles.luau"
           output_file: "${{ runner.temp }}/output.json"
 
       - name: Process JSON output
