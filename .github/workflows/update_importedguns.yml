@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  extract-projectiles:
+  update-importedguns:
     runs-on: ubuntu-latest
 
     defaults:
