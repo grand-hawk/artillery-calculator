@@ -1,0 +1,57 @@
+name: Extract projectiles
+
+on:
+  schedule:
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+
+jobs:
+  extract-projectiles:
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        shell: bash
+        working-directory: ./packages/mtc-artillery
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4.0.0
+        with:
+          version: 9
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: "pnpm"
+          cache-dependency-path: ./packages/mtc-artillery/pnpm-lock.yaml
+
+      - name: Install pnpm packages
+        run: pnpm install
+
+      - name: Extract projectiles
+        id: roblox-luau-execution
+        uses: grand-hawk/action-roblox-luau-execution@0.1.1
+        with:
+          roblox_api_key: ${{ secrets.ROBLOX_LUAU_EXECUTION_API_KEY }}
+          universe_id: "3221676855"
+          place_id: "8421780146"
+          luau_file: "./packages/mtc-artillery/scripts/exportProjectiles.lua"
+          output_file: "$RUNNER_TEMP/output.json"
+
+      - name: Process JSON output
+        run: jq '.[0]' "$RUNNER_TEMP/output.json" > "src/config/importedGuns.json"
+
+      - name: Commit changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+          git add src/config/importedGuns.json
+          git commit -m "Update importedGuns.json"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
