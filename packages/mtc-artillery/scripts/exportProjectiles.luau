@@ -156,3 +156,5 @@ for _, key in ipairs(gunKeys) do
 end
 
 print(HttpService:JSONEncode(sortedGuns))
+
+return sortedGuns
