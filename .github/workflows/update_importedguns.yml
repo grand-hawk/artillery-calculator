@@ -2,7 +2,7 @@ name: Update importedGuns.json
 
 on:
   schedule:
-    - cron: "0 0 * * *"
+    - cron: "25 0 * * 0"
   workflow_dispatch:
 
 jobs:
