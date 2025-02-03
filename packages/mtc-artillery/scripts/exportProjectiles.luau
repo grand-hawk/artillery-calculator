@@ -59,6 +59,12 @@ function processTank(tank: Model)
 				continue
 			end
 
+			local moduleScript = ShellModules:FindFirstChild(weapon.Name) :: ModuleScript?
+			if not moduleScript then
+				warn("ModuleScript not found for weapon", weapon.Name)
+				continue
+			end
+
 			local shellModule = require(ShellModules:FindFirstChild(weapon.Name) :: ModuleScript)
 			for _, ammoType in pairs(shellModule.AmmoTypes) do
 				if not ammoType.MuzzleSpeed or not ammoType.ExplosiveMass then
