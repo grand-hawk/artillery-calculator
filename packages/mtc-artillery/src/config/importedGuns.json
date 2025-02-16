@@ -356,56 +356,6 @@
     ],
     "name": "RSZO-1"
   },
-  "Strv_103C_ARTY": {
-    "projectiles": [
-      {
-        "velocity": 254,
-        "explosiveMass": 15.4,
-        "name": "DM121 Low Charge"
-      },
-      {
-        "velocity": 254,
-        "explosiveMass": 15.4,
-        "name": "DM121 Proxy Low Charge"
-      },
-      {
-        "velocity": 254,
-        "explosiveMass": 0.15,
-        "name": "DM702A1 Low Charge"
-      },
-      {
-        "velocity": 506,
-        "explosiveMass": 15.4,
-        "name": "DM121 Medium Charge"
-      },
-      {
-        "velocity": 506,
-        "explosiveMass": 15.4,
-        "name": "DM121 Proxy Medium Charge"
-      },
-      {
-        "velocity": 506,
-        "explosiveMass": 0.15,
-        "name": "DM702A1 Medium Charge"
-      },
-      {
-        "velocity": 1015,
-        "explosiveMass": 15.4,
-        "name": "DM121 High Charge"
-      },
-      {
-        "velocity": 1015,
-        "explosiveMass": 15.4,
-        "name": "DM121 Proxy High Charge"
-      },
-      {
-        "velocity": 1015,
-        "explosiveMass": 0.15,
-        "name": "DM702A1 High Charge"
-      }
-    ],
-    "name": "Strv 103C ARTY"
-  },
   "LUAZ_672": {
     "projectiles": [
       {
