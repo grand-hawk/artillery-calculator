@@ -8,6 +8,7 @@ use version_compare::{ compare_to, Cmp };
 
 const REPO_OWNER: &'static str = "grand-hawk";
 const REPO_NAME: &'static str = "artillery-calculator";
+const REMOTE_URL: &'static str = "https://artillery-calculator.com";
 const DOWNLOAD_URL: &'static str = "https://download.artillery-calculator.com";
 
 async fn check_for_updates(current_version: String) {
@@ -70,7 +71,7 @@ fn main() {
         });
 
         let _ = main.eval(
-          "window.location.replace('https://artillery-calculator.com')"
+          &format!("window.location.replace('{}')", REMOTE_URL)
         );
       }
 
