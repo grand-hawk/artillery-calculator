@@ -1,8 +1,7 @@
 services:
   - name: artillery-calculator
+    branch: dev
     type: web
     runtime: docker
-    rootDir: packages/mtc-artillery
     dockerContext: packages/mtc-artillery
     dockerfilePath: Dockerfile
-    branch: dev
