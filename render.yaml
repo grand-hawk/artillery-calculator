@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: artillery-calculator
+    env: docker
+    root: packages/mtc-artillery
+    dockerfilePath: Dockerfile
+    branch: dev
