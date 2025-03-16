@@ -3,5 +3,7 @@ services:
     branch: dev
     type: web
     runtime: docker
+    plan: free
+    rootDir: packages/mtc-artillery
     dockerContext: packages/mtc-artillery
     dockerfilePath: Dockerfile
