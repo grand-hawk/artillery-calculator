@@ -21,8 +21,8 @@ importers:
         specifier: ^6.4.7
         version: 6.4.7(@emotion/react@11.14.0(@types/react@18.3.18)(react@18.3.1))(@emotion/styled@11.14.0(@emotion/react@11.14.0(@types/react@18.3.18)(react@18.3.1))(@types/react@18.3.18)(react@18.3.1))(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       merge-sx:
-        specifier: ^3.3.1
-        version: 3.3.1(@mui/material@6.4.7(@emotion/react@11.14.0(@types/react@18.3.18)(react@18.3.1))(@emotion/styled@11.14.0(@emotion/react@11.14.0(@types/react@18.3.18)(react@18.3.1))(@types/react@18.3.18)(react@18.3.1))(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
+        specifier: ^3.3.2
+        version: 3.3.2(@mui/material@6.4.7(@emotion/react@11.14.0(@types/react@18.3.18)(react@18.3.1))(@emotion/styled@11.14.0(@emotion/react@11.14.0(@types/react@18.3.18)(react@18.3.1))(@types/react@18.3.18)(react@18.3.1))(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
       next:
         specifier: 15.2.2
         version: 15.2.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -1704,8 +1704,8 @@ packages:
     resolution: {integrity: sha512-/IXtbwEk5HTPyEwyKX6hGkYXxM9nbj64B+ilVJnC/R6B0pH5G4V3b0pVbL7DBj4tkhBAppbQUlf6F6Xl9LHu1g==}
     engines: {node: '>= 0.4'}
 
-  merge-sx@3.3.1:
-    resolution: {integrity: sha512-6MdCwPXxDurxArkCcv8RFtxHjmEgUnNTQOfwA0fafo3N9m2D1O2jBP42VFrAyj1TGuCZOFRgy22agWRSjQi28w==}
+  merge-sx@3.3.2:
+    resolution: {integrity: sha512-InmFhB0Wk+LTSTy5LwnD1+izhN3GMuVRWw5uHXUokX+8Bx68ffGSQ3TVElV8NpCONKQS9Je/KnX5BoPITaDxiQ==}
     peerDependencies:
       '@mui/material': ^5.1.0 || ^6.0.0
 
@@ -4143,7 +4143,7 @@ snapshots:
 
   math-intrinsics@1.1.0: {}
 
-  merge-sx@3.3.1(@mui/material@6.4.7(@emotion/react@11.14.0(@types/react@18.3.18)(react@18.3.1))(@emotion/styled@11.14.0(@emotion/react@11.14.0(@types/react@18.3.18)(react@18.3.1))(@types/react@18.3.18)(react@18.3.1))(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)):
+  merge-sx@3.3.2(@mui/material@6.4.7(@emotion/react@11.14.0(@types/react@18.3.18)(react@18.3.1))(@emotion/styled@11.14.0(@emotion/react@11.14.0(@types/react@18.3.18)(react@18.3.1))(@types/react@18.3.18)(react@18.3.1))(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)):
     dependencies:
       '@mui/material': 6.4.7(@emotion/react@11.14.0(@types/react@18.3.18)(react@18.3.1))(@emotion/styled@11.14.0(@emotion/react@11.14.0(@types/react@18.3.18)(react@18.3.1))(@types/react@18.3.18)(react@18.3.1))(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
 
