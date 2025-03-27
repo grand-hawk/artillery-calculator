@@ -1,15 +1,13 @@
 # Build layer
 FROM node:22 AS build
 
-RUN corepack enable && corepack prepare pnpm@9.15.4 --activate
+RUN corepack enable pnpm
 
 COPY . /build
 WORKDIR /build
 
 RUN --mount=type=cache,id=pnpm,target=/root/.local/share/pnpm/store pnpm fetch --frozen-lockfile
 RUN --mount=type=cache,id=pnpm,target=/root/.local/share/pnpm/store pnpm install --frozen-lockfile
-
-WORKDIR /build/packages/mtc-artillery
 
 ENV NODE_ENV=production
 ENV NEXT_TELEMETRY_DISABLED=1
@@ -33,9 +31,9 @@ RUN apk --no-cache add curl
 
 WORKDIR /server
 
-COPY --from=build /build/packages/mtc-artillery/.next/standalone .
-COPY --from=build /build/packages/mtc-artillery/.next/static .next/static
-COPY --from=build /build/packages/mtc-artillery/public public
+COPY --from=build /build/.next/standalone .
+COPY --from=build /build/.next/static .next/static
+COPY --from=build /build/public public
 
 EXPOSE 3000
 
