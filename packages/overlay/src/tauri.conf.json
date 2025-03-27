@@ -1,6 +1,6 @@
 {
   "build": {
-    "beforeDevCommand": "npm run dev --prefix ../../packages/mtc-artillery",
+    "beforeDevCommand": "pnpm run dev --prefix ../../packages/mtc-artillery",
     "frontendDist": "../dist",
     "devUrl": "http://localhost:8888"
   },
