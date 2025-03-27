@@ -1,5 +1,5 @@
 # Build layer
-FROM node:21 AS build
+FROM node:22 AS build
 
 RUN corepack enable && corepack prepare pnpm@9.15.4 --activate
 
