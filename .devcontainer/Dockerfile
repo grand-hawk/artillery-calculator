@@ -1,0 +1,17 @@
+FROM mcr.microsoft.com/vscode/devcontainers/javascript-node:0-22
+
+# tauri dependencies
+RUN apt-get update && apt-get install -y \
+  libgtk-3-dev \
+  libayatana-appindicator3-dev \
+  libwebkit2gtk-4.0-dev \
+  && rm -rf /var/lib/apt/lists/*
+
+# install rust
+RUN curl https://sh.rustup.rs -sSf | sh -s -- -y
+ENV PATH="/root/.cargo/bin:${PATH}"
+
+# install pnpm@9.15.5
+RUN corepack enable && corepack prepare pnpm@9.15.5 --activate
+
+WORKDIR /workspace

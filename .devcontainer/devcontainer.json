@@ -1,0 +1,9 @@
+{
+  "name": "artillery-calculator",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+  "remoteUser": "root",
+  "postCreateCommand": "pnpm install"
+}
