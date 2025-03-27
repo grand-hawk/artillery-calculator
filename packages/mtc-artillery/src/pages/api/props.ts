@@ -4,7 +4,7 @@ import type { Props } from '@/stores/props';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
 export default async function handler(
-  req: NextApiRequest,
+  _req: NextApiRequest,
   res: NextApiResponse<Props>,
 ) {
   try {

@@ -39,7 +39,7 @@ export default function MapSelection() {
         }}
         value={mapId}
         variant="soft"
-        onChange={(event, newValue) => setMapId(newValue!)}
+        onChange={(_event, newValue) => setMapId(newValue!)}
         onClose={() => setListboxOpen(false)}
         onListboxOpenChange={() => setListboxOpen(true)}
       >

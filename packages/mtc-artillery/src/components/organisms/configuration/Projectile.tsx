@@ -74,7 +74,7 @@ export default function ProjectileSelection() {
             }}
             value={selectionTab}
             variant="soft"
-            onChange={(event, newTab) => setSelectionTab(newTab as number)}
+            onChange={(_event, newTab) => setSelectionTab(newTab as number)}
           >
             {Object.keys(guns).map((gunKey, index) => {
               const gun = guns[gunKey];
