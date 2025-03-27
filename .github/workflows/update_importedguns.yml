@@ -22,7 +22,6 @@ jobs:
         with:
           node-version: 22
           cache: "pnpm"
-          cache-dependency-path: ./packages/mtc-artillery/pnpm-lock.yaml
 
       - name: Execute script
         id: roblox-luau-execution
