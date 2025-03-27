@@ -1,4 +1,4 @@
-FROM ghcr.io/devcontainers/templates/typescript-node:4.0.2
+FROM mcr.microsoft.com/devcontainers/typescript-node:22
 
 # tauri dependencies
 RUN apt-get update && apt-get install -y \
