@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/vscode/devcontainers/javascript-node:0-22
+FROM ghcr.io/devcontainers/templates/typescript-node:4.0.2
 
 # tauri dependencies
 RUN apt-get update && apt-get install -y \
