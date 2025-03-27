@@ -1,0 +1,9 @@
+# dependencies
+**/node_modules
+
+# next.js
+**/.next
+
+# package specific
+/packages/mtc-artillery/assets
+/packages/overlay/src/target
