@@ -9,6 +9,8 @@ WORKDIR /build
 RUN --mount=type=cache,id=pnpm,target=/root/.local/share/pnpm/store pnpm fetch --frozen-lockfile
 RUN --mount=type=cache,id=pnpm,target=/root/.local/share/pnpm/store pnpm install --frozen-lockfile
 
+WORKDIR /build/packages/mtc-artillery
+
 ENV NODE_ENV=production
 ENV NEXT_TELEMETRY_DISABLED=1
 ENV NEXT_OUTPUT=standalone
@@ -31,9 +33,9 @@ RUN apk --no-cache add curl
 
 WORKDIR /server
 
-COPY --from=build /build/.next/standalone .
-COPY --from=build /build/.next/static .next/static
-COPY --from=build /build/public public
+COPY --from=build /build/packages/mtc-artillery/.next/standalone .
+COPY --from=build /build/packages/mtc-artillery/.next/static .next/static
+COPY --from=build /build/packages/mtc-artillery/public public
 
 EXPOSE 3000
 
