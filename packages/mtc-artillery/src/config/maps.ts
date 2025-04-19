@@ -117,13 +117,13 @@ export const gameMaps: Record<string, GameMap> = {
 
   powerplant: {
     heightmap: {
-      0: 0,
-      255: 476.80126953125,
+      0: 110.25238037109375,
+      255: 579.076416015625,
     },
     image: 'powerplant',
     inRotation: true,
     name: 'Powerplant',
-    size: calculateMapSize(160),
+    size: 3995,
   },
 
   radar_station: {
