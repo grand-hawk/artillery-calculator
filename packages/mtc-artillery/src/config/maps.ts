@@ -200,13 +200,13 @@ export const gameMaps: Record<string, GameMap> = {
 
   villers_sommeil: {
     heightmap: {
-      0: 0,
-      255: 104.35908508300781,
+      0: 19.85155487060547,
+      255: 123.07566833496094,
     },
     image: 'villers_sommeil',
     inRotation: true,
     name: 'Villers-Sommeil',
-    size: 333 * 9,
+    size: 2997,
   },
 
   zone_11: {
