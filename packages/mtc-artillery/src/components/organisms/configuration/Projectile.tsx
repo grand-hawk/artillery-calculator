@@ -35,8 +35,8 @@ export default function ProjectileSelection() {
     [],
   );
 
-  useOnClickOutside(
-    tooltipRef,
+  useOnClickOutside<HTMLDivElement>(
+    tooltipRef as React.RefObject<HTMLDivElement>,
     (event) => {
       // dont do anything if element that was pressed was the button
       if (event.target === buttonRef.current) return;
