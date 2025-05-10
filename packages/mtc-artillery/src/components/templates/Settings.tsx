@@ -36,7 +36,7 @@ export default function Settings() {
             const value = settingsStore[key as KeyOfSettingsStore];
             if (typeof value === 'function') return null;
 
-            let valueComponent: JSX.Element | null = null;
+            let valueComponent: React.ReactNode | null = null;
 
             switch (typeof value) {
               case 'boolean':
