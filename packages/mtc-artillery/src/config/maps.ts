@@ -61,13 +61,13 @@ export const gameMaps: Record<string, GameMap> = {
 
   dustbowl_ii: {
     heightmap: {
-      0: -24,
+      0: -55.95123291015625,
       255: 506,
     },
     image: 'dustbowl_ii',
     inRotation: true,
     name: 'Dustbowl II',
-    size: calculateMapSize(250),
+    size: 6263,
   },
 
   fulvia_gap: {
