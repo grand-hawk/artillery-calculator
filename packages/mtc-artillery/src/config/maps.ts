@@ -171,14 +171,14 @@ export const gameMaps: Record<string, GameMap> = {
     size: calculateMapSize(160),
   },
 
-  sokolokva: {
+  sokolovka: {
     heightmap: {
       0: 0,
       255: 96.25390625,
     },
-    image: 'sokolokva',
+    image: 'sokolovka',
     inRotation: true,
-    name: 'Sokolokva',
+    name: 'Sokolovka',
     size: 556 * 9,
   },
 
