@@ -72,10 +72,15 @@ function processTank(tank: Model)
 				end
 
 				if
-					not table.find(
-						{ "AutoCannon", "Tank_Projectile", "MLRSRocket", "STURM", "Smoke" },
-						ammoType.OverrideProjectileModel
-					)
+					not table.find({
+						"AutoCannon",
+						"Tank_Projectile",
+						"MLRSRocket",
+						"STURM",
+						"Smoke",
+						"IskanderRocket",
+						"BT5TT250",
+					}, ammoType.OverrideProjectileModel)
 				then
 					print(`{tank.Name}'s {ammoType.DisplayName} not eligible`)
 					continue

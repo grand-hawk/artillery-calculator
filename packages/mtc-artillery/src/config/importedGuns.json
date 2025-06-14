@@ -10,10 +10,10 @@
       { "name": "M110 High Charge", "velocity": 684, "explosiveMass": 0.15 }
     ]
   },
-  "T34_Calliope": {
-    "name": "T34 Calliope",
+  "T_64E": {
+    "name": "T-64E",
     "projectiles": [
-      { "name": "HE Rockets", "velocity": 260, "explosiveMass": 1.95 }
+      { "name": "VOG-17M", "velocity": 185, "explosiveMass": 0.065 }
     ]
   },
   "RSZO_2": {
@@ -23,7 +23,7 @@
     ]
   },
   "Centurion_Mk_5_AVRE": {
-    "name": "Centurion Mk 5 AVRE",
+    "name": "Centurion Mk.5 AVRE",
     "projectiles": [{ "name": "L33A1", "velocity": 259, "explosiveMass": 30.6 }]
   },
   "BM_21_Grad": {
@@ -38,21 +38,22 @@
       { "name": "VOG-17M", "velocity": 185, "explosiveMass": 0.065 }
     ]
   },
+  "RBT_5": {
+    "name": "RBT-5",
+    "projectiles": [
+      { "name": "TT-250 Rocket", "velocity": 135, "explosiveMass": 130 }
+    ]
+  },
   "Pz_W_42": {
     "name": "Pz.W.42",
     "projectiles": [
       { "name": "HE Rockets", "velocity": 340, "explosiveMass": 2.15 }
     ]
   },
-  "M17_Whizbang": {
-    "name": "M17 Whizbang",
+  "BMP_30M": {
+    "name": "BMP-30M",
     "projectiles": [
-      {
-        "name": "7.2 in T37",
-        "blastMultiplier": 0.25,
-        "velocity": 99,
-        "explosiveMass": 120.4
-      }
+      { "name": "VOG-17M", "velocity": 185, "explosiveMass": 0.065 }
     ]
   },
   "_2S19_Msta_S": {
@@ -180,6 +181,59 @@
         "blastMultiplier": 2,
         "velocity": 241,
         "explosiveMass": 0.03
+      }
+    ]
+  },
+  "_9K720_Iskander": {
+    "name": "9K720 Iskander",
+    "projectiles": [
+      {
+        "capMultiplier": 500,
+        "name": "SS-26 HE-frag Low",
+        "velocity": 500,
+        "explosiveMass": 1000
+      },
+      {
+        "capMultiplier": 500,
+        "name": "SS-26 Thermo-Nuclear Low",
+        "velocity": 500,
+        "explosiveMass": 5000000
+      },
+      {
+        "capMultiplier": 500,
+        "name": "SS-26 HE-frag Direct",
+        "velocity": 1000,
+        "explosiveMass": 1000
+      },
+      {
+        "capMultiplier": 500,
+        "name": "SS-26 HE-frag Medium",
+        "velocity": 1000,
+        "explosiveMass": 1000
+      },
+      {
+        "capMultiplier": 500,
+        "name": "SS-26 Thermo-Nuclear Direct",
+        "velocity": 1000,
+        "explosiveMass": 5000000
+      },
+      {
+        "capMultiplier": 500,
+        "name": "SS-26 Thermo-Nuclear Medium",
+        "velocity": 1000,
+        "explosiveMass": 5000000
+      },
+      {
+        "capMultiplier": 500,
+        "name": "SS-26 HE-frag High",
+        "velocity": 2000,
+        "explosiveMass": 1000
+      },
+      {
+        "capMultiplier": 500,
+        "name": "SS-26 Thermo-Nuclear High",
+        "velocity": 2000,
+        "explosiveMass": 5000000
       }
     ]
   },
@@ -340,6 +394,12 @@
       }
     ]
   },
+  "M26_T99": {
+    "name": "M26 T99",
+    "projectiles": [
+      { "name": "HE Rockets", "velocity": 260, "explosiveMass": 1.95 }
+    ]
+  },
   "Churchill_VII": {
     "name": "Churchill VII",
     "projectiles": [{ "name": "L33A1", "velocity": 259, "explosiveMass": 30.6 }]
@@ -375,6 +435,12 @@
       },
       { "name": "3VOF34 High Charge", "velocity": 775, "explosiveMass": 30 },
       { "name": "2VG11", "velocity": 864, "explosiveMass": 10 }
+    ]
+  },
+  "T34_Calliope": {
+    "name": "T34 Calliope",
+    "projectiles": [
+      { "name": "HE Rockets", "velocity": 260, "explosiveMass": 1.95 }
     ]
   },
   "Strf_9040C": {
@@ -435,15 +501,10 @@
       { "name": "Blast-frag High Charge", "velocity": 150, "explosiveMass": 1 }
     ]
   },
-  "M109": {
-    "name": "M109",
+  "M17_Whizbang": {
+    "name": "M17 Whizbang",
     "projectiles": [
-      { "name": "M107 Low Charge", "velocity": 171, "explosiveMass": 9.14 },
-      { "name": "M110 Low Charge", "velocity": 171, "explosiveMass": 0.15 },
-      { "name": "M107 Medium Charge", "velocity": 342, "explosiveMass": 9.14 },
-      { "name": "M110 Medium Charge", "velocity": 342, "explosiveMass": 0.15 },
-      { "name": "M107 High Charge", "velocity": 684, "explosiveMass": 9.14 },
-      { "name": "M110 High Charge", "velocity": 684, "explosiveMass": 0.15 }
+      { "name": "7.2 in T37", "velocity": 99, "explosiveMass": 25.44 }
     ]
   },
   "M7_Priest": {
@@ -453,10 +514,15 @@
       { "name": "M1 shell", "velocity": 472, "explosiveMass": 2.18 }
     ]
   },
-  "BMP_30M": {
-    "name": "BMP-30M",
+  "M109": {
+    "name": "M109",
     "projectiles": [
-      { "name": "VOG-17M", "velocity": 185, "explosiveMass": 0.065 }
+      { "name": "M107 Low Charge", "velocity": 171, "explosiveMass": 9.14 },
+      { "name": "M110 Low Charge", "velocity": 171, "explosiveMass": 0.15 },
+      { "name": "M107 Medium Charge", "velocity": 342, "explosiveMass": 9.14 },
+      { "name": "M110 Medium Charge", "velocity": 342, "explosiveMass": 0.15 },
+      { "name": "M107 High Charge", "velocity": 684, "explosiveMass": 9.14 },
+      { "name": "M110 High Charge", "velocity": 684, "explosiveMass": 0.15 }
     ]
   }
 }
