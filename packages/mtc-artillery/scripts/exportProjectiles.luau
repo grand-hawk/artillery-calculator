@@ -1,13 +1,13 @@
 local HttpService = game:GetService("HttpService")
 local ServerStorage = game:GetService("ServerStorage")
-local ReplicatedFirst = game:GetService("ReplicatedFirst")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local InsertService = game:GetService("InsertService")
 
 local TankInfo: { [string]: { Dispname: string, ModelID: number?, Hidden: boolean? } } =
 	require(ReplicatedStorage:FindFirstChild("TankInfo") :: ModuleScript)
 local Tanks = ServerStorage:FindFirstChild("Tanks") :: Folder
-local Shells = ReplicatedFirst:FindFirstChild("Shells") :: Folder
+local PHRST = ReplicatedStorage:FindFirstChild("PHRST") :: Folder
+local Shells = PHRST:FindFirstChild("Shells") :: Folder
 local ShellModules = Shells:FindFirstChild("Modules") :: Folder
 
 type Projectile = {
