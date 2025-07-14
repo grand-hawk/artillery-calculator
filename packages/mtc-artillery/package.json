@@ -57,7 +57,7 @@
   "devDependencies": {
     "@next/bundle-analyzer": "^15.3.3",
     "@types/klaw": "^3.0.7",
-    "@types/node": "^22.15.31",
+    "@types/node": "^24.0.13",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
     "@types/stale-lru-cache": "^5.1.6",
