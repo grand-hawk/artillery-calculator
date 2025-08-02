@@ -143,6 +143,16 @@ export const gameMaps: Record<string, GameMap> = {
     size: calculateMapSize(207),
   },
 
+  rohkstov: {
+    heightmap: {
+      0: -8,
+      255: 487.0882873535156,
+    },
+    image: 'rohkstov',
+    name: 'Rohkstov',
+    size: 15010,
+  },
+
   roinburg: {
     heightmap: {
       0: 0,
@@ -217,16 +227,6 @@ export const gameMaps: Record<string, GameMap> = {
     image: 'zone_11',
     name: 'Zone 11',
     size: calculateMapSize(324),
-  },
-
-  rohkstov: {
-    heightmap: {
-      0: -8,
-      255: 487.0882873535156,
-    },
-    image: 'rohkstov',
-    name: 'Rohkstov',
-    size: 15010,
   },
 } satisfies Record<string, GameMap>;
 
