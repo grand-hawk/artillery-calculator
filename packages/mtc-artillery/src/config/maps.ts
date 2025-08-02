@@ -218,6 +218,16 @@ export const gameMaps: Record<string, GameMap> = {
     name: 'Zone 11',
     size: calculateMapSize(324),
   },
+
+  rohkstov: {
+    heightmap: {
+      0: -8,
+      255: 487.0882873535156,
+    },
+    image: 'rohkstov',
+    name: 'Rohkstov',
+    size: 15010,
+  },
 } satisfies Record<string, GameMap>;
 
 export type MapId = keyof typeof gameMaps;
