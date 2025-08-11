@@ -82,8 +82,8 @@ importers:
         version: 5.0.5(@types/react@19.1.8)(immer@10.1.1)(react@18.3.1)(use-sync-external-store@1.5.0(react@18.3.1))
     devDependencies:
       '@next/bundle-analyzer':
-        specifier: ^15.3.3
-        version: 15.3.3
+        specifier: ^15.4.6
+        version: 15.4.6
       '@types/klaw':
         specifier: ^3.0.7
         version: 3.0.7
@@ -597,8 +597,8 @@ packages:
   '@napi-rs/wasm-runtime@0.2.11':
     resolution: {integrity: sha512-9DPkXtvHydrcOsopiYpUgPHpmj0HWZKMUnL2dZqpvC42lsratuBG06V5ipyno0fUek5VlFsNQ+AcFATSrJXgMA==}
 
-  '@next/bundle-analyzer@15.3.3':
-    resolution: {integrity: sha512-9gddnjACK6yOa5IkmeFyzcwZh2rscsb6ZspTd7tymPYKQM96fJuKjn9HrRtPNKiMm7ExKNadAJqREmHdBgHZ9A==}
+  '@next/bundle-analyzer@15.4.6':
+    resolution: {integrity: sha512-LZWqTQgIpfhblT77VVc1r4qtHJY1pfZOAIx8zNtliU7L3pMjpNrG4rYWikJ7AyAI/RgYyt2sCVWqkeOZmFp7Zg==}
 
   '@next/env@15.3.2':
     resolution: {integrity: sha512-xURk++7P7qR9JG1jJtLzPzf0qEvqCN0A/T3DXf8IPMKo9/6FfjxtEffRJIIew/bIL4T3C2jLLqBor8B/zVlx6g==}
@@ -3173,7 +3173,7 @@ snapshots:
       '@tybys/wasm-util': 0.9.0
     optional: true
 
-  '@next/bundle-analyzer@15.3.3':
+  '@next/bundle-analyzer@15.4.6':
     dependencies:
       webpack-bundle-analyzer: 4.10.1
     transitivePeerDependencies:
