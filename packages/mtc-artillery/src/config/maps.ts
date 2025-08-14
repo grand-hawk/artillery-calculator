@@ -32,7 +32,6 @@ export const gameMaps: Record<string, GameMap> = {
       255: 408.0989990234375,
     },
     image: 'chernobyl_v2',
-    inRotation: true,
     name: 'Chernobyl',
     size: calculateMapSize(165),
   },
@@ -43,7 +42,6 @@ export const gameMaps: Record<string, GameMap> = {
       255: 318.92401123046875,
     },
     image: 'cloudy_valley',
-    inRotation: true,
     name: 'Cloudy Valley',
     size: calculateMapSize(116),
   },
@@ -164,16 +162,15 @@ export const gameMaps: Record<string, GameMap> = {
     size: calculateMapSize(142),
   },
 
-  sandy_place: {
-    heightmap: {
-      0: 0,
-      255: 119.748046875,
-    },
-    image: 'sandy_place',
-    inRotation: true,
-    name: 'Sandy Place',
-    size: calculateMapSize(361),
-  },
+  // sandy_place: {
+  //   heightmap: {
+  //     0: 0,
+  //     255: 119.748046875,
+  //   },
+  //   image: 'sandy_place',
+  //   name: 'Sandy Place',
+  //   size: calculateMapSize(361),
+  // },
 
   snow_tundra: {
     image: 'snow_tundra',
@@ -230,6 +227,7 @@ export const gameMaps: Record<string, GameMap> = {
       255: 250.1391906738281,
     },
     image: 'zone_11',
+    inRotation: true,
     name: 'Zone 11',
     size: calculateMapSize(324),
   },
