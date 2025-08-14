@@ -224,12 +224,12 @@ export const gameMaps: Record<string, GameMap> = {
   zone_11: {
     heightmap: {
       0: 0,
-      255: 250.1391906738281,
+      255: 347.7691345214844,
     },
     image: 'zone_11',
     inRotation: true,
     name: 'Zone 11',
-    size: calculateMapSize(324),
+    size: 8107,
   },
 } satisfies Record<string, GameMap>;
 
