@@ -181,6 +181,17 @@ export const gameMaps: Record<string, GameMap> = {
     size: calculateMapSize(160),
   },
 
+  snowy_fields: {
+    heightmap: {
+      0: 6.652313232421875,
+      255: 228.3592529296875,
+    },
+    image: 'snowy_fields',
+    inRotation: true,
+    name: 'Snowy Fields',
+    size: 5999,
+  },
+
   sokolovka: {
     heightmap: {
       0: 0,
