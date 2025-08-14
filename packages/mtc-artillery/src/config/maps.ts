@@ -192,12 +192,6 @@ export const gameMaps: Record<string, GameMap> = {
     size: 556 * 9,
   },
 
-  testing: {
-    image: 'testing',
-    name: 'TESTING',
-    size: 1113 * 9,
-  },
-
   the_map: {
     heightmap: {
       0: -147.68359375,
