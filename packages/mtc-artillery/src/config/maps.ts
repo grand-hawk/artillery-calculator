@@ -130,7 +130,6 @@ export const gameMaps: Record<string, GameMap> = {
       255: 311.19268798828125,
     },
     image: 'radar_station',
-    inRotation: true,
     name: 'Radar Station',
     size: 708 * 9,
   },
