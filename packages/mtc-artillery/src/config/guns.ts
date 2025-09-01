@@ -106,7 +106,7 @@ const customGuns: Record<string, Gun> = {
     name: 'UB-32',
     projectiles: [
       {
-        name: 'S-5K1 Rocket',
+        name: 'S-5K1',
         velocity: 650,
         explosiveMass: 1.38,
       },
