@@ -29,8 +29,8 @@ jobs:
         uses: grand-hawk/action-roblox-luau-execution@v1
         with:
           roblox_api_key: ${{ secrets.ROBLOX_LUAU_EXECUTION_API_KEY }}
-          universe_id: "3221676855"
-          place_id: "8421780146"
+          universe_id: "7414497778"
+          place_id: "95721658376580"
           luau_file: "./packages/mtc-artillery/scripts/exportProjectiles.luau"
           output_file: "script-execution-output.json"
 
