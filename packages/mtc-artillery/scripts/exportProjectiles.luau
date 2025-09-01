@@ -80,6 +80,7 @@ function processTank(tank: Model)
 						"Smoke",
 						"IskanderRocket",
 						"BT5TT250",
+						"RGB-60"
 					}, ammoType.OverrideProjectileModel)
 				then
 					print(`{tank.Name}'s {ammoType.DisplayName} not eligible`)
