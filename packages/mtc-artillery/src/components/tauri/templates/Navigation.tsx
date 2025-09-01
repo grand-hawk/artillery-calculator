@@ -22,12 +22,11 @@ export default function Navigation() {
         sx={{
           height: '100%',
           width: '100%',
+          padding: 0.5,
 
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
-          paddingX: 1.5,
-          paddingY: 0.5,
         }}
       >
         <Box>
@@ -41,7 +40,7 @@ export default function Navigation() {
             }}
           />
 
-          <Typography level="title-sm">
+          <Typography level="title-sm" marginLeft={1}>
             Artillery<Typography level="body-sm">-</Typography>calculator
             <Typography level="body-sm">.com</Typography>
           </Typography>
