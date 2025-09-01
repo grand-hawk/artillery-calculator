@@ -545,5 +545,17 @@
       { "name": "M107 High Charge", "velocity": 684, "explosiveMass": 9.14 },
       { "name": "M110 High Charge", "velocity": 684, "explosiveMass": 0.15 }
     ]
+  },
+  "Strela_MLRS": {
+    "name": "Strela-MLRS",
+    "projectiles": [
+      { "name": "S-5K1 Rocket", "velocity": 650, "explosiveMass": 1.38 }
+    ]
+  },
+  "RBU_6000_MT_LB": {
+    "name": "RBU-6000 MT-LB",
+    "projectiles": [
+      { "name": "RGB-60", "velocity": 400, "explosiveMass": 23 }
+    ]
   }
 }
