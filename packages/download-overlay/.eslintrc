@@ -8,12 +8,6 @@
     "prettier",
     "next"
   ],
-  "parserOptions": {
-    "project": "./tsconfig.json",
-    "tsconfigRootDir": "./",
-    "ecmaVersion": "latest",
-    "sourceType": "module"
-  },
   "plugins": [
     "@typescript-eslint",
     "import",
