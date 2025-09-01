@@ -9,6 +9,16 @@ export default function Navigation() {
   return (
     <Box sx={{ position: 'relative' }}>
       <Box
+        data-tauri-drag-region
+        sx={{
+          position: 'absolute',
+          width: '100%',
+          height: '100%',
+          zIndex: 1,
+        }}
+      />
+
+      <Box
         sx={{
           height: '100%',
           width: '100%',
