@@ -20,10 +20,9 @@
         "name": "next"
       }
     ],
-    "baseUrl": "./",
     "paths": {
-      "@tauri/*": ["src/components/tauri/*"],
-      "@/*": ["src/*"]
+      "@tauri/*": ["./src/components/tauri/*"],
+      "@/*": ["./src/*"]
     },
     "noEmit": true
   },
