@@ -1,148 +1,166 @@
-name: Build overlay
-
-on:
-  push:
-    branches:
-      - release
-    paths:
-      - packages/overlay/**
-  workflow_dispatch:
-
-jobs:
-  version_check:
-    runs-on: "ubuntu-latest"
-
-    defaults:
-      run:
-        shell: bash
-        working-directory: ./packages/overlay
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - uses: pnpm/action-setup@v4.0.0
-        with:
-          version: 9
-
-      - name: Install Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 22
-          cache: "pnpm"
-          cache-dependency-path: ./packages/overlay/pnpm-lock.yaml
-
-      - name: Install pnpm packages
-        run: pnpm install
-
-      - uses: ari-party/action-get-latest-tag@v1
-        id: tag_version
-
-      - name: Get Tauri version
-        id: tauri_version
-        run: |
-          tauri_version=$(node scripts/version.mjs)
-          echo "tauri_version=$tauri_version" >> $GITHUB_OUTPUT
-
-      - name: Compare
-        run: |
-          raw_version=${{ steps.tag_version.outputs.tag }}
-          prefixedVersion=${raw_version#overlay-}
-          version=${prefixedVersion#v}
-          tauri_version=${{ steps.tauri_version.outputs.tauri_version }}
-          echo "Branch version: $version"
-          echo "Tauri version: $tauri_version"
-          if [ "$version" == "$tauri_version" ]; then
-            echo "Versions are equal, exiting..."
-            exit 1
-          fi
-
-  build:
-    needs: "version_check"
-
-    permissions:
-      contents: write
-      id-token: write
-      attestations: write
-
-    strategy:
-      fail-fast: false
-      max-parallel: 1
-      matrix:
-        include:
-          - platform: "windows-latest"
-            args: ""
-          - platform: "ubuntu-22.04"
-            args: ""
-
-    runs-on: ${{ matrix.platform }}
-
-    defaults:
-      run:
-        shell: bash
-        working-directory: ./packages/overlay
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - uses: pnpm/action-setup@v4.0.0
-        with:
-          version: 9
-
-      - name: Install Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 22
-          cache: "pnpm"
-          cache-dependency-path: ./packages/overlay/pnpm-lock.yaml
-
-      - name: Install pnpm packages
-        run: pnpm install
-
-      - name: Install dependencies (ubuntu)
-        if: matrix.platform == 'ubuntu-22.04' # This must match the platform value defined above.
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y libwebkit2gtk-4.1-dev libappindicator3-dev librsvg2-dev patchelf
-
-      - name: Get workflow run URL
-        id: workflow_url
-        run: |
-          url="$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
-          echo "url=$url" >> $GITHUB_OUTPUT
-
-      - uses: tauri-apps/tauri-action@v0
-        id: tauri_build
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tagName: overlay-v__VERSION__ # the action automatically replaces \_\_VERSION\_\_ with the app version.
-          releaseName: "Overlay v__VERSION__"
-          releaseBody: |
-            View the workflow summary [here](${{ steps.workflow_url.outputs.url }}).
-
-            See the assets to download this version and install.
-
-            ```
-            x86_64.rpm = linux
-            amd64.appimage = linux
-            amd64.deb = linux
-            x64-setup.exe = windows
-            x64_en-US.msi = windows
-            ```
-          releaseDraft: true
-          prerelease: false
-          projectPath: ./packages/overlay
-          args: ${{ matrix.args }}
-
-      - name: Convert artifact paths
-        id: artifact_paths
-        run: |
-          json='${{ steps.tauri_build.outputs.artifactPaths }}' # must use single quotes
-          list="$(echo $json | jq -r '. | join(", ")')"
-          echo "list=$list" >> $GITHUB_OUTPUT
-
-      - uses: actions/attest-build-provenance@v1
-        with:
-          subject-path: ${{ steps.artifact_paths.outputs.list }}
+diff --git a/.github/workflows/build_overlay.yml b/.github/workflows/build_overlay.yml
+index 786e5efc5cc511e1cc468f2444771f2682a970c8..fe41dcedd0aee0991a7b99b40724eb5013104f41 100644
+--- a/.github/workflows/build_overlay.yml
++++ b/.github/workflows/build_overlay.yml
+@@ -8,141 +8,159 @@ on:
+       - packages/overlay/**
+   workflow_dispatch:
+ 
+ jobs:
+   version_check:
+     runs-on: "ubuntu-latest"
+ 
+     defaults:
+       run:
+         shell: bash
+         working-directory: ./packages/overlay
+ 
+     steps:
+       - name: Checkout code
+         uses: actions/checkout@v4
+ 
+       - uses: pnpm/action-setup@v4.0.0
+         with:
+           version: 9
+ 
+       - name: Install Node.js
+         uses: actions/setup-node@v4
+         with:
+           node-version: 22
+           cache: "pnpm"
+-          cache-dependency-path: ./packages/overlay/pnpm-lock.yaml
++          cache-dependency-path: |
++            ./packages/overlay/pnpm-lock.yaml
++            ./packages/mtc-artillery/pnpm-lock.yaml
+ 
+       - name: Install pnpm packages
+         run: pnpm install
+ 
+       - uses: ari-party/action-get-latest-tag@v1
+         id: tag_version
+ 
+       - name: Get Tauri version
+         id: tauri_version
+         run: |
+           tauri_version=$(node scripts/version.mjs)
+           echo "tauri_version=$tauri_version" >> $GITHUB_OUTPUT
+ 
+       - name: Compare
+         run: |
+           raw_version=${{ steps.tag_version.outputs.tag }}
+           prefixedVersion=${raw_version#overlay-}
+           version=${prefixedVersion#v}
+           tauri_version=${{ steps.tauri_version.outputs.tauri_version }}
+           echo "Branch version: $version"
+           echo "Tauri version: $tauri_version"
+           if [ "$version" == "$tauri_version" ]; then
+             echo "Versions are equal, exiting..."
+             exit 1
+           fi
+ 
+   build:
+     needs: "version_check"
+ 
+     permissions:
+       contents: write
+       id-token: write
+       attestations: write
+ 
+     strategy:
+       fail-fast: false
+       max-parallel: 1
+       matrix:
+         include:
+           - platform: "windows-latest"
+             args: ""
+           - platform: "ubuntu-22.04"
+             args: ""
++          - platform: "macos-14"
++            args: ""
++          - platform: "macos-13"
++            args: ""
+ 
+     runs-on: ${{ matrix.platform }}
+ 
+     defaults:
+       run:
+         shell: bash
+         working-directory: ./packages/overlay
+ 
+     steps:
+       - name: Checkout code
+         uses: actions/checkout@v4
+ 
+       - uses: pnpm/action-setup@v4.0.0
+         with:
+           version: 9
+ 
+       - name: Install Node.js
+         uses: actions/setup-node@v4
+         with:
+           node-version: 22
+           cache: "pnpm"
+-          cache-dependency-path: ./packages/overlay/pnpm-lock.yaml
++          cache-dependency-path: |
++            ./packages/overlay/pnpm-lock.yaml
++            ./packages/mtc-artillery/pnpm-lock.yaml
+ 
+       - name: Install pnpm packages
+         run: pnpm install
+ 
++      - name: Install mtc-artillery dependencies
++        run: pnpm --dir ../mtc-artillery install
++
++      - name: Build mtc-artillery assets
++        run: pnpm --dir ../mtc-artillery run build:prod
++
+       - name: Install dependencies (ubuntu)
+         if: matrix.platform == 'ubuntu-22.04' # This must match the platform value defined above.
+         run: |
+           sudo apt-get update
+           sudo apt-get install -y libwebkit2gtk-4.1-dev libappindicator3-dev librsvg2-dev patchelf
+ 
+       - name: Get workflow run URL
+         id: workflow_url
+         run: |
+           url="$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
+           echo "url=$url" >> $GITHUB_OUTPUT
+ 
+       - uses: tauri-apps/tauri-action@v0
+         id: tauri_build
+         env:
+           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+         with:
+           tagName: overlay-v__VERSION__ # the action automatically replaces \_\_VERSION\_\_ with the app version.
+           releaseName: "Overlay v__VERSION__"
+           releaseBody: |
+             View the workflow summary [here](${{ steps.workflow_url.outputs.url }}).
+ 
+             See the assets to download this version and install.
+ 
+             ```
+             x86_64.rpm = linux
+             amd64.appimage = linux
+             amd64.deb = linux
+             x64-setup.exe = windows
+             x64_en-US.msi = windows
++            *_aarch64.dmg = macOS (Apple silicon)
++            *_aarch64.app.tar.gz = macOS (Apple silicon)
++            *_x64.dmg = macOS (Intel)
++            *_x64.app.tar.gz = macOS (Intel)
+             ```
+           releaseDraft: true
+           prerelease: false
+           projectPath: ./packages/overlay
+           args: ${{ matrix.args }}
+ 
+       - name: Convert artifact paths
+         id: artifact_paths
+         run: |
+           json='${{ steps.tauri_build.outputs.artifactPaths }}' # must use single quotes
+           list="$(echo $json | jq -r '. | join(", ")')"
+           echo "list=$list" >> $GITHUB_OUTPUT
+ 
+       - uses: actions/attest-build-provenance@v1
+         with:
+           subject-path: ${{ steps.artifact_paths.outputs.list }}
