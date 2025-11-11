@@ -220,6 +220,17 @@ export const gameMaps: Record<string, GameMap> = {
     size: 2997,
   },
 
+  waterloo: {
+    heightmap: {
+      0: 0,
+      255: 250.58702087402344,
+    },
+    image: 'waterloo',
+    inRotation: true,
+    name: 'Waterloo',
+    size: 8734,
+  },
+
   zone_11: {
     heightmap: {
       0: 0,
