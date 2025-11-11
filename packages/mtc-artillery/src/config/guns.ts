@@ -117,6 +117,22 @@ const customGuns: Record<string, Gun> = {
       },
     ],
   },
+
+  pounder: {
+    name: '12-Pounder cannon',
+    projectiles: [
+      {
+        name: 'Roundshot',
+        velocity: 480,
+        explosiveMass: 0.093,
+      },
+      {
+        name: 'Grapeshot',
+        velocity: 365,
+        explosiveMass: 2.28,
+      },
+    ],
+  },
 };
 
 export const guns = Object.entries({ ...customGuns, ...importedGuns })
