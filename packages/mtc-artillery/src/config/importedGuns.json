@@ -14,21 +14,6 @@
     ],
     "name": "M7 Priest"
   },
-  "M50_Ontos": {
-    "projectiles": [
-      {
-        "velocity": 498,
-        "explosiveMass": 5.04,
-        "name": "M361A1"
-      },
-      {
-        "velocity": 503,
-        "explosiveMass": 1.65,
-        "name": "M344A1"
-      }
-    ],
-    "name": "M50 Ontos"
-  },
   "Merkava_Mk_4M": {
     "projectiles": [
       {
@@ -109,12 +94,32 @@
       },
       {
         "velocity": 241,
-        "blastMultiplier": 2,
+        "blastMultiplier": 1.2,
         "explosiveMass": 0.03,
         "name": "M430A1"
       }
     ],
     "name": "Strf 9040C"
+  },
+  "T34_Calliope": {
+    "projectiles": [
+      {
+        "velocity": 260,
+        "explosiveMass": 1.95,
+        "name": "HE Rockets"
+      }
+    ],
+    "name": "T34 Calliope"
+  },
+  "Churchill_VII": {
+    "projectiles": [
+      {
+        "velocity": 259,
+        "explosiveMass": 30.6,
+        "name": "L33A1"
+      }
+    ],
+    "name": "Churchill VII"
   },
   "M26_T99": {
     "projectiles": [
@@ -194,36 +199,6 @@
       }
     ],
     "name": "BMPT Terminator"
-  },
-  "LUAZ_672": {
-    "projectiles": [
-      {
-        "velocity": 180,
-        "explosiveMass": 6.4,
-        "name": "9M22/M21 HE-Frag"
-      }
-    ],
-    "name": "LUAZ-672"
-  },
-  "Churchill_VII": {
-    "projectiles": [
-      {
-        "velocity": 259,
-        "explosiveMass": 30.6,
-        "name": "L33A1"
-      }
-    ],
-    "name": "Churchill VII"
-  },
-  "T34_Calliope": {
-    "projectiles": [
-      {
-        "velocity": 260,
-        "explosiveMass": 1.95,
-        "name": "HE Rockets"
-      }
-    ],
-    "name": "T34 Calliope"
   },
   "Sturmtiger": {
     "projectiles": [
@@ -326,13 +301,13 @@
         "velocity": 180,
         "submunitions": 150,
         "submunitionDeployFactor": 0.75,
-        "blastMultiplier": 2,
+        "blastMultiplier": 1.2,
         "name": "M26A1 Low Charge",
         "submunitionAngularDispersion": 32.5
       },
       {
         "velocity": 180,
-        "explosiveMass": 100.1,
+        "explosiveMass": 90,
         "name": "M31A2 Low Charge"
       },
       {
@@ -340,13 +315,13 @@
         "velocity": 300,
         "submunitions": 150,
         "submunitionDeployFactor": 0.8,
-        "blastMultiplier": 2,
+        "blastMultiplier": 1.2,
         "name": "M26A1 Medium Charge",
         "submunitionAngularDispersion": 15
       },
       {
         "velocity": 300,
-        "explosiveMass": 100.1,
+        "explosiveMass": 90,
         "name": "M31A2 Medium Charge"
       },
       {
@@ -354,13 +329,13 @@
         "velocity": 420,
         "submunitions": 150,
         "submunitionDeployFactor": 0.85,
-        "blastMultiplier": 2,
+        "blastMultiplier": 1.2,
         "name": "M26A1 High Charge",
         "submunitionAngularDispersion": 10
       },
       {
         "velocity": 420,
-        "explosiveMass": 100.1,
+        "explosiveMass": 90,
         "name": "M31A2 High Charge"
       }
     ],
@@ -375,7 +350,7 @@
       },
       {
         "velocity": 241,
-        "blastMultiplier": 2,
+        "blastMultiplier": 1.2,
         "explosiveMass": 0.03,
         "name": "M430A1"
       }
@@ -420,9 +395,8 @@
   "M17_Whizbang": {
     "projectiles": [
       {
-        "velocity": 99,
-        "blastMultiplier": 0.8,
-        "explosiveMass": 25.44,
+        "velocity": 49,
+        "explosiveMass": 15.75,
         "name": "7.2 in T37"
       }
     ],
@@ -462,6 +436,16 @@
       }
     ],
     "name": "Merkava Mk.1B"
+  },
+  "LUAZ_672": {
+    "projectiles": [
+      {
+        "velocity": 180,
+        "explosiveMass": 6.4,
+        "name": "9M22/M21 HE-Frag"
+      }
+    ],
+    "name": "LUAZ-672"
   },
   "T_64E": {
     "projectiles": [
@@ -561,7 +545,7 @@
       },
       {
         "velocity": 241,
-        "blastMultiplier": 2,
+        "blastMultiplier": 1.2,
         "explosiveMass": 0.03,
         "name": "M430A1"
       }
@@ -572,8 +556,8 @@
     "projectiles": [
       {
         "velocity": 340,
-        "explosiveMass": 2.15,
-        "name": "HE Rockets"
+        "explosiveMass": 2.4,
+        "name": "15 cm Wurfgranate 41 Spreng"
       }
     ],
     "name": "Pz.W.42"
@@ -812,7 +796,7 @@
       },
       {
         "velocity": 241,
-        "blastMultiplier": 2,
+        "blastMultiplier": 1.2,
         "explosiveMass": 0.03,
         "name": "M430A1"
       }
