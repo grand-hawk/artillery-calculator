@@ -142,12 +142,12 @@ export const gameMaps: Record<string, GameMap> = {
 
   rohkstov: {
     heightmap: {
-      0: -8,
-      255: 487.0882873535156,
+      0: 0.406219482421875,
+      255: 488.1702880859375,
     },
     image: 'rohkstov',
     name: 'Rohkstov',
-    size: 15010,
+    size: 14996,
   },
 
   roinburg: {
