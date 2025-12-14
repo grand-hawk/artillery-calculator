@@ -24,8 +24,8 @@ importers:
         specifier: ^3.4.0
         version: 3.4.0(@mui/material@7.3.1(@emotion/react@11.14.0(@types/react@19.1.1)(react@19.1.1))(@emotion/styled@11.14.1(@emotion/react@11.14.0(@types/react@19.1.1)(react@19.1.1))(@types/react@19.1.1)(react@19.1.1))(@types/react@19.1.1)(react-dom@19.1.1(react@19.1.1))(react@19.1.1))
       next:
-        specifier: 15.4.9
-        version: 15.4.9(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
+        specifier: 15.4.10
+        version: 15.4.10(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       react:
         specifier: ^19.1.1
         version: 19.1.1
@@ -61,8 +61,8 @@ importers:
         specifier: ^19.0.4
         version: 19.0.4(eslint-plugin-import@2.32.0)(eslint-plugin-jsx-a11y@6.10.2(eslint@8.57.1))(eslint-plugin-react-hooks@4.6.2(eslint@8.57.1))(eslint-plugin-react@7.37.5(eslint@8.57.1))(eslint@8.57.1)
       eslint-config-next:
-        specifier: 15.4.7
-        version: 15.4.7(eslint@8.57.1)(typescript@5.9.2)
+        specifier: 15.4.10
+        version: 15.4.10(eslint@8.57.1)(typescript@5.9.2)
       eslint-config-prettier:
         specifier: ^10.1.8
         version: 10.1.8(eslint@8.57.1)
@@ -579,11 +579,11 @@ packages:
   '@napi-rs/wasm-runtime@0.2.12':
     resolution: {integrity: sha512-ZVWUcfwY4E/yPitQJl481FjFo3K22D6qF0DuFH6Y/nbnE11GY5uguDxZMGXPQ8WQ0128MXQD7TnfHyK4oWoIJQ==}
 
-  '@next/env@15.4.9':
-    resolution: {integrity: sha512-OYR0RulK5phnbxxzcLE4/ECgfx1PL3EHrDbjyelJ7jauaO+/Qvj5gG8JPMltB51CygC2KrZ0aAfYLjPYjYY17A==}
+  '@next/env@15.4.10':
+    resolution: {integrity: sha512-knhmoJ0Vv7VRf6pZEPSnciUG1S4bIhWx+qTYBW/AjxEtlzsiNORPk8sFDCEvqLfmKuey56UB9FL1UdHEV3uBrg==}
 
-  '@next/eslint-plugin-next@15.4.7':
-    resolution: {integrity: sha512-asj3RRiEruRLVr+k2ZC4hll9/XBzegMpFMr8IIRpNUYypG86m/a76339X2WETl1C53A512w2INOc2KZV769KPA==}
+  '@next/eslint-plugin-next@15.4.10':
+    resolution: {integrity: sha512-WXbIDBQ+IVnsSe5BSfOpj48pZigOp2SIaq3JcQ9DEoqm7fcSsqEFcLBU4xtnoDpWzGx4pNTchCxRcDaItO73aA==}
 
   '@next/swc-darwin-arm64@15.4.8':
     resolution: {integrity: sha512-Pf6zXp7yyQEn7sqMxur6+kYcywx5up1J849psyET7/8pG2gQTVMjU3NzgIt8SeEP5to3If/SaWmaA6H6ysBr1A==}
@@ -1255,8 +1255,8 @@ packages:
       eslint-plugin-react: ^7.28.0
       eslint-plugin-react-hooks: ^4.3.0
 
-  eslint-config-next@15.4.7:
-    resolution: {integrity: sha512-tkKKNVJKI4zMIgTpvG2x6mmdhuOdgXUL3AaSPHwxLQkvzi4Yryqvk6B0R5Z4gkpe7FKopz3ZmlpePH3NTHy3gA==}
+  eslint-config-next@15.4.10:
+    resolution: {integrity: sha512-iJLJPTWkXlQo07mdJ+861c3I0T5UXDv9iE/dYJwceRW5a9OqXzcLwCHW4aBfOqHa0aJRWife64snHbQgLXamOA==}
     peerDependencies:
       eslint: ^7.23.0 || ^8.0.0 || ^9.0.0
       typescript: '>=3.3.1'
@@ -1900,8 +1900,8 @@ packages:
   natural-compare@1.4.0:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
 
-  next@15.4.9:
-    resolution: {integrity: sha512-/NedNmbiH4Umt/7SohT9VKxEdBt02Lj33xHrukE7d8Li6juT+75sEq4a4U06jggrvdbklKgr78OZEyWZ8XRrtw==}
+  next@15.4.10:
+    resolution: {integrity: sha512-itVlc79QjpKMFMRhP+kbGKaSG/gZM6RCvwhEbwmCNF06CdDiNaoHcbeg0PqkEa2GOcn8KJ0nnc7+yL7EjoYLHQ==}
     engines: {node: ^18.18.0 || ^19.8.0 || >= 20.0.0}
     hasBin: true
     peerDependencies:
@@ -2961,9 +2961,9 @@ snapshots:
       '@tybys/wasm-util': 0.10.0
     optional: true
 
-  '@next/env@15.4.9': {}
+  '@next/env@15.4.10': {}
 
-  '@next/eslint-plugin-next@15.4.7':
+  '@next/eslint-plugin-next@15.4.10':
     dependencies:
       fast-glob: 3.3.1
 
@@ -3730,9 +3730,9 @@ snapshots:
       object.assign: 4.1.7
       object.entries: 1.1.9
 
-  eslint-config-next@15.4.7(eslint@8.57.1)(typescript@5.9.2):
+  eslint-config-next@15.4.10(eslint@8.57.1)(typescript@5.9.2):
     dependencies:
-      '@next/eslint-plugin-next': 15.4.7
+      '@next/eslint-plugin-next': 15.4.10
       '@rushstack/eslint-patch': 1.12.0
       '@typescript-eslint/eslint-plugin': 8.41.0(@typescript-eslint/parser@8.41.0(eslint@8.57.1)(typescript@5.9.2))(eslint@8.57.1)(typescript@5.9.2)
       '@typescript-eslint/parser': 8.41.0(eslint@8.57.1)(typescript@5.9.2)
@@ -4496,9 +4496,9 @@ snapshots:
 
   natural-compare@1.4.0: {}
 
-  next@15.4.9(react-dom@19.1.1(react@19.1.1))(react@19.1.1):
+  next@15.4.10(react-dom@19.1.1(react@19.1.1))(react@19.1.1):
     dependencies:
-      '@next/env': 15.4.9
+      '@next/env': 15.4.10
       '@swc/helpers': 0.5.15
       caniuse-lite: 1.0.30001760
       postcss: 8.4.31
