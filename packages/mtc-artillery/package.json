@@ -35,7 +35,7 @@
     "@mui/icons-material": "^7.3.4",
     "@mui/joy": "5.0.0-beta.52",
     "@mui/material": "^7.3.4",
-    "@tauri-apps/api": "^2.8.0",
+    "@tauri-apps/api": "^2.9.1",
     "flag-icons": "^7.5.0",
     "immer": "^11.0.1",
     "is-image": "^4.0.0",
