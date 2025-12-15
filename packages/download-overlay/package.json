@@ -32,13 +32,13 @@
     "merge-sx": "^3.4.0",
     "next": "15.4.10",
     "react": "^19.2.3",
-    "react-dom": "^19.1.1",
+    "react-dom": "^19.2.3",
     "usehooks-ts": "^3.1.1"
   },
   "devDependencies": {
     "@types/node": "^22.18.0",
     "@types/react": "^19.2.7",
-    "@types/react-dom": "^19.1.1",
+    "@types/react-dom": "^19.2.3",
     "@typescript-eslint/eslint-plugin": "^8.41.0",
     "@typescript-eslint/parser": "^8.49.0",
     "depcheck": "^1.4.7",
