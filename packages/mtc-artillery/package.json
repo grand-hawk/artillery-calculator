@@ -48,7 +48,7 @@
     "react-device-detect": "^2.2.3",
     "react-dom": "^19.2.3",
     "react-zoom-pan-pinch": "^3.7.0",
-    "sharp": "^0.34.3",
+    "sharp": "^0.34.5",
     "stale-lru-cache": "^5.1.1",
     "swr": "^2.3.6",
     "usehooks-ts": "^3.1.1",
