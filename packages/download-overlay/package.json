@@ -19,9 +19,9 @@
     "lint": "pnpm run next:lint && pnpm run eslint",
     "next:lint": "next lint",
     "eslint": "eslint .",
-    "lint:fix": "pnpm run eslint -- --fix",
+    "lint:fix": "pnpm run eslint --fix",
     "format": "prettier . -w",
-    "fix": "pnpm run eslint -- --fix && pnpm run format",
+    "fix": "pnpm run lint:fix && pnpm run format",
     "depcheck": "depcheck . --quiet --skip-missing"
   },
   "dependencies": {

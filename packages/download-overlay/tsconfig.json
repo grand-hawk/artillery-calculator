@@ -25,11 +25,6 @@
     },
     "noEmit": true
   },
-  "include": [
-    "next-env.d.ts",
-    "next.config.mjs",
-    "src",
-    ".next/types/**/*.ts"
-  ],
+  "include": ["next-env.d.ts", "next.config.mjs", "src", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]
 }
