@@ -57,9 +57,8 @@ export default function Navigation() {
             size="sm"
             onClick={async () => {
               try {
-                const { getCurrentWebviewWindow } = await import(
-                  '@tauri-apps/api/webviewWindow'
-                );
+                const { getCurrentWebviewWindow } =
+                  await import('@tauri-apps/api/webviewWindow');
                 const appWindow = getCurrentWebviewWindow();
 
                 appWindow.minimize();
@@ -74,9 +73,8 @@ export default function Navigation() {
             size="sm"
             onClick={async () => {
               try {
-                const { getCurrentWebviewWindow } = await import(
-                  '@tauri-apps/api/webviewWindow'
-                );
+                const { getCurrentWebviewWindow } =
+                  await import('@tauri-apps/api/webviewWindow');
                 const appWindow = getCurrentWebviewWindow();
 
                 appWindow.close();

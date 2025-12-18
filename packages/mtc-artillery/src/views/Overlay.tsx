@@ -40,9 +40,8 @@ export default function OverlayView() {
   React.useEffect(() => {
     async function updateSize() {
       try {
-        const { getCurrentWebviewWindow } = await import(
-          '@tauri-apps/api/webviewWindow'
-        );
+        const { getCurrentWebviewWindow } =
+          await import('@tauri-apps/api/webviewWindow');
         const appWindow = getCurrentWebviewWindow();
 
         const boundingClientRect =

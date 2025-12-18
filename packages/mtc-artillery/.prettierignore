@@ -4,6 +4,7 @@ package.json
 
 # other
 assets
+public/images
 
 # frameworks
 next-env.d.ts
