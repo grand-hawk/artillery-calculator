@@ -37,7 +37,7 @@
     "@mui/material": "^7.3.4",
     "@tauri-apps/api": "^2.9.1",
     "flag-icons": "^7.5.0",
-    "immer": "^11.0.1",
+    "immer": "^11.1.0",
     "is-image": "^4.0.0",
     "klaw": "^4.1.0",
     "ky": "^1.13.0",
