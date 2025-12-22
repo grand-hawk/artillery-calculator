@@ -54,7 +54,7 @@
     "eslint-plugin-react-hooks": "^6.0.0",
     "prettier": "^3.7.4",
     "prettier-eslint": "^16.4.2",
-    "typescript": "^5.9.2",
+    "typescript": "^5.9.3",
     "user-agent-data-types": "^0.4.2"
   }
 }
