@@ -15,7 +15,9 @@
     "react"
   ],
   "parser": "@typescript-eslint/parser",
-  "ignorePatterns": [],
+  "ignorePatterns": [
+    "next-env.d.ts"
+  ],
   "settings": {
     "import/resolver": {
       "typescript": {
