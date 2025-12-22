@@ -55,7 +55,7 @@
     "zustand": "^5.0.8"
   },
   "devDependencies": {
-    "@next/bundle-analyzer": "^15.5.2",
+    "@next/bundle-analyzer": "^16.1.0",
     "@types/klaw": "^3.0.7",
     "@types/node": "^22.18.0",
     "@types/react": "^19.2.7",
