@@ -42,7 +42,7 @@
     "klaw": "^4.1.0",
     "ky": "^1.13.0",
     "merge-sx": "^3.4.0",
-    "next": "15.4.10",
+    "next": "^15.5.9",
     "next-intl": "^4.6.1",
     "react": "^19.2.3",
     "react-device-detect": "^2.2.3",
@@ -55,7 +55,7 @@
     "zustand": "^5.0.8"
   },
   "devDependencies": {
-    "@next/bundle-analyzer": "^15.5.2",
+    "@next/bundle-analyzer": "^15.5.9",
     "@types/klaw": "^3.0.7",
     "@types/node": "^22.18.0",
     "@types/react": "^19.2.7",
@@ -74,7 +74,7 @@
     "eslint-plugin-jsx-a11y": "^6.10.2",
     "eslint-plugin-prettier": "^5.5.4",
     "eslint-plugin-react": "^7.37.5",
-    "eslint-plugin-react-hooks": "^6.0.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
     "eslint-plugin-sort-keys-fix": "^1.1.2",
     "prettier": "^3.7.4",
     "prettier-eslint": "^16.4.2",
