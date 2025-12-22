@@ -50,7 +50,7 @@
     "react-zoom-pan-pinch": "^3.7.0",
     "sharp": "^0.34.5",
     "stale-lru-cache": "^5.1.1",
-    "swr": "^2.3.6",
+    "swr": "^2.3.8",
     "usehooks-ts": "^3.1.1",
     "zustand": "^5.0.8"
   },
