@@ -93,13 +93,13 @@ export const gameMaps: Record<string, GameMap> = {
 
   muddy_fields: {
     heightmap: {
-      0: 6.65234375,
-      255: 163.99659729003906,
+      0: 5.9947967529296875,
+      255: 104.14280700683594,
     },
     image: 'muddy_fields',
     inRotation: true,
     name: 'Muddy Fields',
-    size: calculateMapSize(240),
+    size: 5999,
   },
 
   normandy: {
