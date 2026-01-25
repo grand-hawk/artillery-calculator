@@ -152,13 +152,13 @@ export const gameMaps: Record<string, GameMap> = {
 
   roinburg: {
     heightmap: {
-      0: 0,
-      255: 227.86021423339844,
+      0: 6.165008544921875,
+      255: 227.7537384033203,
     },
     image: 'roinburg',
     inRotation: true,
     name: 'Roinburg',
-    size: calculateMapSize(142),
+    size: 7086,
   },
 
   // sandy_place: {
