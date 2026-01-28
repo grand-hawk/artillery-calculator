@@ -179,7 +179,7 @@ export const gameMaps: Record<string, GameMap> = {
 
   snowy_fields: {
     heightmap: {
-      0: 6.652313232421875,
+      0: 6.6523284912109375,
       255: 228.3592529296875,
     },
     image: 'snowy_fields',
