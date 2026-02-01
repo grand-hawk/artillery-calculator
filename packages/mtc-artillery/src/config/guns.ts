@@ -42,19 +42,34 @@ const customGuns: Record<string, Gun> = {
     name: 'M120/Soltam K6',
     projectiles: [
       {
-        name: 'Medium Charge',
+        name: 'M934A1 Medium Charge',
         velocity: 172,
         explosiveMass: 3.29,
       },
       {
-        name: 'Low Charge',
+        name: 'M934A1 Low Charge',
         velocity: 125,
         explosiveMass: 3.29,
       },
       {
-        name: 'High Charge',
+        name: 'M934A1High Charge',
         velocity: 225,
         explosiveMass: 3.29,
+      },
+      {
+        name: 'M68 Medium Charge',
+        velocity: 225,
+        explosiveMass: 0.08,
+      },
+      {
+        name: 'M68 High Charge',
+        velocity: 225,
+        explosiveMass: 0.08,
+      },
+     {
+        name: 'M68 Low Charge',
+        velocity: 225,
+        explosiveMass: 0.08,
       },
     ],
   },
