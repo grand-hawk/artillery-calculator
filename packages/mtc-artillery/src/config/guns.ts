@@ -38,6 +38,27 @@ const customGuns: Record<string, Gun> = {
     ],
   },
 
+    M120SoltamK6: {
+    name: 'M120/Soltam K6',
+    projectiles: [
+      {
+        name: 'Medium Charge',
+        velocity: 172,
+        explosiveMass: 2,
+      },
+      {
+        name: 'Low Charge',
+        velocity: 125,
+        explosiveMass: 2,
+      },
+      {
+        name: 'High Charge',
+        velocity: 225,
+        explosiveMass: 2,
+      },
+    ],
+  },
+  
   ags17: {
     name: 'AGS-17',
     projectiles: [
