@@ -44,17 +44,17 @@ const customGuns: Record<string, Gun> = {
       {
         name: 'Medium Charge',
         velocity: 172,
-        explosiveMass: 14,
+        explosiveMass: 3.29,
       },
       {
         name: 'Low Charge',
         velocity: 125,
-        explosiveMass: 14,
+        explosiveMass: 3.29,
       },
       {
         name: 'High Charge',
         velocity: 225,
-        explosiveMass: 14,
+        explosiveMass: 3.29,
       },
     ],
   },
