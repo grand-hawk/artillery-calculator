@@ -58,7 +58,7 @@ const customGuns: Record<string, Gun> = {
       },
       {
         name: 'M68 Medium Charge',
-        velocity: 225,
+        velocity: 172,
         explosiveMass: 0.08,
       },
       {
@@ -68,7 +68,7 @@ const customGuns: Record<string, Gun> = {
       },
       {
         name: 'M68 Low Charge',
-        velocity: 225,
+        velocity: 125,
         explosiveMass: 0.08,
       },
     ],
