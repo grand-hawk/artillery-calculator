@@ -42,7 +42,7 @@
     "klaw": "^4.1.0",
     "ky": "^1.14.2",
     "merge-sx": "^3.4.0",
-    "next": "^15.5.9",
+    "next": "^15.5.12",
     "next-intl": "^4.6.1",
     "react": "^19.2.3",
     "react-device-detect": "^2.2.3",
@@ -55,7 +55,7 @@
     "zustand": "^5.0.9"
   },
   "devDependencies": {
-    "@next/bundle-analyzer": "^15.5.9",
+    "@next/bundle-analyzer": "^15.5.12",
     "@types/klaw": "^3.0.7",
     "@types/node": "^22.18.0",
     "@types/react": "^19.2.7",
@@ -67,7 +67,7 @@
     "depcheck": "^1.4.7",
     "eslint": "^8.57.1",
     "eslint-config-airbnb": "^19.0.4",
-    "eslint-config-next": "15.5.9",
+    "eslint-config-next": "15.5.12",
     "eslint-config-prettier": "^10.1.8",
     "eslint-import-resolver-typescript": "^4.4.4",
     "eslint-plugin-import": "^2.32.0",
