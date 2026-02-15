@@ -101,6 +101,65 @@
     ],
     "name": "Strf 9040C"
   },
+  "BMP_30M": {
+    "projectiles": [
+      {
+        "velocity": 185,
+        "explosiveMass": 0.065,
+        "name": "VOG-17M"
+      }
+    ],
+    "name": "BMP-30M"
+  },
+  "_2S7_Pion": {
+    "projectiles": [
+      {
+        "submunitionDeployFactor": 0.8,
+        "velocity": 194,
+        "submunitions": 24,
+        "explosiveMass": 0.3542,
+        "name": "3VO15 Low Charge",
+        "submunitionAngularDispersion": 15
+      },
+      {
+        "velocity": 194,
+        "explosiveMass": 30,
+        "name": "3VOF34 Low Charge"
+      },
+      {
+        "submunitionDeployFactor": 0.8,
+        "velocity": 388,
+        "submunitions": 24,
+        "explosiveMass": 0.3542,
+        "name": "3VO15 Medium Charge",
+        "submunitionAngularDispersion": 11
+      },
+      {
+        "velocity": 388,
+        "explosiveMass": 30,
+        "name": "3VOF34 Medium Charge"
+      },
+      {
+        "submunitionDeployFactor": 0.8,
+        "velocity": 775,
+        "submunitions": 24,
+        "explosiveMass": 0.3542,
+        "name": "3VO15 High Charge",
+        "submunitionAngularDispersion": 9
+      },
+      {
+        "velocity": 775,
+        "explosiveMass": 30,
+        "name": "3VOF34 High Charge"
+      },
+      {
+        "velocity": 864,
+        "explosiveMass": 10,
+        "name": "2VG11"
+      }
+    ],
+    "name": "2S7 Pion"
+  },
   "T34_Calliope": {
     "projectiles": [
       {
@@ -220,59 +279,6 @@
     ],
     "name": "Cheonma-2"
   },
-  "_9K720_Iskander": {
-    "projectiles": [
-      {
-        "velocity": 500,
-        "explosiveMass": 1000,
-        "name": "SS-26 HE-frag Low",
-        "capMultiplier": 500
-      },
-      {
-        "velocity": 500,
-        "explosiveMass": 5000000,
-        "name": "SS-26 Thermo-Nuclear Low",
-        "capMultiplier": 500
-      },
-      {
-        "velocity": 1000,
-        "explosiveMass": 1000,
-        "name": "SS-26 HE-frag Direct",
-        "capMultiplier": 500
-      },
-      {
-        "velocity": 1000,
-        "explosiveMass": 1000,
-        "name": "SS-26 HE-frag Medium",
-        "capMultiplier": 500
-      },
-      {
-        "velocity": 1000,
-        "explosiveMass": 5000000,
-        "name": "SS-26 Thermo-Nuclear Direct",
-        "capMultiplier": 500
-      },
-      {
-        "velocity": 1000,
-        "explosiveMass": 5000000,
-        "name": "SS-26 Thermo-Nuclear Medium",
-        "capMultiplier": 500
-      },
-      {
-        "velocity": 2000,
-        "explosiveMass": 1000,
-        "name": "SS-26 HE-frag High",
-        "capMultiplier": 500
-      },
-      {
-        "velocity": 2000,
-        "explosiveMass": 5000000,
-        "name": "SS-26 Thermo-Nuclear High",
-        "capMultiplier": 500
-      }
-    ],
-    "name": "9K720 Iskander"
-  },
   "RSZO_1": {
     "projectiles": [
       {
@@ -282,17 +288,6 @@
       }
     ],
     "name": "RSZO-1"
-  },
-  "Karl_Ger__t": {
-    "projectiles": [
-      {
-        "velocity": 150,
-        "explosiveMass": 289,
-        "name": "Schwere Betongranate",
-        "capMultiplier": 2
-      }
-    ],
-    "name": "Karl-Gerät"
   },
   "M270_MLRS": {
     "projectiles": [
@@ -437,16 +432,6 @@
     ],
     "name": "Merkava Mk.1B"
   },
-  "LUAZ_672": {
-    "projectiles": [
-      {
-        "velocity": 180,
-        "explosiveMass": 6.4,
-        "name": "9M22/M21 HE-Frag"
-      }
-    ],
-    "name": "LUAZ-672"
-  },
   "T_64E": {
     "projectiles": [
       {
@@ -467,64 +452,15 @@
     ],
     "name": "BMP-2M"
   },
-  "_2S7_Pion": {
+  "LUAZ_672": {
     "projectiles": [
       {
-        "submunitionDeployFactor": 0.8,
-        "velocity": 194,
-        "submunitions": 24,
-        "explosiveMass": 0.3542,
-        "name": "3VO15 Low Charge",
-        "submunitionAngularDispersion": 15
-      },
-      {
-        "velocity": 194,
-        "explosiveMass": 30,
-        "name": "3VOF34 Low Charge"
-      },
-      {
-        "submunitionDeployFactor": 0.8,
-        "velocity": 388,
-        "submunitions": 24,
-        "explosiveMass": 0.3542,
-        "name": "3VO15 Medium Charge",
-        "submunitionAngularDispersion": 11
-      },
-      {
-        "velocity": 388,
-        "explosiveMass": 30,
-        "name": "3VOF34 Medium Charge"
-      },
-      {
-        "submunitionDeployFactor": 0.8,
-        "velocity": 775,
-        "submunitions": 24,
-        "explosiveMass": 0.3542,
-        "name": "3VO15 High Charge",
-        "submunitionAngularDispersion": 9
-      },
-      {
-        "velocity": 775,
-        "explosiveMass": 30,
-        "name": "3VOF34 High Charge"
-      },
-      {
-        "velocity": 864,
-        "explosiveMass": 10,
-        "name": "2VG11"
+        "velocity": 180,
+        "explosiveMass": 6.4,
+        "name": "9M22/M21 HE-Frag"
       }
     ],
-    "name": "2S7 Pion"
-  },
-  "BMP_30M": {
-    "projectiles": [
-      {
-        "velocity": 185,
-        "explosiveMass": 0.065,
-        "name": "VOG-17M"
-      }
-    ],
-    "name": "BMP-30M"
+    "name": "LUAZ-672"
   },
   "BTR_4": {
     "projectiles": [
