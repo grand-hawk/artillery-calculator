@@ -13,16 +13,11 @@ import MapSelection from '@/components/organisms/configuration/Map';
 import ProjectileSelection from '@/components/organisms/configuration/Projectile';
 import TimeOfFlightValue from '@/components/organisms/configuration/TimeOfFlight';
 import Footer from '@/components/organisms/Footer';
-import Motd from '@/components/organisms/Motd';
 import OverlayDownloadCard from '@/components/organisms/OverlayDownloadCard';
 import Canvas from '@/components/templates/Canvas';
-import { usePropStore } from '@/stores/props';
 
 export default function DesktopView() {
   const t = useTranslations();
-
-  const version = usePropStore((s) => s.version);
-  const motd = usePropStore((s) => s.motd);
 
   return (
     <Box
@@ -59,8 +54,6 @@ export default function DesktopView() {
             <Canvas />
 
             <ColumnContainer>
-              <Motd message={motd || undefined} />
-
               <ConfigurationGroup>
                 <ElevationValue />
                 <AzimuthValue />
@@ -82,7 +75,7 @@ export default function DesktopView() {
         </Box>
       </Box>
 
-      <Footer version={version!} />
+      <Footer />
     </Box>
   );
 }

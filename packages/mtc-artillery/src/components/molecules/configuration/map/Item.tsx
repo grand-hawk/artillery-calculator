@@ -5,6 +5,8 @@ import Typography from '@mui/joy/Typography';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 
+import { getMapImageUrl } from '@/utils/images';
+
 import type { GameMap } from '@/config/maps';
 
 export default function MapItem({ gameMap }: { gameMap: GameMap }) {
@@ -32,7 +34,8 @@ export default function MapItem({ gameMap }: { gameMap: GameMap }) {
         <Image
           alt={gameMap.name}
           height={24}
-          src={`/images/webp/maps/${gameMap.image}.webp`}
+          src={getMapImageUrl(gameMap.image, { width: 24, q: 90 })}
+          unoptimized
           width={24}
         />
       </Box>

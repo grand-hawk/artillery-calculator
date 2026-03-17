@@ -6,6 +6,7 @@ node_modules
 # frameworks
 .next
 next-env.d.ts
+*.tsbuildinfo
 
 # misc
 .DS_Store

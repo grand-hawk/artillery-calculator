@@ -12,7 +12,6 @@ RUN --mount=type=cache,id=pnpm,target=/root/.local/share/pnpm/store pnpm install
 ENV NODE_ENV=production
 ENV NEXT_TELEMETRY_DISABLED=1
 ENV NEXT_OUTPUT=standalone
-ENV SHARP_EFFORT=3
 
 # only lint if DEVELOPMENT env var is not true
 ARG DEVELOPMENT=false
@@ -20,9 +19,6 @@ ENV DEVELOPMENT=$DEVELOPMENT
 RUN if [ "$DEVELOPMENT" != "true" ]; then pnpm run lint; fi
 
 RUN pnpm run build:unsafe
-
-# Remove all folders in public/images except 'webp'
-RUN find /build/public/images -mindepth 1 -maxdepth 1 -type d ! -name 'webp' -exec rm -rf {} +
 
 # Package layer
 FROM node:22-alpine AS package

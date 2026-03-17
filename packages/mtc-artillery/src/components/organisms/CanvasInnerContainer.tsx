@@ -13,9 +13,6 @@ export default function CanvasInnerContainer({ children }: PropsWithChildren) {
   const canvasHeight = useCanvasStore((s) => s.height);
   const setZoom = useCanvasStore((s) => s.setZoom);
 
-  const unoptimized = useCanvasStore((s) => s.unoptimized);
-  const setUnoptimized = useCanvasStore((s) => s.setUnoptimized);
-
   return (
     <Sheet
       className="canvas-sheet"
@@ -48,12 +45,7 @@ export default function CanvasInnerContainer({ children }: PropsWithChildren) {
           isPanning.current = false;
         }}
         onZoom={(wrapper) => {
-          const zoom = wrapper.instance.transformState.scale;
-
-          setZoom(zoom);
-
-          // dont go back to the optimized image once the full image was requested
-          if (!unoptimized && zoom > 1.25) setUnoptimized(true);
+          setZoom(wrapper.instance.transformState.scale);
         }}
       >
         <TransformComponent>{children}</TransformComponent>

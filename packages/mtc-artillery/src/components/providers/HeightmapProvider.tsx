@@ -2,6 +2,7 @@ import React from 'react';
 
 import Profiler from '@/components/utils/Profiler';
 import useGameMap from '@/hooks/data/useGameMap';
+import { getHeightmapImageUrl } from '@/utils/images';
 
 import type { PropsWithChildren } from 'react';
 
@@ -36,6 +37,7 @@ export default function HeightmapProvider({
     context.clearRect(0, 0, canvas.width, canvas.height);
 
     const image = new Image();
+    image.crossOrigin = 'anonymous';
 
     function onImageLoad() {
       context.drawImage(image, 0, 0);
@@ -47,7 +49,7 @@ export default function HeightmapProvider({
 
     image.addEventListener('load', onImageLoad);
 
-    image.src = `/images/webp/heightmaps/${gameMap.image}.webp`;
+    image.src = getHeightmapImageUrl(gameMap.image);
 
     return () => {
       image.removeEventListener('load', onImageLoad);

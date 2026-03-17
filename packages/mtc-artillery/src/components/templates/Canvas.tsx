@@ -16,6 +16,7 @@ import drawBlastRadius from '@/utils/canvas/drawBlastRadius';
 import drawGun from '@/utils/canvas/drawGun';
 import drawLine from '@/utils/canvas/drawLine';
 import drawTarget from '@/utils/canvas/drawTarget';
+import { getMapImageUrl } from '@/utils/images';
 import {
   calculateBlastDiameter,
   calculateMaxRangeDiameter,
@@ -169,9 +170,8 @@ function Canvas() {
           alt={gameMap.name}
           height={canvasStore.height}
           priority
-          quality={90}
-          src={`/images/webp/maps/${gameMap.image}.webp`}
-          unoptimized={canvasStore.unoptimized}
+          src={getMapImageUrl(gameMap.image, { q: 90 })}
+          unoptimized
           width={canvasStore.width}
         />
 

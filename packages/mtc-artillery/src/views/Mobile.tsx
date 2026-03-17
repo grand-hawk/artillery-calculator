@@ -12,14 +12,9 @@ import MobileMode from '@/components/organisms/configuration/MobileMode';
 import ProjectileSelection from '@/components/organisms/configuration/Projectile';
 import TimeOfFlightValue from '@/components/organisms/configuration/TimeOfFlight';
 import Footer from '@/components/organisms/Footer';
-import Motd from '@/components/organisms/Motd';
 import Canvas from '@/components/templates/Canvas';
-import { usePropStore } from '@/stores/props';
 
 export default function MobileView() {
-  const version = usePropStore((s) => s.version);
-  const motd = usePropStore((s) => s.motd);
-
   return (
     <Box
       className="mobile"
@@ -46,8 +41,6 @@ export default function MobileView() {
         <Canvas />
 
         <ColumnContainer>
-          <Motd message={motd || undefined} />
-
           {isMobile && <MobileMode />}
 
           <ConfigurationGroup>
@@ -61,7 +54,7 @@ export default function MobileView() {
         </ColumnContainer>
       </Box>
 
-      <Footer version={version!} />
+      <Footer />
     </Box>
   );
 }
