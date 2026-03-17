@@ -9,6 +9,9 @@ WORKDIR /build
 RUN pnpm fetch --frozen-lockfile
 RUN pnpm install --frozen-lockfile
 
+ARG NEXT_PUBLIC_REPO_OWNER
+ARG NEXT_PUBLIC_REPO_NAME
+
 ENV NEXT_TELEMETRY_DISABLED=1
 ENV NEXT_OUTPUT=standalone
 
