@@ -64,7 +64,18 @@ export const gameMaps: Record<string, GameMap> = {
     },
     image: 'dustbowl_ii',
     inRotation: true,
-    name: 'Dustbowl II',
+    name: 'Dustbowl II (old)',
+    size: 6263,
+  },
+
+  dustbowl_ii_rework: {
+    heightmap: {
+      0: 35.71875,
+      255: 232.2118682861328,
+    },
+    image: 'dustbowl_ii_rework',
+    inRotation: false,
+    name: 'Dustbowl II (rework)',
     size: 6263,
   },
 
@@ -170,7 +181,6 @@ export const gameMaps: Record<string, GameMap> = {
   //   name: 'Sandy Place',
   //   size: calculateMapSize(361),
   // },
-
   snow_tundra: {
     image: 'snow_tundra',
     name: 'Snow Tundra',
