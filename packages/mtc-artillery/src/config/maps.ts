@@ -150,6 +150,16 @@ export const gameMaps: Record<string, GameMap> = {
     size: calculateMapSize(207),
   },
 
+  rohkshort: {
+    heightmap: {
+      0: 0,
+      255: 387.8159484863281,
+    },
+    image: 'rohkshort',
+    name: 'Rohkshort',
+    size: 9217,
+  },
+
   rohkstov: {
     heightmap: {
       0: 0.406219482421875,
@@ -159,16 +169,6 @@ export const gameMaps: Record<string, GameMap> = {
     inRotation: true,
     name: 'Rohkstov',
     size: 14996,
-  },
-
-  rohkshort: {
-    heightmap: {
-      0: 0,
-      255: 387.8159484863281,
-    },
-    image: 'rohkshort',
-    name: 'Rohkshort',
-    size: 9217,
   },
 
   roinburg: {
