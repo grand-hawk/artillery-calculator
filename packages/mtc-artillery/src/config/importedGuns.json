@@ -184,16 +184,6 @@
     ],
     "name": "LUAZ-672"
   },
-  "Churchill_VII": {
-    "projectiles": [
-      {
-        "velocity": 259,
-        "explosiveMass": 30.6,
-        "name": "L33A1"
-      }
-    ],
-    "name": "Churchill VII"
-  },
   "T34_Calliope": {
     "projectiles": [
       {
@@ -292,6 +282,36 @@
       }
     ],
     "name": "RSZO-1"
+  },
+  "T_64E": {
+    "projectiles": [
+      {
+        "velocity": 185,
+        "explosiveMass": 0.065,
+        "name": "VOG-17M"
+      }
+    ],
+    "name": "T-64E"
+  },
+  "BMP_2M": {
+    "projectiles": [
+      {
+        "velocity": 185,
+        "explosiveMass": 0.065,
+        "name": "VOG-17M"
+      }
+    ],
+    "name": "BMP-2M"
+  },
+  "Churchill_AVRE": {
+    "projectiles": [
+      {
+        "velocity": 259,
+        "explosiveMass": 30.6,
+        "name": "L33A1"
+      }
+    ],
+    "name": "Churchill AVRE"
   },
   "Karl_Ger__t": {
     "projectiles": [
@@ -467,6 +487,31 @@
     ],
     "name": "Sturmtiger"
   },
+  "Namer_30": {
+    "projectiles": [
+      {
+        "velocity": 30,
+        "explosiveMass": 1,
+        "name": "Blast-frag Low Charge"
+      },
+      {
+        "velocity": 30,
+        "explosiveMass": 0.6,
+        "name": "Smoke"
+      },
+      {
+        "velocity": 80,
+        "explosiveMass": 1,
+        "name": "Blast-frag Medium Charge"
+      },
+      {
+        "velocity": 150,
+        "explosiveMass": 1,
+        "name": "Blast-frag High Charge"
+      }
+    ],
+    "name": "Namer 30"
+  },
   "PzH_2000": {
     "projectiles": [
       {
@@ -547,26 +592,6 @@
       }
     ],
     "name": "BMP-1TS"
-  },
-  "T_64E": {
-    "projectiles": [
-      {
-        "velocity": 185,
-        "explosiveMass": 0.065,
-        "name": "VOG-17M"
-      }
-    ],
-    "name": "T-64E"
-  },
-  "BMP_2M": {
-    "projectiles": [
-      {
-        "velocity": 185,
-        "explosiveMass": 0.065,
-        "name": "VOG-17M"
-      }
-    ],
-    "name": "BMP-2M"
   },
   "_2S7_Pion": {
     "projectiles": [
