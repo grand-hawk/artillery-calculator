@@ -74,7 +74,7 @@ export const gameMaps: Record<string, GameMap> = {
     },
     image: 'dustbowl_ii_rework',
     inRotation: true,
-    name: 'Dustbowl II (rework)',
+    name: 'Dustbowl II',
     size: 6263,
   },
 
