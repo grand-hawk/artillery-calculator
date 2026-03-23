@@ -38,7 +38,7 @@
     "flag-icons": "^7.5.0",
     "immer": "^11.1.0",
     "merge-sx": "^3.4.0",
-    "next": "^15.5.12",
+    "next": "^15.5.14",
     "next-intl": "^4.6.1",
     "react": "^19.2.3",
     "react-device-detect": "^2.2.3",
@@ -48,7 +48,7 @@
     "zustand": "^5.0.9"
   },
   "devDependencies": {
-    "@next/bundle-analyzer": "^15.5.12",
+    "@next/bundle-analyzer": "^15.5.14",
     "@types/node": "^22.18.0",
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
@@ -58,16 +58,16 @@
     "depcheck": "^1.4.7",
     "eslint": "^8.57.1",
     "eslint-config-airbnb": "^19.0.4",
-    "eslint-config-next": "15.5.12",
+    "eslint-config-next": "15.5.14",
     "eslint-config-prettier": "^10.1.8",
     "eslint-import-resolver-typescript": "^4.4.4",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-jsx-a11y": "^6.10.2",
-    "eslint-plugin-prettier": "^5.5.4",
+    "eslint-plugin-prettier": "^5.5.5",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-sort-keys-fix": "^1.1.2",
-    "prettier": "^3.7.4",
+    "prettier": "^3.8.1",
     "prettier-eslint": "^16.4.2",
     "typescript": "^5.9.3"
   }
