@@ -112,6 +112,16 @@ export const gameMaps: Record<string, GameMap> = {
     size: 5999,
   },
 
+  no_mans_land: {
+    heightmap: {
+      0: 27.66015625,
+      255: 149.8065490722656,
+    },
+    image: 'no_mans_land',
+    name: "No Man's Land",
+    size: 3179,
+  },
+
   normandy: {
     heightmap: {
       0: 0,
