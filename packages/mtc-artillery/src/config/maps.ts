@@ -69,10 +69,10 @@ export const gameMaps: Record<string, GameMap> = {
 
   dustbowl_ii_rework: {
     heightmap: {
-      0: 35.71875,
+      0: 25.84375,
       255: 232.2118682861328,
     },
-    image: 'dustbowl_ii_rework',
+    image: 'dustbowl_ii_rework_april',
     inRotation: true,
     name: 'Dustbowl II',
     size: 6263,
