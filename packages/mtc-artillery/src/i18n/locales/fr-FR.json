@@ -1,0 +1,30 @@
+{
+  "meta": {
+    "description": "Un calculateur d'artillerie conçu pour Multicrew Tank Combat sur Roblox."
+  },
+  "typography": {
+    "azimuth": "Azimut",
+    "distance": "Distance",
+    "downloadOverlay": "Téléchargez l'overlay en jeu sur <link></link>.",
+    "elevation": "Élévation",
+    "gun": "canon",
+    "heightmap": "Cette carte propose une carte de hauteur pour une meilleure précision",
+    "instructions": "<kbd>LMB</kbd> pour définir votre position. <kbd>RMB</kbd> pour définir la position de la cible. Maintenez <kbd>MMB</kbd> pour déplacer la carte, et utilisez la molette pour zoomer.",
+    "map": "Carte",
+    "metersPerSecond": "{value} m/s",
+    "notApplicable": "N/A",
+    "or": "ou",
+    "projectile": "Projectile",
+    "settings": {
+      "legacyBlastRadius": "Rayon d'explosion hérité"
+    },
+    "status": "Statut",
+    "switchSelectionTo": "Passer la sélection sur {value}",
+    "target": "cible",
+    "timeOfFlight": "Temps de vol"
+  },
+  "units": {
+    "meter": "{value, plural, =1 {{value} mètre} other {{value} mètres}}",
+    "second": "{value, plural, =1 {{value} seconde} other {{value} secondes}}"
+  }
+}
