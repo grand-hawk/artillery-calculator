@@ -39,7 +39,7 @@
     "immer": "^11.1.0",
     "merge-sx": "^3.4.0",
     "next": "^15.5.14",
-    "next-intl": "^4.6.1",
+    "next-intl": "^4.9.2",
     "react": "^19.2.3",
     "react-device-detect": "^2.2.3",
     "react-dom": "^19.2.3",
