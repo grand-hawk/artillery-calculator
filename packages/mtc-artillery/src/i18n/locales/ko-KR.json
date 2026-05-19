@@ -1,0 +1,30 @@
+{
+  "meta": {
+    "description": "Roblox의 Multicrew Tank Combat용 포병 계산기입니다."
+  },
+  "typography": {
+    "azimuth": "방위각",
+    "distance": "거리",
+    "downloadOverlay": "게임 내 오버레이는 <link></link>에서 다운로드하세요.",
+    "elevation": "고각",
+    "gun": "포",
+    "heightmap": "이 지도는 더욱 정확한 계산을 위해 높이 지도를 지원합니다.",
+    "instructions": "<kbd>좌클릭</kbd>으로 내 위치를 설정하세요. <kbd>우클릭</kbd>으로 목표 위치를 설정하세요. <kbd>휠 버튼</kbd>을 누른 채 드래그하여 지도를 이동하고, 스크롤 휠로 확대/축소하세요.",
+    "map": "지도",
+    "metersPerSecond": "{value} m/s",
+    "notApplicable": "해당 없음",
+    "or": "또는",
+    "projectile": "포탄",
+    "settings": {
+      "legacyBlastRadius": "기존 폭발 반경"
+    },
+    "status": "상태",
+    "switchSelectionTo": "{value}(으)로 선택 전환",
+    "target": "목표",
+    "timeOfFlight": "탄착 시간"
+  },
+  "units": {
+    "meter": "{value}m",
+    "second": "{value}초"
+  }
+}
