@@ -16,6 +16,8 @@
     "notApplicable": "N/A",
     "or": "o",
     "projectile": "Proyectil",
+    "projectileSearchPlaceholder": "Buscar proyectiles…",
+    "projectileNoResults": "No se encontraron resultados",
     "settings": {
       "legacyBlastRadius": "Indicador antiguo de radio de explosión"
     },

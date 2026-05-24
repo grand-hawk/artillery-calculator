@@ -13,6 +13,7 @@ import { useOnClickOutside } from 'usehooks-ts';
 
 import ProjectileButton from '@/components/atoms/configuration/projectile/Button';
 import DataContainer from '@/components/atoms/DataContainer';
+import SearchProvider from '@/components/atoms/SearchProvider';
 import ScrollBox from '@/components/molecules/ScrollBox';
 import { guns } from '@/config/guns';
 import { useDataStore } from '@/stores/data';
@@ -26,22 +27,17 @@ export default function ProjectileSelection() {
   const projectileData = useDataStore((s) => s.projectile);
 
   const [selectionOpen, setSelectionOpen] = React.useState<boolean>(false);
-  const [selectionTab, setSelectionTab] = React.useState<number>(
-    Object.keys(guns).findIndex((key) => key === projectileData.gunKey),
+  const [selectionTabGunKey, setSelectionTabGunKey] = React.useState<string>(
+    () => projectileData.gunKey || Object.keys(guns)[0],
   );
 
-  const selectionOpenChange = React.useCallback(
-    (open: boolean) => setSelectionOpen(open),
-    [],
-  );
+  const handleOpenToggle = () => setSelectionOpen((prev) => !prev);
 
   useOnClickOutside<HTMLDivElement>(
     tooltipRef as React.RefObject<HTMLDivElement>,
     (event) => {
-      // dont do anything if element that was pressed was the button
       if (event.target === buttonRef.current) return;
-
-      if (selectionOpen) selectionOpenChange(false);
+      if (selectionOpen) setSelectionOpen(false);
     },
     'mouseup',
   );
@@ -60,68 +56,127 @@ export default function ProjectileSelection() {
             open: selectionOpen,
           },
         }}
-        sx={{
-          padding: 0,
-          overflow: 'hidden',
-        }}
+        sx={{ padding: 0, overflow: 'hidden' }}
         title={
-          <Tabs
-            color="neutral"
-            orientation="vertical"
-            size="sm"
-            sx={{
-              maxHeight: 200,
-            }}
-            value={selectionTab}
-            variant="soft"
-            onChange={(_event, newTab) => setSelectionTab(newTab as number)}
+          <SearchProvider
+            key={String(selectionOpen)}
+            placeholder={t('typography.projectileSearchPlaceholder')}
+            autoFocus
           >
-            {Object.keys(guns).map((gunKey, index) => {
-              const gun = guns[gunKey];
+            {(searchQuery) => {
+              const filteredGunKeys = Object.keys(guns).filter((gunKey) => {
+                if (!searchQuery.trim()) return true;
+                const q = searchQuery.toLowerCase();
+                const gun = guns[gunKey];
+                return (
+                  gun.name.toLowerCase().includes(q) ||
+                  gun.projectiles.some((p) =>
+                    p.name.toLowerCase().includes(q),
+                  )
+                );
+              });
+
+              const showNoResults =
+                filteredGunKeys.length === 0 && searchQuery.trim() !== '';
+
+              const activeGunKey =
+                filteredGunKeys.length > 0
+                  ? filteredGunKeys.includes(selectionTabGunKey)
+                    ? selectionTabGunKey
+                    : filteredGunKeys[0]
+                  : '';
+
+              const activeTabIndex = Math.max(
+                filteredGunKeys.indexOf(activeGunKey),
+                0,
+              );
 
               return (
-                <TabPanel key={index} sx={{ padding: 0 }} value={index}>
-                  <ScrollBox dependency={selectionOpen} sx={{ maxHeight: 200 }}>
-                    <Box
-                      sx={{
-                        display: 'flex',
-                        flexDirection: 'column',
-                      }}
-                    >
-                      {gun.projectiles.map(
-                        (projectile, thisProjectileIndex) => (
-                          <ProjectileButton
-                            key={thisProjectileIndex}
-                            gunKey={gunKey}
-                            projectile={projectile}
-                            thisProjectileIndex={thisProjectileIndex}
-                          />
-                        ),
-                      )}
-                    </Box>
-                  </ScrollBox>
-                </TabPanel>
-              );
-            })}
+                <Tabs
+                  color="neutral"
+                  orientation="vertical"
+                  size="sm"
+                  sx={{ maxHeight: 200 }}
+                  value={activeTabIndex}
+                  variant="soft"
+                  onChange={(_event, newTab) => {
+                    const newGunKey = filteredGunKeys[newTab as number];
+                    if (newGunKey) setSelectionTabGunKey(newGunKey);
+                  }}
+                >
+                  {showNoResults ? (
+                    <TabPanel sx={{ padding: 0 }} value={0}>
+                      <Box
+                        sx={{
+                          textAlign: 'center',
+                          py: 1,
+                          px: 2,
+                          minWidth: 150,
+                        }}
+                      >
+                        <Typography
+                          level="body-sm"
+                          sx={{ color: 'var(--joy-palette-text-icon)' }}
+                        >
+                          {t('typography.projectileNoResults')}
+                        </Typography>
+                      </Box>
+                    </TabPanel>
+                  ) : (
+                    filteredGunKeys.map((gunKey, index) => {
+                      const gun = guns[gunKey];
+                      return (
+                        <TabPanel
+                          key={gunKey}
+                          sx={{ padding: 0 }}
+                          value={index}
+                        >
+                          <ScrollBox
+                            dependency={selectionOpen}
+                            sx={{ maxHeight: 200 }}
+                          >
+                            <Box
+                              sx={{
+                                display: 'flex',
+                                flexDirection: 'column',
+                              }}
+                            >
+                              {gun.projectiles.map((projectile, thisProjectileIndex) => (
+                                <ProjectileButton
+                                  key={`${gunKey}-${thisProjectileIndex}`}
+                                  gunKey={gunKey}
+                                  projectile={projectile}
+                                  thisProjectileIndex={thisProjectileIndex}
+                                />
+                              ))}
+                              </Box>
+                          </ScrollBox>
+                        </TabPanel>
+                      );
+                    })
+                  )}
 
-            <TabList underlinePlacement="left">
-              <ScrollBox dependency={selectionOpen}>
-                {Object.values(guns).map((gun, index) => (
-                  <Tab
-                    key={index}
-                    color="neutral"
-                    indicatorPlacement="left"
-                    sx={{
-                      width: '100%',
-                    }}
-                    variant="soft"
-                  >
-                    {gun.name}
-                  </Tab>
-                ))}
-              </ScrollBox>
-            </TabList>
-          </Tabs>
+                  {filteredGunKeys.length > 0 && (
+                    <TabList underlinePlacement="left">
+                      <ScrollBox dependency={selectionOpen}>
+                        {filteredGunKeys.map((gunKey) => (
+                          <Tab
+                            key={gunKey}
+                            color="neutral"
+                            indicatorPlacement="left"
+                            sx={{ width: '100%' }}
+                            variant="soft"
+                          >
+                            {guns[gunKey].name}
+                          </Tab>
+                        ))}
+                      </ScrollBox>
+                    </TabList>
+                  )}
+                </Tabs>
+              );
+            }}
+          </SearchProvider>
         }
         variant="plain"
       >
@@ -129,21 +184,14 @@ export default function ProjectileSelection() {
           ref={buttonRef}
           color="neutral"
           endDecorator={
-            <UnfoldMore
-              style={{
-                color: 'var(--joy-palette-text-icon)',
-              }}
-            />
+            <UnfoldMore style={{ color: 'var(--joy-palette-text-icon)' }} />
           }
-          sx={{
-            paddingInline: '0.75rem',
-            fontSize: 16,
-            fontWeight: 400,
-          }}
+          sx={{ paddingInline: '0.75rem', fontSize: 16, fontWeight: 400 }}
           variant="soft"
-          onClick={() => selectionOpenChange(!selectionOpen)}
+          onClick={handleOpenToggle}
         >
-          {guns[projectileData.gunKey].projectiles[projectileData.index].name}
+          {guns[projectileData.gunKey]?.projectiles[projectileData.index]
+            ?.name || t('typography.projectileSelect')}
         </Button>
       </Tooltip>
     </DataContainer>

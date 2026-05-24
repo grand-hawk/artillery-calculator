@@ -16,6 +16,8 @@
     "notApplicable": "Không có sẵn",
     "or": "hoặc",
     "projectile": "Đầu đạn",
+    "projectileSearchPlaceholder": "Tìm kiếm đầu đạn…",
+    "projectileNoResults": "Không tìm thấy kết quả",
     "settings": {
       "legacyBlastRadius": "Legacy Blast Radius"
     },

@@ -16,6 +16,8 @@
     "notApplicable": "ไม่มีข้อมูล",
     "or": "หรือ",
     "projectile": "กระสุน",
+    "projectileSearchPlaceholder": "ค้นหากระสุน…",
+    "projectileNoResults": "ไม่พบผลลัพธ์",
     "settings": {
       "legacyBlastRadius": "รัศมีการระเบิดดั้งเดิม"
     },

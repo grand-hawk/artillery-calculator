@@ -16,6 +16,8 @@
     "notApplicable": "N/V",
     "or": "oder",
     "projectile": "Projektil",
+    "projectileSearchPlaceholder": "Projektile durchsuchen…",
+    "projectileNoResults": "Keine Ergebnisse gefunden",
     "settings": {
       "legacyBlastRadius": "Legacy Blast Radius"
     },

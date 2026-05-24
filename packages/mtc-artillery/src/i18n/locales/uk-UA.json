@@ -16,6 +16,8 @@
     "notApplicable": "н/д",
     "or": "Або",
     "projectile": "Снаряд",
+    "projectileSearchPlaceholder": "Пошук снарядів…",
+    "projectileNoResults": "Нічого не знайдено",
     "settings": {
       "legacyBlastRadius": "Наслідки Радіусу Вибуха"
     },
