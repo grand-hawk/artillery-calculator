@@ -24,7 +24,7 @@
     "timeOfFlight": "탄착 시간"
   },
   "units": {
-    "meter": "{value}m",
-    "second": "{value}초"
+    "meter": "{value, plural, =1 {{value}m} other {{value}m}}",
+    "second": "{value, plural, =1 {{value}초} other {{value}초}}"
   }
 }
