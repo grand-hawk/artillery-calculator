@@ -85,6 +85,31 @@
     ],
     "name": "SAU-2"
   },
+  "Namer_APC": {
+    "projectiles": [
+      {
+        "velocity": 30,
+        "explosiveMass": 1,
+        "name": "Blast-frag Low Charge"
+      },
+      {
+        "velocity": 30,
+        "explosiveMass": 0.6,
+        "name": "Smoke"
+      },
+      {
+        "velocity": 80,
+        "explosiveMass": 1,
+        "name": "Blast-frag Medium Charge"
+      },
+      {
+        "velocity": 150,
+        "explosiveMass": 1,
+        "name": "Blast-frag High Charge"
+      }
+    ],
+    "name": "Namer APC"
+  },
   "M26_T99": {
     "projectiles": [
       {
@@ -95,18 +120,18 @@
     ],
     "name": "M26 T99"
   },
-  "T_62_Berezhok": {
-    "projectiles": [
-      {
-        "velocity": 185,
-        "explosiveMass": 0.065,
-        "name": "VOG-17M"
-      }
-    ],
-    "name": "T-62 Berezhok"
-  },
   "_2S43": {
     "projectiles": [
+      {
+        "velocity": 207,
+        "explosiveMass": 12.012,
+        "name": "3OF61 Low Charge"
+      },
+      {
+        "velocity": 207,
+        "explosiveMass": 12.012,
+        "name": "3OF61 Proxy Low Charge"
+      },
       {
         "submunitionDeployFactor": 0.8,
         "velocity": 207,
@@ -116,14 +141,14 @@
         "submunitionAngularDispersion": 15
       },
       {
-        "velocity": 216,
+        "velocity": 414,
         "explosiveMass": 12.012,
-        "name": "3VOF91 Low Charge"
+        "name": "3OF61 Medium Charge"
       },
       {
-        "velocity": 216,
+        "velocity": 414,
         "explosiveMass": 12.012,
-        "name": "3VOF91 Proxy Low Charge"
+        "name": "3OF61 Proxy Medium Charge"
       },
       {
         "submunitionDeployFactor": 0.8,
@@ -134,14 +159,14 @@
         "submunitionAngularDispersion": 11
       },
       {
-        "velocity": 432,
+        "velocity": 828,
         "explosiveMass": 12.012,
-        "name": "3VOF91 Medium Charge"
+        "name": "3OF61 High Charge"
       },
       {
-        "velocity": 432,
+        "velocity": 828,
         "explosiveMass": 12.012,
-        "name": "3VOF91 Proxy Medium Charge"
+        "name": "3OF61 Proxy High Charge"
       },
       {
         "submunitionDeployFactor": 0.8,
@@ -150,21 +175,11 @@
         "explosiveMass": 0.067,
         "name": "3VO28 High Charge",
         "submunitionAngularDispersion": 9
-      },
-      {
-        "velocity": 864,
-        "explosiveMass": 12.012,
-        "name": "3VOF91 High Charge"
-      },
-      {
-        "velocity": 864,
-        "explosiveMass": 12.012,
-        "name": "3VOF91 Proxy High Charge"
       }
     ],
     "name": "2S43"
   },
-  "BMPT_Terminator": {
+  "T_62_Berezhok": {
     "projectiles": [
       {
         "velocity": 185,
@@ -172,7 +187,7 @@
         "name": "VOG-17M"
       }
     ],
-    "name": "BMPT Terminator"
+    "name": "T-62 Berezhok"
   },
   "LUAZ_672": {
     "projectiles": [
@@ -371,6 +386,31 @@
     ],
     "name": "M270 MLRS"
   },
+  "TOS_1A_BM_1": {
+    "projectiles": [
+      {
+        "velocity": 180,
+        "explosiveMass": 21,
+        "name": "Blast fragmentation"
+      },
+      {
+        "explosiveMass": 0.2,
+        "velocity": 180,
+        "submunitions": 35,
+        "submunitionDeployFactor": 0.7,
+        "blastMultiplier": 2,
+        "name": "Incendiary",
+        "submunitionAngularDispersion": 25
+      },
+      {
+        "velocity": 180,
+        "blastMultiplier": 4,
+        "explosiveMass": 3,
+        "name": "Thermobaric"
+      }
+    ],
+    "name": "TOS-1A BM-1"
+  },
   "Ariete_PSO": {
     "projectiles": [
       {
@@ -396,31 +436,6 @@
       }
     ],
     "name": "GAZ Tigr M"
-  },
-  "TOS_1A_BM_1": {
-    "projectiles": [
-      {
-        "velocity": 180,
-        "explosiveMass": 21,
-        "name": "Blast fragmentation"
-      },
-      {
-        "explosiveMass": 0.2,
-        "velocity": 180,
-        "submunitions": 35,
-        "submunitionDeployFactor": 0.7,
-        "blastMultiplier": 2,
-        "name": "Incendiary",
-        "submunitionAngularDispersion": 25
-      },
-      {
-        "velocity": 180,
-        "blastMultiplier": 4,
-        "explosiveMass": 3,
-        "name": "Thermobaric"
-      }
-    ],
-    "name": "TOS-1A BM-1"
   },
   "M17_Whizbang": {
     "projectiles": [
@@ -561,6 +576,16 @@
       }
     ],
     "name": "PzH 2000"
+  },
+  "BMPT_Spyridon": {
+    "projectiles": [
+      {
+        "velocity": 185,
+        "explosiveMass": 0.065,
+        "name": "VOG-17M"
+      }
+    ],
+    "name": "BMPT Spyridon"
   },
   "RBT_5": {
     "projectiles": [
@@ -730,6 +755,26 @@
   "_2S19_Msta_S": {
     "projectiles": [
       {
+        "velocity": 207,
+        "explosiveMass": 11.781,
+        "name": "3OF45 Low Charge"
+      },
+      {
+        "velocity": 207,
+        "explosiveMass": 11.781,
+        "name": "3OF45 Proxy Low Charge"
+      },
+      {
+        "velocity": 207,
+        "explosiveMass": 12.012,
+        "name": "3OF61 Low Charge"
+      },
+      {
+        "velocity": 207,
+        "explosiveMass": 12.012,
+        "name": "3OF61 Proxy Low Charge"
+      },
+      {
         "submunitionDeployFactor": 0.8,
         "velocity": 207,
         "submunitions": 40,
@@ -738,19 +783,24 @@
         "submunitionAngularDispersion": 15
       },
       {
-        "velocity": 216,
-        "explosiveMass": 12.012,
-        "name": "3VOF91 Low Charge"
-      },
-      {
-        "velocity": 216,
-        "explosiveMass": 12.012,
-        "name": "3VOF91 Proxy Low Charge"
-      },
-      {
-        "velocity": 216,
+        "velocity": 414,
         "explosiveMass": 11.781,
-        "name": "OF-72 Low Charge"
+        "name": "3OF45 Medium Charge"
+      },
+      {
+        "velocity": 414,
+        "explosiveMass": 11.781,
+        "name": "3OF45 Proxy Medium Charge"
+      },
+      {
+        "velocity": 414,
+        "explosiveMass": 12.012,
+        "name": "3OF61 Medium Charge"
+      },
+      {
+        "velocity": 414,
+        "explosiveMass": 12.012,
+        "name": "3OF61 Proxy Medium Charge"
       },
       {
         "submunitionDeployFactor": 0.8,
@@ -761,19 +811,24 @@
         "submunitionAngularDispersion": 11
       },
       {
-        "velocity": 432,
-        "explosiveMass": 12.012,
-        "name": "3VOF91 Medium Charge"
-      },
-      {
-        "velocity": 432,
-        "explosiveMass": 12.012,
-        "name": "3VOF91 Proxy Medium Charge"
-      },
-      {
-        "velocity": 432,
+        "velocity": 828,
         "explosiveMass": 11.781,
-        "name": "OF-72 Medium Charge"
+        "name": "3OF45 High Charge"
+      },
+      {
+        "velocity": 828,
+        "explosiveMass": 11.781,
+        "name": "3OF45 Proxy High Charge"
+      },
+      {
+        "velocity": 828,
+        "explosiveMass": 12.012,
+        "name": "3OF61 High Charge"
+      },
+      {
+        "velocity": 828,
+        "explosiveMass": 12.012,
+        "name": "3OF61 Proxy High Charge"
       },
       {
         "submunitionDeployFactor": 0.8,
@@ -782,21 +837,6 @@
         "explosiveMass": 0.067,
         "name": "3VO28 High Charge",
         "submunitionAngularDispersion": 9
-      },
-      {
-        "velocity": 864,
-        "explosiveMass": 12.012,
-        "name": "3VOF91 High Charge"
-      },
-      {
-        "velocity": 864,
-        "explosiveMass": 12.012,
-        "name": "3VOF91 Proxy High Charge"
-      },
-      {
-        "velocity": 864,
-        "explosiveMass": 11.781,
-        "name": "OF-72 High Charge"
       }
     ],
     "name": "2S19 Msta-S"

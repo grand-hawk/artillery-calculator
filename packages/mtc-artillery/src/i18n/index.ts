@@ -6,6 +6,7 @@ import deDE from '@/i18n/locales/de-DE.json';
 import enUS from '@/i18n/locales/en-US.json';
 import esES from '@/i18n/locales/es-ES.json';
 import frFR from '@/i18n/locales/fr-FR.json';
+import koKR from '@/i18n/locales/ko-KR.json';
 import nlNL from '@/i18n/locales/nl-NL.json';
 import plPL from '@/i18n/locales/pl-PL.json';
 import ruRU from '@/i18n/locales/ru-RU.json';
@@ -20,6 +21,7 @@ const locales: Record<string, LocaleDictionary> = {
   'en-US': enUS,
   'es-ES': esES,
   'fr-FR': frFR,
+  'ko-KR': koKR,
   'nl-NL': nlNL,
   'pl-PL': plPL,
   'ru-RU': ruRU,
