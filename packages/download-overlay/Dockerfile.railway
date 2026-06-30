@@ -7,7 +7,7 @@ COPY . /build
 WORKDIR /build
 
 RUN pnpm fetch --frozen-lockfile
-RUN pnpm install --frozen-lockfile
+RUN pnpm install --frozen-lockfile --config.dangerouslyAllowAllBuilds=true
 
 ARG NEXT_PUBLIC_REPO_OWNER
 ARG NEXT_PUBLIC_REPO_NAME
