@@ -1,6 +1,11 @@
 lockfileVersion: '9.0'
 
 settings:
+  onlyBuiltDependencies:
+    - '@parcel/watcher'
+    - '@swc/core'
+    - sharp
+    - unrs-resolver
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
