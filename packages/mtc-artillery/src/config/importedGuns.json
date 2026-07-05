@@ -223,13 +223,13 @@
     "projectiles": [
       {
         "velocity": 241,
-        "explosiveMass": 0.0959,
+        "explosiveMass": 0.1566,
         "name": "M383"
       },
       {
         "velocity": 241,
-        "blastMultiplier": 1.2,
-        "explosiveMass": 0.03,
+        "blastMultiplier": 1.1,
+        "explosiveMass": 0.1305,
         "name": "M430A1"
       }
     ],
@@ -346,7 +346,7 @@
         "velocity": 180,
         "submunitions": 150,
         "submunitionDeployFactor": 0.75,
-        "blastMultiplier": 1.2,
+        "blastMultiplier": 1.1,
         "name": "M26A1 Low Charge",
         "submunitionAngularDispersion": 32.5
       },
@@ -360,7 +360,7 @@
         "velocity": 300,
         "submunitions": 150,
         "submunitionDeployFactor": 0.8,
-        "blastMultiplier": 1.2,
+        "blastMultiplier": 1.1,
         "name": "M26A1 Medium Charge",
         "submunitionAngularDispersion": 15
       },
@@ -374,7 +374,7 @@
         "velocity": 420,
         "submunitions": 150,
         "submunitionDeployFactor": 0.85,
-        "blastMultiplier": 1.2,
+        "blastMultiplier": 1.1,
         "name": "M26A1 High Charge",
         "submunitionAngularDispersion": 10
       },
@@ -415,13 +415,13 @@
     "projectiles": [
       {
         "velocity": 241,
-        "explosiveMass": 0.0959,
+        "explosiveMass": 0.1566,
         "name": "M383"
       },
       {
         "velocity": 241,
-        "blastMultiplier": 1.2,
-        "explosiveMass": 0.03,
+        "blastMultiplier": 1.1,
+        "explosiveMass": 0.1305,
         "name": "M430A1"
       }
     ],
@@ -855,13 +855,13 @@
     "projectiles": [
       {
         "velocity": 241,
-        "explosiveMass": 0.0959,
+        "explosiveMass": 0.1566,
         "name": "M383"
       },
       {
         "velocity": 241,
-        "blastMultiplier": 1.2,
-        "explosiveMass": 0.03,
+        "blastMultiplier": 1.1,
+        "explosiveMass": 0.1305,
         "name": "M430A1"
       }
     ],
@@ -956,13 +956,13 @@
     "projectiles": [
       {
         "velocity": 241,
-        "explosiveMass": 0.0959,
+        "explosiveMass": 0.1566,
         "name": "M383"
       },
       {
         "velocity": 241,
-        "blastMultiplier": 1.2,
-        "explosiveMass": 0.03,
+        "blastMultiplier": 1.1,
+        "explosiveMass": 0.1305,
         "name": "M430A1"
       }
     ],
