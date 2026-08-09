@@ -1,8 +1,7 @@
 // Prevents additional console window on Windows in release, DO NOT REMOVE!!
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 
-use std::env;
-use native_dialog::MessageDialog;
+use native_dialog::{ MessageDialogBuilder, MessageLevel };
 use tauri::{ async_runtime::spawn, Manager };
 use version_compare::{ compare_to, Cmp };
 
@@ -28,15 +27,16 @@ async fn check_for_updates(current_version: String) {
       println!("Current version: {}", current_version);
       println!("Latest version: {}", latest_version);
 
-      if compare_to(latest_version, current_version, Cmp::Gt).unwrap() {
-        let confirmation = MessageDialog::new()
-          .set_type(native_dialog::MessageType::Info)
+      if compare_to(latest_version, current_version, Cmp::Gt).unwrap_or(false) {
+        let confirmation = MessageDialogBuilder::default()
+          .set_level(MessageLevel::Info)
           .set_title("Artillery overlay")
           .set_text(
             "A new version is available, do you wish to visit the download page?"
           )
-          .show_confirm()
-          .unwrap();
+          .confirm()
+          .spawn().await
+          .unwrap_or(false);
 
         if confirmation {
           let _ = open::that(DOWNLOAD_URL);
@@ -51,19 +51,17 @@ async fn check_for_updates(current_version: String) {
 }
 
 fn main() {
-  dotenv::dotenv().ok();
-
   tauri::Builder
     ::default()
     .setup(|app| {
       let main = app.get_webview_window("main").unwrap();
-      let tauri_env = env
-        ::var("TAURI_ENV")
-        .unwrap_or_else(|_| "production".into());
 
-      println!("Enviroment: {}", tauri_env);
+      // `tauri dev` builds debug, `tauri build` builds release
+      let production = !cfg!(debug_assertions);
 
-      if tauri_env == "production" {
+      println!("Production: {}", production);
+
+      if production {
         let version = app.package_info().version.to_string();
 
         spawn(async move {
