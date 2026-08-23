@@ -189,7 +189,7 @@ export const gameMaps: Record<string, GameMap> = {
     image: 'roinburg',
     inRotation: true,
     name: 'Roinburg',
-    size: 7086,
+    size: 3543,
   },
 
   // sandy_place: {
