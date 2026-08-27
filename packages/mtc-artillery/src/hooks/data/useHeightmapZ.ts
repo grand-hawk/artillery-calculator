@@ -27,7 +27,10 @@ export default function useHeightmapZ(): [number, number] {
       1,
     );
 
-    gunHeight = (gunData.data[0] / 255) * map.heightmap[255];
+    const heightMin = map.heightmap[0];
+    const heightMax = map.heightmap[255];
+    const heightRange = heightMax - heightMin;
+gunHeight = heightMin + (gunData.data[0] / 255) * heightRange;
 
     const targetData = heightmapContext.getImageData(
       Math.round(target.x * width),
