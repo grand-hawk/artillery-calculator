@@ -13,9 +13,13 @@ export default function HeightmapProvider({
   ...props
 }: PropsWithChildren<React.ComponentProps<'canvas'>>) {
   const canvasRef = React.useRef<HTMLCanvasElement>(null);
-  const pendingImageRef = React.useRef<HTMLImageElement | null>(null);
 
-  const [size, setSize] = React.useState<number>(1024);
+  const [size, setSize] = React.useState<{ height: number; width: number }>({
+    height: 1024,
+    width: 1024,
+  });
+  const [pendingImage, setPendingImage] =
+    React.useState<HTMLImageElement | null>(null);
   const [mounted, setMounted] = React.useState<boolean>(false);
 
   const gameMap = useGameMap();
@@ -36,14 +40,14 @@ export default function HeightmapProvider({
     const context = canvas.getContext('2d', {}) as CanvasRenderingContext2D;
 
     context.clearRect(0, 0, canvas.width, canvas.height);
-    pendingImageRef.current = null;
+    setPendingImage(null);
 
     const image = new Image();
     image.crossOrigin = 'anonymous';
 
     function onImageLoad() {
-      pendingImageRef.current = image;
-      setSize(Math.max(image.width, image.height));
+      setSize({ height: image.height, width: image.width });
+      setPendingImage(image);
     }
 
     image.addEventListener('load', onImageLoad);
@@ -57,30 +61,25 @@ export default function HeightmapProvider({
 
   React.useLayoutEffect(() => {
     const canvas = canvasRef.current;
-    const image = pendingImageRef.current;
-    if (!canvas || !image) return;
-    if (canvas.width !== image.width || canvas.height !== image.height) {
-      return;
-    }
+    if (!canvas || !pendingImage) return;
+    if (canvas.width !== size.width || canvas.height !== size.height) return;
 
     const context = canvas.getContext('2d', {}) as CanvasRenderingContext2D;
 
     context.clearRect(0, 0, canvas.width, canvas.height);
-    context.drawImage(image, 0, 0);
-
-    pendingImageRef.current = null;
+    context.drawImage(pendingImage, 0, 0);
 
     console.log('[Heightmap provider]', 'drew:', gameMap.name);
-  }, [size, gameMap]);
+  }, [size, pendingImage, gameMap]);
 
   return (
     <>
       <Profiler id="heightmap-canvas-profiler">
         <canvas
           ref={canvasRef}
-          height={size}
+          height={size.height}
           id={heightmapCanvasId}
-          width={size}
+          width={size.width}
           {...props}
           style={{
             display: 'none',
