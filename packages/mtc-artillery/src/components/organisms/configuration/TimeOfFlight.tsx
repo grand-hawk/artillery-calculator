@@ -3,9 +3,8 @@ import Box from '@mui/joy/Box';
 import Typography from '@mui/joy/Typography';
 import { useTranslations } from 'next-intl';
 import React from 'react';
-
 import DataContainer from '@/components/atoms/DataContainer';
-import useDistanceWithHeight from '@/hooks/data/useDistanceWithHeight';
+import useDistance from '@/hooks/data/useDistance';
 import useElevation from '@/hooks/data/useElevation';
 import useProjectile from '@/hooks/data/useProjectile';
 import { calculateTimeOfFlight } from '@/utils/math';
@@ -16,11 +15,9 @@ export default function TimeOfFlightValue({
   minimized?: boolean;
 }) {
   const t = useTranslations();
-
   const { velocity } = useProjectile();
   const [lowArc, highArc] = useElevation();
-  const distance = useDistanceWithHeight();
-
+  const distance = useDistance();
   const lowArcTof = todec(
     Math.max(0, calculateTimeOfFlight(lowArc, velocity, distance)),
   );
@@ -29,7 +26,6 @@ export default function TimeOfFlightValue({
   return (
     <DataContainer>
       <Typography level="title-md">{t('typography.timeOfFlight')}</Typography>
-
       <Box
         sx={{
           display: 'flex',
@@ -41,13 +37,11 @@ export default function TimeOfFlightValue({
         {lowArc ? (
           <>
             <Typography>{lowArcTof}</Typography>
-
             {!!highArc && (
               <>
                 <Typography component="b" level="body-sm">
                   {minimized ? '/' : t('typography.or')}
                 </Typography>
-
                 <Typography>
                   {minimized
                     ? highArcTof
