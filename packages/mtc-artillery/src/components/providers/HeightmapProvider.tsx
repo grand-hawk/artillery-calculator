@@ -13,6 +13,7 @@ export default function HeightmapProvider({
   ...props
 }: PropsWithChildren<React.ComponentProps<'canvas'>>) {
   const canvasRef = React.useRef<HTMLCanvasElement>(null);
+  const pendingImageRef = React.useRef<HTMLImageElement | null>(null);
 
   const [size, setSize] = React.useState<number>(1024);
   const [mounted, setMounted] = React.useState<boolean>(false);
@@ -30,21 +31,19 @@ export default function HeightmapProvider({
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    console.log('[Heightmap provider]', 'drawing:', gameMap.name);
+    console.log('[Heightmap provider]', 'loading:', gameMap.name);
 
     const context = canvas.getContext('2d', {}) as CanvasRenderingContext2D;
 
     context.clearRect(0, 0, canvas.width, canvas.height);
+    pendingImageRef.current = null;
 
     const image = new Image();
     image.crossOrigin = 'anonymous';
 
     function onImageLoad() {
-      context.drawImage(image, 0, 0);
-
+      pendingImageRef.current = image;
       setSize(Math.max(image.width, image.height));
-
-      console.log('[Heightmap provider]', 'drew:', gameMap.name);
     }
 
     image.addEventListener('load', onImageLoad);
@@ -55,6 +54,24 @@ export default function HeightmapProvider({
       image.removeEventListener('load', onImageLoad);
     };
   }, [mounted, gameMap]);
+
+  React.useLayoutEffect(() => {
+    const canvas = canvasRef.current;
+    const image = pendingImageRef.current;
+    if (!canvas || !image) return;
+    if (canvas.width !== image.width || canvas.height !== image.height) {
+      return;
+    }
+
+    const context = canvas.getContext('2d', {}) as CanvasRenderingContext2D;
+
+    context.clearRect(0, 0, canvas.width, canvas.height);
+    context.drawImage(image, 0, 0);
+
+    pendingImageRef.current = null;
+
+    console.log('[Heightmap provider]', 'drew:', gameMap.name);
+  }, [size, gameMap]);
 
   return (
     <>
