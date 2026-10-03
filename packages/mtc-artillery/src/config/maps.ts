@@ -201,6 +201,7 @@ export const gameMaps: Record<string, GameMap> = {
   //   name: 'Sandy Place',
   //   size: calculateMapSize(361),
   // },
+
   snow_tundra: {
     key: 'Snowy Tundra',
     name: 'Snow Tundra',
@@ -275,4 +276,3 @@ export const gameMaps: Record<string, GameMap> = {
 export type MapId = keyof typeof gameMaps;
 
 export const defaultMapId: MapId = 'normandy';
-
