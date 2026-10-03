@@ -34,7 +34,7 @@ export default function MapItem({ gameMap }: { gameMap: GameMap }) {
         <Image
           alt={gameMap.name}
           height={24}
-          src={getMapImageUrl(gameMap.image, { width: 24, q: 90 })}
+          src={getMapImageUrl(gameMap.key, { width: 24, q: 90 })}
           unoptimized
           width={24}
         />

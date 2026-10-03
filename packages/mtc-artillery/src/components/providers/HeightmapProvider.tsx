@@ -52,7 +52,7 @@ export default function HeightmapProvider({
 
     image.addEventListener('load', onImageLoad);
 
-    image.src = getHeightmapImageUrl(gameMap.image);
+    image.src = getHeightmapImageUrl(gameMap.key);
 
     return () => {
       image.removeEventListener('load', onImageLoad);

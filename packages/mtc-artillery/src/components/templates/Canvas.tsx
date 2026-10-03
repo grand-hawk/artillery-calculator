@@ -170,7 +170,7 @@ function Canvas() {
           alt={gameMap.name}
           height={canvasStore.height}
           priority
-          src={getMapImageUrl(gameMap.image, { q: 90 })}
+          src={getMapImageUrl(gameMap.key, { q: 90 })}
           unoptimized
           width={canvasStore.width}
         />
