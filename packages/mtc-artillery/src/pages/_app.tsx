@@ -2,6 +2,7 @@ import { useRouter } from 'next/router';
 import { NextIntlClientProvider } from 'next-intl';
 import React from 'react';
 
+import GunsProvider from '@/components/providers/GunsProvider';
 import HeightmapProvider from '@/components/providers/HeightmapProvider';
 import locales, { config } from '@/i18n';
 import objectKeySearch from '@/utils/objectKeySearch';
@@ -31,9 +32,11 @@ function App({ Component, pageProps }: AppProps) {
             : console.error(error)
         }
       >
-        <HeightmapProvider>
-          <Component {...pageProps} />
-        </HeightmapProvider>
+        <GunsProvider guns={pageProps.guns}>
+          <HeightmapProvider>
+            <Component {...pageProps} />
+          </HeightmapProvider>
+        </GunsProvider>
       </NextIntlClientProvider>
     </React.StrictMode>
   );

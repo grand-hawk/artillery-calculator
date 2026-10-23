@@ -2,7 +2,6 @@ import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import { immer } from 'zustand/middleware/immer';
 
-import { guns } from '@/config/guns';
 import { defaultMapId } from '@/config/maps';
 
 import type { MobileModes } from '@/components/organisms/configuration/MobileMode';
@@ -49,7 +48,7 @@ export const useDataStore = create(
       },
 
       projectile: {
-        gunKey: Object.keys(guns)[0],
+        gunKey: '',
         index: 0,
       },
       setProjectile(gun, index) {

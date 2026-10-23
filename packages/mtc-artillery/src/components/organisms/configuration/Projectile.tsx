@@ -14,7 +14,8 @@ import { useOnClickOutside } from 'usehooks-ts';
 import ProjectileButton from '@/components/atoms/configuration/projectile/Button';
 import DataContainer from '@/components/atoms/DataContainer';
 import ScrollBox from '@/components/molecules/ScrollBox';
-import { guns } from '@/config/guns';
+import useGuns from '@/hooks/data/useGuns';
+import useProjectile from '@/hooks/data/useProjectile';
 import { useDataStore } from '@/stores/data';
 
 export default function ProjectileSelection() {
@@ -23,11 +24,16 @@ export default function ProjectileSelection() {
   const buttonRef = React.useRef<HTMLButtonElement | null>(null);
   const tooltipRef = React.useRef<HTMLDivElement | null>(null);
 
+  const guns = useGuns();
+  const selectedProjectile = useProjectile();
   const projectileData = useDataStore((s) => s.projectile);
 
   const [selectionOpen, setSelectionOpen] = React.useState<boolean>(false);
   const [selectionTab, setSelectionTab] = React.useState<number>(
-    Object.keys(guns).findIndex((key) => key === projectileData.gunKey),
+    Math.max(
+      Object.keys(guns).findIndex((key) => key === projectileData.gunKey),
+      0,
+    ),
   );
 
   const selectionOpenChange = React.useCallback(
@@ -143,7 +149,7 @@ export default function ProjectileSelection() {
           variant="soft"
           onClick={() => selectionOpenChange(!selectionOpen)}
         >
-          {guns[projectileData.gunKey].projectiles[projectileData.index].name}
+          {selectedProjectile.name}
         </Button>
       </Tooltip>
     </DataContainer>

@@ -8,18 +8,24 @@ import Settings from '@/components/templates/Settings';
 import Umami from '@/components/utils/Umami';
 import useIsSmallScreen from '@/hooks/useIsSmallScreen';
 import locales from '@/i18n';
+import fetchGuns from '@/utils/fetchGuns';
 import DesktopView from '@/views/Desktop';
 import MobileView from '@/views/Mobile';
 
+import type { Gun } from '@/config/guns';
 import type { GetStaticPropsContext, GetStaticPropsResult } from 'next';
 
 export async function getStaticProps(
   context: GetStaticPropsContext,
-): Promise<GetStaticPropsResult<{ messages: unknown }>> {
+): Promise<
+  GetStaticPropsResult<{ guns: Record<string, Gun>; messages: unknown }>
+> {
   return {
     props: {
+      guns: await fetchGuns(),
       messages: locales[context.locale!],
     },
+    revalidate: 3600,
   };
 }
 

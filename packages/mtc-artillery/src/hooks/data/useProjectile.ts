@@ -1,29 +1,31 @@
-import { useRouter } from 'next/router';
+import React from 'react';
 
-import { guns } from '@/config/guns';
+import useGuns from '@/hooks/data/useGuns';
 import { useDataStore } from '@/stores/data';
 
 import type { Projectile } from '@/config/guns';
 
 export default function useProjectile(): Projectile {
-  const router = useRouter();
+  const guns = useGuns();
 
   const projectileData = useDataStore((s) => s.projectile);
   const setProjectile = useDataStore((s) => s.setProjectile);
 
-  const gun = guns[projectileData.gunKey];
-  // gun doesn't exist anymore, reset to default
-  if (!gun) {
-    setProjectile(Object.keys(guns)[0], 0);
-    router.reload();
-  }
+  const gunKey =
+    projectileData.gunKey in guns
+      ? projectileData.gunKey
+      : Object.keys(guns)[0];
+  const gun = guns[gunKey];
 
-  const projectile = gun.projectiles[projectileData.index];
-  // projectile doesn't exist anymore, reset to the first
-  if (!projectile) {
-    setProjectile(projectileData.gunKey, 0);
-    router.reload();
-  }
+  const index =
+    gunKey === projectileData.gunKey && gun.projectiles[projectileData.index]
+      ? projectileData.index
+      : 0;
 
-  return projectile;
+  React.useEffect(() => {
+    if (gunKey !== projectileData.gunKey || index !== projectileData.index)
+      setProjectile(gunKey, index);
+  }, [gunKey, index, projectileData, setProjectile]);
+
+  return gun.projectiles[index];
 }

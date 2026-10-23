@@ -74,12 +74,10 @@ function Canvas() {
 
     if (average > 0) blastDiameter = average;
   }
+  if (projectile.blastRadius && !blastDiameter)
+    blastDiameter = metersToStuds(projectile.blastRadius) * 2;
   if (projectile.explosiveMass && !blastDiameter)
-    blastDiameter = calculateBlastDiameter(
-      projectile.explosiveMass,
-      projectile.capMultiplier,
-      projectile.blastMultiplier,
-    );
+    blastDiameter = calculateBlastDiameter(projectile.explosiveMass);
 
   const blastRadius =
     blastDiameter && (blastDiameter / gameMap.size / 2) * scaledDimension;
