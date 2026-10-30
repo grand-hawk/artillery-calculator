@@ -17,6 +17,7 @@ interface Shell {
   name: string;
   type: string;
   velocity: number;
+  ballistics?: { gravity: number; dragConstant?: number; lifetime: number };
   explosive?: { mass: number; radius?: number };
   missile?: unknown;
   cluster?: {
@@ -58,6 +59,13 @@ function toProjectile(shell: Shell): Projectile {
     name: shell.name.trim(),
     velocity: shell.velocity,
   };
+
+  if (shell.ballistics) {
+    projectile.gravity = shell.ballistics.gravity;
+    projectile.lifetime = shell.ballistics.lifetime;
+    if (shell.ballistics.dragConstant)
+      projectile.dragConstant = shell.ballistics.dragConstant;
+  }
 
   if (shell.explosive) {
     projectile.explosiveMass = Number(shell.explosive.mass.toFixed(4));

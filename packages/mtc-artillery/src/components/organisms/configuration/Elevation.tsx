@@ -5,12 +5,12 @@ import { useTranslations } from 'next-intl';
 import React from 'react';
 
 import DataContainer from '@/components/atoms/DataContainer';
-import useElevation from '@/hooks/data/useElevation';
+import useArcs from '@/hooks/data/useArcs';
 
 export default function ElevationValue() {
   const t = useTranslations();
 
-  const [lowArc, highArc] = useElevation();
+  const [lowArc, highArc] = useArcs();
 
   return (
     <DataContainer>
@@ -26,15 +26,15 @@ export default function ElevationValue() {
       >
         {lowArc ? (
           <>
-            <Typography>{todec(lowArc)}°</Typography>
+            <Typography>{todec(lowArc.elevation)}°</Typography>
 
-            {!!highArc && (
+            {highArc && (
               <>
                 <Typography component="b" level="body-sm">
                   {t('typography.or')}
                 </Typography>
 
-                <Typography>{todec(highArc)}°</Typography>
+                <Typography>{todec(highArc.elevation)}°</Typography>
               </>
             )}
           </>

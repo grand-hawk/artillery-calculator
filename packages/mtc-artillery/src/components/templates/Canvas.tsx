@@ -6,8 +6,9 @@ import { useShallow } from 'zustand/shallow';
 import AbsoluteContainer from '@/components/atoms/canvas/AbsoluteContainer';
 import CanvasMeasureContainer from '@/components/organisms/CanvasMeasureContainer';
 import Profiler from '@/components/utils/Profiler';
-import useElevation from '@/hooks/data/useElevation';
+import useArcs from '@/hooks/data/useArcs';
 import useGameMap from '@/hooks/data/useGameMap';
+import useHeightDifference from '@/hooks/data/useHeightDifference';
 import useHeightmapZ from '@/hooks/data/useHeightmapZ';
 import useProjectile from '@/hooks/data/useProjectile';
 import { useCanvasStore } from '@/stores/canvas';
@@ -19,7 +20,7 @@ import drawTarget from '@/utils/canvas/drawTarget';
 import { getMapImageUrl } from '@/utils/images';
 import {
   calculateBlastDiameter,
-  calculateMaxRangeDiameter,
+  calculateMaxRange,
   calculateSubmunitionBlastDiameter,
   metersToStuds,
   studsToMeters,
@@ -37,7 +38,8 @@ function Canvas() {
 
   const projectile = useProjectile();
   const gameMap = useGameMap();
-  const elevation = useElevation();
+  const arcs = useArcs();
+  const heightDifference = useHeightDifference();
   const [gunHeight] = useHeightmapZ();
 
   const gun = useDataStore(useShallow((s) => s.getGun()));
@@ -55,22 +57,18 @@ function Canvas() {
     projectile.submunitions &&
     projectile.submunitionAngularDispersion
   ) {
-    const arcs = [
-      calculateSubmunitionBlastDiameter(
-        projectile.submunitionAngularDispersion,
-        projectile.velocity,
-        elevation[0],
-        projectile.submunitionDeployFactor,
-      ),
-      calculateSubmunitionBlastDiameter(
-        projectile.submunitionAngularDispersion,
-        projectile.velocity,
-        elevation[1],
-        projectile.submunitionDeployFactor,
-      ),
-    ].filter((number) => !Number.isNaN(number));
+    const diameters = arcs
+      .filter((arc) => arc !== undefined)
+      .map((arc) =>
+        calculateSubmunitionBlastDiameter(
+          projectile,
+          arc.elevation,
+          heightDifference,
+        ),
+      )
+      .filter((number) => !Number.isNaN(number));
 
-    const average = arcs.reduce((a, b) => a + b, 0) / arcs.length;
+    const average = diameters.reduce((a, b) => a + b, 0) / diameters.length;
 
     if (average > 0) blastDiameter = average;
   }
@@ -83,9 +81,7 @@ function Canvas() {
     blastDiameter && (blastDiameter / gameMap.size / 2) * scaledDimension;
 
   const maxRadius =
-    (metersToStuds(
-      calculateMaxRangeDiameter(projectile.velocity, studsToMeters(gunHeight)),
-    ) /
+    (metersToStuds(calculateMaxRange(projectile, -studsToMeters(gunHeight))) /
       gameMap.size) *
     scaledDimension;
 

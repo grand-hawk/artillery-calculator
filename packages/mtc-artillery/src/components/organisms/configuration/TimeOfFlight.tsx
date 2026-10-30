@@ -5,10 +5,7 @@ import { useTranslations } from 'next-intl';
 import React from 'react';
 
 import DataContainer from '@/components/atoms/DataContainer';
-import useDistanceWithHeight from '@/hooks/data/useDistanceWithHeight';
-import useElevation from '@/hooks/data/useElevation';
-import useProjectile from '@/hooks/data/useProjectile';
-import { calculateTimeOfFlight } from '@/utils/math';
+import useArcs from '@/hooks/data/useArcs';
 
 export default function TimeOfFlightValue({
   minimized = false,
@@ -17,14 +14,7 @@ export default function TimeOfFlightValue({
 }) {
   const t = useTranslations();
 
-  const { velocity } = useProjectile();
-  const [lowArc, highArc] = useElevation();
-  const distance = useDistanceWithHeight();
-
-  const lowArcTof = todec(
-    Math.max(0, calculateTimeOfFlight(lowArc, velocity, distance)),
-  );
-  const highArcTof = todec(calculateTimeOfFlight(highArc, velocity, distance));
+  const [lowArc, highArc] = useArcs();
 
   return (
     <DataContainer>
@@ -40,9 +30,9 @@ export default function TimeOfFlightValue({
       >
         {lowArc ? (
           <>
-            <Typography>{lowArcTof}</Typography>
+            <Typography>{todec(lowArc.timeOfFlight)}</Typography>
 
-            {!!highArc && (
+            {highArc && (
               <>
                 <Typography component="b" level="body-sm">
                   {minimized ? '/' : t('typography.or')}
@@ -50,9 +40,9 @@ export default function TimeOfFlightValue({
 
                 <Typography>
                   {minimized
-                    ? highArcTof
+                    ? todec(highArc.timeOfFlight)
                     : t('units.second', {
-                        value: highArcTof,
+                        value: todec(highArc.timeOfFlight),
                       })}
                 </Typography>
               </>
